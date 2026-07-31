@@ -6,6 +6,12 @@
   // Freezes runtime behaviour to this date. Leave it alone unless you need a newer feature.
   "compatibility_date": "2026-07-31",
 
+  // Never turn on workers.dev address
+  "workers_dev": false,
+
+  // Keep PR previews
+  "preview_urls": true,
+
   // Assets-only Worker — no JavaScript, just static files.
   "assets": {
     // Folder that gets served. No build step, so this is the source folder directly.
