@@ -1,0 +1,26 @@
+{
+  // Worker name. This MUST match the Worker name in the Cloudflare dashboard,
+  // otherwise Workers Builds will fail.
+  "name": "newtcommander",
+
+  // Freezes runtime behaviour to this date. Leave it alone unless you need a newer feature.
+  "compatibility_date": "2026-07-31",
+
+  // Assets-only Worker — no JavaScript, just static files.
+  "assets": {
+    // Folder that gets served. No build step, so this is the source folder directly.
+    // If you later add a static site generator, point this at its output (e.g. "./dist").
+    "directory": "./public",
+
+    // Unmatched paths return 404.html with a real 404 status code.
+    "not_found_handling": "404-page",
+
+    // /docs resolves to docs/index.html or docs.html; folders get a trailing slash.
+    "html_handling": "auto-trailing-slash"
+  },
+
+  // Request and error metrics in the Cloudflare dashboard.
+  "observability": {
+    "enabled": true
+  }
+}
