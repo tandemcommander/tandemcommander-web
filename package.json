@@ -1,8 +1,8 @@
 {
-  "name": "newtcommander-web",
+  "name": "tandemcommander-web",
   "version": "0.1.0",
   "private": true,
-  "description": "Website for Newt Commander, an open source two-pane file manager. Hosted on Cloudflare Workers.",
+  "description": "Website for Tandem Commander, an open source two-pane file manager. Hosted on Cloudflare Workers.",
   "license": "MIT",
   "scripts": {
     "dev": "wrangler dev",

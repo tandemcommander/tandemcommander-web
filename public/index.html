@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Newt Commander — Two-pane file manager</title>
-<meta name="description" content="Newt Commander is an open source two-pane file manager. Coming soon.">
+<title>Tandem Commander — Two-pane file manager</title>
+<meta name="description" content="Tandem Commander is an open source two-pane file manager. Coming soon.">
 <meta name="theme-color" content="#0A1424">
 <meta name="color-scheme" content="dark">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="canonical" href="https://newtcommander.org/">
+<link rel="canonical" href="https://tandemcommander.org/">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Newt Commander">
-<meta property="og:url" content="https://newtcommander.org/">
-<meta property="og:title" content="Newt Commander — Two-pane file manager">
+<meta property="og:site_name" content="Tandem Commander">
+<meta property="og:url" content="https://tandemcommander.org/">
+<meta property="og:title" content="Tandem Commander — Two-pane file manager">
 <meta property="og:description" content="An open source two-pane file manager. Coming soon.">
-<meta property="og:image" content="https://newtcommander.org/assets/og-image.png">
+<meta property="og:image" content="https://tandemcommander.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Newt Commander — two-pane file manager. Coming soon.">
+<meta property="og:image:alt" content="Tandem Commander — two-pane file manager. Coming soon.">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -182,47 +182,54 @@
 <body>
 <main>
 
-  <!-- Newt Commander lockup, dark background variant. Do not recolour or rebuild. -->
+  <!-- Tandem Commander lockup, dark background variant. Do not recolour or rebuild. -->
   <svg class="lockup" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" role="img"
-       aria-label="Newt Commander — two-pane file manager">
+       aria-label="Tandem Commander — two-pane file manager">
     <defs>
-      <linearGradient id="nc-orangeFold" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="tc-orangeFold" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="#FFB35C"/><stop offset="0.55" stop-color="#F97316"/><stop offset="1" stop-color="#EA6A0B"/>
       </linearGradient>
-      <linearGradient id="nc-orangeBack" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="tc-orangeBack" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="#D96A15"/><stop offset="1" stop-color="#B85306"/>
       </linearGradient>
-      <linearGradient id="nc-innerBottom" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="tc-innerBottom" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0.55" stop-color="#B85306" stop-opacity="0"/><stop offset="1" stop-color="#8A3E04" stop-opacity="0.45"/>
       </linearGradient>
-      <linearGradient id="nc-gloss" x1="0" y1="0" x2="0" y2="1">
+      <linearGradient id="tc-gloss" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
       </linearGradient>
-      <filter id="nc-soft" x="-35%" y="-35%" width="170%" height="170%">
+      <clipPath id="tc-backTabClip"><rect x="56" y="74" width="92" height="50" rx="16"/></clipPath>
+      <filter id="tc-soft" x="-35%" y="-35%" width="170%" height="170%">
         <feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#02060D" flood-opacity="0.55"/>
       </filter>
     </defs>
     <g transform="translate(20,28) scale(0.5625)">
       <g transform="translate(128 133) scale(1.28 1.38) translate(-128 -133)">
-        <g filter="url(#nc-soft)">
-          <rect x="56" y="74" width="92" height="50" rx="16" fill="url(#nc-orangeBack)"/>
-          <rect x="56" y="74" width="92" height="22" rx="11" fill="#FFFFFF" opacity="0.22"/>
+        <g filter="url(#tc-soft)">
+          <rect x="56" y="74" width="92" height="50" rx="16" fill="url(#tc-orangeBack)"/>
+          <rect x="56" y="74" width="92" height="22" fill="#FFFFFF" opacity="0.22" clip-path="url(#tc-backTabClip)"/>
           <g transform="rotate(4 128 110)"><rect x="84" y="72" width="96" height="60" rx="9" fill="#EAF2FB"/></g>
           <g transform="rotate(-4 128 110)">
             <rect x="72" y="76" width="112" height="64" rx="9" fill="#FDFEFF"/>
             <rect x="88" y="88" width="64" height="7" rx="3.5" fill="#93C5FD"/>
             <rect x="88" y="100" width="44" height="7" rx="3.5" fill="#93C5FD"/>
           </g>
-          <rect x="50" y="104" width="156" height="88" rx="22" fill="url(#nc-orangeFold)"/>
+          <rect x="50" y="104" width="156" height="88" rx="22" fill="url(#tc-orangeFold)"/>
         </g>
-        <rect x="50" y="104" width="156" height="44" rx="22" fill="url(#nc-gloss)"/>
+        <rect x="50" y="104" width="156" height="44" rx="22" fill="url(#tc-gloss)"/>
         <rect x="58" y="108" width="140" height="12" rx="6" fill="#FFFFFF" opacity="0.3"/>
-        <rect x="50" y="104" width="156" height="88" rx="22" fill="url(#nc-innerBottom)"/>
-        <rect x="76" y="140" width="64" height="14" rx="7" fill="#FFD9AE"/>
-        <circle cx="164" cy="147" r="7" fill="#FFC98F"/>
+        <rect x="50" y="104" width="156" height="88" rx="22" fill="url(#tc-innerBottom)"/>
+        <rect x="66" y="122" width="58" height="54" rx="9" fill="#FFFFFF" opacity="0.22"/>
+        <rect x="132" y="122" width="58" height="54" rx="9" fill="#FFFFFF" opacity="0.22"/>
+        <rect x="74" y="130" width="40" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
+        <rect x="74" y="143" width="30" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
+        <rect x="74" y="156" width="42" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
+        <rect x="140" y="130" width="40" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
+        <rect x="140" y="143" width="30" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
+        <rect x="140" y="156" width="42" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
       </g>
     </g>
-    <text x="200" y="105" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="-1.5"><tspan fill="#EAF2FB">Newt </tspan><tspan fill="#F97316">Commander</tspan></text>
+    <text x="200" y="105" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="-1.5"><tspan fill="#EAF2FB">Tandem </tspan><tspan fill="#F97316">Commander</tspan></text>
     <text x="203" y="145" font-family="Archivo, Arial, sans-serif" font-weight="600" font-size="19" letter-spacing="9" fill="#8FA6C4">TWO-PANE FILE MANAGER</text>
   </svg>
 
@@ -233,7 +240,7 @@
     Follow the repository to watch it take shape.
   </p>
 
-  <a class="cta" href="https://github.com/newtcommander/newtcommander" rel="noopener">
+  <a class="cta" href="https://github.com/tandemcommander/tandemcommander" rel="noopener">
     <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
       <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
     </svg>

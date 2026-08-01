@@ -1,11 +1,11 @@
-# newtcommander-web
+# tandemcommander-web
 
-Website for **Newt Commander** — an open source two-pane file manager.
+Website for **Tandem Commander** — an open source two-pane file manager.
 
 Currently a single "coming soon" page, built from the project's design manual and hosted on
 [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/) as a static site.
 
-Project repository: <https://github.com/newtcommander/newtcommander>
+Project repository: <https://github.com/tandemcommander/tandemcommander>
 
 ## Structure
 
@@ -55,12 +55,12 @@ Manual deploy from your machine:
 npm run deploy
 ```
 
-The Cloudflare Worker is named **`newtcommander`**. This name must stay in sync between
+The Cloudflare Worker is named **`tandemcommander-web`**. This name must stay in sync between
 `wrangler.jsonc` and the Cloudflare dashboard — a mismatch is the most common cause of a failed build.
 
 ## Domain
 
-The site is served from **<https://newtcommander.org>**, attached to the Worker as a Custom Domain
+The site is served from **<https://tandemcommander.org>**, attached to the Worker as a Custom Domain
 in the Cloudflare dashboard (Worker → Settings → Domains & Routes). Cloudflare manages the DNS
 record and the TLS certificate — do not add a DNS record for the apex by hand.
 
@@ -70,12 +70,12 @@ The domain appears in these files; keep them in sync if it ever changes:
 - `public/robots.txt` — the `Sitemap:` line
 - `public/sitemap.xml` — the `<loc>` element
 
-`www.newtcommander.org` should redirect to the apex with a 301 (Cloudflare → Rules → Redirect Rules)
+`www.tandemcommander.org` should redirect to the apex with a 301 (Cloudflare → Rules → Redirect Rules)
 so search engines do not index the site twice.
 
 ## Brand
 
-Colours, typography and logo usage follow the Newt Commander design manual:
+Colours, typography and logo usage follow the Tandem Commander design manual:
 
 - Background `#0A1424`, text `#EAF2FB`, muted `#8FA6C4`
 - Brand orange `#F97316` (highlight `#FFB35C`, deep `#EA6A0B`)
@@ -87,5 +87,5 @@ the wordmark exactly as specified. Do not recolour the gradients or rebuild the 
 ## Licence
 
 Site code: MIT. Brand assets (logo, icon, wordmark) are not covered — they belong to the
-Newt Commander project. Archivo is licensed under the SIL Open Font License; see
+Tandem Commander project. Archivo is licensed under the SIL Open Font License; see
 `public/fonts/`.

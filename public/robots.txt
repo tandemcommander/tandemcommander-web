@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://newtcommander.org/sitemap.xml
+Sitemap: https://tandemcommander.org/sitemap.xml

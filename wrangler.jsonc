@@ -1,7 +1,7 @@
 {
   // Worker name. This MUST match the Worker name in the Cloudflare dashboard,
   // otherwise Workers Builds will fail.
-  "name": "newtcommander-web",
+  "name": "tandemcommander-web",
 
   // Freezes runtime behaviour to this date. Leave it alone unless you need a newer feature.
   "compatibility_date": "2026-07-31",
