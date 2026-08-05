@@ -1,0 +1,19 @@
+{
+  "name": "Tandem Commander",
+  "version": "0.1.0",
+  "platform": "Windows 11 · x64",
+  "license": "GPLv2 or later",
+  "toolchain": "Visual Studio 2022",
+  "domain": "tandemcommander.org",
+  "url": "https://tandemcommander.org",
+  "description": "A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase — full Unicode, long paths, SFTP, Markdown viewer, light and dark themes. Free under GPLv2.",
+  "github": {
+    "repoUrl": "https://github.com/tandemcommander/tandemcommander",
+    "issuesUrl": "https://github.com/tandemcommander/tandemcommander/issues",
+    "releasesUrl": "https://github.com/tandemcommander/tandemcommander/releases"
+  },
+  "author": {
+    "name": "Pavel Stupka",
+    "email": "pavel.stupka@gmail.com"
+  }
+}

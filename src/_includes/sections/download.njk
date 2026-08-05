@@ -1,0 +1,28 @@
+{% set installerFile = "tandemcommander-" + site.version + "-x64-setup.exe" %}
+{% set installerUrl = site.github.repoUrl + "/releases/download/v" + site.version + "/" + installerFile %}
+<section id="download" class="section section--download">
+  <div class="download-inner">
+    <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="download-mark">
+    <h2 class="section-title section-title--md">Get version {{ site.version }}</h2>
+    <div class="installer-wrap">
+      <div class="installer-card">
+        <h3 class="installer-title">Installer</h3>
+        <p class="installer-desc">Version {{ site.version }} for Windows 11, x64.</p>
+        <a href="{{ installerUrl }}" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Download installer</a>
+        <p class="installer-file">{{ installerFile }}</p>
+      </div>
+    </div>
+    <p class="download-meta">Windows 11 · x64 · GPLv2 or later · <a href="{{ site.github.releasesUrl }}">all releases</a> · <a href="{{ site.github.issuesUrl }}">report an issue</a></p>
+    <div class="disclaimer">
+      <p class="disclaimer-label">⚠ Disclaimer</p>
+      <p class="disclaimer-text">This is a first release, created through agentic AI development. The software is provided "as is", without warranty of any kind, and the author accepts no responsibility or liability for its use.</p>
+    </div>
+    <div class="build-box">
+      <p class="build-label">Build from source</p>
+      <div class="build-lines">
+        <div><span class="code-cmd">git</span> clone {{ site.github.repoUrl }}.git</div>
+        <div><span class="code-cmd">build.cmd</span> full release<span class="code-comment">    :: app + plugins + language modules</span></div>
+      </div>
+    </div>
+  </div>
+</section>

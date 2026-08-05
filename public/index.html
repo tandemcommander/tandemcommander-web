@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tandem Commander — Two-pane file manager</title>
-<meta name="description" content="Tandem Commander is an open source two-pane file manager. Coming soon.">
-<meta name="theme-color" content="#0A1424">
-<meta name="color-scheme" content="dark">
+<title>Tandem Commander — two-pane file manager for Windows</title>
+<meta name="description" content="A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase — full Unicode, long paths, SFTP, Markdown viewer, light and dark themes. Free under GPLv2.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1424" media="(prefers-color-scheme: dark)">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -16,241 +16,271 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tandem Commander">
 <meta property="og:url" content="https://tandemcommander.org/">
-<meta property="og:title" content="Tandem Commander — Two-pane file manager">
-<meta property="og:description" content="An open source two-pane file manager. Coming soon.">
+<meta property="og:title" content="Tandem Commander — two-pane file manager for Windows">
+<meta property="og:description" content="A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase — full Unicode, long paths, SFTP, Markdown viewer, light and dark themes. Free under GPLv2.">
 <meta property="og:image" content="https://tandemcommander.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Tandem Commander — two-pane file manager. Coming soon.">
+<meta property="og:image:alt" content="Tandem Commander — two-pane file manager for Windows">
 <meta name="twitter:card" content="summary_large_image">
 
+<script>(function(){try{var t=localStorage.getItem('tc-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-
-<style>
-  /* ---- Typography: Archivo, self-hosted (SIL Open Font License) ---- */
-  @font-face {
-    font-family: 'Archivo';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('/fonts/archivo-latin-600-normal.woff2') format('woff2');
-  }
-  @font-face {
-    font-family: 'Archivo';
-    font-style: normal;
-    font-weight: 800;
-    font-display: swap;
-    src: url('/fonts/archivo-latin-800-normal.woff2') format('woff2');
-  }
-
-  /* ---- Brand tokens (see design manual) ---- */
-  :root {
-    --bg:            #0A1424;
-    --bg-deep:       #02060D;
-    --bg-raised:     #131C2E;
-    --text:          #EAF2FB;
-    --text-muted:    #8FA6C4;
-    --text-subtle:   #5D82B8;
-    --orange:        #F97316;
-    --orange-deep:   #EA6A0B;
-    --orange-light:  #FFB35C;
-  }
-
-  * { box-sizing: border-box; }
-
-  html { -webkit-text-size-adjust: 100%; }
-
-  body {
-    margin: 0;
-    min-height: 100svh;
-    display: grid;
-    place-items: center;
-    padding: clamp(1.5rem, 6vw, 4rem);
-    background: var(--bg);
-    background-image:
-      radial-gradient(ellipse 70% 55% at 50% 8%, rgba(249, 115, 22, 0.13), transparent 70%),
-      radial-gradient(ellipse 90% 70% at 50% 100%, rgba(19, 28, 46, 0.9), transparent 70%);
-    color: var(--text);
-    font-family: 'Archivo', Arial, sans-serif;
-    font-weight: 600;
-    line-height: 1.6;
-    text-align: center;
-  }
-
-  main {
-    width: 100%;
-    max-width: 44rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* ---- Lockup: the ready-made dark lockup, inlined so the webfont applies ---- */
-  .lockup {
-    width: min(38rem, 90vw);
-    min-width: 15rem;   /* design manual: never below 240px wide */
-    height: auto;
-    display: block;
-  }
-
-  /* ---- Coming soon ---- */
-  .status {
-    margin-top: clamp(2rem, 6vw, 3rem);
-    display: inline-flex;
-    align-items: center;
-    gap: .625rem;
-    padding: .45rem 1.1rem .45rem .9rem;
-    border: 1px solid rgba(249, 115, 22, 0.35);
-    border-radius: 999px;
-    background: rgba(249, 115, 22, 0.09);
-    color: var(--orange-light);
-    font-size: .8125rem;
-    font-weight: 600;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-  }
-
-  .status .dot {
-    width: .5rem;
-    height: .5rem;
-    border-radius: 50%;
-    background: var(--orange);
-    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6);
-    animation: pulse 2.4s ease-out infinite;
-  }
-
-  @keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.55); }
-    70%  { box-shadow: 0 0 0 .55rem rgba(249, 115, 22, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .status .dot { animation: none; }
-  }
-
-  .lead {
-    margin: 1.5rem 0 0;
-    max-width: 32rem;
-    font-size: clamp(1rem, 2.4vw, 1.1875rem);
-    color: var(--text-muted);
-  }
-
-  /* ---- GitHub call to action ---- */
-  .cta {
-    margin-top: clamp(2rem, 5vw, 2.75rem);
-    display: inline-flex;
-    align-items: center;
-    gap: .625rem;
-    padding: .8rem 1.5rem;
-    border-radius: .625rem;
-    background: linear-gradient(180deg, var(--orange-light), var(--orange) 55%, var(--orange-deep));
-    color: #2A1200;
-    font-size: 1rem;
-    font-weight: 800;
-    text-decoration: none;
-    box-shadow: 0 6px 18px rgba(2, 6, 13, 0.45);
-    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
-  }
-
-  .cta:hover,
-  .cta:focus-visible {
-    transform: translateY(-1px);
-    filter: brightness(1.06);
-    box-shadow: 0 10px 24px rgba(2, 6, 13, 0.55);
-  }
-
-  .cta:active { transform: translateY(0); }
-
-  .cta svg { width: 1.25rem; height: 1.25rem; flex: none; }
-
-  :focus-visible {
-    outline: 2px solid var(--orange-light);
-    outline-offset: 3px;
-  }
-
-  footer {
-    margin-top: clamp(3rem, 8vw, 4.5rem);
-    font-size: .8125rem;
-    color: var(--text-subtle);
-  }
-
-  footer a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(93, 130, 184, 0.35); }
-  footer a:hover { color: var(--text-muted); }
-</style>
+<link rel="stylesheet" href="/css/main.css">
+<script defer src="/js/main.js"></script>
 </head>
 <body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
+      <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#screens" class="nav-link">Themes</a>
+      <a href="#new" class="nav-link">What's new</a>
+      <a href="#project" class="nav-link">Project</a>
+      <a href="#download" class="nav-link">Download</a>
+      <div class="theme-toggle" role="group" aria-label="Theme">
+        <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Light</button>
+        <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Dark</button>
+      </div>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Main menu">
+    <a href="#screens" class="mobile-link">Themes</a>
+    <a href="#new" class="mobile-link">What's new</a>
+    <a href="#project" class="mobile-link">Project</a>
+    <a href="#download" class="mobile-link">Download</a>
+    <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="Theme">
+      <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Light</button>
+      <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Dark</button>
+    </div>
+  </nav>
+</header>
+
 <main>
+<section id="top" class="hero">
+  <div class="hero-inner">
+    <div class="hero-lockup">
+      <img src="/assets/tandem-commander-lockup-light.svg" alt="Tandem Commander — two-pane file manager" class="lockup lockup--light">
+      <img src="/assets/tandem-commander-lockup-dark.svg" alt="" aria-hidden="true" class="lockup lockup--dark">
+    </div>
+    <h1 class="hero-title">The two-pane <br>classic&nbsp;<span class="accent">reborn</span></h1>
+    <p class="hero-lead">Two panels, function keys along the bottom, a plugin for everything — the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, connects over SFTP, renders Markdown on F3 — and ships in a dark theme as well as the light one.</p>
+    <div class="hero-cta">
+      <a href="#download" class="btn btn--primary">Download for Windows<span class="btn-badge">v0.1.0</span></a>
+      <a href="https://github.com/tandemcommander/tandemcommander" class="btn btn--secondary">Browse the source</a>
+    </div>
+    <p class="hero-note">Windows installer · Windows 11 · x64 · free under GPLv2</p>
+  </div>
+</section>
 
-  <!-- Tandem Commander lockup, dark background variant. Do not recolour or rebuild. -->
-  <svg class="lockup" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" role="img"
-       aria-label="Tandem Commander — two-pane file manager">
-    <defs>
-      <linearGradient id="tc-orangeFold" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#FFB35C"/><stop offset="0.55" stop-color="#F97316"/><stop offset="1" stop-color="#EA6A0B"/>
-      </linearGradient>
-      <linearGradient id="tc-orangeBack" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#D96A15"/><stop offset="1" stop-color="#B85306"/>
-      </linearGradient>
-      <linearGradient id="tc-innerBottom" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0.55" stop-color="#B85306" stop-opacity="0"/><stop offset="1" stop-color="#8A3E04" stop-opacity="0.45"/>
-      </linearGradient>
-      <linearGradient id="tc-gloss" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
-      </linearGradient>
-      <clipPath id="tc-backTabClip"><rect x="56" y="74" width="92" height="50" rx="16"/></clipPath>
-      <filter id="tc-soft" x="-35%" y="-35%" width="170%" height="170%">
-        <feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#02060D" flood-opacity="0.55"/>
-      </filter>
-    </defs>
-    <g transform="translate(20,28) scale(0.5625)">
-      <g transform="translate(128 133) scale(1.28 1.38) translate(-128 -133)">
-        <g filter="url(#tc-soft)">
-          <rect x="56" y="74" width="92" height="50" rx="16" fill="url(#tc-orangeBack)"/>
-          <rect x="56" y="74" width="92" height="22" fill="#FFFFFF" opacity="0.22" clip-path="url(#tc-backTabClip)"/>
-          <g transform="rotate(4 128 110)"><rect x="84" y="72" width="96" height="60" rx="9" fill="#EAF2FB"/></g>
-          <g transform="rotate(-4 128 110)">
-            <rect x="72" y="76" width="112" height="64" rx="9" fill="#FDFEFF"/>
-            <rect x="88" y="88" width="64" height="7" rx="3.5" fill="#93C5FD"/>
-            <rect x="88" y="100" width="44" height="7" rx="3.5" fill="#93C5FD"/>
-          </g>
-          <rect x="50" y="104" width="156" height="88" rx="22" fill="url(#tc-orangeFold)"/>
-        </g>
-        <rect x="50" y="104" width="156" height="44" rx="22" fill="url(#tc-gloss)"/>
-        <rect x="58" y="108" width="140" height="12" rx="6" fill="#FFFFFF" opacity="0.3"/>
-        <rect x="50" y="104" width="156" height="88" rx="22" fill="url(#tc-innerBottom)"/>
-        <rect x="66" y="122" width="58" height="54" rx="9" fill="#FFFFFF" opacity="0.22"/>
-        <rect x="132" y="122" width="58" height="54" rx="9" fill="#FFFFFF" opacity="0.22"/>
-        <rect x="74" y="130" width="40" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
-        <rect x="74" y="143" width="30" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
-        <rect x="74" y="156" width="42" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
-        <rect x="140" y="130" width="40" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
-        <rect x="140" y="143" width="30" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
-        <rect x="140" y="156" width="42" height="6" rx="3" fill="#FFE3C2" opacity="0.85"/>
-      </g>
-    </g>
-    <text x="200" y="105" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="64" letter-spacing="-1.5"><tspan fill="#EAF2FB">Tandem </tspan><tspan fill="#F97316">Commander</tspan></text>
-    <text x="203" y="145" font-family="Archivo, Arial, sans-serif" font-weight="600" font-size="19" letter-spacing="9" fill="#8FA6C4">TWO-PANE FILE MANAGER</text>
-  </svg>
+<section id="screens" class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker">Two themes, one binary</p>
+      <h2 class="section-title">Light by default. Dark when you want it.</h2>
+      <p class="section-lead">The classic light panels are still the default — nothing moved, nothing was reflowed. The new dark theme is the same layout with the same information density, for the people who stopped enjoying white rectangles at 2 a.m. It is still experimental — a few places are not quite final yet.</p>
+    </div>
+    <div class="screens-grid">
+      <figure class="shot">
+        <figcaption class="shot-caption">
+          <span class="swatch swatch--light"></span>
+          <span class="shot-label">Light</span>
+          <span class="shot-note">— the default, unchanged</span>
+        </figcaption>
+        <div class="shot-frame">
+          <img src="/assets/screenshot-light.png" alt="Tandem Commander in its light theme, two file panels side by side">
+        </div>
+      </figure>
+      <figure class="shot">
+        <figcaption class="shot-caption">
+          <span class="swatch swatch--dark"></span>
+          <span class="shot-label">Dark</span>
+          <span class="shot-note">— new in 0.1.0</span>
+        </figcaption>
+        <div class="shot-frame">
+          <img src="/assets/screenshot-dark.png" alt="Tandem Commander in its dark theme, the same two panels">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
 
-  <p class="status"><span class="dot" aria-hidden="true"></span>Coming soon</p>
+<section class="section band">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker">What it is</p>
+      <h2 class="section-title">Old habits, nothing to relearn.</h2>
+      <p class="section-lead">A file manager for people who navigate by keyboard and think in two panels.</p>
+    </div>
+    <div class="card-grid card-grid--features">
+      <article class="card">
+        <p class="card-num">01</p>
+        <h3 class="card-title">Two panels</h3>
+        <p class="card-text">Source on the left, target on the right. Copy, move, pack and compare without opening a second window or reaching for the mouse.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">02</p>
+        <h3 class="card-title">Keyboard first</h3>
+        <p class="card-text">Function keys along the bottom edge, a shortcut for everything, and a command line that stays exactly where your hands already are.</p>
+      </article>
+      <article class="card card--accent">
+        <p class="card-num card-num--brand">03</p>
+        <h3 class="card-title">Its own core</h3>
+        <p class="card-text"><span class="mono">tandemcommander.exe</span> is a program with its own identity: own icon, own window titles, own settings — and a modern core built for Windows 11, with full Unicode and long paths throughout.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <p class="lead">
-    An open source two-pane file manager, currently in development.
-    Follow the repository to watch it take shape.
-  </p>
+<section id="new" class="section section--roomy">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker">What's new</p>
+      <h2 class="section-title">What's new in Tandem Commander.</h2>
+      <p class="section-lead">The main additions and improvements in this release.</p>
+    </div>
+    <div class="card-grid card-grid--news">
+      <article class="card card--accent card--tight">
+        <h3 class="card-title card-title--sm">Full Unicode, long paths</h3>
+        <p class="card-text card-text--sm">Names and paths are Unicode end to end — panels, dialogs, viewers, plugins. Accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work.</p>
+      </article>
+      <article class="card card--accent card--tight">
+        <h3 class="card-title card-title--sm">New SFTP plugin</h3>
+        <p class="card-text card-text--sm">A Linux server in one panel, your disk in the other — built on libssh2 over SSH. Password or private-key auth with host-key verification, unix permissions shown as <span class="mono">drwxr-xr-x</span>, chmod from the panel.</p>
+      </article>
+      <article class="card card--accent card--tight">
+        <h3 class="card-title card-title--sm">Markdown View</h3>
+        <p class="card-text card-text--sm">F3 on a <span class="mono">.md</span> file opens the new mdview plugin: rendered headings, lists, tables and code blocks instead of raw markup.</p>
+      </article>
+      <article class="card card--accent card--tight">
+        <h3 class="card-title card-title--sm">PictView, repaired</h3>
+        <p class="card-text card-text--sm">The image viewer works again — pictures open reliably from either panel, with the fixes carried into the new Unicode-clean core.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <a class="cta" href="https://github.com/tandemcommander/tandemcommander" rel="noopener">
-    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
-    </svg>
-    View on GitHub
-  </a>
+<section id="project" class="section band section--roomy">
+  <div class="section-inner project-grid">
+    <div>
+      <p class="kicker">The project</p>
+      <h2 class="section-title">Open source, and open about how it is made.</h2>
+      <p class="project-text">Tandem Commander grew out of <a href="https://github.com/OpenSalamander/salamander">Open Salamander</a>, the classic file manager whose source was opened to the world, and it owes that project everything it started with. Our thanks go to the original Salamander authors and to everyone who kept the code alive after them — a quarter century of careful work by people who cared how a file manager should feel. The core has since gone its own way, but the debt stands.</p>
+      <p class="project-text">Tandem Commander is free software, licensed under <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2 and later</a>. Individual files and bundled libraries carry different but compatible licenses, and everyone who has contributed to it is credited in <span class="mono mono--md">AUTHORS</span>.</p>
+      <p class="project-text">The rules the project holds itself to — build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API — are written down in the repository rather than kept in someone's head.</p>
+      <div class="agentic-note">
+        <p class="project-text project-text--flush">There is one genuinely new thing here. Development follows spec-driven principles: every change starts as a written specification that is clarified, planned and broken into tasks before any code is touched, and the implementation is carried out by agentic coding frameworks. The whole paper trail is committed next to the code, so the repository records not only what changed in this quarter-century-old C++ codebase, but why.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact">
+        <span class="fact-label">Version</span>
+        <span class="fact-value">0.1.0</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Platform</span>
+        <span class="fact-value">Windows 11 · x64</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">License</span>
+        <span class="fact-value">GPLv2 or later</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Toolchain</span>
+        <span class="fact-value">Visual Studio 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    Open source · Hosted on <a href="https://workers.cloudflare.com/" rel="noopener">Cloudflare Workers</a>
-  </footer>
+<section id="story" class="section section--roomy section--divided">
+  <div class="story-inner">
+    <p class="kicker">From the author</p>
+    <h2 class="section-title section-title--md">Why This Project Exists — A Personal Note</h2>
+    <p class="story-text">Whenever I have worked on Windows, there has always been a Salamander close at hand. First Servant Salamander, later Altap Salamander — in my view one of the finest pieces of software I have ever worked with. But the last released version of Altap Salamander dates back to 2019, and it still carries a few aches inherited from the original versions: incomplete encoding support, missing long directory and file path support, and quite a few others. At the same time, many of my friends and family members use Altap Salamander every day, both at work and at home.</p>
+    <p class="story-text">The moment Salamander was released as Open Salamander, I had a clear vision: I would adapt it for myself so I could simply keep using it. That vision quickly ran into hard reality — even though I am a very experienced software engineer, developer, and architect, I was missing the one factor a project of this scale demands above all else: time.</p>
+    <p class="story-text">That has changed, essentially within the last few months, with the overall shift in how software can now be — not programmed, but <em>created</em> — with agentic systems. To be clear, I am emphatically not talking about "vibe coding"; I consider that a bit of a buzzword and I do not like it. The term I would choose is <strong class="story-strong">Full Agentic Spec-Driven Development</strong>: clearly defined procedures not just for producing code, but for producing the entire project — documentation and artifacts included. This project is deliberately built with the spec-driven approach on top of GitHub SpecKit, using the best agentic models available at the time — currently Fable 5, with reviews also carried out by GPT-5.6 Sol and others.</p>
+    <p class="story-text">Tandem Commander is, of course, not perfect. But thanks to this approach I ended up with a genuinely usable tool — one that I hope can serve others as well.</p>
+    <p class="story-text story-text--flush">None of this would exist without the people who built Servant Salamander, Altap Salamander, and finally Open Salamander. Over a quarter of a century they created and refined a program that countless people — me, my friends, my family — have trusted with their daily work, and it shows in every detail: the speed, the keyboard-first design, the plugin architecture, the sheer care in the code this repository inherited. Their decision to release it under an open-source license was an act of real generosity that gave this remarkable software a second life. Tandem Commander stands entirely on their shoulders, and I hope it honors what they built. <b>To all the original authors and contributors: Thank you.</b></p>
+    <p class="story-signature">Pavel Stupka<br><a href="mailto:pavel.stupka@gmail.com" class="story-mail">pavel.stupka@gmail.com</a></p>
+  </div>
+</section>
+
+
+
+<section id="download" class="section section--download">
+  <div class="download-inner">
+    <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="download-mark">
+    <h2 class="section-title section-title--md">Get version 0.1.0</h2>
+    <div class="installer-wrap">
+      <div class="installer-card">
+        <h3 class="installer-title">Installer</h3>
+        <p class="installer-desc">Version 0.1.0 for Windows 11, x64.</p>
+        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.0/tandemcommander-0.1.0-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Download installer</a>
+        <p class="installer-file">tandemcommander-0.1.0-x64-setup.exe</p>
+      </div>
+    </div>
+    <p class="download-meta">Windows 11 · x64 · GPLv2 or later · <a href="https://github.com/tandemcommander/tandemcommander/releases">all releases</a> · <a href="https://github.com/tandemcommander/tandemcommander/issues">report an issue</a></p>
+    <div class="disclaimer">
+      <p class="disclaimer-label">⚠ Disclaimer</p>
+      <p class="disclaimer-text">This is a first release, created through agentic AI development. The software is provided "as is", without warranty of any kind, and the author accepts no responsibility or liability for its use.</p>
+    </div>
+    <div class="build-box">
+      <p class="build-label">Build from source</p>
+      <div class="build-lines">
+        <div><span class="code-cmd">git</span> clone https://github.com/tandemcommander/tandemcommander.git</div>
+        <div><span class="code-cmd">build.cmd</span> full release<span class="code-comment">    :: app + plugins + language modules</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="brand brand--footer">
+          <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
+          <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
+        </div>
+        <p class="footer-tagline">A fast, keyboard-friendly two-pane file manager for Windows.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Program</p>
+        <a href="#screens" class="footer-link">Themes</a>
+        <a href="#new" class="footer-link">What's new</a>
+        <a href="#project" class="footer-link">Project</a>
+        <a href="#download" class="footer-link">Download</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Source</p>
+        <a href="https://github.com/tandemcommander/tandemcommander" class="footer-link">GitHub</a>
+        <a href="https://github.com/tandemcommander/tandemcommander/issues" class="footer-link">Issues</a>
+        <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" class="footer-link">GPLv2 licence</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Contact</p>
+        <span class="footer-plain">Pavel Stupka</span>
+        <a href="mailto:pavel.stupka@gmail.com" class="footer-link">pavel.stupka@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">tandemcommander.org · GPLv2 or later</p>
+      <p class="footer-note">Free software, built in the open. Issues and pull requests are welcome.</p>
+    </div>
+  </div>
+</footer>
+
+
 </body>
 </html>

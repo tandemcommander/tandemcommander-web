@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Page not found | Tandem Commander</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A1424">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<style>
+  @font-face {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/archivo-latin-600-normal.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/archivo-latin-800-normal.woff2') format('woff2');
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: clamp(1.5rem, 6vw, 4rem);
+    background: #0A1424;
+    background-image: radial-gradient(ellipse 70% 55% at 50% 10%, rgba(249, 115, 22, 0.12), transparent 70%);
+    color: #EAF2FB;
+    font-family: 'Archivo', Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+  }
+  img { width: 4.5rem; height: 4.5rem; display: block; margin: 0 auto 1.5rem; }
+  h1 {
+    margin: 0;
+    font-size: clamp(3rem, 12vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(180deg, #FFB35C, #F97316 55%, #EA6A0B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  p { margin: .5rem 0 0; color: #8FA6C4; }
+  a.back {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: .7rem 1.4rem;
+    border: 1px solid rgba(143, 166, 196, 0.3);
+    border-radius: .625rem;
+    color: #EAF2FB;
+    text-decoration: none;
+  }
+  a.back:hover, a.back:focus-visible { border-color: #F97316; color: #FFB35C; }
+  :focus-visible { outline: 2px solid #FFB35C; outline-offset: 3px; }
+</style>
+</head>
+<body>
+  <main>
+    <img src="/favicon.svg" alt="" aria-hidden="true">
+    <h1>404</h1>
+    <p>This page does not exist.</p>
+    <a class="back" href="/">Back to home</a>
+  </main>
+</body>
+</html>

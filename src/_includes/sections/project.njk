@@ -1,0 +1,32 @@
+<section id="project" class="section band section--roomy">
+  <div class="section-inner project-grid">
+    <div>
+      <p class="kicker">The project</p>
+      <h2 class="section-title">Open source, and open about how it is made.</h2>
+      <p class="project-text">Tandem Commander grew out of <a href="https://github.com/OpenSalamander/salamander">Open Salamander</a>, the classic file manager whose source was opened to the world, and it owes that project everything it started with. Our thanks go to the original Salamander authors and to everyone who kept the code alive after them — a quarter century of careful work by people who cared how a file manager should feel. The core has since gone its own way, but the debt stands.</p>
+      <p class="project-text">Tandem Commander is free software, licensed under <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2 and later</a>. Individual files and bundled libraries carry different but compatible licenses, and everyone who has contributed to it is credited in <span class="mono mono--md">AUTHORS</span>.</p>
+      <p class="project-text">The rules the project holds itself to — build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API — are written down in the repository rather than kept in someone's head.</p>
+      <div class="agentic-note">
+        <p class="project-text project-text--flush">There is one genuinely new thing here. Development follows spec-driven principles: every change starts as a written specification that is clarified, planned and broken into tasks before any code is touched, and the implementation is carried out by agentic coding frameworks. The whole paper trail is committed next to the code, so the repository records not only what changed in this quarter-century-old C++ codebase, but why.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact">
+        <span class="fact-label">Version</span>
+        <span class="fact-value">{{ site.version }}</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Platform</span>
+        <span class="fact-value">{{ site.platform }}</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">License</span>
+        <span class="fact-value">{{ site.license }}</span>
+      </div>
+      <div class="fact">
+        <span class="fact-label">Toolchain</span>
+        <span class="fact-value">{{ site.toolchain }}</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "site-config.schema.json",
+  "title": "Tandem Commander web — sdílená konfigurace (src/_data/site.json)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "version", "platform", "license", "toolchain", "domain", "url", "description", "github", "author"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semver bez prefixu 'v'. Jediný zdroj čísla verze pro celý web."
+    },
+    "platform": { "type": "string", "minLength": 1 },
+    "license": { "type": "string", "minLength": 1 },
+    "toolchain": { "type": "string", "minLength": 1 },
+    "domain": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "description": { "type": "string", "minLength": 1, "maxLength": 300 },
+    "github": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repoUrl", "issuesUrl", "releasesUrl"],
+      "properties": {
+        "repoUrl": { "type": "string", "format": "uri", "pattern": "^https://github\\.com/" },
+        "issuesUrl": { "type": "string", "format": "uri", "pattern": "^https://github\\.com/" },
+        "releasesUrl": { "type": "string", "format": "uri", "pattern": "^https://github\\.com/" }
+      }
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "email"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "email": { "type": "string", "format": "email" }
+      }
+    }
+  }
+}

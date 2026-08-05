@@ -5,11 +5,16 @@
   "description": "Website for Tandem Commander, an open source two-pane file manager. Hosted on Cloudflare Workers.",
   "license": "MIT",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "check": "wrangler deploy --dry-run"
+    "build": "node -e \"fs.rmSync('public',{recursive:true,force:true})\" && eleventy",
+    "dev": "eleventy --serve",
+    "preview": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "check": "npm run build && wrangler deploy --dry-run"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@fontsource/archivo": "^5.0.0",
+    "@fontsource/ibm-plex-mono": "^5.0.0",
     "wrangler": "^4.0.0"
   }
 }
