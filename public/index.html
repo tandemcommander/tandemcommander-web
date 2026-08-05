@@ -97,7 +97,15 @@
           <span class="shot-note">— the default, unchanged</span>
         </figcaption>
         <div class="shot-frame">
-          <img src="/assets/screenshot-light.png" alt="Tandem Commander in its light theme, two file panels side by side">
+          <button type="button" class="shot-zoom" aria-label="View screenshot full size">
+            <img src="/assets/screenshot-light.png" alt="Tandem Commander in its light theme, two file panels side by side">
+            <span class="shot-zoom-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
         </div>
       </figure>
       <figure class="shot">
@@ -107,10 +115,26 @@
           <span class="shot-note">— new in 0.1.0</span>
         </figcaption>
         <div class="shot-frame">
-          <img src="/assets/screenshot-dark.png" alt="Tandem Commander in its dark theme, the same two panels">
+          <button type="button" class="shot-zoom" aria-label="View screenshot full size">
+            <img src="/assets/screenshot-dark.png" alt="Tandem Commander in its dark theme, the same two panels">
+            <span class="shot-zoom-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
         </div>
       </figure>
     </div>
+    <dialog class="lightbox" aria-label="Enlarged screenshot">
+      <button type="button" class="lightbox-close" aria-label="Close enlarged view">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <img class="lightbox-img" src="" alt="">
+    </dialog>
   </div>
 </section>
 
