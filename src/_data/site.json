@@ -1,6 +1,6 @@
 {
   "name": "Tandem Commander",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "platform": "Windows 11 · x64",
   "license": "GPLv2 or later",
   "toolchain": "Visual Studio 2022",
