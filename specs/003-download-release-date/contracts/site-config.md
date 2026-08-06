@@ -41,12 +41,13 @@ Template: `src/_includes/sections/download.njk`, installer card description line
 
 | Aspect | Contract |
 |--------|----------|
-| Location | `<p class="installer-desc">` inside the installer card — the only place the release date renders (SC-003) |
-| Text shape | `Version {version} for Windows 11, x64 · released {Month D, YYYY}.` |
-| Example | `Version 0.1.1 for Windows 11, x64 · released August 5, 2026.` |
+| Location | Second line of `<p class="installer-desc">` inside the installer card (after a `<br>`) — the only place the release date renders (SC-003) |
+| Text shape | `Version {version} for Windows 11, x64.<br>Released {Month D, YYYY}` — both lines share the same paragraph, font, size, and color |
+| Example | `Version 0.1.1 for Windows 11, x64.` ⏎ `Released August 5, 2026` |
 | Date format | US English long date via `Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })` |
-| Separator | `·` (U+00B7), matching the existing `download-meta` idiom |
-| Layout | No CSS changes; `.installer-desc` wraps naturally at both desktop and mobile (≤860 px) widths (FR-005) |
+| Layout | No CSS changes; the two lines sit at the paragraph's natural line height, and the card's vertical rhythm is unchanged at both desktop and mobile (≤860 px) widths (FR-005) |
+
+*Revision 2026-08-06: the original single-line variant ("… x64 · released August 5, 2026.") was replaced at the user's request by two lines within the same paragraph; an intermediate separate-paragraph variant with its own smaller style was rejected (wrong font/size impression, too much spacing).*
 
 ## 3. Filter contract — `releaseDate` (Nunjucks filter, `eleventy.config.js`)
 

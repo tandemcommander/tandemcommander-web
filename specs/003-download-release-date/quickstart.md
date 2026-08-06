@@ -17,9 +17,9 @@ npm run build
 Select-String -Path public/index.html -Pattern "released"
 ```
 
-**Expected**: build exits 0; the match is inside `<p class="installer-desc">` and reads
-`Version 0.1.1 for Windows 11, x64 · released August 5, 2026.`
-(month spelled out in English, day unpadded, matching the `releaseDate` value in `src/_data/site.json`).
+**Expected**: build exits 0; the `installer-desc` paragraph contains
+`Version 0.1.1 for Windows 11, x64.<br>Released August 5, 2026`
+— the date on its own line via `<br>`, same typography as the version line (month spelled out in English, day unpadded, matching the `releaseDate` value in `src/_data/site.json`).
 
 ## Scenario 2 — Single-source update (US2, SC-002)
 
@@ -27,7 +27,7 @@ Select-String -Path public/index.html -Pattern "released"
 2. `npm run build`
 3. `Select-String -Path public/index.html -Pattern "released"`
 
-**Expected**: output now reads `… · released December 24, 2026.` No template or content file was touched. Revert the value afterwards.
+**Expected**: the date line now reads `Released December 24, 2026`. No template or content file was touched. Revert the value afterwards.
 
 ## Scenario 3 — Missing date fails the build (FR-006)
 

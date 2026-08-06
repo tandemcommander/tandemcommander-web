@@ -13,7 +13,7 @@
 ### Session 2026-08-06
 
 - Q: Co se má stát, když datum vydání v JSON nastavení chybí nebo je neplatné? → A: Build selže s jasnou chybou; web se bez platného data nesestaví.
-- Q: Kde přesně v sekci Download se má datum vydání zobrazit? → A: Připojené k existujícímu řádku s verzí v kartě instalátoru (např. "Version 0.1.1 for Windows 11, x64 · released August 6, 2026").
+- Q: Kde přesně v sekci Download se má datum vydání zobrazit? → A: Samostatný řádek "Released August 5, 2026" pod popisem verze v kartě instalátoru. (Revidováno po implementaci: původně zvolená jednořádková varianta nahrazena dvouřádkovou.)
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -27,7 +27,7 @@ A visitor considering downloading Tandem Commander opens the Download section an
 
 **Acceptance Scenarios**:
 
-1. **Given** the site is built with a release date configured, **When** a visitor views the Download section, **Then** the release date is displayed in the installer card on the same line as the installer's version and platform description (e.g., "Version 0.1.1 for Windows 11, x64 · released August 6, 2026").
+1. **Given** the site is built with a release date configured, **When** a visitor views the Download section, **Then** the release date is displayed in the installer card on its own line directly below the version and platform description (e.g., "Released August 5, 2026").
 2. **Given** the site is viewed on a mobile-width screen, **When** a visitor views the Download section, **Then** the release date remains visible and legible without breaking the section layout.
 3. **Given** the displayed release date, **When** a visitor reads it, **Then** it is formatted as a human-readable date consistent with the site's language (English), not as a raw technical value.
 
@@ -58,7 +58,7 @@ When publishing a new release, the site maintainer edits the same central JSON s
 
 ### Functional Requirements
 
-- **FR-001**: The Download section MUST display the release date of the offered installer in the installer card, appended to the existing line carrying the version and platform description (e.g., "Version 0.1.1 for Windows 11, x64 · released August 6, 2026").
+- **FR-001**: The Download section MUST display the release date of the offered installer in the installer card, on its own line directly below the version and platform description (e.g., "Released August 5, 2026").
 - **FR-002**: The release date MUST be sourced from the same central JSON settings file that already holds the version number, as a single configurable value.
 - **FR-003**: Changing the release date MUST require editing only that settings value; no page templates or content need to be touched for the date to update after a rebuild.
 - **FR-004**: The displayed date MUST be human-readable and consistent with the site's language (English), regardless of how the value is stored in the settings.
@@ -80,7 +80,7 @@ When publishing a new release, the site maintainer edits the same central JSON s
 
 ## Assumptions
 
-- "U stažení souboru" (next to the file download) means the installer card in the Download section: the date is appended to the same line where the version and platform are already shown (confirmed in clarification session 2026-08-06).
+- "U stažení souboru" (next to the file download) means the installer card in the Download section: the date sits on its own line directly below the version/platform description (clarified 2026-08-06, revised to the two-line layout after implementation).
 - Only the Download section gains the date; other places that mention the version (hero badge, project facts, screenshots note) are out of scope unless requested later.
 - The date is stored in the settings in an unambiguous machine-friendly form and rendered as a human-readable English date (e.g., "August 6, 2026"), matching the site's language.
 - One release date applies to the single currently offered version — the site offers exactly one installer download at a time, so no per-release date list is needed.

@@ -140,3 +140,4 @@ The whole feature is a single sitting for one implementer (~3 file edits + verif
 - [Story] label maps task to spec.md user stories for traceability
 - T007–T009 intentionally leave the working tree unchanged after completion (edit → verify → revert)
 - Commit after each phase checkpoint; `public/` is committed build output and must be regenerated (T011) before the final commit
+- *Revision 2026-08-06 (post-completion)*: T004's single-line layout was superseded at the user's request by a two-line layout — both lines now live in the `installer-desc` paragraph separated by `<br>`, with identical typography and no CSS changes (see research.md Decision 5 and contract §2)

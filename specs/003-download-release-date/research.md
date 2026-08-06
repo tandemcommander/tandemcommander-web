@@ -37,11 +37,11 @@ No NEEDS CLARIFICATION markers remained in the Technical Context; the open desig
   - *Separate `eleventy.before` event hook reading `site.json`* — slightly more robust (fails even if no template uses the value) but duplicates file-reading logic Eleventy already does and adds a second mechanism; rejected for simplicity. Can be revisited if more validated config values appear.
   - *JSON Schema validation of `site.json`* — over-engineering for a single field in a hand-edited three-key workflow.
 
-## Decision 5: Template wording — appended to the installer-desc line
+## Decision 5: Template wording — separate line below the installer-desc line (revised)
 
-- **Decision**: Change `download.njk` line 10 to `Version {{ site.version }} for Windows 11, x64 · released {{ site.releaseDate | releaseDate }}.` The `·` separator matches the site's existing meta-line idiom ("Windows 11 · x64 · GPLv2 or later").
-- **Rationale**: Matches the clarified placement (appended to the existing version line in the installer card, confirmed 2026-08-06) and reuses the site's visual vocabulary. `.installer-desc` is a normal wrapping paragraph, so no CSS change is needed at the 860 px breakpoint (FR-005).
-- **Alternatives considered**: separate line in card, meta line below card — both explicitly rejected by the user in the clarification session.
+- **Decision** *(revised 2026-08-06 after implementation, at the user's request)*: `download.njk` renders both lines inside the existing `installer-desc` paragraph, separated by `<br>`: `Version {{ site.version }} for Windows 11, x64.<br>Released {{ site.releaseDate | releaseDate }}`. No CSS changes — both lines share the paragraph's font, size, color, and natural line height.
+- **Rationale**: The user switched to a two-line variant but wants the date visually identical to the version line and tight beneath it. A single paragraph with a line break guarantees identical typography and minimal spacing by construction.
+- **Alternatives considered**: single line with `·` separator (originally chosen in clarification, implemented, then superseded); separate `<p class="installer-date">` with its own smaller, muted style — implemented and rejected by the user (read as a different font, too much spacing); meta line below card — rejected in the clarification session.
 
 ## Decision 6: Initial value — `2026-08-05`
 
