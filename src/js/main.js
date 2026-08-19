@@ -15,6 +15,19 @@
     });
   });
 
+  /* ---- Language switcher (spec: specs/004-multilingual-czech/) ----
+     Plain links do the navigation; this handler only persists the explicit
+     choice (the ONLY writer of tc-lang) and carries the section anchor over
+     so the reader lands on the same place in the other language. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-set-lang]'), function (link) {
+    link.addEventListener('click', function () {
+      try { localStorage.setItem('tc-lang', link.getAttribute('data-set-lang')); } catch (e) { /* private mode: choice lasts for the visit only */ }
+      if (location.hash) {
+        link.href = link.getAttribute('href').split('#')[0] + location.hash;
+      }
+    });
+  });
+
   /* ---- Mobile menu (hamburger; breakpoint must match main.css) ---- */
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('mobile-menu');

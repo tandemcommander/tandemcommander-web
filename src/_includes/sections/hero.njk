@@ -1,15 +1,15 @@
 <section id="top" class="hero">
   <div class="hero-inner">
     <div class="hero-lockup">
-      <img src="/assets/tandem-commander-lockup-light.svg" alt="Tandem Commander — two-pane file manager" class="lockup lockup--light">
+      <img src="/assets/tandem-commander-lockup-light.svg" alt="{{ lang | t("hero.lockupAlt") }}" class="lockup lockup--light">
       <img src="/assets/tandem-commander-lockup-dark.svg" alt="" aria-hidden="true" class="lockup lockup--dark">
     </div>
-    <h1 class="hero-title">The two-pane <br>classic&nbsp;<span class="accent">reborn</span></h1>
-    <p class="hero-lead">Two panels, function keys along the bottom, a plugin for everything — the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, connects over SFTP, renders Markdown on F3 — and ships in a dark theme as well as the light one.</p>
+    <h1 class="hero-title">{{ lang | t("hero.title") | safe }}</h1>
+    <p class="hero-lead">{{ lang | t("hero.lead") }}</p>
     <div class="hero-cta">
-      <a href="#download" class="btn btn--primary">Download for Windows<span class="btn-badge">v{{ site.version }}</span></a>
-      <a href="{{ site.github.repoUrl }}" class="btn btn--secondary">Browse the source</a>
+      <a href="#download" class="btn btn--primary">{{ lang | t("hero.ctaDownload") }}<span class="btn-badge">v{{ site.version }}</span></a>
+      <a href="{{ site.github.repoUrl }}" class="btn btn--secondary">{{ lang | t("hero.ctaSource") }}</a>
     </div>
-    <p class="hero-note">Windows installer · Windows 11 · x64 · free under GPLv2</p>
+    <p class="hero-note">{{ lang | t("hero.note") }}</p>
   </div>
 </section>

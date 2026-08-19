@@ -12,16 +12,20 @@ Project repository: <https://github.com/tandemcommander/tandemcommander>
 
 ```
 src/                           # SOURCES — this is what you edit
-  index.njk                    # page: composes the sections below
+  index.njk                    # English page (/) — composes the sections below
+  cs/index.njk                 # Czech page (/cs/) — same sections, lang: cs
   _includes/
-    layout.njk                 # <head> (meta/SEO/OG), fonts, theme bootstrap
-    sections/                  # one file per page section (header, hero, …)
+    layout.njk                 # <head> (meta/SEO/OG/hreflang), fonts, theme + language bootstrap
+    sections/                  # one file per page section (header, hero, …); no hardcoded text
   _data/
     site.json                  # single source of shared values: version, URLs, contact
+    languages.json             # language registry (code, URL, labels, Intl/OG locales)
+    i18n/                      # ALL user-visible text — one catalog per language,
+                               #   same keys everywhere (enforced at build time)
   css/main.css                 # design tokens (light/dark), all styles, responsive rules
-  js/main.js                   # theme switcher + mobile (hamburger) menu
+  js/main.js                   # theme + language switcher + mobile (hamburger) menu
   assets/                      # logos, screenshots, og-image, app icons
-  fonts/                       # Archivo + IBM Plex Mono, self-hosted (SIL OFL)
+  fonts/                       # Archivo + IBM Plex Mono (latin + latin-ext), self-hosted (SIL OFL)
   root/                        # files copied to the site root (404, robots, sitemap,
                                #   _headers, favicons)
 
@@ -36,7 +40,11 @@ needs no extra build configuration. Any manual edit in `public/` will be lost.
 
 ## Everyday tasks
 
-**Edit content** — change the relevant file in `src/_includes/sections/`, then rebuild.
+**Edit content** — change the string in `src/_data/i18n/en.json` **and** `cs.json` (the
+templates in `src/_includes/sections/` only hold structure), then rebuild. The build fails
+if any catalog is missing a key or holds an empty value — a page can never ship with a
+missing or half-done translation. Keys whose values intentionally contain HTML are listed
+in `RICH_TEXT_KEYS` in `eleventy.config.js`.
 
 **Release a new version** — change `version` in `src/_data/site.json`, then rebuild.
 The hero badge, project card, download section, installer file name and download URL
@@ -45,6 +53,20 @@ all update from that single value.
 **Replace the (temporary) screenshots** — overwrite `src/assets/screenshot-light.png`
 and `src/assets/screenshot-dark.png` (same names), then rebuild. Layout adapts to any
 resolution.
+
+**Add a language** — three steps (see `specs/004-multilingual-czech/` for the full design):
+
+1. add an entry to `src/_data/languages.json` (code, label, URL prefix, locales)
+2. create `src/_data/i18n/<code>.json` with every key translated (build enforces parity)
+3. create `src/<code>/index.njk` — a copy of `src/cs/index.njk` with `lang: <code>`
+
+Language behavior: English is the default at `/`, Czech lives at `/cs/`. The header
+switcher stores the visitor's explicit choice in `localStorage` under `tc-lang` (the only
+writer). The root page redirects before paint when a stored choice or — with nothing
+stored — the browser's first preferred language points to another language; a direct visit
+to `/cs/` always wins over both. Note for `eleventy --serve`: after editing
+`languages.json` or `RICH_TEXT_KEYS`, restart the server (catalog *values* reload
+automatically).
 
 ```bash
 npm install

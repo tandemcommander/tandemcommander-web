@@ -12,10 +12,15 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://tandemcommander.org/">
+<link rel="alternate" hreflang="en" href="https://tandemcommander.org/">
+<link rel="alternate" hreflang="cs" href="https://tandemcommander.org/cs/">
+<link rel="alternate" hreflang="x-default" href="https://tandemcommander.org/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tandem Commander">
 <meta property="og:url" content="https://tandemcommander.org/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="cs_CZ">
 <meta property="og:title" content="Tandem Commander — two-pane file manager for Windows">
 <meta property="og:description" content="A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase — full Unicode, long paths, SFTP, Markdown viewer, light and dark themes. Free under GPLv2.">
 <meta property="og:image" content="https://tandemcommander.org/assets/og-image.png">
@@ -25,8 +30,26 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <script>(function(){try{var t=localStorage.getItem('tc-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+<script>(function(){try{
+/* Language routing (spec 004, contracts/language-routing.md). Runs only on the
+   default-language page, before paint. Never writes to storage — only the
+   switcher does. Any error leaves the page as it is (English). */
+var locales={"en":null,"cs":"/cs/"};
+var stored=null;try{stored=localStorage.getItem('tc-lang');}catch(e){}
+var target=null;
+if(stored&&locales.hasOwnProperty(stored)){target=locales[stored];}
+else{
+/* Nothing stored: detect from the FIRST browser preference only (FR-005);
+   a browser ordered e.g. "de, cs, en" gets the default language. */
+var pref=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+for(var code in locales){if(locales[code]&&pref.indexOf(code)===0){target=locales[code];break;}}
+}
+if(target){location.replace(target+location.search+location.hash);}
+}catch(e){}})();</script>
+
 
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+
 <link rel="stylesheet" href="/css/main.css">
 <script defer src="/js/main.js"></script>
 </head>
@@ -39,13 +62,17 @@
     </a>
     <nav class="site-nav" aria-label="Main">
       <a href="#screens" class="nav-link">Themes</a>
-      <a href="#new" class="nav-link">What's new</a>
+      <a href="#new" class="nav-link">What&#39;s new</a>
       <a href="#project" class="nav-link">Project</a>
       <a href="#download" class="nav-link">Download</a>
       <div class="theme-toggle" role="group" aria-label="Theme">
         <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Light</button>
         <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Dark</button>
       </div>
+      <nav class="lang-toggle" aria-label="Language">
+        <a href="/" hreflang="en" lang="en" data-set-lang="en" class="lang-link" aria-current="true">EN</a>
+        <a href="/cs/" hreflang="cs" lang="cs" data-set-lang="cs" class="lang-link">CS</a>
+      </nav>
     </nav>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
       <span class="nav-toggle-bar"></span>
@@ -55,13 +82,17 @@
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Main menu">
     <a href="#screens" class="mobile-link">Themes</a>
-    <a href="#new" class="mobile-link">What's new</a>
+    <a href="#new" class="mobile-link">What&#39;s new</a>
     <a href="#project" class="mobile-link">Project</a>
     <a href="#download" class="mobile-link">Download</a>
     <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="Theme">
       <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Light</button>
       <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Dark</button>
     </div>
+    <nav class="lang-toggle lang-toggle--mobile" aria-label="Language">
+      <a href="/" hreflang="en" lang="en" data-set-lang="en" class="lang-link" aria-current="true">EN</a>
+      <a href="/cs/" hreflang="cs" lang="cs" data-set-lang="cs" class="lang-link">CS</a>
+    </nav>
   </nav>
 </header>
 
@@ -168,8 +199,8 @@
 <section id="new" class="section section--roomy">
   <div class="section-inner">
     <div class="section-head">
-      <p class="kicker">What's new</p>
-      <h2 class="section-title">What's new in Tandem Commander.</h2>
+      <p class="kicker">What&#39;s new</p>
+      <h2 class="section-title">What&#39;s new in Tandem Commander.</h2>
       <p class="section-lead">The main additions and improvements in this release.</p>
     </div>
     <div class="card-grid card-grid--news">
@@ -200,7 +231,7 @@
       <h2 class="section-title">Open source, and open about how it is made.</h2>
       <p class="project-text">Tandem Commander grew out of <a href="https://github.com/OpenSalamander/salamander">Open Salamander</a>, the classic file manager whose source was opened to the world, and it owes that project everything it started with. Our thanks go to the original Salamander authors and to everyone who kept the code alive after them — a quarter century of careful work by people who cared how a file manager should feel. The core has since gone its own way, but the debt stands.</p>
       <p class="project-text">Tandem Commander is free software, licensed under <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2 and later</a>. Individual files and bundled libraries carry different but compatible licenses, and everyone who has contributed to it is credited in <span class="mono mono--md">AUTHORS</span>.</p>
-      <p class="project-text">The rules the project holds itself to — build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API — are written down in the repository rather than kept in someone's head.</p>
+      <p class="project-text">The rules the project holds itself to — build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API — are written down in the repository rather than kept in someone&#39;s head.</p>
       <div class="agentic-note">
         <p class="project-text project-text--flush">There is one genuinely new thing here. Development follows spec-driven principles: every change starts as a written specification that is clarified, planned and broken into tasks before any code is touched, and the implementation is carried out by agentic coding frameworks. The whole paper trail is committed next to the code, so the repository records not only what changed in this quarter-century-old C++ codebase, but why.</p>
       </div>
@@ -241,6 +272,7 @@
 
 
 
+
 <section id="download" class="section section--download">
   <div class="download-inner">
     <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="download-mark">
@@ -256,7 +288,7 @@
     <p class="download-meta">Windows 11 · x64 · GPLv2 or later · <a href="https://github.com/tandemcommander/tandemcommander/releases">all releases</a> · <a href="https://github.com/tandemcommander/tandemcommander/issues">report an issue</a></p>
     <div class="disclaimer">
       <p class="disclaimer-label">⚠ Disclaimer</p>
-      <p class="disclaimer-text">This is a first release, created through agentic AI development. The software is provided "as is", without warranty of any kind, and the author accepts no responsibility or liability for its use.</p>
+      <p class="disclaimer-text">This is a first release, created through agentic AI development. The software is provided &quot;as is&quot;, without warranty of any kind, and the author accepts no responsibility or liability for its use.</p>
     </div>
     <div class="build-box">
       <p class="build-label">Build from source</p>
@@ -282,7 +314,7 @@
       <div class="footer-col">
         <p class="footer-heading">Program</p>
         <a href="#screens" class="footer-link">Themes</a>
-        <a href="#new" class="footer-link">What's new</a>
+        <a href="#new" class="footer-link">What&#39;s new</a>
         <a href="#project" class="footer-link">Project</a>
         <a href="#download" class="footer-link">Download</a>
       </div>

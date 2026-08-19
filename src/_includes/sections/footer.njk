@@ -6,31 +6,31 @@
           <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
           <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
         </div>
-        <p class="footer-tagline">A fast, keyboard-friendly two-pane file manager for Windows.</p>
+        <p class="footer-tagline">{{ lang | t("footer.tagline") }}</p>
       </div>
       <div class="footer-col">
-        <p class="footer-heading">Program</p>
-        <a href="#screens" class="footer-link">Themes</a>
-        <a href="#new" class="footer-link">What's new</a>
-        <a href="#project" class="footer-link">Project</a>
-        <a href="#download" class="footer-link">Download</a>
+        <p class="footer-heading">{{ lang | t("footer.headingProgram") }}</p>
+        <a href="#screens" class="footer-link">{{ lang | t("nav.themes") }}</a>
+        <a href="#new" class="footer-link">{{ lang | t("nav.whatsNew") }}</a>
+        <a href="#project" class="footer-link">{{ lang | t("nav.project") }}</a>
+        <a href="#download" class="footer-link">{{ lang | t("nav.download") }}</a>
       </div>
       <div class="footer-col">
-        <p class="footer-heading">Source</p>
-        <a href="{{ site.github.repoUrl }}" class="footer-link">GitHub</a>
-        <a href="{{ site.github.issuesUrl }}" class="footer-link">Issues</a>
-        <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" class="footer-link">GPLv2 licence</a>
+        <p class="footer-heading">{{ lang | t("footer.headingSource") }}</p>
+        <a href="{{ site.github.repoUrl }}" class="footer-link">{{ lang | t("footer.linkGithub") }}</a>
+        <a href="{{ site.github.issuesUrl }}" class="footer-link">{{ lang | t("footer.linkIssues") }}</a>
+        <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" class="footer-link">{{ lang | t("footer.linkLicense") }}</a>
       </div>
       <div class="footer-col">
-        <p class="footer-heading">Contact</p>
+        <p class="footer-heading">{{ lang | t("footer.headingContact") }}</p>
         <span class="footer-plain">{{ site.author.name }}</span>
         <a href="mailto:{{ site.author.email }}" class="footer-link">{{ site.author.email }}</a>
-        <a href="{{ site.author.linkedin }}" class="footer-link">LinkedIn</a>
+        <a href="{{ site.author.linkedin }}" class="footer-link">{{ lang | t("footer.linkLinkedin") }}</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-legal">{{ site.domain }} · {{ site.license }}</p>
-      <p class="footer-note">Free software, built in the open. Issues and pull requests are welcome.</p>
+      <p class="footer-note">{{ lang | t("footer.note") }}</p>
     </div>
   </div>
 </footer>

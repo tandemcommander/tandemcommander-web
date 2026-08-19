@@ -1,0 +1,4 @@
+[
+  { "code": "en", "label": "EN", "url": "/", "ogLocale": "en_US", "intl": "en-US", "default": true },
+  { "code": "cs", "label": "CS", "url": "/cs/", "ogLocale": "cs_CZ", "intl": "cs-CZ", "default": false }
+]

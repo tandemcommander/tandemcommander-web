@@ -1,32 +1,57 @@
+{%- set locale = lang | locale -%}
+{%- set defaultLocale = languages | selectattr("default") | first -%}
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ site.name }} — two-pane file manager for Windows</title>
-<meta name="description" content="{{ site.description }}">
+<title>{{ lang | t("meta.title") }}</title>
+<meta name="description" content="{{ lang | t("meta.description") }}">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0A1424" media="(prefers-color-scheme: dark)">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="canonical" href="{{ site.url }}/">
+<link rel="canonical" href="{{ site.url }}{{ locale.url }}">
+{% for l in languages %}<link rel="alternate" hreflang="{{ l.code }}" href="{{ site.url }}{{ l.url }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ defaultLocale.url }}">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ site.name }}">
-<meta property="og:url" content="{{ site.url }}/">
-<meta property="og:title" content="{{ site.name }} — two-pane file manager for Windows">
-<meta property="og:description" content="{{ site.description }}">
+<meta property="og:url" content="{{ site.url }}{{ locale.url }}">
+<meta property="og:locale" content="{{ locale.ogLocale }}">
+{% for l in languages %}{% if l.code != lang %}<meta property="og:locale:alternate" content="{{ l.ogLocale }}">
+{% endif %}{% endfor %}<meta property="og:title" content="{{ lang | t("meta.title") }}">
+<meta property="og:description" content="{{ lang | t("meta.description") }}">
 <meta property="og:image" content="{{ site.url }}/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{{ site.name }} — two-pane file manager for Windows">
+<meta property="og:image:alt" content="{{ lang | t("meta.ogImageAlt") }}">
 <meta name="twitter:card" content="summary_large_image">
 
 <script>(function(){try{var t=localStorage.getItem('tc-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+{% if locale.default %}<script>(function(){try{
+/* Language routing (spec 004, contracts/language-routing.md). Runs only on the
+   default-language page, before paint. Never writes to storage — only the
+   switcher does. Any error leaves the page as it is (English). */
+var locales={ {%- for l in languages -%}"{{ l.code }}":{% if l.default %}null{% else %}"{{ l.url }}"{% endif %}{{ "," if not loop.last }}{%- endfor -%} };
+var stored=null;try{stored=localStorage.getItem('tc-lang');}catch(e){}
+var target=null;
+if(stored&&locales.hasOwnProperty(stored)){target=locales[stored];}
+else{
+/* Nothing stored: detect from the FIRST browser preference only (FR-005);
+   a browser ordered e.g. "de, cs, en" gets the default language. */
+var pref=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();
+for(var code in locales){if(locales[code]&&pref.indexOf(code)===0){target=locales[code];break;}}
+}
+if(target){location.replace(target+location.search+location.hash);}
+}catch(e){}})();</script>
+{% endif %}
 
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+{% if not locale.default %}<link rel="preload" href="/fonts/archivo-latin-ext-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+{% endif %}
 <link rel="stylesheet" href="/css/main.css">
 <script defer src="/js/main.js"></script>
 </head>

@@ -1,20 +1,20 @@
 <section id="screens" class="section">
   <div class="section-inner">
     <div class="section-head">
-      <p class="kicker">Two themes, one binary</p>
-      <h2 class="section-title">Light by default. Dark when you want it.</h2>
-      <p class="section-lead">The classic light panels are still the default — nothing moved, nothing was reflowed. The new dark theme is the same layout with the same information density, for the people who stopped enjoying white rectangles at 2 a.m. It is still experimental — a few places are not quite final yet.</p>
+      <p class="kicker">{{ lang | t("screens.kicker") }}</p>
+      <h2 class="section-title">{{ lang | t("screens.title") }}</h2>
+      <p class="section-lead">{{ lang | t("screens.lead") }}</p>
     </div>
     <div class="screens-grid">
       <figure class="shot">
         <figcaption class="shot-caption">
           <span class="swatch swatch--light"></span>
-          <span class="shot-label">Light</span>
-          <span class="shot-note">— the default, unchanged</span>
+          <span class="shot-label">{{ lang | t("screens.lightLabel") }}</span>
+          <span class="shot-note">{{ lang | t("screens.lightNote") }}</span>
         </figcaption>
         <div class="shot-frame">
-          <button type="button" class="shot-zoom" aria-label="View screenshot full size">
-            <img src="/assets/screenshot-light.png" alt="Tandem Commander in its light theme, two file panels side by side">
+          <button type="button" class="shot-zoom" aria-label="{{ lang | t("screens.zoomLabel") }}">
+            <img src="/assets/screenshot-light.png" alt="{{ lang | t("screens.lightAlt") }}">
             <span class="shot-zoom-icon">
               <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
                 <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -27,12 +27,12 @@
       <figure class="shot">
         <figcaption class="shot-caption">
           <span class="swatch swatch--dark"></span>
-          <span class="shot-label">Dark</span>
-          <span class="shot-note">— new in {{ site.version }}</span>
+          <span class="shot-label">{{ lang | t("screens.darkLabel") }}</span>
+          <span class="shot-note">{{ lang | t("screens.darkNote") | replace("{version}", site.version) }}</span>
         </figcaption>
         <div class="shot-frame">
-          <button type="button" class="shot-zoom" aria-label="View screenshot full size">
-            <img src="/assets/screenshot-dark.png" alt="Tandem Commander in its dark theme, the same two panels">
+          <button type="button" class="shot-zoom" aria-label="{{ lang | t("screens.zoomLabel") }}">
+            <img src="/assets/screenshot-dark.png" alt="{{ lang | t("screens.darkAlt") }}">
             <span class="shot-zoom-icon">
               <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
                 <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -43,8 +43,8 @@
         </div>
       </figure>
     </div>
-    <dialog class="lightbox" aria-label="Enlarged screenshot">
-      <button type="button" class="lightbox-close" aria-label="Close enlarged view">
+    <dialog class="lightbox" aria-label="{{ lang | t("screens.lightboxLabel") }}">
+      <button type="button" class="lightbox-close" aria-label="{{ lang | t("screens.lightboxClose") }}">
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
           <path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>

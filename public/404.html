@@ -20,6 +20,14 @@
   @font-face {
     font-family: 'Archivo';
     font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/archivo-latin-ext-600-normal.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF;
+  }
+  @font-face {
+    font-family: 'Archivo';
+    font-style: normal;
     font-weight: 800;
     font-display: swap;
     src: url('/fonts/archivo-latin-800-normal.woff2') format('woff2');
@@ -51,6 +59,7 @@
     color: transparent;
   }
   p { margin: .5rem 0 0; color: #8FA6C4; }
+  .links { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
   a.back {
     display: inline-block;
     margin-top: 2rem;
@@ -69,7 +78,11 @@
     <img src="/favicon.svg" alt="" aria-hidden="true">
     <h1>404</h1>
     <p>This page does not exist.</p>
-    <a class="back" href="/">Back to home</a>
+    <p lang="cs">Tato stránka neexistuje.</p>
+    <div class="links">
+      <a class="back" href="/">Back to home</a>
+      <a class="back" lang="cs" href="/cs/">Zpět na úvod</a>
+    </div>
   </main>
 </body>
 </html>
