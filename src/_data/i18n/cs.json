@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Tandem Commander — dvoupanelový správce souborů pro Windows",
-    "description": "Rychlý dvoupanelový správce souborů pro Windows 11 ovládaný především klávesnicí, zrozený z kódu Open Salamanderu — plný Unicode, dlouhé cesty, SFTP, prohlížeč Markdownu, světlý i tmavý motiv. Zdarma pod licencí GPLv2.",
+    "description": "Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu — plný Unicode, dlouhé cesty, SFTP, prohlížeč Markdownu, světlý i tmavý motiv. Zdarma pod licencí GPLv2.",
     "ogImageAlt": "Tandem Commander — dvoupanelový správce souborů pro Windows"
   },
   "nav": {
@@ -19,16 +19,16 @@
   },
   "hero": {
     "lockupAlt": "Tandem Commander — dvoupanelový správce souborů",
-    "title": "Dvoupanelová <br>klasika&nbsp;<span class=\"accent\">znovuzrozená</span>",
-    "lead": "Dva panely, funkční klávesy podél spodního okraje a plugin na všechno — pracovní styl, na kterém si pokročilí uživatelé vybudovali své návyky, teď běží nativně na Windows 11. Zrodil se z otevřeného kódu Open Salamanderu, je napsaný v C++ a dnes plně ovládá Unicode, zvládá dlouhé cesty, připojí se přes SFTP, na F3 vykreslí Markdown — a vedle světlého motivu přináší i tmavý.",
+    "title": "Znovuzrození <br>dvoupanelové&nbsp;<span class=\"accent\">legendy</span>",
+    "lead": "Dva panely, funkční klávesesové zkratky a pluginy — pracovní styl, na který jsou zvyklí tisíce uživatelů. Znovuzrozené z otevřeného kódu Open Salamander, dnes plně podporuje Unicode, zvládá dlouhé cesty, připojí se přes SFTP, na F3 vykreslí Markdown — a nově přináší i experimentální tmavý motiv.",
     "ctaDownload": "Stáhnout pro Windows",
     "ctaSource": "Prohlédnout zdrojový kód",
     "note": "Instalátor pro Windows · Windows 11 · x64 · zdarma pod GPLv2"
   },
   "screens": {
     "kicker": "Dva motivy, jedna binárka",
-    "title": "Světlý jako výchozí. Tmavý, když chcete.",
-    "lead": "Klasické světlé panely zůstávají výchozí — nic se neposunulo, nic se nepřeskládalo. Nový tmavý motiv je stejné rozložení se stejnou hustotou informací, pro ty, které přestaly bavit bílé obdélníky ve dvě ráno. Zatím je experimentální — pár míst ještě není úplně doladěných.",
+    "title": "Světlý jako klasika. Tmavý jako nový experiment.",
+    "lead": "Klasický světlý vzhled zůstává jako výchozí — nic se nezměnilo, nic se nepřeskládalo. Nový tmavý motiv má stejné rozložení se stejnou hustotou informací, pro ty, které přestaly bavit bílé obdélníky ve dvě ráno. Zatím je experimentální — pár míst ještě není úplně doladěných.",
     "lightLabel": "Světlý",
     "lightNote": "— výchozí, beze změn",
     "darkLabel": "Tmavý",
@@ -48,28 +48,28 @@
     "card2Title": "Klávesnice na prvním místě",
     "card2Text": "Funkční klávesy podél spodního okraje, zkratka na všechno a příkazová řádka přesně tam, kde už vaše ruce jsou.",
     "card3Title": "Vlastní jádro",
-    "card3Text": "<span class=\"mono\">tandemcommander.exe</span> je program s vlastní identitou: vlastní ikona, vlastní titulky oken, vlastní nastavení — a moderní jádro postavené pro Windows 11, s plnou podporou Unicode a dlouhých cest napříč celým programem."
+    "card3Text": "<span class=\"mono\">tandemcommander.exe</span> je program s vlastní identitou: vlastní ikona, vlastní titulky oken, vlastní nastavení — a aktualizované jádro postavené pro Windows 11, s plnou podporou Unicode a dlouhých cest napříč celým programem."
   },
   "whatsNew": {
     "kicker": "Novinky",
     "title": "Co je nového v Tandem Commanderu.",
-    "lead": "Hlavní novinky a vylepšení v tomto vydání.",
+    "lead": "Hlavní novinky a vylepšení.",
     "entry1Title": "Plný Unicode, dlouhé cesty",
-    "entry1Text": "Názvy a cesty jsou Unicode od začátku do konce — panely, dialogy, prohlížeče, pluginy. Diakritika i nelatinková písma se všude vykreslují správně a cesty přesahující starý limit 260 znaků prostě fungují.",
+    "entry1Text": "Názvy a cesty jsou Unicode od začátku do konce — panely, dialogy, prohlížeče, pluginy. Diakritika i nelatinková písma se vykreslují správně a cesty přesahující starý limit 260 znaků fungují. Stále ladím a opravuji - je toho hodně :)",
     "entry2Title": "Nový SFTP plugin",
     "entry2Text": "Linuxový server v jednom panelu, váš disk ve druhém — postaveno na libssh2 přes SSH. Přihlášení heslem nebo privátním klíčem s ověřením klíče serveru, unixová oprávnění zobrazená jako <span class=\"mono\">drwxr-xr-x</span>, chmod přímo z panelu.",
     "entry3Title": "Markdown View",
     "entry3Text": "F3 na souboru <span class=\"mono\">.md</span> otevře nový plugin mdview: vykreslené nadpisy, seznamy, tabulky a bloky kódu místo surového značkování.",
-    "entry4Title": "PictView, opravený",
+    "entry4Title": "Opravený PictView",
     "entry4Text": "Prohlížeč obrázků znovu funguje — obrázky se spolehlivě otevírají z obou panelů a opravy se přenesly do nového jádra s čistou podporou Unicode."
   },
   "project": {
     "kicker": "Projekt",
     "title": "Open source — a otevřený i v tom, jak vzniká.",
-    "text1": "Tandem Commander vyrostl z <a href=\"https://github.com/OpenSalamander/salamander\">Open Salamanderu</a>, klasického správce souborů, jehož zdrojový kód byl otevřen světu, a vděčí mu za všechno, s čím začínal. Náš dík patří původním autorům Salamanderu i všem, kdo kód udržovali při životě po nich — čtvrt století pečlivé práce lidí, kterým záleželo na tom, jak se má správce souborů chovat. Jádro se od té doby vydalo vlastní cestou, ale ten dluh trvá.",
-    "text2": "Tandem Commander je svobodný software licencovaný pod <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 a novější</a>. Jednotlivé soubory a přibalené knihovny nesou odlišné, ale kompatibilní licence, a každý, kdo do projektu přispěl, je uveden v souboru <span class=\"mono mono--md\">AUTHORS</span>.",
-    "text3": "Pravidla, kterých se projekt drží — reprodukovatelnost sestavení, postupná modernizace, závazek vůči Windows a stabilní API pluginů — jsou zapsaná přímo v repozitáři, ne uložená v něčí hlavě.",
-    "agenticNote": "Jedna věc je tu opravdu nová. Vývoj se řídí principy spec-driven developmentu: každá změna začíná jako psaná specifikace, která se ujasní, naplánuje a rozpadne na úkoly dřív, než se sáhne na kód, a implementaci provádějí agentní kódovací frameworky. Celá papírová stopa je commitovaná vedle kódu, takže repozitář zaznamenává nejen co se v této čtvrtstoleté C++ kódové bázi změnilo, ale i proč.",
+    "text1": "Tandem Commander vyrostl z <a href=\"https://github.com/OpenSalamander/salamander\">Open Salamanderu</a>, klasického správce souborů, jehož zdrojový kód byl otevřen světu, a vděčí mu za všechno, s čím začínal. Náš dík patří původním autorům Salamanderu i všem, kdo kód udržovali při životě — čtvrt století pečlivé práce lidí, kterým záleželo na tom, jak se má správce souborů chovat.",
+    "text2": "Tandem Commander je svobodný software licencovaný pod <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 a novější</a>. Jednotlivé soubory a přibalené knihovny nesou kompatibilní licence, a každý, kdo do projektu přispěl, je uveden v souboru <span class=\"mono mono--md\">AUTHORS</span>.",
+    "text3": "Pravidla, kterých se projekt drží — reprodukovatelnost sestavení, postupná modernizace, závazek vůči Windows a stabilní API pluginů — jsou zapsaná přímo v repozitáři.",
+    "agenticNote": "Jedna věc je tu opravdu nová. Vývoj se řídí principy spec-driven developmentu: každá změna začíná jako psaná specifikace, která se ujasní, naplánuje a rozpadne na úkoly dřív, než se sáhne na kód, a implementaci provádějí agentní kódovací frameworky. Celá specifikační stopa je urdžovaná vedle kódu, takže repozitář zaznamenává nejen co se změnilo, ale i proč.",
     "factVersion": "Verze",
     "factPlatform": "Platforma",
     "factLicense": "Licence",
@@ -78,9 +78,9 @@
   "story": {
     "kicker": "Od autora",
     "title": "Proč tento projekt existuje — osobní poznámka",
-    "p1": "Kdykoli jsem pracoval na Windows, vždycky byl po ruce nějaký Salamander. Nejdřív Servant Salamander, později Altap Salamander — podle mě jeden z nejlepších kusů softwaru, se kterými jsem kdy pracoval. Poslední vydaná verze Altap Salamanderu ale pochází z roku 2019 a pořád si nese pár neduhů zděděných z původních verzí: neúplnou podporu kódování, chybějící podporu dlouhých cest k adresářům a souborům a řadu dalších. Zároveň Altap Salamander dodnes denně používá spousta mých přátel a členů rodiny, v práci i doma.",
-    "p2": "Ve chvíli, kdy byl Salamander uvolněn jako Open Salamander, jsem měl jasnou vizi: upravím si ho pro sebe, abych ho mohl prostě používat dál. Ta vize rychle narazila na tvrdou realitu — přestože jsem velmi zkušený softwarový inženýr, vývojář a architekt, chyběl mi ten jediný faktor, který projekt tohoto rozsahu vyžaduje ze všeho nejvíc: čas.",
-    "p3": "To se změnilo v podstatě během posledních měsíců s celkovým posunem v tom, jak dnes software může — ne být programován, ale <em>vznikat</em> — s pomocí agentních systémů. Aby bylo jasno: důrazně nemluvím o „vibe codingu“; považuji ho tak trochu za módní slovo a nemám ho rád. Termín, který bych zvolil, je <strong class=\"story-strong\">Full Agentic Spec-Driven Development</strong>: jasně definované postupy nejen pro vznik kódu, ale pro vznik celého projektu — včetně dokumentace a artefaktů. Tento projekt je záměrně postaven spec-driven přístupem nad GitHub SpecKitem, s využitím nejlepších agentních modelů dostupných v daném okamžiku — aktuálně Fable 5, přičemž revize provádí také GPT-5.6 Sol a další.",
+    "p1": "Kdykoli jsem pracoval na Windows, vždy byl po ruce Salamander. Nejdřív Servant Salamander, později Altap Salamander — podle mě nejlepší správce souborů, se kterým jsem kdy pracoval (a ano, vždy jsem jej chtěl dostat i do Linuxu - ale Krusader to jistí...). Poslední vydaná verze Altap Salamanderu však pochází z roku 2019 a pořád si nese pár neduhů: neúplnou podporu kódování, chybějící podporu dlouhých cest k adresářům a souborům a řadu dalších. Zároveň Altap Salamander dodnes denně používá spousta mých přátel a členů rodiny, v práci i doma.",
+    "p2": "Ve chvíli, kdy byl Salamander uvolněn jako Open Salamander, jsem měl jasnou vizi: upravím si ho pro sebe, abych ho mohl prostě používat dál. Ta vize rychle narazila na tvrdou realitu — přestože jsem zkušený softwarový inženýr, vývojář a architekt, chyběl mi ten jediný faktor, který projekt tohoto rozsahu vyžaduje ze všeho nejvíc: čas.",
+    "p3": "To se změnilo v podstatě během posledních měsíců s celkovým posunem v tom, jak dnes software může — ne být programován, ale <em>vznikat</em> — s pomocí agentních systémů. Termín, který pro tento přístup používám je <strong class=\"story-strong\">Full Agentic Spec-Driven Development</strong>: jasně definované postupy nejen pro vznik kódu, ale pro vznik celého projektu — včetně dokumentace a artefaktů. Tento projekt je záměrně postaven spec-driven přístupem nad GitHub Spec Kitem, s využitím nejlepších agentních modelů dostupných v daném okamžiku — aktuálně Fable 5, přičemž revize provádí také GPT-5.6 Sol a další.",
     "p4": "Tandem Commander samozřejmě není dokonalý. Díky tomuto přístupu jsem ale nakonec získal skutečně použitelný nástroj — a doufám, že poslouží i dalším.",
     "p5": "Nic z toho by neexistovalo bez lidí, kteří vytvořili Servant Salamander, Altap Salamander a nakonec Open Salamander. Přes čtvrt století tvořili a pilovali program, kterému nespočet lidí — já, moji přátelé, moje rodina — svěřovalo svou každodenní práci, a je to znát v každém detailu: v rychlosti, v důrazu na klávesnici, v architektuře pluginů, v poctivosti kódu, který tento repozitář zdědil. Jejich rozhodnutí uvolnit ho pod open-source licencí bylo projevem skutečné velkorysosti, který dal tomuto pozoruhodnému softwaru druhý život. Tandem Commander stojí celý na jejich ramenou a doufám, že dělá čest tomu, co vybudovali. <b>Všem původním autorům a přispěvatelům: Děkuji.</b>",
     "signatureLinkedin": "LinkedIn"
@@ -95,7 +95,7 @@
     "metaAllReleases": "všechna vydání",
     "metaReportIssue": "nahlásit problém",
     "disclaimerLabel": "⚠ Upozornění",
-    "disclaimerText": "Toto je první vydání, vytvořené pomocí agentního AI vývoje. Software je poskytován „tak, jak je“, bez jakékoli záruky, a autor nenese žádnou odpovědnost ani ručení za jeho používání.",
+    "disclaimerText": "Toto je vydání, vytvořené pomocí agentního AI vývoje. Software je poskytován „tak, jak je“, bez jakékoli záruky, a autor nenese žádnou odpovědnost ani ručení za jeho používání.",
     "buildLabel": "Sestavení ze zdrojových kódů",
     "buildComment": ":: aplikace + pluginy + jazykové moduly"
   },
