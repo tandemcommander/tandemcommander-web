@@ -95,7 +95,7 @@
     "metaAllReleases": "všechna vydání",
     "metaReportIssue": "nahlásit problém",
     "disclaimerLabel": "⚠ Upozornění",
-    "disclaimerText": "Toto je vydání, vytvořené pomocí agentního AI vývoje. Software je poskytován „tak, jak je“, bez jakékoli záruky, a autor nenese žádnou odpovědnost ani ručení za jeho používání.",
+    "disclaimerText": "Vytvořeno pomocí agentního AI vývoje. Software je poskytován „tak, jak je“, bez jakékoli záruky, a autor nenese žádnou odpovědnost ani ručení za jeho používání.",
     "buildLabel": "Sestavení ze zdrojových kódů",
     "buildComment": ":: aplikace + pluginy + jazykové moduly"
   },
