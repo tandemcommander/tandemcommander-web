@@ -82,7 +82,7 @@
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T017 Full quickstart pass (steps 1–5 locally: green build, red battery spot-check, release simulation, preview fetch) and commit the source changes together with the rebuilt committed `public/` output, per the project's build-output-is-committed convention.
+- [X] T017 Full quickstart pass (steps 1–5 locally: green build, red battery spot-check, release simulation, preview fetch) and commit the source changes together with the rebuilt committed `public/` output, per the project's build-output-is-committed convention.
 - [ ] T018 Deploy (`npm run deploy`) and verify SC-005 per quickstart step 5: `curl https://tandemcommander.org/pad.xml` returns the XML; screenshot and icon URLs referenced by the PAD respond 200. **Precondition note**: current screenshots are temporary placeholders (memory: pending-final-assets) — deploying the PAD is fine, but coordinate timing with the author if final assets are imminent.
 - [ ] T019 Catalog submission — **author-performed** (requires the author's slunecnice.cz login; quickstart step 7): submit `https://tandemcommander.org/pad.xml` via "Nahrát URL s PAD souborem" at slunecnice.cz **after final assets are deployed**; verify the form pre-fills (SC-001) and the listing shows Czech text (SC-004); record any field slunečnice still demands manually as a follow-up issue.
 
