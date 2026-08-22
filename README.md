@@ -14,11 +14,16 @@ Project repository: <https://github.com/tandemcommander/tandemcommander>
 src/                           # SOURCES — this is what you edit
   index.njk                    # English page (/) — composes the sections below
   cs/index.njk                 # Czech page (/cs/) — same sections, lang: cs
+  pad.njk                      # PAD file (/pad.xml) — machine-readable listing for software catalogs
   _includes/
     layout.njk                 # <head> (meta/SEO/OG/hreflang), fonts, theme + language bootstrap
     sections/                  # one file per page section (header, hero, …); no hardcoded text
   _data/
-    site.json                  # single source of shared values: version, URLs, contact
+    site.json                  # single source of shared values: version, URLs, contact,
+                               #   installer size in bytes (updated every release)
+    installer.js               # derived installer file name + download URL (the only place
+                               #   these strings are built — used by the page and the PAD file)
+    pad.js                     # derived PAD values: release-date split, file sizes, changelog
     languages.json             # language registry (code, URL, labels, Intl/OG locales)
     i18n/                      # ALL user-visible text — one catalog per language,
                                #   same keys everywhere (enforced at build time)
@@ -46,9 +51,12 @@ if any catalog is missing a key or holds an empty value — a page can never shi
 missing or half-done translation. Keys whose values intentionally contain HTML are listed
 in `RICH_TEXT_KEYS` in `eleventy.config.js`.
 
-**Release a new version** — change `version` in `src/_data/site.json`, then rebuild.
-The hero badge, project card, download section, installer file name and download URL
-all update from that single value.
+**Release a new version** — in `src/_data/site.json` update `version`, `releaseDate` and
+`installerSizeBytes` (the exact byte size of the new installer asset on the GitHub release),
+refresh the What's New texts in the i18n catalogs, then rebuild and deploy. The hero badge,
+project card, download section, installer file name, download URL **and the PAD file**
+(version, release date, file sizes, download URL, changelog) all update from those values —
+no PAD-specific step exists. The build fails if `installerSizeBytes` is missing or implausible.
 
 **Replace the (temporary) screenshots** — overwrite `src/assets/screenshot-light.png`
 and `src/assets/screenshot-dark.png` (same names), then rebuild. Layout adapts to any
@@ -73,6 +81,29 @@ npm install
 npm run build        # regenerate public/ from src/
 npm run dev          # live-reload dev server (Eleventy) — http://localhost:8080
 ```
+
+## PAD file (software catalogs)
+
+The site publishes a [PAD file](https://en.wikipedia.org/wiki/Portable_Application_Description)
+— a machine-readable program description that software catalogs (e.g. slunecnice.cz) import
+instead of a hand-filled form — at:
+
+**<https://tandemcommander.org/pad.xml>**
+
+⚠️ **This URL is permanent.** Catalogs store it and re-crawl it for updates — renaming or
+moving the file after it has been submitted anywhere breaks every existing listing.
+
+How it fits together (full design in `specs/005-pad-file/`):
+
+- `src/pad.njk` renders the XML from `site.json`, `installer.js`, `pad.js` and the `pad.*`
+  keys in the i18n catalogs (English **and** Czech description blocks in one file).
+- A build gate in `eleventy.config.js` (`validatePad`) checks the rendered file against the
+  PAD contract — required fields, length caps, enumerations, URL shapes, size/date consistency
+  with `site.json` — and **fails the build** on any violation, so an invalid PAD never ships.
+- The catalog-facing texts live under the `pad` namespace in `src/_data/i18n/en.json` and
+  `cs.json`; each key has a hard character cap (45/80/250/450/2000, keywords 250).
+
+To list the program on a new catalog, hand it the URL above — no other data entry needed.
 
 ## Verifying and deploying
 

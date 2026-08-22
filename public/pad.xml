@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>tandemcommander-web build</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Pavel Stupka</Company_Name>
+		<Address_1></Address_1>
+		<Address_2></Address_2>
+		<City_Town></City_Town>
+		<State_Province></State_Province>
+		<Zip_Postal_Code></Zip_Postal_Code>
+		<Country>Czech Republic</Country>
+		<Company_WebSite_URL>https://tandemcommander.org</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Pavel</Author_First_Name>
+			<Author_Last_Name>Stupka</Author_Last_Name>
+			<Author_Email>pavel.stupka@gmail.com</Author_Email>
+			<Contact_First_Name>Pavel</Contact_First_Name>
+			<Contact_Last_Name>Stupka</Contact_Last_Name>
+			<Contact_Email>pavel.stupka@gmail.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email></Sales_Email>
+			<Support_Email>pavel.stupka@gmail.com</Support_Email>
+			<General_Email></General_Email>
+			<Sales_Phone></Sales_Phone>
+			<Support_Phone></Support_Phone>
+			<General_Phone></General_Phone>
+			<Fax_Phone></Fax_Phone>
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>Tandem Commander</Program_Name>
+		<Program_Version>0.1.4</Program_Version>
+		<Program_Release_Month>08</Program_Release_Month>
+		<Program_Release_Day>19</Program_Release_Day>
+		<Program_Release_Year>2026</Program_Release_Year>
+		<Program_Cost_Dollars>0</Program_Cost_Dollars>
+		<Program_Cost_Other_Code></Program_Cost_Other_Code>
+		<Program_Cost_Other></Program_Cost_Other>
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>New Release</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Win11 x64</Program_OS_Support>
+		<Program_Language>English</Program_Language>
+		<Program_Change_Info>Full Unicode, long paths; New SFTP plugin; Markdown View; PictView, repaired</Program_Change_Info>
+		<Program_Specific_Category>System Utilities</Program_Specific_Category>
+		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
+		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
+		<File_Info>
+			<File_Size_Bytes>6805464</File_Size_Bytes>
+			<File_Size_K>6646</File_Size_K>
+			<File_Size_MB>6.49</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count></Expire_Count>
+			<Expire_Based_On></Expire_Based_On>
+			<Expire_Other_Info></Expire_Other_Info>
+			<Expire_Month></Expire_Month>
+			<Expire_Day></Expire_Day>
+			<Expire_Year></Expire_Year>
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>file manager, two-pane file manager, dual-pane, orthodox file manager, file commander, Windows 11, x64, Unicode, long paths, SFTP, Markdown viewer, dark theme, Open Salamander, open source, free, GPL</Keywords>
+			<Char_Desc_45>Fast two-pane file manager for Windows 11.</Char_Desc_45>
+			<Char_Desc_80>A fast, keyboard-friendly two-pane file manager for Windows 11, free under GPL.</Char_Desc_80>
+			<Char_Desc_250>A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase: full Unicode, long paths, SFTP, a Markdown viewer and a dark theme. Free and open source under GPLv2 or later.</Char_Desc_250>
+			<Char_Desc_450>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11, born from the open source Open Salamander codebase. It speaks full Unicode, handles paths past the old 260-character limit, connects to Linux servers over SFTP, renders Markdown files on F3, and ships with a dark theme alongside the classic light one. Free and open source under GPLv2 or later.</Char_Desc_450>
+			<Char_Desc_2000>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11. It carries on the classic orthodox file manager working style: source panel on the left, target on the right, function keys along the bottom edge, a shortcut for everything, and a command line that stays exactly where your hands already are. Copy, move, pack and compare files without opening a second window or reaching for the mouse. The program was born from the open source Open Salamander codebase and now runs on its own modernized core built for Windows 11: names and paths are Unicode end to end, so accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work. A new SFTP plugin puts a Linux server in one panel and your disk in the other, with password or private-key authentication, host-key verification and unix permissions shown directly in the panel. Pressing F3 on a Markdown file opens a rendered view with headings, lists, tables and code blocks, and the repaired image viewer opens pictures reliably from either panel. The classic light look remains the default, and a new dark theme offers the same layout and information density. Tandem Commander is free software, open source under GPLv2 or later, with the full source code, issue tracker and all releases available on GitHub.</Char_Desc_2000>
+		</English>
+		<Czech>
+			<Keywords>správce souborů, dvoupanelový správce souborů, souborový manažer, file manager, Windows 11, x64, Unicode, dlouhé cesty, SFTP, prohlížeč Markdownu, tmavý motiv, Open Salamander, open source, zdarma, GPL</Keywords>
+			<Char_Desc_45>Dvoupanelový správce souborů pro Windows 11.</Char_Desc_45>
+			<Char_Desc_80>Rychlý dvoupanelový správce souborů pro Windows 11, zdarma pod licencí GPL.</Char_Desc_80>
+			<Char_Desc_250>Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu: plný Unicode, dlouhé cesty, SFTP, prohlížeč Markdownu, světlý i tmavý motiv. Svobodný software zdarma pod licencí GPLv2 nebo novější.</Char_Desc_250>
+			<Char_Desc_450>Tandem Commander je rychlý dvoupanelový správce souborů pro Windows 11, zrozený z otevřeného kódu Open Salamanderu. Plně podporuje Unicode, zvládá cesty přesahující starý limit 260 znaků, připojí se k linuxovým serverům přes SFTP, na F3 vykreslí soubory Markdown a vedle klasického světlého vzhledu přináší i tmavý motiv. Svobodný software zdarma pod licencí GPLv2 nebo novější.</Char_Desc_450>
+			<Char_Desc_2000>Tandem Commander je rychlý dvoupanelový správce souborů pro Windows 11. Pokračuje v klasickém pracovním stylu dvoupanelových správců: zdrojový panel vlevo, cílový vpravo, funkční klávesy podél spodního okraje, zkratka na všechno a příkazová řádka přesně tam, kde už vaše ruce jsou. Kopírujte, přesouvejte, balte a porovnávejte soubory bez otevírání druhého okna a bez sahání po myši. Program se zrodil z otevřeného kódu Open Salamanderu a dnes běží na vlastním modernizovaném jádru postaveném pro Windows 11: názvy a cesty jsou Unicode od začátku do konce, diakritika i nelatinková písma se všude vykreslují správně a cesty přesahující starý limit 260 znaků prostě fungují. Nový SFTP plugin dá linuxový server do jednoho panelu a váš disk do druhého, s přihlášením heslem nebo privátním klíčem, ověřením klíče serveru a unixovými oprávněními zobrazenými přímo v panelu. Stisk F3 na souboru Markdown otevře vykreslený náhled s nadpisy, seznamy, tabulkami a bloky kódu a opravený prohlížeč obrázků spolehlivě otevírá obrázky z obou panelů. Klasický světlý vzhled zůstává výchozí a nový tmavý motiv nabízí stejné rozložení se stejnou hustotou informací. Tandem Commander je svobodný software, open source pod licencí GPLv2 nebo novější, s úplnými zdrojovými kódy, hlášením chyb i všemi vydáními na GitHubu.</Char_Desc_2000>
+		</Czech>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>https://tandemcommander.org</Application_Info_URL>
+			<Application_Order_URL></Application_Order_URL>
+			<Application_Screenshot_URL>https://tandemcommander.org/assets/screenshot-light.png</Application_Screenshot_URL>
+			<Application_Icon_URL>https://tandemcommander.org/assets/icon-256.png</Application_Icon_URL>
+			<Application_XML_File_URL>https://tandemcommander.org/pad.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.4/tandemcommander-0.1.4-x64-setup.exe</Primary_Download_URL>
+			<Secondary_Download_URL></Secondary_Download_URL>
+			<Additional_Download_URL_1></Additional_Download_URL_1>
+			<Additional_Download_URL_2></Additional_Download_URL_2>
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions>Tandem Commander is free software released under the GNU General Public License v2 or later. Download sites and software catalogs may freely list the program and distribute the official installer in unchanged form. The full source code is available at https://github.com/tandemcommander/tandemcommander</Distribution_Permissions>
+		<EULA>Tandem Commander is distributed under the GNU General Public License version 2 or later (GPLv2+). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file in the source repository for the full license text: https://github.com/tandemcommander/tandemcommander</EULA>
+	</Permissions>
+</XML_DIZ_INFO>

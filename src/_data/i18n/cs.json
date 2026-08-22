@@ -109,5 +109,13 @@
     "linkLicense": "Licence GPLv2",
     "linkLinkedin": "LinkedIn",
     "note": "Svobodný software, vyvíjený otevřeně. Issues i pull requesty jsou vítány."
+  },
+  "pad": {
+    "keywords": "správce souborů, dvoupanelový správce souborů, souborový manažer, file manager, Windows 11, x64, Unicode, dlouhé cesty, SFTP, prohlížeč Markdownu, tmavý motiv, Open Salamander, open source, zdarma, GPL",
+    "desc45": "Dvoupanelový správce souborů pro Windows 11.",
+    "desc80": "Rychlý dvoupanelový správce souborů pro Windows 11, zdarma pod licencí GPL.",
+    "desc250": "Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu: plný Unicode, dlouhé cesty, SFTP, prohlížeč Markdownu, světlý i tmavý motiv. Svobodný software zdarma pod licencí GPLv2 nebo novější.",
+    "desc450": "Tandem Commander je rychlý dvoupanelový správce souborů pro Windows 11, zrozený z otevřeného kódu Open Salamanderu. Plně podporuje Unicode, zvládá cesty přesahující starý limit 260 znaků, připojí se k linuxovým serverům přes SFTP, na F3 vykreslí soubory Markdown a vedle klasického světlého vzhledu přináší i tmavý motiv. Svobodný software zdarma pod licencí GPLv2 nebo novější.",
+    "desc2000": "Tandem Commander je rychlý dvoupanelový správce souborů pro Windows 11. Pokračuje v klasickém pracovním stylu dvoupanelových správců: zdrojový panel vlevo, cílový vpravo, funkční klávesy podél spodního okraje, zkratka na všechno a příkazová řádka přesně tam, kde už vaše ruce jsou. Kopírujte, přesouvejte, balte a porovnávejte soubory bez otevírání druhého okna a bez sahání po myši. Program se zrodil z otevřeného kódu Open Salamanderu a dnes běží na vlastním modernizovaném jádru postaveném pro Windows 11: názvy a cesty jsou Unicode od začátku do konce, diakritika i nelatinková písma se všude vykreslují správně a cesty přesahující starý limit 260 znaků prostě fungují. Nový SFTP plugin dá linuxový server do jednoho panelu a váš disk do druhého, s přihlášením heslem nebo privátním klíčem, ověřením klíče serveru a unixovými oprávněními zobrazenými přímo v panelu. Stisk F3 na souboru Markdown otevře vykreslený náhled s nadpisy, seznamy, tabulkami a bloky kódu a opravený prohlížeč obrázků spolehlivě otevírá obrázky z obou panelů. Klasický světlý vzhled zůstává výchozí a nový tmavý motiv nabízí stejné rozložení se stejnou hustotou informací. Tandem Commander je svobodný software, open source pod licencí GPLv2 nebo novější, s úplnými zdrojovými kódy, hlášením chyb i všemi vydáními na GitHubu."
   }
 }

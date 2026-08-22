@@ -2,6 +2,7 @@
   "name": "Tandem Commander",
   "version": "0.1.4",
   "releaseDate": "2026-08-19",
+  "installerSizeBytes": 6805464,
   "platform": "Windows 11 · x64",
   "license": "GPLv2 or later",
   "toolchain": "Visual Studio 2022",

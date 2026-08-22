@@ -1,5 +1,5 @@
-{% set installerFile = "tandemcommander-" + site.version + "-x64-setup.exe" %}
-{% set installerUrl = site.github.repoUrl + "/releases/download/v" + site.version + "/" + installerFile %}
+{% set installerFile = installer.fileName %}
+{% set installerUrl = installer.url %}
 {% set locale = lang | locale %}
 <section id="download" class="section section--download">
   <div class="download-inner">
