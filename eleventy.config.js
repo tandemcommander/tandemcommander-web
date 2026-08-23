@@ -82,123 +82,78 @@ function checkCatalogParity() {
 }
 
 // ---------------------------------------------------------------------------
-// PAD file gate (spec: specs/005-pad-file/)
+// PAD file gate (spec: specs/006-pad-v4-compliance/, supersedes 005-pad-file)
 //
-// Validates the rendered pad.xml against the vendored PAD rules from
-// specs/005-pad-file/contracts/pad-file.md — required elements, length caps,
-// enumerations, URL shapes, size/date consistency with site.json. Any
-// violation throws, so an invalid PAD file can never be published. The OS
-// token list extends the frozen 2010 enumeration with the modern Windows
-// tokens (documented deviation, research R4).
+// Validates the rendered pad.xml in two layers. Layer 1 is PAD 4.0 conformance
+// and is derived entirely from the vendored specification (see readPadSpec
+// below): element paths, value patterns and every controlled vocabulary come
+// from the spec file, so there is no list here to fall out of date. Layer 2 is
+// the handful of project facts the format cannot express — which elements this
+// project considers mandatory, and agreement with site.json. Any violation
+// throws, so a non-compliant PAD file can never be published.
 // ---------------------------------------------------------------------------
 
 const PAD_REQUIRED_LANGUAGES = ["English", "Czech"];
 
-const PAD_ENUMS = {
-  "Program_Info/Program_Type": ["Shareware", "Freeware", "Adware", "Demo", "Commercial", "Data Only"],
-  "Program_Info/Program_Release_Status": ["Major Update", "Minor Update", "New Release", "Beta", "Alpha", "Media Only"],
-  "Program_Info/Program_Install_Support": ["Install and Uninstall", "Install Only", "No Install Support", "Uninstall Only"],
-};
+// Layer 2. PAD 4.0 carries no optionality flag — its patterns say what a value
+// may look like, never whether the element has to be there. These are the ones
+// a catalog listing genuinely needs: present AND non-empty. Everything else may
+// be absent, or empty where its own 4.0 pattern permits an empty value.
+const PAD_REQUIRED_ELEMENTS = [
+  "MASTER_PAD_VERSION_INFO/MASTER_PAD_VERSION",
+  "MASTER_PAD_VERSION_INFO/MASTER_PAD_INFO",
+  "Company_Info/Company_Name",
+  "Company_Info/Country",
+  "Company_Info/Company_WebSite_URL",
+  "Company_Info/Contact_Info/Author_First_Name",
+  "Company_Info/Contact_Info/Author_Last_Name",
+  "Company_Info/Contact_Info/Author_Email",
+  "Company_Info/Contact_Info/Contact_First_Name",
+  "Company_Info/Contact_Info/Contact_Last_Name",
+  "Company_Info/Contact_Info/Contact_Email",
+  "Company_Info/Support_Info/Support_Email",
+  "Program_Info/Program_Name",
+  "Program_Info/Program_Version",
+  "Program_Info/Program_Release_Month",
+  "Program_Info/Program_Release_Day",
+  "Program_Info/Program_Release_Year",
+  "Program_Info/Program_Cost_Dollars",
+  "Program_Info/Program_Type",
+  "Program_Info/Program_Release_Status",
+  "Program_Info/Program_Install_Support",
+  "Program_Info/Program_OS_Support",
+  "Program_Info/Program_Language",
+  "Program_Info/File_Info/File_Size_Bytes",
+  "Program_Info/File_Info/File_Size_K",
+  "Program_Info/File_Info/File_Size_MB",
+  "Program_Info/Expire_Info/Has_Expire_Info",
+  "Program_Info/Program_Change_Info",
+  "Program_Info/Program_Category_Class",
+  "Program_Info/Program_Specific_Category",
+  "Program_Info/Program_System_Requirements",
+  "Web_Info/Application_URLs/Application_Info_URL",
+  "Web_Info/Application_URLs/Application_Screenshot_URL",
+  "Web_Info/Application_URLs/Application_Icon_URL",
+  "Web_Info/Application_URLs/Application_XML_File_URL",
+  "Web_Info/Download_URLs/Primary_Download_URL",
+  "Permissions/Distribution_Permissions",
+  "Permissions/EULA",
+];
 
-const PAD_OS_TOKENS = new Set([
-  "Win95", "Win98", "WinME", "WinNT 3.x", "WinNT 4.x", "Win2000", "WinXP",
-  "Win2003", "WinVista", "WinVista x64", "Win7 x32", "Win7 x64",
-  "Win 8", "Win8 x64", "Win10 x32", "Win10 x64", "Win11 x64",
-  "WinServer", "WinMobile", "WinCE", "WinOther", "Handheld/Mobile Other",
-  "Java", "Linux", "Linux Console", "Linux Gnome", "Linux GPL",
-  "Linux Open Source", "Mac OS X", "Mac Other", "MS-DOS", "Netware",
-  "OpenVMS", "Palm", "Pocket PC", "Symbian", "Unix", "Android",
-  "BlackBerry", "iPhone", "iPod", "iTouch", "Other",
-]);
+// Layer 2. PAD 4.0 permits plain http in its URL patterns; this site is
+// https-only, so any non-empty *_URL value must be an absolute https URL.
+const PAD_HTTPS_URL_SUFFIX = "_URL";
 
-const PAD_LANGUAGE_TOKENS = new Set([
-  "Arabic", "Bulgarian", "Byelorussian", "Catalan", "Chinese",
-  "ChineseSimplified", "ChineseTraditional", "Croatian", "Czech", "Danish",
-  "Dutch", "English", "Estonian", "Finnish", "French", "German", "Greek",
-  "Hebrew", "Hungarian", "Icelandic", "Indonesian", "Italian", "Japanese",
-  "Korean", "Latvian", "Lithuanian", "Norwegian", "Polish", "Portuguese",
-  "Romanian", "Russian", "Serbian", "Slovak", "Slovenian", "Spanish",
-  "Swedish", "Thai", "Turkish", "Ukrainian", "Vietnamese", "Other",
-]);
+// Layer 2. These must resolve to a real file under src/assets/.
+const PAD_ASSET_ELEMENTS = [
+  "Web_Info/Application_URLs/Application_Screenshot_URL",
+  "Web_Info/Application_URLs/Application_Icon_URL",
+];
 
-// Per-language description block: element name -> max length.
-const PAD_DESC_FIELDS = {
-  Keywords: 250,
-  Char_Desc_45: 45,
-  Char_Desc_80: 80,
-  Char_Desc_250: 250,
-  Char_Desc_450: 450,
-  Char_Desc_2000: 2000,
-};
+// Layer 2. Fields the 4.0 pattern would allow to span lines, but which this
+// project keeps to a single line so catalog listings render predictably.
+const PAD_SINGLE_LINE_ELEMENTS = ["Program_Info/Program_Change_Info"];
 
-// Every element the contract requires to exist (possibly empty), with
-// constraints. required = must be non-empty; max = decoded length cap;
-// pattern = full-match regex; url = must be an absolute https URL when
-// non-empty (required + url = must be present and a URL).
-const PAD_RULES = {
-  "MASTER_PAD_VERSION_INFO/MASTER_PAD_VERSION": { required: true, pattern: /^3\.11$/ },
-  "MASTER_PAD_VERSION_INFO/MASTER_PAD_EDITOR": { max: 100 },
-  "MASTER_PAD_VERSION_INFO/MASTER_PAD_INFO": { required: true },
-  "Company_Info/Company_Name": { required: true, max: 40 },
-  "Company_Info/Address_1": { max: 40 },
-  "Company_Info/Address_2": { max: 40 },
-  "Company_Info/City_Town": { max: 40 },
-  "Company_Info/State_Province": { max: 30 },
-  "Company_Info/Zip_Postal_Code": { max: 20 },
-  "Company_Info/Country": { required: true, max: 40 },
-  "Company_Info/Company_WebSite_URL": { required: true, url: true },
-  "Company_Info/Contact_Info/Author_First_Name": { required: true, max: 30 },
-  "Company_Info/Contact_Info/Author_Last_Name": { required: true, max: 30 },
-  "Company_Info/Contact_Info/Author_Email": { required: true, email: true },
-  "Company_Info/Contact_Info/Contact_First_Name": { required: true, max: 30 },
-  "Company_Info/Contact_Info/Contact_Last_Name": { required: true, max: 30 },
-  "Company_Info/Contact_Info/Contact_Email": { required: true, email: true },
-  "Company_Info/Support_Info/Sales_Email": { email: true },
-  "Company_Info/Support_Info/Support_Email": { email: true },
-  "Company_Info/Support_Info/General_Email": { email: true },
-  "Company_Info/Support_Info/Sales_Phone": { max: 40 },
-  "Company_Info/Support_Info/Support_Phone": { max: 40 },
-  "Company_Info/Support_Info/General_Phone": { max: 40 },
-  "Company_Info/Support_Info/Fax_Phone": { max: 40 },
-  "Program_Info/Program_Name": { required: true, max: 40 },
-  "Program_Info/Program_Version": { required: true, max: 15 },
-  "Program_Info/Program_Release_Month": { required: true, pattern: /^(0[1-9]|1[0-2])$/ },
-  "Program_Info/Program_Release_Day": { required: true, pattern: /^(0[1-9]|[12]\d|3[01])$/ },
-  "Program_Info/Program_Release_Year": { required: true, pattern: /^\d{4}$/ },
-  "Program_Info/Program_Cost_Dollars": { required: true, pattern: /^\d+(\.\d{1,2})?$/ },
-  "Program_Info/Program_Cost_Other_Code": { max: 10 },
-  "Program_Info/Program_Cost_Other": { max: 20 },
-  "Program_Info/Program_Type": { required: true },
-  "Program_Info/Program_Release_Status": { required: true },
-  "Program_Info/Program_Install_Support": { required: true },
-  "Program_Info/Program_OS_Support": { required: true },
-  "Program_Info/Program_Language": { required: true },
-  "Program_Info/Program_Change_Info": { max: 300, singleLine: true },
-  "Program_Info/Program_Specific_Category": { required: true, max: 2000 },
-  "Program_Info/Program_Category_Class": { required: true, max: 80, pattern: /^[\w &.'-]+::[\w &.,'()/-]+$/ },
-  "Program_Info/Program_System_Requirements": { max: 100 },
-  "Program_Info/File_Info/File_Size_Bytes": { required: true, pattern: /^\d+$/ },
-  "Program_Info/File_Info/File_Size_K": { required: true, pattern: /^\d+$/ },
-  "Program_Info/File_Info/File_Size_MB": { required: true, pattern: /^\d+(\.\d{1,2})?$/ },
-  "Program_Info/Expire_Info/Has_Expire_Info": { required: true, pattern: /^[YN]$/ },
-  "Program_Info/Expire_Info/Expire_Count": {},
-  "Program_Info/Expire_Info/Expire_Based_On": {},
-  "Program_Info/Expire_Info/Expire_Other_Info": {},
-  "Program_Info/Expire_Info/Expire_Month": {},
-  "Program_Info/Expire_Info/Expire_Day": {},
-  "Program_Info/Expire_Info/Expire_Year": {},
-  "Web_Info/Application_URLs/Application_Info_URL": { required: true, url: true },
-  "Web_Info/Application_URLs/Application_Order_URL": { url: true },
-  "Web_Info/Application_URLs/Application_Screenshot_URL": { required: true, url: true, asset: true },
-  "Web_Info/Application_URLs/Application_Icon_URL": { required: true, url: true, asset: true },
-  "Web_Info/Application_URLs/Application_XML_File_URL": { required: true, url: true },
-  "Web_Info/Download_URLs/Primary_Download_URL": { required: true, url: true },
-  "Web_Info/Download_URLs/Secondary_Download_URL": { url: true },
-  "Web_Info/Download_URLs/Additional_Download_URL_1": { url: true },
-  "Web_Info/Download_URLs/Additional_Download_URL_2": { url: true },
-  "Permissions/Distribution_Permissions": { required: true, max: 2000 },
-  "Permissions/EULA": { required: true, max: 20000 },
-};
 
 function padDecode(text) {
   return text
@@ -209,8 +164,10 @@ function padDecode(text) {
     .replace(/&amp;/g, "&");
 }
 
-// Minimal parser for the attribute-free, paired-tag XML this build emits.
-function padParse(src, fail) {
+// Minimal parser for attribute-free, paired-tag XML. Serves both documents
+// this gate handles: the pad.xml the build emits, and the vendored PAD 4.0
+// specification (neither uses attributes).
+function padParse(src, fail, expectedRoot) {
   const decl = src.indexOf("?>");
   let pos = decl >= 0 ? decl + 2 : 0;
   const doc = { name: null, children: [], text: "" };
@@ -239,10 +196,92 @@ function padParse(src, fail) {
   }
   if (stack.length !== 1) fail(`malformed XML: unclosed <${stack[stack.length - 1].name}>`);
   const roots = doc.children.filter((n) => n.name);
-  if (roots.length !== 1 || roots[0].name !== "XML_DIZ_INFO") {
-    fail("root element must be XML_DIZ_INFO");
+  if (roots.length !== 1 || roots[0].name !== expectedRoot) {
+    fail(`root element must be ${expectedRoot}`);
   }
   return roots[0];
+}
+
+// ---------------------------------------------------------------------------
+// PAD 4.0 specification reader (spec: specs/006-pad-v4-compliance/)
+//
+// The format rules this gate enforces are not hand-maintained — they are read
+// from the PAD 4.0 specification itself, vendored at vendor/pad-4.0-spec.xml.
+// PAD 4.0 is the final revision: the originating association dissolved in 2021
+// and released it into the public domain, and its host no longer resolves, so
+// the file is committed rather than fetched (the build stays offline). Each of
+// its 104 <Field> entries carries an element Path, a human-readable constraint
+// and a validation RegEx. Deriving the rules from that file is what stops this
+// gate drifting away from the format, which is exactly what the hand-written
+// 3.11 tables it replaced had done.
+// ---------------------------------------------------------------------------
+
+const PAD_SPEC_FILE = path.join(__dirname, "vendor", "pad-4.0-spec.xml");
+const PAD_SPEC_VERSION = "4.0";
+const PAD_SPEC_MIN_FIELDS = 104;
+
+let padSpecCache = null;
+
+function readPadSpec() {
+  if (padSpecCache) return padSpecCache;
+
+  const fail = (msg) => {
+    throw new Error(`pad spec: ${msg}`);
+  };
+
+  let src;
+  try {
+    src = fs.readFileSync(PAD_SPEC_FILE, "utf8");
+  } catch {
+    fail(`cannot read vendor/pad-4.0-spec.xml — the PAD 4.0 specification must be vendored in the repository`);
+  }
+
+  const root = padParse(src, fail, "PAD_Spec");
+  const child = (node, name) => node.children.find((c) => c.name === name);
+  const textOf = (node, name) => {
+    const found = child(node, name);
+    return found ? padDecode(found.text).trim() : "";
+  };
+
+  const specVersion = textOf(root, "PAD_Spec_Version");
+  if (specVersion !== PAD_SPEC_VERSION) {
+    fail(`PAD_Spec_Version is ${JSON.stringify(specVersion)}, expected ${PAD_SPEC_VERSION}`);
+  }
+
+  const fieldsNode = child(root, "Fields");
+  const fields = fieldsNode ? fieldsNode.children.filter((c) => c.name === "Field") : [];
+  if (fields.length < PAD_SPEC_MIN_FIELDS) {
+    fail(`found ${fields.length} <Field> entries, expected at least ${PAD_SPEC_MIN_FIELDS}`);
+  }
+
+  const rules = new Map();
+  for (const field of fields) {
+    const fullPath = textOf(field, "Path");
+    if (!fullPath.startsWith("XML_DIZ_INFO/")) {
+      fail(`unexpected field path ${JSON.stringify(fullPath)}`);
+    }
+    // Keyed by path, never by Name: "Keywords" exists at two different paths
+    // (Program_Descriptions/English/ and Press_Release/) with different limits.
+    const key = fullPath.slice("XML_DIZ_INFO/".length);
+    const source = textOf(field, "RegEx");
+    let pattern = null;
+    if (source) {
+      try {
+        // The patterns are .NET-flavoured; \Z (end of input) becomes $, which
+        // is exactly what $ asserts in JavaScript without the /m flag.
+        pattern = new RegExp(source.replace(/\\Z/g, "$"));
+      } catch (error) {
+        fail(`${key}: specification pattern does not compile (${error.message})`);
+      }
+    }
+    // An empty <RegEx> means the field carries no constraint at all — nine do
+    // (the Affiliates_* group and ASP_Member_Number). It must stay null:
+    // new RegExp("") would match anything and silently pass every value.
+    rules.set(key, { pattern, doc: textOf(field, "RegExDocumentation") });
+  }
+
+  padSpecCache = { specVersion, rules, knownPaths: new Set(rules.keys()) };
+  return padSpecCache;
 }
 
 function validatePad(xml) {
@@ -252,13 +291,14 @@ function validatePad(xml) {
   const site = JSON.parse(
     fs.readFileSync(path.join(__dirname, "src", "_data", "site.json"), "utf8")
   );
+  const spec = readPadSpec();
 
   if (xml.charCodeAt(0) === 0xfeff) fail("file must not start with a BOM");
   if (!xml.trimStart().startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
     fail("missing UTF-8 XML declaration");
   }
 
-  const root = padParse(xml, fail);
+  const root = padParse(xml, fail, "XML_DIZ_INFO");
   const find = (node, pathStr) =>
     pathStr.split("/").reduce(
       (cur, name) => cur && cur.children.find((c) => c.name === name),
@@ -266,50 +306,59 @@ function validatePad(xml) {
     );
   const textOf = (node) => padDecode(node.text).trim();
 
-  const checkValue = (label, value, rule) => {
-    if (rule.required && !value) fail(`${label}: required value is empty`);
-    if (value.includes("<")) fail(`${label}: markup is not allowed in PAD text`);
-    if (rule.max && value.length > rule.max) {
-      fail(`${label}: ${value.length} chars exceeds the ${rule.max}-char limit`);
-    }
-    if (rule.singleLine && /[\r\n]/.test(value)) fail(`${label}: line breaks are not allowed`);
-    if (value && rule.pattern && !rule.pattern.test(value)) {
-      fail(`${label}: value ${JSON.stringify(value)} does not match the required format`);
-    }
-    if (value && rule.url && !/^https:\/\/\S+$/.test(value)) {
-      fail(`${label}: must be an absolute https URL, got ${JSON.stringify(value)}`);
-    }
-    if (value && rule.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      fail(`${label}: must be an e-mail address, got ${JSON.stringify(value)}`);
-    }
-    if (rule.asset && value) {
-      const prefix = `${site.url}/assets/`;
-      if (!value.startsWith(prefix)) fail(`${label}: must live under ${prefix}`);
-      const assetFile = path.join(__dirname, "src", "assets", value.slice(prefix.length));
-      if (!fs.existsSync(assetFile)) fail(`${label}: asset ${value.slice(prefix.length)} not found in src/assets/`);
+  // Description blocks repeat one element set per language; the specification
+  // only enumerates the English ones, so every block is checked against those.
+  const asSpecPath = (elementPath) =>
+    elementPath.replace(/^Program_Descriptions\/[^/]+/, "Program_Descriptions/English");
+
+  // -------------------------------------------------------------------------
+  // Layer 1 — PAD 4.0 conformance, every rule from the vendored specification.
+  // -------------------------------------------------------------------------
+  const seen = new Set();
+  const walk = (node, trail) => {
+    for (const child of node.children) {
+      const elementPath = [...trail, child.name].join("/");
+      seen.add(elementPath);
+      if (child.children.length) {
+        walk(child, [...trail, child.name]);
+        continue;
+      }
+      const rule = spec.rules.get(asSpecPath(elementPath));
+      if (!rule) continue;
+      const value = textOf(child);
+      if (value.includes("<")) fail(`${elementPath}: markup is not allowed in PAD text`);
+      if (rule.pattern && !rule.pattern.test(value)) {
+        fail(
+          `${elementPath}: value ${JSON.stringify(value)} is not valid PAD ${spec.specVersion}` +
+          ` — needs: ${rule.doc}`
+        );
+      }
+      if (PAD_SINGLE_LINE_ELEMENTS.includes(elementPath) && /[\r\n]/.test(value)) {
+        fail(`${elementPath}: line breaks are not allowed`);
+      }
+      if (value && child.name.endsWith(PAD_HTTPS_URL_SUFFIX) && !/^https:\/\/\S+$/.test(value)) {
+        fail(`${elementPath}: must be an absolute https URL, got ${JSON.stringify(value)}`);
+      }
     }
   };
+  walk(root, []);
 
-  for (const [rulePath, rule] of Object.entries(PAD_RULES)) {
-    const node = find(root, rulePath);
-    if (!node) fail(`${rulePath}: element is missing`);
-    checkValue(rulePath, textOf(node), rule);
+  // -------------------------------------------------------------------------
+  // Layer 2 — project facts the format cannot express.
+  // -------------------------------------------------------------------------
+  for (const elementPath of PAD_REQUIRED_ELEMENTS) {
+    const node = find(root, elementPath);
+    if (!node) fail(`${elementPath}: element is missing`);
+    if (!textOf(node)) fail(`${elementPath}: required value is empty`);
   }
 
-  // Enumerations and token lists.
-  for (const [rulePath, allowed] of Object.entries(PAD_ENUMS)) {
-    const value = textOf(find(root, rulePath));
-    if (!allowed.includes(value)) {
-      fail(`${rulePath}: ${JSON.stringify(value)} is not one of: ${allowed.join(", ")}`);
-    }
-  }
-  for (const [rulePath, tokens] of [
-    ["Program_Info/Program_OS_Support", PAD_OS_TOKENS],
-    ["Program_Info/Program_Language", PAD_LANGUAGE_TOKENS],
-  ]) {
-    for (const token of textOf(find(root, rulePath)).split(",")) {
-      const trimmed = token.trim();
-      if (trimmed && !tokens.has(trimmed)) fail(`${rulePath}: unknown token ${JSON.stringify(trimmed)}`);
+  for (const elementPath of PAD_ASSET_ELEMENTS) {
+    const value = textOf(find(root, elementPath));
+    const prefix = `${site.url}/assets/`;
+    if (!value.startsWith(prefix)) fail(`${elementPath}: must live under ${prefix}`);
+    const assetFile = path.join(__dirname, "src", "assets", value.slice(prefix.length));
+    if (!fs.existsSync(assetFile)) {
+      fail(`${elementPath}: asset ${value.slice(prefix.length)} not found in src/assets/`);
     }
   }
 
@@ -348,7 +397,13 @@ function validatePad(xml) {
     fail(`Application_XML_File_URL: must be ${site.url}/pad.xml`);
   }
 
-  // Language description blocks.
+  // Language description blocks. The field set and its limits come from the
+  // specification's English paths; which languages are mandatory is ours.
+  const descFields = [...spec.knownPaths]
+    .filter((p) => p.startsWith("Program_Descriptions/English/"))
+    .map((p) => p.slice("Program_Descriptions/English/".length));
+  const languagePattern = spec.rules.get("Program_Info/Program_Language").pattern;
+
   const descriptions = find(root, "Program_Descriptions");
   if (!descriptions) fail("Program_Descriptions: element is missing");
   const blockNames = descriptions.children.map((c) => c.name);
@@ -356,15 +411,15 @@ function validatePad(xml) {
     if (!blockNames.includes(language)) fail(`Program_Descriptions: required language block <${language}> is missing`);
   }
   for (const block of descriptions.children) {
-    if (!PAD_LANGUAGE_TOKENS.has(block.name)) fail(`Program_Descriptions: <${block.name}> is not a known PAD language`);
-    for (const [field, max] of Object.entries(PAD_DESC_FIELDS)) {
+    // A block name must be a single PAD language: the Program_Language pattern
+    // also accepts comma-separated lists, which is meaningless for a block.
+    if (block.name.includes(",") || !languagePattern.test(block.name)) {
+      fail(`Program_Descriptions: <${block.name}> is not a PAD ${spec.specVersion} language`);
+    }
+    for (const field of descFields) {
       const node = block.children.find((c) => c.name === field);
       if (!node) fail(`Program_Descriptions/${block.name}/${field}: element is missing`);
-      checkValue(`Program_Descriptions/${block.name}/${field}`, textOf(node), {
-        required: true,
-        max,
-        singleLine: field === "Char_Desc_45" || field === "Char_Desc_80",
-      });
+      if (!textOf(node)) fail(`Program_Descriptions/${block.name}/${field}: required value is empty`);
     }
   }
 }

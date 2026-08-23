@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <XML_DIZ_INFO>
 	<MASTER_PAD_VERSION_INFO>
-		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+		<MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
 		<MASTER_PAD_EDITOR>tandemcommander-web build</MASTER_PAD_EDITOR>
 		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
 	</MASTER_PAD_VERSION_INFO>
@@ -9,7 +9,6 @@
 		<Company_Name>Pavel Stupka</Company_Name>
 		<Address_1></Address_1>
 		<Address_2></Address_2>
-		<City_Town></City_Town>
 		<State_Province></State_Province>
 		<Zip_Postal_Code></Zip_Postal_Code>
 		<Country>Czech Republic</Country>
@@ -23,9 +22,7 @@
 			<Contact_Email>pavel.stupka@gmail.com</Contact_Email>
 		</Contact_Info>
 		<Support_Info>
-			<Sales_Email></Sales_Email>
 			<Support_Email>pavel.stupka@gmail.com</Support_Email>
-			<General_Email></General_Email>
 			<Sales_Phone></Sales_Phone>
 			<Support_Phone></Support_Phone>
 			<General_Phone></General_Phone>
@@ -44,12 +41,8 @@
 		<Program_Type>Freeware</Program_Type>
 		<Program_Release_Status>New Release</Program_Release_Status>
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
-		<Program_OS_Support>Win11 x64</Program_OS_Support>
+		<Program_OS_Support>WinOther</Program_OS_Support>
 		<Program_Language>English</Program_Language>
-		<Program_Change_Info>Full Unicode, long paths; New SFTP plugin; Markdown View; PictView, repaired</Program_Change_Info>
-		<Program_Specific_Category>System Utilities</Program_Specific_Category>
-		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
-		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
 		<File_Info>
 			<File_Size_Bytes>6805464</File_Size_Bytes>
 			<File_Size_K>6646</File_Size_K>
@@ -64,6 +57,10 @@
 			<Expire_Day></Expire_Day>
 			<Expire_Year></Expire_Year>
 		</Expire_Info>
+		<Program_Change_Info>Full Unicode, long paths; New SFTP plugin; Markdown View; PictView, repaired</Program_Change_Info>
+		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
 	</Program_Info>
 	<Program_Descriptions>
 		<English>
