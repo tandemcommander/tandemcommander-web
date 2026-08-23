@@ -93,15 +93,39 @@ instead of a hand-filled form — at:
 ⚠️ **This URL is permanent.** Catalogs store it and re-crawl it for updates — renaming or
 moving the file after it has been submitted anywhere breaks every existing listing.
 
-How it fits together (full design in `specs/005-pad-file/`):
+The file targets **PAD 4.0** — the final revision of the format. Its originating association
+dissolved in 2021 and released the specification into the public domain, and the host that
+served it is gone, so the machine-readable specification is **vendored** in this repository at
+`vendor/pad-4.0-spec.xml` (104 field definitions, each with a validation pattern). The build
+validates against that file, so it stays offline and deterministic.
+
+How it fits together (full design in `specs/006-pad-v4-compliance/`, originally `specs/005-pad-file/`):
 
 - `src/pad.njk` renders the XML from `site.json`, `installer.js`, `pad.js` and the `pad.*`
   keys in the i18n catalogs (English **and** Czech description blocks in one file).
-- A build gate in `eleventy.config.js` (`validatePad`) checks the rendered file against the
-  PAD contract — required fields, length caps, enumerations, URL shapes, size/date consistency
-  with `site.json` — and **fails the build** on any violation, so an invalid PAD never ships.
+- A build gate in `eleventy.config.js` (`validatePad`) checks the rendered file in two layers
+  and **fails the build** on any violation, so a non-compliant PAD never ships:
+  1. **PAD 4.0 conformance**, read from the vendored specification — element paths, value
+     patterns and every controlled vocabulary. There is no hand-maintained list of allowed
+     values here; adding one would be a step backwards, because hand-transcribed tables are
+     exactly what drifted out of spec before.
+  2. **Project facts the format cannot express** — which elements this project treats as
+     mandatory, plus agreement with `site.json` (release date, installer size, canonical URLs,
+     screenshot/icon files present).
 - The catalog-facing texts live under the `pad` namespace in `src/_data/i18n/en.json` and
   `cs.json`; each key has a hard character cap (45/80/250/450/2000, keywords 250).
+
+### Operating-system value: use `WinOther`
+
+PAD 4.0's operating-system vocabulary was frozen around 2012. Its newest Windows entries are
+`Windows 8`, `Windows RT` and `Windows Phone 7`/`8` — **there is no Windows 10 or Windows 11
+token, and there never will be.** So `Program_OS_Support` carries the generic **`WinOther`**,
+and the real requirement lives in `Program_System_Requirements` (`Windows 11, x64`), which
+catalogs display to visitors.
+
+**Never pick a lower Windows token to look more specific** — `Windows 8` would publish a false
+compatibility claim. This rule applies unchanged to every future Windows release: when the
+actual version has no PAD 4.0 token, it is `WinOther` plus accurate system requirements.
 
 To list the program on a new catalog, hand it the URL above — no other data entry needed.
 

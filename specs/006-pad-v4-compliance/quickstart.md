@@ -100,7 +100,8 @@ Make each edit, run `npm run build`, confirm it **fails naming the element**, th
 | 5 | re-add `<Sales_Email></Sales_Email>` | `Sales_Email` — needs an e-mail address |
 | 6 | rename an element, e.g. `<Program_Nam>` | unknown element — not a PAD 4.0 path |
 | 7 | `Program_Type` → `Free` | `Program_Type` — not in the 4.0 list |
-| 8 | rename the `<Czech>` block to `<Czechh>` | not a 4.0 language token |
+| 8 | rename the `<Czech>` block to `<Czechh>` | `required language block <Czech> is missing` — the required-language check fires before the language-token check, so this is the message you get, not "unknown language" |
+| 8b | add an extra block with a non-PAD name, e.g. `<Klingon>` | `<Klingon> is not a PAD 4.0 language` — this is the case that actually exercises the language-token check |
 | 9 | delete the `<Czech>` block | required language block missing |
 | 10 | over-length `pad.desc45` in `cs.json` | `Char_Desc_45` — exceeds 45 characters |
 | 11 | `<b>x</b>` inside `pad.desc80` | markup not allowed in PAD text |
@@ -108,6 +109,8 @@ Make each edit, run `npm run build`, confirm it **fails naming the element**, th
 | 13 | change `releaseDate` without rebuilding derived values | release date parts disagree with `site.json` |
 
 Items 1–6 are the defects this feature fixes; 7–13 are 005's protections, which must survive the gate rewrite.
+
+**Result of the T016 run**: all 14 cases (13 + 8b) reject the build, and the unmodified build is green.
 
 ---
 

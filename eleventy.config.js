@@ -314,17 +314,31 @@ function validatePad(xml) {
   // -------------------------------------------------------------------------
   // Layer 1 — PAD 4.0 conformance, every rule from the vendored specification.
   // -------------------------------------------------------------------------
-  const seen = new Set();
+  // Container paths are not fields, so they are not in the specification's
+  // path list; a misnamed container is caught by matching it against the known
+  // paths' prefixes.
+  const knownContainers = new Set();
+  for (const knownPath of spec.knownPaths) {
+    const parts = knownPath.split("/");
+    for (let i = 1; i < parts.length; i++) knownContainers.add(parts.slice(0, i).join("/"));
+  }
+
   const walk = (node, trail) => {
     for (const child of node.children) {
       const elementPath = [...trail, child.name].join("/");
-      seen.add(elementPath);
+      const specPath = asSpecPath(elementPath);
       if (child.children.length) {
+        if (!knownContainers.has(specPath)) {
+          fail(`${elementPath}: not an element of PAD ${spec.specVersion}`);
+        }
         walk(child, [...trail, child.name]);
         continue;
       }
-      const rule = spec.rules.get(asSpecPath(elementPath));
-      if (!rule) continue;
+      const rule = spec.rules.get(specPath);
+      // An element the specification does not define cannot be validated, and
+      // a path-driven consumer would silently ignore it — so a typo would ship
+      // unnoticed. Reject it instead.
+      if (!rule) fail(`${elementPath}: not an element of PAD ${spec.specVersion}`);
       const value = textOf(child);
       if (value.includes("<")) fail(`${elementPath}: markup is not allowed in PAD text`);
       if (rule.pattern && !rule.pattern.test(value)) {
@@ -342,6 +356,17 @@ function validatePad(xml) {
     }
   };
   walk(root, []);
+
+  // The one defect the specification's own patterns cannot catch: its version
+  // pattern (^\d.\d+$) accepts "3.11" perfectly happily, so without this the
+  // file could go back to declaring a superseded revision unnoticed.
+  const declaredVersion = textOf(find(root, "MASTER_PAD_VERSION_INFO/MASTER_PAD_VERSION"));
+  if (declaredVersion !== spec.specVersion) {
+    fail(
+      `MASTER_PAD_VERSION: declares ${JSON.stringify(declaredVersion)} but the vendored` +
+      ` specification is PAD ${spec.specVersion}`
+    );
+  }
 
   // -------------------------------------------------------------------------
   // Layer 2 — project facts the format cannot express.

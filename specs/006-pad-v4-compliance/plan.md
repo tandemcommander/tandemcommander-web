@@ -44,7 +44,7 @@ Six content fixes plus one reordering bring the file to zero violations: version
 | No new toolchain or test framework | **PASS** — same build-transform gate pattern as the existing i18n gates |
 | Single source of truth, no duplicated facts | **IMPROVED** — the gate's rules stop being a hand-transcribed copy of the spec and become a read of the spec itself |
 | Build stays offline and deterministic | **PASS** — the spec is vendored; nothing is fetched at build time |
-| Net complexity | **REDUCED** — ~115 lines of hand-maintained rule tables (`PAD_RULES`, `PAD_ENUMS`, `PAD_OS_TOKENS`, `PAD_LANGUAGE_TOKENS`) are replaced by a ~30-line spec reader plus a small project-level required-fields list |
+| Net complexity | **Mixed — and the pre-implementation estimate here was wrong.** No *format knowledge* is hand-maintained any more: 105 lines of rule/vocabulary tables (`PAD_RULES`, `PAD_ENUMS`, `PAD_OS_TOKENS`, `PAD_LANGUAGE_TOKENS`, `PAD_DESC_FIELDS`) are gone. But the replacement is bigger than predicted: `readPadSpec` is 80 lines (not ~30), the explicit `PAD_REQUIRED_ELEMENTS` list is 40, and `validatePad` grew 123 → 164. **Measured: `eleventy.config.js` went 451 → 531 lines (+242/−162).** The win is that the drift-prone part is gone, not that the file shrank |
 
 **PASS** (pre-research and post-design).
 
@@ -93,4 +93,4 @@ public/pad.xml               # committed build output — regenerated
 
 ## Complexity Tracking
 
-No constitution violations — this feature reduces complexity rather than adding it. Table not needed.
+No constitution violations. The feature removes the drift-prone hand-maintained format tables, but it is not a net line reduction — `eleventy.config.js` grew 451 → 531 lines. See the Net complexity row above for the measured figures; the plan's original "~30-line spec reader" estimate was optimistic by roughly a factor of three.
