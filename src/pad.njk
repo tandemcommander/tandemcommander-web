@@ -2,37 +2,70 @@
 permalink: "pad.xml"
 eleventyExcludeFromCollections: true
 ---
+{#-
+  PAD 4.0 file (spec: specs/006-pad-v4-compliance/).
+
+  Element set and order mirror the reference PAD 4.0 implementation — AppVisor's
+  output, as published by PSPad (http://www.pspad.com/pad_file.xml), a Czech
+  program listed on slunecnice.cz and the only PAD 4.0 file we can confirm a
+  target catalog accepts. The vendored specification's flat field list is NOT a
+  document-order description, so the reference's order is authoritative here.
+
+  Sections deliberately not emitted: PublisherID / BrandID / AppID / CERTIFICATE_ID
+  (identifiers issued by the defunct AppVisor registry — unobtainable), and the
+  RoboSoft, Dynamic_PAD, Site, Affiliates and NewsFeed sections (AppVisor's own
+  submission bookkeeping, carrying no product information).
+-#}
 <?xml version="1.0" encoding="UTF-8"?>
 <XML_DIZ_INFO>
 	<MASTER_PAD_VERSION_INFO>
 		<MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
 		<MASTER_PAD_EDITOR>tandemcommander-web build</MASTER_PAD_EDITOR>
+		<MASTER_PAD_EDITOR_URL>{{ site.github.repoUrl }}</MASTER_PAD_EDITOR_URL>
 		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+		<CERTIFIED>N</CERTIFIED>
+		<CERTIFICATE_ID></CERTIFICATE_ID>
+		<CERTIFICATE_LICENSE></CERTIFICATE_LICENSE>
 	</MASTER_PAD_VERSION_INFO>
 	<Company_Info>
 		<Company_Name>{{ site.author.name }}</Company_Name>
-		<Address_1></Address_1>
-		<Address_2></Address_2>
-		<State_Province></State_Province>
-		<Zip_Postal_Code></Zip_Postal_Code>
 		<Country>Czech Republic</Country>
+		<State_Province>{{ site.author.stateProvince }}</State_Province>
+{%- if site.author.city %}
+		<City_Town>{{ site.author.city }}</City_Town>
+{%- endif %}
+		<Zip_Postal_Code>{{ site.author.zip }}</Zip_Postal_Code>
+		<Address_1>{{ site.author.address1 }}</Address_1>
+		<Address_2></Address_2>
 		<Company_WebSite_URL>{{ site.url }}</Company_WebSite_URL>
 		<Contact_Info>
-			<Author_First_Name>{{ pad.authorFirstName }}</Author_First_Name>
-			<Author_Last_Name>{{ pad.authorLastName }}</Author_Last_Name>
-			<Author_Email>{{ site.author.email }}</Author_Email>
 			<Contact_First_Name>{{ pad.authorFirstName }}</Contact_First_Name>
 			<Contact_Last_Name>{{ pad.authorLastName }}</Contact_Last_Name>
 			<Contact_Email>{{ site.author.email }}</Contact_Email>
+			<Author_First_Name>{{ pad.authorFirstName }}</Author_First_Name>
+			<Author_Last_Name>{{ pad.authorLastName }}</Author_Last_Name>
+			<Author_Email>{{ site.author.email }}</Author_Email>
+			<Contact_Phone></Contact_Phone>
 		</Contact_Info>
 		<Support_Info>
+			<Sales_Email>{{ site.author.email }}</Sales_Email>
 			<Support_Email>{{ site.author.email }}</Support_Email>
+			<General_Email>{{ site.author.email }}</General_Email>
 			<Sales_Phone></Sales_Phone>
 			<Support_Phone></Support_Phone>
 			<General_Phone></General_Phone>
 			<Fax_Phone></Fax_Phone>
 		</Support_Info>
+		<GooglePlusPage></GooglePlusPage>
+		<LinkedinPage></LinkedinPage>
+		<TwitterCompanyPage></TwitterCompanyPage>
+		<FacebookCompanyPage></FacebookCompanyPage>
 	</Company_Info>
+	<ASP>
+		<ASP_FORM>Y</ASP_FORM>
+		<ASP_Member>N</ASP_Member>
+		<ASP_Member_Number></ASP_Member_Number>
+	</ASP>
 	<Program_Info>
 		<Program_Name>{{ site.name }}</Program_Name>
 		<Program_Version>{{ site.version }}</Program_Version>
@@ -43,15 +76,30 @@ eleventyExcludeFromCollections: true
 		<Program_Cost_Other_Code></Program_Cost_Other_Code>
 		<Program_Cost_Other></Program_Cost_Other>
 		<Program_Type>Freeware</Program_Type>
+		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_Categories>System Utilities :: File &amp; Disk Management</Program_Categories>
 		<Program_Release_Status>New Release</Program_Release_Status>
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_Target_Platform>Windows</Program_Target_Platform>
 		<Program_OS_Support>WinOther</Program_OS_Support>
 		<Program_Language>English</Program_Language>
+		<Program_Change_Info>{{ pad.changeInfo }}</Program_Change_Info>
+		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
+		<Limitations>none</Limitations>
+		<Awards></Awards>
 		<File_Info>
 			<File_Size_Bytes>{{ pad.fileSizeBytes }}</File_Size_Bytes>
 			<File_Size_K>{{ pad.fileSizeK }}</File_Size_K>
 			<File_Size_MB>{{ pad.fileSizeMB }}</File_Size_MB>
 		</File_Info>
+		<FacebookFanPage></FacebookFanPage>
+		<VideoLink1URL></VideoLink1URL>
+		<VideoLink2URL></VideoLink2URL>
+		<Includes_JAVA_VM></Includes_JAVA_VM>
+		<Includes_DirectX></Includes_DirectX>
+		<Includes_VB_Runtime></Includes_VB_Runtime>
+		<GooglePlusFanPage></GooglePlusFanPage>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>
 			<Expire_Count></Expire_Count>
@@ -61,10 +109,6 @@ eleventyExcludeFromCollections: true
 			<Expire_Day></Expire_Day>
 			<Expire_Year></Expire_Year>
 		</Expire_Info>
-		<Program_Change_Info>{{ pad.changeInfo }}</Program_Change_Info>
-		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
-		<Program_Specific_Category>Utilities</Program_Specific_Category>
-		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
 	</Program_Info>
 	<Program_Descriptions>
 		<English>
@@ -99,6 +143,15 @@ eleventyExcludeFromCollections: true
 			<Additional_Download_URL_2></Additional_Download_URL_2>
 		</Download_URLs>
 	</Web_Info>
+	{#- Press_Release reuses the already-reviewed English copy; no new prose. -#}
+	<Press_Release>
+		<Keywords>{{ "en" | t("pad.keywords") }}</Keywords>
+		<Headline>{{ site.name }} {{ site.version }} — {{ "en" | t("pad.desc45") }}</Headline>
+		<Summary>{{ "en" | t("pad.desc250") }}</Summary>
+		<Press_Release>{{ "en" | t("pad.desc2000") }}</Press_Release>
+		<Press_Release_Plain>{{ "en" | t("pad.desc450") }}</Press_Release_Plain>
+		<Related_URL>{{ site.url }}</Related_URL>
+	</Press_Release>
 	<Permissions>
 		<Distribution_Permissions>Tandem Commander is free software released under the GNU General Public License v2 or later. Download sites and software catalogs may freely list the program and distribute the official installer in unchanged form. The full source code is available at {{ site.github.repoUrl }}</Distribution_Permissions>
 		<EULA>Tandem Commander is distributed under the GNU General Public License version 2 or later (GPLv2+). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file in the source repository for the full license text: {{ site.github.repoUrl }}</EULA>

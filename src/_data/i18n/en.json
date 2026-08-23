@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Tandem Commander — two-pane file manager for Windows",
-    "description": "A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase — full Unicode, long paths, SFTP, Markdown viewer, light and dark themes. Free under GPLv2.",
-    "ogImageAlt": "Tandem Commander — two-pane file manager for Windows"
+    "title": "Tandem Commander – two-pane file manager for Windows",
+    "description": "A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase – full Unicode, long paths, SFTP, Markdown viewer, light and dark themes and ongoing development. Free under GPLv2.",
+    "ogImageAlt": "Tandem Commander – two-pane file manager for Windows"
   },
   "nav": {
     "themes": "Themes",
@@ -18,9 +18,9 @@
     "langLabel": "Language"
   },
   "hero": {
-    "lockupAlt": "Tandem Commander — two-pane file manager",
-    "title": "The two-pane <br>classic&nbsp;<span class=\"accent\">reborn</span>",
-    "lead": "Two panels, function keys along the bottom, a plugin for everything — the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, connects over SFTP, renders Markdown on F3 — and ships in a dark theme as well as the light one.",
+    "lockupAlt": "Tandem Commander – two-pane file manager",
+    "title": "The two-pane <br>legend&nbsp;<span class=\"accent\">reborn</span>",
+    "lead": "Two panels, function keys along the bottom, a plugin for everything – the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, connects over SFTP, renders Markdown on F3 – and ships in a dark theme as well as the light one.",
     "ctaDownload": "Download for Windows",
     "ctaSource": "Browse the source",
     "note": "Windows installer · Windows 11 · x64 · free under GPLv2"
@@ -28,11 +28,11 @@
   "screens": {
     "kicker": "Two themes, one binary",
     "title": "Light by default. Dark when you want it.",
-    "lead": "The classic light panels are still the default — nothing moved, nothing was reflowed. The new dark theme is the same layout with the same information density, for the people who stopped enjoying white rectangles at 2 a.m. It is still experimental — a few places are not quite final yet.",
+    "lead": "The classic light panels are still the default – nothing moved, nothing was reflowed. The new dark theme is the same layout with the same information density, for the people who stopped enjoying white rectangles at 2 a.m. It is still experimental – a few places are not quite final yet.",
     "lightLabel": "Light",
-    "lightNote": "— the default, unchanged",
+    "lightNote": "– the default, unchanged",
     "darkLabel": "Dark",
-    "darkNote": "— new in Tandem Commander",
+    "darkNote": "– new in Tandem Commander",
     "zoomLabel": "View screenshot full size",
     "lightAlt": "Tandem Commander in its light theme, two file panels side by side",
     "darkAlt": "Tandem Commander in its dark theme, the same two panels",
@@ -48,27 +48,27 @@
     "card2Title": "Keyboard first",
     "card2Text": "Function keys along the bottom edge, a shortcut for everything, and a command line that stays exactly where your hands already are.",
     "card3Title": "Its own core",
-    "card3Text": "<span class=\"mono\">tandemcommander.exe</span> is a program with its own identity: own icon, own window titles, own settings — and a modern core built for Windows 11, with full Unicode and long paths throughout."
+    "card3Text": "<span class=\"mono\">tandemcommander.exe</span> is a program with its own identity: own icon, own window titles, own settings – and a modern core built for Windows 11, with full Unicode and long paths throughout."
   },
   "whatsNew": {
     "kicker": "What's new",
     "title": "What's new in Tandem Commander.",
     "lead": "The main additions and improvements in this release.",
     "entry1Title": "Full Unicode, long paths",
-    "entry1Text": "Names and paths are Unicode end to end — panels, dialogs, viewers, plugins. Accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work.",
+    "entry1Text": "Names and paths are Unicode end to end – panels, dialogs, viewers, plugins. Accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work.",
     "entry2Title": "New SFTP plugin",
-    "entry2Text": "A Linux server in one panel, your disk in the other — built on libssh2 over SSH. Password or private-key auth with host-key verification, unix permissions shown as <span class=\"mono\">drwxr-xr-x</span>, chmod from the panel.",
+    "entry2Text": "A Linux server in one panel, your disk in the other – built on libssh2 over SSH. Password or private-key auth with host-key verification, unix permissions shown as <span class=\"mono\">drwxr-xr-x</span>, chmod from the panel.",
     "entry3Title": "Markdown View",
     "entry3Text": "F3 on a <span class=\"mono\">.md</span> file opens the new mdview plugin: rendered headings, lists, tables and code blocks instead of raw markup.",
     "entry4Title": "PictView, repaired",
-    "entry4Text": "The image viewer works again — pictures open reliably from either panel, with the fixes carried into the new Unicode-clean core."
+    "entry4Text": "The image viewer works again – pictures open reliably from either panel, with the fixes carried into the new Unicode-clean core."
   },
   "project": {
     "kicker": "The project",
     "title": "Open source, and open about how it is made.",
-    "text1": "Tandem Commander grew out of <a href=\"https://github.com/OpenSalamander/salamander\">Open Salamander</a>, the classic file manager whose source was opened to the world, and it owes that project everything it started with. Our thanks go to the original Salamander authors and to everyone who kept the code alive after them — a quarter century of careful work by people who cared how a file manager should feel. The core has since gone its own way, but the debt stands.",
+    "text1": "Tandem Commander grew out of <a href=\"https://github.com/OpenSalamander/salamander\">Open Salamander</a>, the classic file manager whose source was opened to the world, and it owes that project everything it started with. Our thanks go to the original Salamander authors and to everyone who kept the code alive after them – a quarter century of careful work by people who cared how a file manager should feel. The core has since gone its own way, but the debt stands.",
     "text2": "Tandem Commander is free software, licensed under <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 and later</a>. Individual files and bundled libraries carry different but compatible licenses, and everyone who has contributed to it is credited in <span class=\"mono mono--md\">AUTHORS</span>.",
-    "text3": "The rules the project holds itself to — build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API — are written down in the repository rather than kept in someone's head.",
+    "text3": "The rules the project holds itself to – build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API – are written down in the repository rather than kept in someone's head.",
     "agenticNote": "There is one genuinely new thing here. Development follows spec-driven principles: every change starts as a written specification that is clarified, planned and broken into tasks before any code is touched, and the implementation is carried out by agentic coding frameworks. The whole paper trail is committed next to the code, so the repository records not only what changed in this quarter-century-old C++ codebase, but why.",
     "factVersion": "Version",
     "factPlatform": "Platform",
@@ -77,12 +77,12 @@
   },
   "story": {
     "kicker": "From the author",
-    "title": "Why This Project Exists — A Personal Note",
-    "p1": "Whenever I have worked on Windows, there has always been a Salamander close at hand. First Servant Salamander, later Altap Salamander — in my view one of the finest pieces of software I have ever worked with. But the last released version of Altap Salamander dates back to 2019, and it still carries a few aches inherited from the original versions: incomplete encoding support, missing long directory and file path support, and quite a few others. At the same time, many of my friends and family members use Altap Salamander every day, both at work and at home.",
-    "p2": "The moment Salamander was released as Open Salamander, I had a clear vision: I would adapt it for myself so I could simply keep using it. That vision quickly ran into hard reality — even though I am a very experienced software engineer, developer, and architect, I was missing the one factor a project of this scale demands above all else: time.",
-    "p3": "That has changed, essentially within the last few months, with the overall shift in how software can now be — not programmed, but <em>created</em> — with agentic systems. To be clear, I am emphatically not talking about \"vibe coding\"; I consider that a bit of a buzzword and I do not like it. The term I would choose is <strong class=\"story-strong\">Full Agentic Spec-Driven Development</strong>: clearly defined procedures not just for producing code, but for producing the entire project — documentation and artifacts included. This project is deliberately built with the spec-driven approach on top of GitHub SpecKit, using the best agentic models available at the time — currently Fable 5, with reviews also carried out by GPT-5.6 Sol and others.",
-    "p4": "Tandem Commander is, of course, not perfect. But thanks to this approach I ended up with a genuinely usable tool — one that I hope can serve others as well.",
-    "p5": "None of this would exist without the people who built Servant Salamander, Altap Salamander, and finally Open Salamander. Over a quarter of a century they created and refined a program that countless people — me, my friends, my family — have trusted with their daily work, and it shows in every detail: the speed, the keyboard-first design, the plugin architecture, the sheer care in the code this repository inherited. Their decision to release it under an open-source license was an act of real generosity that gave this remarkable software a second life. Tandem Commander stands entirely on their shoulders, and I hope it honors what they built. <b>To all the original authors and contributors: Thank you.</b>",
+    "title": "Why This Project Exists – A Personal Note",
+    "p1": "Whenever I have worked on Windows, there has always been a Salamander close at hand. First Servant Salamander, later Altap Salamander – in my view one of the finest pieces of software I have ever worked with. But the last released version of Altap Salamander dates back to 2019, and it still carries a few aches inherited from the original versions: incomplete encoding support, missing long directory and file path support, and quite a few others. At the same time, many of my friends and family members use Altap Salamander every day, both at work and at home.",
+    "p2": "The moment Salamander was released as Open Salamander, I had a clear vision: I would adapt it for myself so I could simply keep using it. That vision quickly ran into hard reality – even though I am a very experienced software engineer, developer, and architect, I was missing the one factor a project of this scale demands above all else: time.",
+    "p3": "That has changed, essentially within the last few months, with the overall shift in how software can now be – not programmed, but <em>created</em> – with agentic systems. To be clear, I am emphatically not talking about \"vibe coding\"; I consider that a bit of a buzzword and I do not like it. The term I would choose is <strong class=\"story-strong\">Full Agentic Spec-Driven Development</strong>: clearly defined procedures not just for producing code, but for producing the entire project – documentation and artifacts included. This project is deliberately built with the spec-driven approach on top of GitHub SpecKit, using the best agentic models available at the time – currently Fable 5, with reviews also carried out by GPT-5.6 Sol and others.",
+    "p4": "Tandem Commander is, of course, not perfect. But thanks to this approach I ended up with a genuinely usable tool – one that I hope can serve others as well.",
+    "p5": "None of this would exist without the people who built Servant Salamander, Altap Salamander, and finally Open Salamander. Over a quarter of a century they created and refined a program that countless people – me, my friends, my family – have trusted with their daily work, and it shows in every detail: the speed, the keyboard-first design, the plugin architecture, the sheer care in the code this repository inherited. Their decision to release it under an open-source license was an act of real generosity that gave this remarkable software a second life. Tandem Commander stands entirely on their shoulders, and I hope it honors what they built. <b>To all the original authors and contributors: Thank you.</b>",
     "signatureLinkedin": "LinkedIn"
   },
   "download": {

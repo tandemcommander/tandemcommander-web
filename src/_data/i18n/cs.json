@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Tandem Commander — dvoupanelový správce souborů pro Windows",
-    "description": "Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu — plný Unicode, dlouhé cesty, SFTP, prohlížeč Markdownu, světlý i tmavý motiv. Zdarma pod licencí GPLv2.",
+    "description": "Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu — plný Unicode, podpora dlouhých cest, SFTP, prohlížeč Markdownu, světlý i tmavý motiv a další průběžné vylepšování. Zdarma pod licencí GPLv2.",
     "ogImageAlt": "Tandem Commander — dvoupanelový správce souborů pro Windows"
   },
   "nav": {
@@ -20,7 +20,7 @@
   "hero": {
     "lockupAlt": "Tandem Commander — dvoupanelový správce souborů",
     "title": "Znovuzrození <br>dvoupanelové&nbsp;<span class=\"accent\">legendy</span>",
-    "lead": "Dva panely, funkční klávesesové zkratky a pluginy — pracovní styl, na který jsou zvyklí tisíce uživatelů. Znovuzrozené z otevřeného kódu Open Salamander, dnes plně podporuje Unicode, zvládá dlouhé cesty, připojí se přes SFTP, na F3 vykreslí Markdown — a nově přináší i experimentální tmavý motiv.",
+    "lead": "Dva panely, funkční klávesesové zkratky a pluginy — pracovní styl, na který jsou zvyklí tisíce uživatelů. Znovuzrozené z otevřeného kódu Open Salamander, dnes plně podporuje Unicode, zvládá dlouhé cesty, připojí se přes SFTP, na F3 vykreslí Markdown — a nově přináší i experimentální tmavý motiv. Projekt je živý a průběžně vylepšován.",
     "ctaDownload": "Stáhnout pro Windows",
     "ctaSource": "Prohlédnout zdrojový kód",
     "note": "Instalátor pro Windows · Windows 11 · x64 · zdarma pod GPLv2"
@@ -28,7 +28,7 @@
   "screens": {
     "kicker": "Dva motivy, jedna binárka",
     "title": "Světlý jako klasika. Tmavý jako nový experiment.",
-    "lead": "Klasický světlý vzhled zůstává jako výchozí — nic se nezměnilo, nic se nepřeskládalo. Nový tmavý motiv má stejné rozložení se stejnou hustotou informací, pro ty, které přestaly bavit bílé obdélníky ve dvě ráno. Zatím je experimentální — pár míst ještě není úplně doladěných.",
+    "lead": "Klasický světlý vzhled zůstává jako výchozí — nic se nezměnilo, nic se nepřeskládalo. Nový tmavý motiv má stejné rozložení a sadu ikon. Zatím je experimentální — pár míst ještě není úplně doladěných.",
     "lightLabel": "Světlý",
     "lightNote": "— výchozí, beze změn",
     "darkLabel": "Tmavý",
@@ -57,11 +57,11 @@
     "entry1Title": "Plný Unicode, dlouhé cesty",
     "entry1Text": "Názvy a cesty jsou Unicode od začátku do konce — panely, dialogy, prohlížeče, pluginy. Diakritika i nelatinková písma se vykreslují správně a cesty přesahující starý limit 260 znaků fungují. Stále ladím a opravuji - je toho hodně :)",
     "entry2Title": "Nový SFTP plugin",
-    "entry2Text": "Linuxový server v jednom panelu, váš disk ve druhém — postaveno na libssh2 přes SSH. Přihlášení heslem nebo privátním klíčem s ověřením klíče serveru, unixová oprávnění zobrazená jako <span class=\"mono\">drwxr-xr-x</span>, chmod přímo z panelu.",
+    "entry2Text": "Linuxový server v jednom panelu, váš disk ve druhém — postaveno na libssh2 přes SSH. Přihlášení heslem nebo privátním klíčem s ověřením klíče serveru, unixová oprávnění zobrazená jako <span class=\"mono\">drwxr-xr-x</span>, chmod přímo z panelu. Stále je vývoji, ale už teď je fajn.",
     "entry3Title": "Markdown View",
     "entry3Text": "F3 na souboru <span class=\"mono\">.md</span> otevře nový plugin mdview: vykreslené nadpisy, seznamy, tabulky a bloky kódu místo surového značkování.",
     "entry4Title": "Opravený PictView",
-    "entry4Text": "Prohlížeč obrázků znovu funguje — obrázky se spolehlivě otevírají z obou panelů a opravy se přenesly do nového jádra s čistou podporou Unicode."
+    "entry4Text": "Prohlížeč obrázků znovu funguje — obrázky se spolehlivě otevírají z obou panelů a opravy se přenesly do nového jádra s čistou podporou Unicode. Optimalizováno vykreslování miniatur souborů u adresářů s desítkami tisíc fotek."
   },
   "project": {
     "kicker": "Projekt",

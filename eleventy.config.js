@@ -140,6 +140,30 @@ const PAD_REQUIRED_ELEMENTS = [
   "Permissions/EULA",
 ];
 
+// Elements that real PAD 4.0 files carry but the vendored field list does not
+// enumerate. The vendored file is a *validator's* field set, not the complete
+// format — proven by the reference implementation's output, which contains all
+// of these. Provenance: PSPad's AppVisor-generated PAD 4.0 file
+// (http://www.pspad.com/pad_file.xml) — a Czech program listed on slunecnice.cz
+// and therefore the only PAD 4.0 file we can confirm a target catalog accepts.
+// They are known element names with no pattern to check, not typos to reject.
+const PAD_EXTRA_KNOWN_ELEMENTS = [
+  "MASTER_PAD_VERSION_INFO/MASTER_PAD_EDITOR_URL",
+  "Company_Info/Contact_Info/Contact_Phone",
+  "ASP/ASP_FORM",
+  "Program_Info/Program_Categories",
+  "Program_Info/Program_Target_Platform",
+  "Program_Info/Limitations",
+  "Program_Info/Awards",
+  "Program_Info/FacebookFanPage",
+  "Program_Info/GooglePlusFanPage",
+  "Program_Info/VideoLink1URL",
+  "Program_Info/VideoLink2URL",
+  "Program_Info/Includes_JAVA_VM",
+  "Program_Info/Includes_DirectX",
+  "Program_Info/Includes_VB_Runtime",
+];
+
 // Layer 2. PAD 4.0 permits plain http in its URL patterns; this site is
 // https-only, so any non-empty *_URL value must be an absolute https URL.
 const PAD_HTTPS_URL_SUFFIX = "_URL";
@@ -317,8 +341,9 @@ function validatePad(xml) {
   // Container paths are not fields, so they are not in the specification's
   // path list; a misnamed container is caught by matching it against the known
   // paths' prefixes.
+  const knownPaths = new Set([...spec.knownPaths, ...PAD_EXTRA_KNOWN_ELEMENTS]);
   const knownContainers = new Set();
-  for (const knownPath of spec.knownPaths) {
+  for (const knownPath of knownPaths) {
     const parts = knownPath.split("/");
     for (let i = 1; i < parts.length; i++) knownContainers.add(parts.slice(0, i).join("/"));
   }
@@ -334,11 +359,14 @@ function validatePad(xml) {
         walk(child, [...trail, child.name]);
         continue;
       }
-      const rule = spec.rules.get(specPath);
-      // An element the specification does not define cannot be validated, and
-      // a path-driven consumer would silently ignore it — so a typo would ship
-      // unnoticed. Reject it instead.
-      if (!rule) fail(`${elementPath}: not an element of PAD ${spec.specVersion}`);
+      // An element neither the specification nor the reference implementation
+      // defines cannot be validated, and a path-driven consumer would silently
+      // ignore it — so a typo would ship unnoticed. Reject it instead.
+      if (!knownPaths.has(specPath)) {
+        fail(`${elementPath}: not an element of PAD ${spec.specVersion}`);
+      }
+      // Elements known only from the reference implementation carry no pattern.
+      const rule = spec.rules.get(specPath) || { pattern: null, doc: "" };
       const value = textOf(child);
       if (value.includes("<")) fail(`${elementPath}: markup is not allowed in PAD text`);
       if (rule.pattern && !rule.pattern.test(value)) {

@@ -3,32 +3,48 @@
 	<MASTER_PAD_VERSION_INFO>
 		<MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
 		<MASTER_PAD_EDITOR>tandemcommander-web build</MASTER_PAD_EDITOR>
+		<MASTER_PAD_EDITOR_URL>https://github.com/tandemcommander/tandemcommander</MASTER_PAD_EDITOR_URL>
 		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+		<CERTIFIED>N</CERTIFIED>
+		<CERTIFICATE_ID></CERTIFICATE_ID>
+		<CERTIFICATE_LICENSE></CERTIFICATE_LICENSE>
 	</MASTER_PAD_VERSION_INFO>
 	<Company_Info>
 		<Company_Name>Pavel Stupka</Company_Name>
-		<Address_1></Address_1>
-		<Address_2></Address_2>
+		<Country>Czech Republic</Country>
 		<State_Province></State_Province>
 		<Zip_Postal_Code></Zip_Postal_Code>
-		<Country>Czech Republic</Country>
+		<Address_1></Address_1>
+		<Address_2></Address_2>
 		<Company_WebSite_URL>https://tandemcommander.org</Company_WebSite_URL>
 		<Contact_Info>
-			<Author_First_Name>Pavel</Author_First_Name>
-			<Author_Last_Name>Stupka</Author_Last_Name>
-			<Author_Email>pavel.stupka@gmail.com</Author_Email>
 			<Contact_First_Name>Pavel</Contact_First_Name>
 			<Contact_Last_Name>Stupka</Contact_Last_Name>
 			<Contact_Email>pavel.stupka@gmail.com</Contact_Email>
+			<Author_First_Name>Pavel</Author_First_Name>
+			<Author_Last_Name>Stupka</Author_Last_Name>
+			<Author_Email>pavel.stupka@gmail.com</Author_Email>
+			<Contact_Phone></Contact_Phone>
 		</Contact_Info>
 		<Support_Info>
+			<Sales_Email>pavel.stupka@gmail.com</Sales_Email>
 			<Support_Email>pavel.stupka@gmail.com</Support_Email>
+			<General_Email>pavel.stupka@gmail.com</General_Email>
 			<Sales_Phone></Sales_Phone>
 			<Support_Phone></Support_Phone>
 			<General_Phone></General_Phone>
 			<Fax_Phone></Fax_Phone>
 		</Support_Info>
+		<GooglePlusPage></GooglePlusPage>
+		<LinkedinPage></LinkedinPage>
+		<TwitterCompanyPage></TwitterCompanyPage>
+		<FacebookCompanyPage></FacebookCompanyPage>
 	</Company_Info>
+	<ASP>
+		<ASP_FORM>Y</ASP_FORM>
+		<ASP_Member>N</ASP_Member>
+		<ASP_Member_Number></ASP_Member_Number>
+	</ASP>
 	<Program_Info>
 		<Program_Name>Tandem Commander</Program_Name>
 		<Program_Version>0.1.4</Program_Version>
@@ -39,15 +55,30 @@
 		<Program_Cost_Other_Code></Program_Cost_Other_Code>
 		<Program_Cost_Other></Program_Cost_Other>
 		<Program_Type>Freeware</Program_Type>
+		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_Categories>System Utilities :: File &amp; Disk Management</Program_Categories>
 		<Program_Release_Status>New Release</Program_Release_Status>
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_Target_Platform>Windows</Program_Target_Platform>
 		<Program_OS_Support>WinOther</Program_OS_Support>
 		<Program_Language>English</Program_Language>
+		<Program_Change_Info>Full Unicode, long paths; New SFTP plugin; Markdown View; PictView, repaired</Program_Change_Info>
+		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
+		<Limitations>none</Limitations>
+		<Awards></Awards>
 		<File_Info>
 			<File_Size_Bytes>6805464</File_Size_Bytes>
 			<File_Size_K>6646</File_Size_K>
 			<File_Size_MB>6.49</File_Size_MB>
 		</File_Info>
+		<FacebookFanPage></FacebookFanPage>
+		<VideoLink1URL></VideoLink1URL>
+		<VideoLink2URL></VideoLink2URL>
+		<Includes_JAVA_VM></Includes_JAVA_VM>
+		<Includes_DirectX></Includes_DirectX>
+		<Includes_VB_Runtime></Includes_VB_Runtime>
+		<GooglePlusFanPage></GooglePlusFanPage>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>
 			<Expire_Count></Expire_Count>
@@ -57,10 +88,6 @@
 			<Expire_Day></Expire_Day>
 			<Expire_Year></Expire_Year>
 		</Expire_Info>
-		<Program_Change_Info>Full Unicode, long paths; New SFTP plugin; Markdown View; PictView, repaired</Program_Change_Info>
-		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
-		<Program_Specific_Category>Utilities</Program_Specific_Category>
-		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
 	</Program_Info>
 	<Program_Descriptions>
 		<English>
@@ -94,7 +121,14 @@
 			<Additional_Download_URL_1></Additional_Download_URL_1>
 			<Additional_Download_URL_2></Additional_Download_URL_2>
 		</Download_URLs>
-	</Web_Info>
+	</Web_Info><Press_Release>
+		<Keywords>file manager, two-pane file manager, dual-pane, orthodox file manager, file commander, Windows 11, x64, Unicode, long paths, SFTP, Markdown viewer, dark theme, Open Salamander, open source, free, GPL</Keywords>
+		<Headline>Tandem Commander 0.1.4 — Fast two-pane file manager for Windows 11.</Headline>
+		<Summary>A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase: full Unicode, long paths, SFTP, a Markdown viewer and a dark theme. Free and open source under GPLv2 or later.</Summary>
+		<Press_Release>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11. It carries on the classic orthodox file manager working style: source panel on the left, target on the right, function keys along the bottom edge, a shortcut for everything, and a command line that stays exactly where your hands already are. Copy, move, pack and compare files without opening a second window or reaching for the mouse. The program was born from the open source Open Salamander codebase and now runs on its own modernized core built for Windows 11: names and paths are Unicode end to end, so accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work. A new SFTP plugin puts a Linux server in one panel and your disk in the other, with password or private-key authentication, host-key verification and unix permissions shown directly in the panel. Pressing F3 on a Markdown file opens a rendered view with headings, lists, tables and code blocks, and the repaired image viewer opens pictures reliably from either panel. The classic light look remains the default, and a new dark theme offers the same layout and information density. Tandem Commander is free software, open source under GPLv2 or later, with the full source code, issue tracker and all releases available on GitHub.</Press_Release>
+		<Press_Release_Plain>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11, born from the open source Open Salamander codebase. It speaks full Unicode, handles paths past the old 260-character limit, connects to Linux servers over SFTP, renders Markdown files on F3, and ships with a dark theme alongside the classic light one. Free and open source under GPLv2 or later.</Press_Release_Plain>
+		<Related_URL>https://tandemcommander.org</Related_URL>
+	</Press_Release>
 	<Permissions>
 		<Distribution_Permissions>Tandem Commander is free software released under the GNU General Public License v2 or later. Download sites and software catalogs may freely list the program and distribute the official installer in unchanged form. The full source code is available at https://github.com/tandemcommander/tandemcommander</Distribution_Permissions>
 		<EULA>Tandem Commander is distributed under the GNU General Public License version 2 or later (GPLv2+). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file in the source repository for the full license text: https://github.com/tandemcommander/tandemcommander</EULA>
