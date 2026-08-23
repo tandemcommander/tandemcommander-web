@@ -110,24 +110,6 @@ eleventyExcludeFromCollections: true
 			<Expire_Year></Expire_Year>
 		</Expire_Info>
 	</Program_Info>
-	<Program_Descriptions>
-		<English>
-			<Keywords>{{ "en" | t("pad.keywords") }}</Keywords>
-			<Char_Desc_45>{{ "en" | t("pad.desc45") }}</Char_Desc_45>
-			<Char_Desc_80>{{ "en" | t("pad.desc80") }}</Char_Desc_80>
-			<Char_Desc_250>{{ "en" | t("pad.desc250") }}</Char_Desc_250>
-			<Char_Desc_450>{{ "en" | t("pad.desc450") }}</Char_Desc_450>
-			<Char_Desc_2000>{{ "en" | t("pad.desc2000") }}</Char_Desc_2000>
-		</English>
-		<Czech>
-			<Keywords>{{ "cs" | t("pad.keywords") }}</Keywords>
-			<Char_Desc_45>{{ "cs" | t("pad.desc45") }}</Char_Desc_45>
-			<Char_Desc_80>{{ "cs" | t("pad.desc80") }}</Char_Desc_80>
-			<Char_Desc_250>{{ "cs" | t("pad.desc250") }}</Char_Desc_250>
-			<Char_Desc_450>{{ "cs" | t("pad.desc450") }}</Char_Desc_450>
-			<Char_Desc_2000>{{ "cs" | t("pad.desc2000") }}</Char_Desc_2000>
-		</Czech>
-	</Program_Descriptions>
 	<Web_Info>
 		<Application_URLs>
 			<Application_Info_URL>{{ site.url }}</Application_Info_URL>
@@ -143,6 +125,30 @@ eleventyExcludeFromCollections: true
 			<Additional_Download_URL_2></Additional_Download_URL_2>
 		</Download_URLs>
 	</Web_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>{{ "en" | t("pad.keywords") }}</Keywords>
+			<Char_Desc_45>{{ "en" | t("pad.desc45") }}</Char_Desc_45>
+			<Char_Desc_80>{{ "en" | t("pad.desc80") }}</Char_Desc_80>
+			<Char_Desc_250>{{ "en" | t("pad.desc250") }}</Char_Desc_250>
+			<Char_Desc_450>{{ "en" | t("pad.desc450") }}</Char_Desc_450>
+			<Char_Desc_2000>{{ "en" | t("pad.desc2000") }}</Char_Desc_2000>
+		</English>
+		{#-
+		  English only, deliberately — see research R10. A <Czech> sibling block is
+		  the one place this file diverged from BOTH the vendored specification
+		  (which enumerates description paths under English only) and the reference
+		  implementation (English only), so it is the prime suspect for slunecnice's
+		  "must be valid PAD v4.0" rejection. The Czech texts remain in
+		  src/_data/i18n/cs.json under the pad.* namespace: to restore the block,
+		  re-add the six fields with the "cs" language and put "Czech" back into
+		  PAD_REQUIRED_LANGUAGES in eleventy.config.js.
+		-#}
+	</Program_Descriptions>
+	<Permissions>
+		<Distribution_Permissions>Tandem Commander is free software released under the GNU General Public License v2 or later. Download sites and software catalogs may freely list the program and distribute the official installer in unchanged form. The full source code is available at {{ site.github.repoUrl }}</Distribution_Permissions>
+		<EULA>Tandem Commander is distributed under the GNU General Public License version 2 or later (GPLv2+). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file in the source repository for the full license text: {{ site.github.repoUrl }}</EULA>
+	</Permissions>
 	{#- Press_Release reuses the already-reviewed English copy; no new prose. -#}
 	<Press_Release>
 		<Keywords>{{ "en" | t("pad.keywords") }}</Keywords>
@@ -152,8 +158,4 @@ eleventyExcludeFromCollections: true
 		<Press_Release_Plain>{{ "en" | t("pad.desc450") }}</Press_Release_Plain>
 		<Related_URL>{{ site.url }}</Related_URL>
 	</Press_Release>
-	<Permissions>
-		<Distribution_Permissions>Tandem Commander is free software released under the GNU General Public License v2 or later. Download sites and software catalogs may freely list the program and distribute the official installer in unchanged form. The full source code is available at {{ site.github.repoUrl }}</Distribution_Permissions>
-		<EULA>Tandem Commander is distributed under the GNU General Public License version 2 or later (GPLv2+). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file in the source repository for the full license text: {{ site.github.repoUrl }}</EULA>
-	</Permissions>
 </XML_DIZ_INFO>

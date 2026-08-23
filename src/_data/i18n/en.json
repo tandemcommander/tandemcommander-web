@@ -61,7 +61,7 @@
     "entry3Title": "Markdown View",
     "entry3Text": "F3 on a <span class=\"mono\">.md</span> file opens the new mdview plugin: rendered headings, lists, tables and code blocks instead of raw markup.",
     "entry4Title": "PictView, repaired",
-    "entry4Text": "The image viewer works again – pictures open reliably from either panel, with the fixes carried into the new Unicode-clean core."
+    "entry4Text": "The image viewer works again – pictures open reliably from either panel, with the fixes carried into the new Unicode-clean core. Optimized file thumbnail rendering in directories containing tens of thousands of photos."
   },
   "project": {
     "kicker": "The project",

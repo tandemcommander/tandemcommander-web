@@ -93,7 +93,10 @@ function checkCatalogParity() {
 // throws, so a non-compliant PAD file can never be published.
 // ---------------------------------------------------------------------------
 
-const PAD_REQUIRED_LANGUAGES = ["English", "Czech"];
+// English only while we test whether a non-English sibling description block is
+// what slunecnice.cz rejects (research R10). The Czech texts are still in the
+// i18n catalogs; put "Czech" back here when the block is restored.
+const PAD_REQUIRED_LANGUAGES = ["English"];
 
 // Layer 2. PAD 4.0 carries no optionality flag — its patterns say what a value
 // may look like, never whether the element has to be there. These are the ones
