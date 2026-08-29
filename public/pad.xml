@@ -47,7 +47,7 @@
 	</ASP>
 	<Program_Info>
 		<Program_Name>Tandem Commander</Program_Name>
-		<Program_Version>0.1.6</Program_Version>
+		<Program_Version>0.1.7</Program_Version>
 		<Program_Release_Month>08</Program_Release_Month>
 		<Program_Release_Day>29</Program_Release_Day>
 		<Program_Release_Year>2026</Program_Release_Year>
@@ -68,7 +68,7 @@
 		<Limitations>none</Limitations>
 		<Awards></Awards>
 		<File_Info>
-			<File_Size_Bytes>8002608</File_Size_Bytes>
+			<File_Size_Bytes>8002480</File_Size_Bytes>
 			<File_Size_K>7815</File_Size_K>
 			<File_Size_MB>7.63</File_Size_MB>
 		</File_Info>
@@ -98,7 +98,7 @@
 			<Application_XML_File_URL>https://tandemcommander.org/pad.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.6/tandemcommander-0.1.6-x64-setup.exe</Primary_Download_URL>
+			<Primary_Download_URL>https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.7/tandemcommander-0.1.7-x64-setup.exe</Primary_Download_URL>
 			<Secondary_Download_URL></Secondary_Download_URL>
 			<Additional_Download_URL_1></Additional_Download_URL_1>
 			<Additional_Download_URL_2></Additional_Download_URL_2>
@@ -118,7 +118,7 @@
 		<EULA>Tandem Commander is distributed under the GNU General Public License version 2 or later (GPLv2+). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file in the source repository for the full license text: https://github.com/tandemcommander/tandemcommander</EULA>
 	</Permissions><Press_Release>
 		<Keywords>file manager, two-pane file manager, dual-pane, orthodox file manager, file commander, Windows 11, x64, Unicode, long paths, SFTP, Markdown viewer, dark theme, Open Salamander, open source, free, GPL</Keywords>
-		<Headline>Tandem Commander 0.1.6 — Fast two-pane file manager for Windows 11.</Headline>
+		<Headline>Tandem Commander 0.1.7 — Fast two-pane file manager for Windows 11.</Headline>
 		<Summary>A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase: full Unicode, long paths, SFTP, a Markdown viewer and a dark theme. Free and open source under GPLv2 or later.</Summary>
 		<Press_Release>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11. It carries on the classic orthodox file manager working style: source panel on the left, target on the right, function keys along the bottom edge, a shortcut for everything, and a command line that stays exactly where your hands already are. Copy, move, pack and compare files without opening a second window or reaching for the mouse. The program was born from the open source Open Salamander codebase and now runs on its own modernized core built for Windows 11: names and paths are Unicode end to end, so accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work. A new SFTP plugin puts a Linux server in one panel and your disk in the other, with password or private-key authentication, host-key verification and unix permissions shown directly in the panel. Pressing F3 on a Markdown file opens a rendered view with headings, lists, tables and code blocks, and the repaired image viewer opens pictures reliably from either panel. The classic light look remains the default, and a new dark theme offers the same layout and information density. Tandem Commander is free software, open source under GPLv2 or later, with the full source code, issue tracker and all releases available on GitHub.</Press_Release>
 		<Press_Release_Plain>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11, born from the open source Open Salamander codebase. It speaks full Unicode, handles paths past the old 260-character limit, connects to Linux servers over SFTP, renders Markdown files on F3, and ships with a dark theme alongside the classic light one. Free and open source under GPLv2 or later.</Press_Release_Plain>
