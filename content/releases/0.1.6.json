@@ -1,0 +1,46 @@
+{
+  "version": "0.1.6",
+  "date": "2026-08-29",
+  "build": 190,
+  "kind": "feature",
+  "summary": {
+    "en": "A new Code Viewer with syntax highlighting, a Command Shell command that opens the shell you choose, and the first release submitted to the winget catalogue.",
+    "cs": "Nový Prohlížeč kódu se zvýrazněním syntaxe, příkaz Command Shell otevírající shell podle vaší volby a první vydání odeslané do katalogu winget."
+  },
+  "highlights": [
+    {
+      "id": "code-viewer",
+      "title": {
+        "en": "Code Viewer",
+        "cs": "Prohlížeč kódu"
+      },
+      "text": {
+        "en": "`F3` on a source or configuration file shows it with syntax highlighting - over 200 languages and formats, twelve colour schemes, line numbers. Read-only: nothing is executed, no network request is made.",
+        "cs": "`F3` na zdrojovém nebo konfiguračním souboru ho zobrazí se zvýrazněním syntaxe - přes 200 jazyků a formátů, dvanáct barevných schémat, čísla řádků. Jen pro čtení: nic se nespouští ani neodesílá."
+      },
+      "scene": "code-viewer"
+    },
+    {
+      "id": "command-shell",
+      "title": {
+        "en": "Choose your command shell",
+        "cs": "Vlastní příkazový shell"
+      },
+      "text": {
+        "en": "The Command Shell command (`Num /`) is no longer tied to Command Prompt: pick Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash or any program with your own arguments.",
+        "cs": "Příkaz Command Shell (`Num /`) už není svázaný s Příkazovým řádkem: zvolte Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash nebo libovolný program s vlastními argumenty."
+      }
+    },
+    {
+      "id": "winget",
+      "title": {
+        "en": "On the way to winget",
+        "cs": "Na cestě do wingetu"
+      },
+      "text": {
+        "en": "Tandem Commander is submitted to the Windows Package Manager catalogue. Once Microsoft accepts it, `winget install tandemcommander` installs it and `winget upgrade` keeps it current.",
+        "cs": "Tandem Commander je odeslán do katalogu Windows Package Manageru. Jakmile ho Microsoft přijme, `winget install tandemcommander` ho nainstaluje a `winget upgrade` udrží aktuální."
+      }
+    }
+  ]
+}

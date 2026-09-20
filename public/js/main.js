@@ -28,6 +28,32 @@
     });
   });
 
+  /* ---- Copy-to-clipboard buttons (spec: specs/007-release-news-gallery/) ----
+     Rendered hidden: without scripting or the Clipboard API the command stays
+     plain selectable text. */
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-copy-target]'), function (btn) {
+      var source = document.getElementById(btn.getAttribute('data-copy-target'));
+      if (!source) { return; }
+      var label = btn.textContent;
+      var status = btn.parentNode.parentNode.querySelector('[data-copy-status]');
+      var timer = null;
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(source.textContent.trim()).then(function () {
+          var copied = btn.getAttribute('data-copied-label') || label;
+          btn.textContent = copied;
+          if (status) { status.textContent = copied; }
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            btn.textContent = label;
+            if (status) { status.textContent = ''; }
+          }, 2000);
+        }, function () { /* denied: the command is still selectable */ });
+      });
+    });
+  }
+
   /* ---- Mobile menu (hamburger; breakpoint must match main.css) ---- */
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('mobile-menu');
@@ -58,103 +84,14 @@
     if (mq.addEventListener) { mq.addEventListener('change', onChange); } else { mq.addListener(onChange); }
   }
 
-  /* ---- Screenshot lightbox (spec: specs/002-screenshot-lightbox/) ---- */
-  var lightbox = document.querySelector('.lightbox');
-  if (lightbox && typeof lightbox.showModal === 'function') {
-    var lightboxImg = lightbox.querySelector('.lightbox-img');
-    var lightboxClose = lightbox.querySelector('.lightbox-close');
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    var status = 'closed'; /* closed -> opening -> open -> closing -> closed */
-    var sourceBtn = null;
-    var settleTimer = null;
+  /* ---- Gallery viewer (spec 007) ----
+     PhotoSwipe, self-hosted under js/vendor/photoswipe (MIT). It is loaded as
+     a module only when the page actually has a gallery, and only by browsers
+     that support modules: without it every card is still a plain link to the
+     full-size picture, so the gallery keeps working.
 
-    var cleanup = function (closeDialog) {
-      clearTimeout(settleTimer);
-      settleTimer = null;
-      status = 'closed';
-      if (closeDialog) { lightbox.close(); }
-      lightbox.classList.remove('is-open');
-      lightbox.classList.remove('is-closing');
-      document.documentElement.classList.remove('lightbox-open');
-      document.documentElement.style.paddingRight = '';
-      lightboxImg.removeAttribute('src');
-      lightboxImg.alt = '';
-      if (sourceBtn) { sourceBtn.focus(); }
-      sourceBtn = null;
-    };
-
-    var openLightbox = function (btn) {
-      if (status !== 'closed') { return; }
-      var img = btn.querySelector('img');
-      if (!img) { return; }
-      sourceBtn = btn;
-      lightboxImg.src = img.currentSrc || img.src;
-      lightboxImg.alt = img.alt;
-
-      /* Lock scroll; pad for the vanished scrollbar so the layout cannot shift. */
-      var scrollbar = window.innerWidth - document.documentElement.clientWidth;
-      document.documentElement.classList.add('lightbox-open');
-      if (scrollbar > 0) { document.documentElement.style.paddingRight = scrollbar + 'px'; }
-      lightbox.showModal();
-
-      if (reduceMotion.matches) {
-        lightbox.classList.add('is-open');
-        status = 'open';
-        return;
-      }
-
-      /* Entrance: backdrop fades in while the image rises into place at its
-         final size. Nothing is scaled mid-animation, so the raster stays
-         alias-free. Double rAF: the hidden start state must paint first. */
-      status = 'opening';
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          lightbox.classList.add('is-open');
-          settleTimer = setTimeout(function () {
-            if (status === 'opening') { status = 'open'; }
-          }, 450);
-        });
-      });
-    };
-
-    var closeLightbox = function () {
-      if (status === 'open' && !reduceMotion.matches) {
-        clearTimeout(settleTimer);
-        status = 'closing';
-        lightbox.classList.add('is-closing');
-        lightbox.classList.remove('is-open');
-        settleTimer = setTimeout(function () {
-          if (status === 'closing') { cleanup(true); }
-        }, 400);
-      } else if (status === 'open' || status === 'opening') {
-        cleanup(true);
-      }
-    };
-
-    lightboxImg.addEventListener('transitionend', function (e) {
-      if (e.target !== lightboxImg || e.propertyName !== 'transform') { return; }
-      if (status === 'opening') {
-        clearTimeout(settleTimer);
-        status = 'open';
-      } else if (status === 'closing') {
-        cleanup(true);
-      }
-    });
-
-    Array.prototype.forEach.call(document.querySelectorAll('.shot-zoom'), function (btn) {
-      btn.addEventListener('click', function () { openLightbox(btn); });
-    });
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('cancel', function (e) {
-      e.preventDefault();
-      closeLightbox();
-    });
-    lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) { closeLightbox(); }
-    });
-    /* Safety net: if the browser force-closes the dialog, resync our state. */
-    lightbox.addEventListener('close', function () {
-      if (status !== 'closed') { cleanup(false); }
-    });
+     Replaces the hand-written lightbox of spec 002; that page section is gone. */
+  if (document.querySelector('[data-gallery]')) {
+    import('/js/gallery.js').catch(function () { /* the links still work */ });
   }
 })();

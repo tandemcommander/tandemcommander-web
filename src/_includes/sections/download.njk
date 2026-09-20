@@ -13,6 +13,19 @@
         <p class="installer-file">{{ installerFile }}</p>
       </div>
     </div>
+    {#- Shown only once the package is live in the winget catalogue
+        (site.json → winget.available); a command that fails is worse than none. -#}
+    {%- if site.winget.available %}
+    <div class="winget">
+      <p class="winget-label">{{ lang | t("download.wingetLabel") }}</p>
+      <div class="winget-line">
+        <code class="winget-cmd" id="winget-cmd">{{ site.winget.command }}</code>
+        <button type="button" class="winget-copy" data-copy-target="winget-cmd" data-copied-label="{{ lang | t("download.wingetCopied") }}" hidden>{{ lang | t("download.wingetCopy") }}</button>
+      </div>
+      <p class="winget-hint">{{ lang | t("download.wingetHint") | inline | safe }}</p>
+      <span class="visually-hidden" aria-live="polite" data-copy-status></span>
+    </div>
+    {%- endif %}
     <p class="download-meta">{{ lang | t("download.meta") }} · <a href="{{ site.github.releasesUrl }}">{{ lang | t("download.metaAllReleases") }}</a> · <a href="{{ site.github.issuesUrl }}">{{ lang | t("download.metaReportIssue") }}</a></p>
     <div class="disclaimer">
       <p class="disclaimer-label">{{ lang | t("download.disclaimerLabel") }}</p>

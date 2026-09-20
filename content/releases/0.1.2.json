@@ -1,0 +1,34 @@
+{
+  "version": "0.1.2",
+  "date": "2026-08-07",
+  "build": 186,
+  "kind": "maintenance",
+  "summary": {
+    "en": "The SFTP plugin's dialogs and connection handling were reworked, and every machine-translated text in all eight non-English languages was redone with context.",
+    "cs": "Dialogy a připojování pluginu SFTP prošly přepracováním a všechny strojově přeložené texty v osmi jazycích byly přeloženy znovu s ohledem na kontext."
+  },
+  "highlights": [
+    {
+      "id": "sftp-dialogs",
+      "title": {
+        "en": "SFTP dialogs that fit",
+        "cs": "Dialogy SFTP, které se vejdou"
+      },
+      "text": {
+        "en": "The settings window opens again, labels are no longer cut off in translated interfaces, a host with an unreachable first address connects in a second, and Quick Connect no longer stores anything.",
+        "cs": "Okno nastavení se zase otevře, popisky v přeložených rozhraních nejsou oříznuté, server s nedostupnou první adresou se připojí do sekundy a Rychlé připojení už nic neukládá."
+      }
+    },
+    {
+      "id": "retranslation",
+      "title": {
+        "en": "Translations with context",
+        "cs": "Překlady s kontextem"
+      },
+      "text": {
+        "en": "About 3,300 strings across the file manager and 18 plugins were re-translated knowing where they appear - no more server address field labelled as a talk-show host.",
+        "cs": "Přibližně 3 300 textů ve správci souborů a 18 pluginech bylo přeloženo znovu se znalostí místa, kde se zobrazují - adresa serveru už se nejmenuje „Moderátor“."
+      }
+    }
+  ]
+}

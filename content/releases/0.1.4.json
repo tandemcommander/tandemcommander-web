@@ -1,0 +1,45 @@
+{
+  "version": "0.1.4",
+  "date": "2026-08-19",
+  "build": 188,
+  "kind": "bugfix",
+  "summary": {
+    "en": "Thumbnails appear immediately even in huge photo folders, DEL uses the Recycle Bin again in folders with accented paths, and TortoiseGit and TortoiseSVN badges are back.",
+    "cs": "Náhledy se objevují okamžitě i ve velkých složkách fotek, DEL v cestách s diakritikou zase maže do Koše a vrátily se odznaky TortoiseGit a TortoiseSVN."
+  },
+  "highlights": [
+    {
+      "id": "fast-thumbnails",
+      "title": {
+        "en": "Thumbnails without the wait",
+        "cs": "Náhledy bez čekání"
+      },
+      "text": {
+        "en": "Thumbnails view (`Alt+5`) starts with the files on screen and uses embedded previews, so a folder with thousands of photos fills in at once. Portrait photos are rotated correctly.",
+        "cs": "Zobrazení náhledů (`Alt+5`) začíná soubory na obrazovce a využívá vložené náhledy, takže se složka s tisíci fotek plní hned. Fotky na výšku jsou správně otočené."
+      }
+    },
+    {
+      "id": "recycle-bin-fix",
+      "title": {
+        "en": "DEL goes to the Recycle Bin",
+        "cs": "DEL maže do Koše"
+      },
+      "text": {
+        "en": "In folders whose path contains accented characters - typical for localized OneDrive trees - DEL deleted permanently. It moves files to the Recycle Bin again, and fails safe when unsure.",
+        "cs": "Ve složkách s diakritikou v cestě - typicky v lokalizovaném OneDrivu - mazal DEL natrvalo. Teď soubory opět přesouvá do Koše a v nejistotě volí bezpečnější cestu."
+      }
+    },
+    {
+      "id": "vcs-badges",
+      "title": {
+        "en": "Tortoise badges are back",
+        "cs": "Odznaky Tortoise jsou zpět"
+      },
+      "text": {
+        "en": "Status badges of TortoiseGit and TortoiseSVN show again at display scaling other than 100 % and refresh in folders with accented names.",
+        "cs": "Stavové odznaky TortoiseGit a TortoiseSVN se opět zobrazují i při jiném měřítku displeje než 100 % a obnovují se i ve složkách s diakritikou."
+      }
+    }
+  ]
+}

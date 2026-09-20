@@ -1,0 +1,35 @@
+{
+  "version": "0.1.8",
+  "date": "2026-09-20",
+  "build": 192,
+  "kind": "feature",
+  "summary": {
+    "en": "Panels get browser-style tabs, the program starts without the Visual C++ runtime, and other minor upgrades.",
+    "cs": "Panely dostaly záložky jako v prohlížeči, program se spustí i bez Visual C++ runtime a další drobné úpravy."
+  },
+  "highlights": [
+    {
+      "id": "panel-tabs",
+      "title": {
+        "en": "Panel tabs",
+        "cs": "Záložky v panelech"
+      },
+      "text": {
+        "en": "Several directories per panel, the way a browser does it. Each tab keeps its own view, sorting, filter, selection and history, and the whole set returns at the next start. `Ctrl+Shift+T` opens one.",
+        "cs": "Několik adresářů v jednom panelu, jako v prohlížeči. Každá záložka si pamatuje zobrazení, řazení, filtr, výběr i historii a po startu se vše obnoví. Novou otevřete přes `Ctrl+Shift+T`."
+      },
+      "scene": "panel-tabs"
+    },
+    {
+      "id": "no-vc-runtime",
+      "title": {
+        "en": "No runtime to install",
+        "cs": "Bez instalace runtime"
+      },
+      "text": {
+        "en": "The Microsoft Visual C++ runtime now ships inside the program folder. On a clean PC, earlier versions installed fine and then refused to start - that is over.",
+        "cs": "Microsoft Visual C++ runtime je nově přímo ve složce programu. Na čistém počítači se starší verze nainstalovaly, ale nespustily - to už neplatí."
+      }
+    }
+  ]
+}

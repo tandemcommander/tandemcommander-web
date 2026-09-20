@@ -1,0 +1,21 @@
+{#- Home-page gallery section (spec 007): the featured scenes, in catalog
+    order, plus a link to the full gallery. Replaces the former two-screenshot
+    "screens" section; the #screens anchor is kept so old links still land. -#}
+{%- import "components/gallery-card.njk" as cards -%}
+{%- set locale = lang | locale -%}
+<section id="gallery" class="section">
+  <span id="screens" class="anchor-alias" aria-hidden="true"></span>
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker">{{ lang | t("gallery.kicker") }}</p>
+      <h2 class="section-title">{{ lang | t("gallery.title") }}</h2>
+      <p class="section-lead">{{ lang | t("gallery.lead") }}</p>
+    </div>
+    <div data-gallery class="gallery-grid">
+      {%- for scene in gallery.items %}
+      {{ cards.galleryCard(scene, lang, { eager: loop.index <= 2, wide: true }) }}
+      {%- endfor %}
+    </div>
+  </div>
+  {% include "components/gallery-viewer.njk" %}
+</section>

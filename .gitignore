@@ -6,3 +6,7 @@ node_modules/
 .DS_Store
 dist/
 /temp
+# feature 007: installer cache, Sandbox job/output, changelog excerpts
+.work/
+
+tools/screenshots/demo/scenes.json

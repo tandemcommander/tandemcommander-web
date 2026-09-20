@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tandem Commander – dvoupanelový správce souborů pro Windows</title>
-<meta name="description" content="Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu – plný Unicode, podpora dlouhých cest, SFTP, prohlížeč Markdownu, světlý i tmavý motiv a další průběžné vylepšování. Zdarma pod licencí GPLv2.">
+<title>Tandem Commander - dvoupanelový správce souborů pro Windows</title>
+<meta name="description" content="Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu - záložky v panelech, plný Unicode a dlouhé cesty, SFTP, prohlížeč kódu a Markdownu, odznaky cloudové synchronizace, světlý i tmavý motiv. Zdarma pod licencí GPLv2.">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0A1424" media="(prefers-color-scheme: dark)">
 
@@ -21,12 +21,12 @@
 <meta property="og:url" content="https://tandemcommander.org/cs/">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="Tandem Commander – dvoupanelový správce souborů pro Windows">
-<meta property="og:description" content="Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu – plný Unicode, podpora dlouhých cest, SFTP, prohlížeč Markdownu, světlý i tmavý motiv a další průběžné vylepšování. Zdarma pod licencí GPLv2.">
+<meta property="og:title" content="Tandem Commander - dvoupanelový správce souborů pro Windows">
+<meta property="og:description" content="Rychlý dvoupanelový správce souborů pro Windows 11, zrozený z kódu Open Salamanderu - záložky v panelech, plný Unicode a dlouhé cesty, SFTP, prohlížeč kódu a Markdownu, odznaky cloudové synchronizace, světlý i tmavý motiv. Zdarma pod licencí GPLv2.">
 <meta property="og:image" content="https://tandemcommander.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Tandem Commander – dvoupanelový správce souborů pro Windows">
+<meta property="og:image:alt" content="Tandem Commander - dvoupanelový správce souborů pro Windows">
 <meta name="twitter:card" content="summary_large_image">
 
 <script>(function(){try{var t=localStorage.getItem('tc-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
@@ -35,6 +35,7 @@
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/archivo-latin-ext-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 
+<link rel="stylesheet" href="/js/vendor/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/css/main.css">
 <script defer src="/js/main.js"></script>
 </head>
@@ -46,7 +47,7 @@
       <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
     </a>
     <nav class="site-nav" aria-label="Hlavní">
-      <a href="#screens" class="nav-link">Motivy</a>
+      <a href="#gallery" class="nav-link">Galerie</a>
       <a href="#new" class="nav-link">Novinky</a>
       <a href="#project" class="nav-link">Projekt</a>
       <a href="#download" class="nav-link">Stažení</a>
@@ -66,7 +67,7 @@
     </button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Hlavní nabídka">
-    <a href="#screens" class="mobile-link">Motivy</a>
+    <a href="#gallery" class="mobile-link">Galerie</a>
     <a href="#new" class="mobile-link">Novinky</a>
     <a href="#project" class="mobile-link">Projekt</a>
     <a href="#download" class="mobile-link">Stažení</a>
@@ -85,11 +86,11 @@
 <section id="top" class="hero">
   <div class="hero-inner">
     <div class="hero-lockup">
-      <img src="/assets/tandem-commander-lockup-light.svg" alt="Tandem Commander – dvoupanelový správce souborů" class="lockup lockup--light">
+      <img src="/assets/tandem-commander-lockup-light.svg" alt="Tandem Commander - dvoupanelový správce souborů" class="lockup lockup--light">
       <img src="/assets/tandem-commander-lockup-dark.svg" alt="" aria-hidden="true" class="lockup lockup--dark">
     </div>
     <h1 class="hero-title">Znovuzrození <br>dvoupanelové&nbsp;<span class="accent">legendy</span></h1>
-    <p class="hero-lead">Dva panely, funkční klávesesové zkratky a pluginy – pracovní styl, na který jsou zvyklí tisíce uživatelů. Znovuzrozené z otevřeného kódu Open Salamander, dnes plně podporuje Unicode, zvládá dlouhé cesty, připojí se přes SFTP, na F3 vykreslí Markdown – a nově přináší i experimentální tmavý motiv. Projekt je živý a průběžně vylepšován.</p>
+    <p class="hero-lead">Dva panely, funkční klávesové zkratky a pluginy - pracovní styl, na který jsou zvyklí tisíce uživatelů. Znovuzrozené z otevřeného kódu Open Salamander, dnes plně podporuje Unicode, zvládá dlouhé cesty, drží adresáře v záložkách panelů, připojí se přes SFTP, na F3 zobrazí zdrojový kód i Markdown, ukazuje stav cloudové synchronizace - a přináší i experimentální tmavý motiv. Projekt je živý a průběžně vylepšován.</p>
     <div class="hero-cta">
       <a href="#download" class="btn btn--primary">Stáhnout pro Windows<span class="btn-badge">v0.1.8</span></a>
       <a href="https://github.com/tandemcommander/tandemcommander" class="btn btn--secondary">Prohlédnout zdrojový kód</a>
@@ -98,60 +99,233 @@
   </div>
 </section>
 
-<section id="screens" class="section">
+<section id="gallery" class="section">
+  <span id="screens" class="anchor-alias" aria-hidden="true"></span>
   <div class="section-inner">
     <div class="section-head">
-      <p class="kicker">Dva motivy, jedna binárka</p>
-      <h2 class="section-title">Světlý jako klasika. Tmavý jako nový experiment.</h2>
-      <p class="section-lead">Klasický světlý vzhled zůstává jako výchozí – nic se nezměnilo, nic se nepřeskládalo. Nový tmavý motiv má stejné rozložení a sadu ikon. Zatím je experimentální – pár míst ještě není úplně doladěných.</p>
+      <p class="kicker">Podívejte se</p>
+      <h2 class="section-title">Galerie funkcí Tandem Commander.</h2>
+      <p class="section-lead">Klasické světlé panely zůstávají výchozí - nic se nepřesunulo, nic nepřeskládalo. Tmavý motiv má stejné rozložení i hustotu informací. Níže program při práci.</p>
     </div>
-    <div class="screens-grid">
-      <figure class="shot">
-        <figcaption class="shot-caption">
-          <span class="swatch swatch--light"></span>
-          <span class="shot-label">Světlý</span>
-          <span class="shot-note">– výchozí, beze změn</span>
-        </figcaption>
-        <div class="shot-frame">
-          <button type="button" class="shot-zoom" aria-label="Zobrazit snímek v plné velikosti">
-            <img src="/assets/screenshot-light.png" alt="Tandem Commander ve světlém motivu, dva panely souborů vedle sebe">
-            <span class="shot-zoom-icon">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </span>
-          </button>
-        </div>
-      </figure>
-      <figure class="shot">
-        <figcaption class="shot-caption">
-          <span class="swatch swatch--dark"></span>
-          <span class="shot-label">Tmavý</span>
-          <span class="shot-note">– novinka v Tandem Commanderu</span>
-        </figcaption>
-        <div class="shot-frame">
-          <button type="button" class="shot-zoom" aria-label="Zobrazit snímek v plné velikosti">
-            <img src="/assets/screenshot-dark.png" alt="Tandem Commander v tmavém motivu, stejné dva panely">
-            <span class="shot-zoom-icon">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </span>
-          </button>
-        </div>
-      </figure>
-    </div>
-    <dialog class="lightbox" aria-label="Zvětšený snímek obrazovky">
-      <button type="button" class="lightbox-close" aria-label="Zavřít zvětšený náhled">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
-          <path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <div data-gallery class="gallery-grid">
+      <figure class="gallery-item" id="main-window">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Dva panely, spousta záložek</h3>
+    <p class="gallery-text">Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/main-window-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Dva panely, spousta záložek" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+       target="_blank" rel="noopener"
+       aria-label="Dva panely, spousta záložek - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/main-window-light-640.webp" srcset="/assets/gallery/main-window-light-640.webp 640w, /assets/gallery/main-window-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy."
+           loading="eager" fetchpriority="high" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-      </button>
-      <img class="lightbox-img" src="" alt="">
-    </dialog>
+      </span>
+    </a>
   </div>
+</figure>
+      <figure class="gallery-item" id="dark-theme">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Tmavý motiv</h3>
+    <p class="gallery-text">Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/dark-theme-dark.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Tmavý motiv" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+       target="_blank" rel="noopener"
+       aria-label="Tmavý motiv - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/dark-theme-dark-640.webp" srcset="/assets/gallery/dark-theme-dark-640.webp 640w, /assets/gallery/dark-theme-dark.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí."
+           loading="eager" fetchpriority="high" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="panel-tabs">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Záložky v panelu</h3>
+    <p class="gallery-text">Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/panel-tabs-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Záložky v panelu" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+       target="_blank" rel="noopener"
+       aria-label="Záložky v panelu - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/panel-tabs-light-640.webp" srcset="/assets/gallery/panel-tabs-light-640.webp 640w, /assets/gallery/panel-tabs-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="code-viewer">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Prohlížeč kódu</h3>
+    <p class="gallery-text">F3 na zdrojovém souboru: zvýraznění syntaxe pro více než 200 formátů ve dvanácti barevných schématech.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/code-viewer-light.webp"
+       data-pswp-width="1100" data-pswp-height="760"
+       data-pswp-title="Prohlížeč kódu" data-pswp-caption="F3 na zdrojovém souboru: zvýraznění syntaxe pro více než 200 formátů ve dvanácti barevných schématech."
+       target="_blank" rel="noopener"
+       aria-label="Prohlížeč kódu - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/code-viewer-light-640.webp" srcset="/assets/gallery/code-viewer-light-640.webp 640w, /assets/gallery/code-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="442"
+           alt="Okno prohlížeče kódu se souborem C++, čísly řádků a barevně odlišenými klíčovými slovy, řetězci a komentáři."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="markdown-viewer">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Markdown na F3</h3>
+    <p class="gallery-text">Nadpisy, seznamy, tabulky a bloky kódu místo surového značkování - vykreslené, rolovatelné, jen pro čtení.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/markdown-viewer-light.webp"
+       data-pswp-width="1100" data-pswp-height="760"
+       data-pswp-title="Markdown na F3" data-pswp-caption="Nadpisy, seznamy, tabulky a bloky kódu místo surového značkování - vykreslené, rolovatelné, jen pro čtení."
+       target="_blank" rel="noopener"
+       aria-label="Markdown na F3 - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/markdown-viewer-light-640.webp" srcset="/assets/gallery/markdown-viewer-light-640.webp 640w, /assets/gallery/markdown-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="442"
+           alt="Okno prohlížeče Markdownu s vykresleným souborem README: nadpisy, tabulka cest k souborům a blok kódu."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="unicode-long-paths">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Unicode a dlouhé cesty</h3>
+    <p class="gallery-text">Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/unicode-long-paths-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Unicode a dlouhé cesty" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+       target="_blank" rel="noopener"
+       aria-label="Unicode a dlouhé cesty - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/unicode-long-paths-light-640.webp" srcset="/assets/gallery/unicode-long-paths-light-640.webp 640w, /assets/gallery/unicode-long-paths-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="thumbnails">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Náhledy bez čekání</h3>
+    <p class="gallery-text">Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/thumbnails-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Náhledy bez čekání" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+       target="_blank" rel="noopener"
+       aria-label="Náhledy bez čekání - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/thumbnails-light-640.webp" srcset="/assets/gallery/thumbnails-light-640.webp 640w, /assets/gallery/thumbnails-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="command-shell">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Shell podle vaší volby</h3>
+    <p class="gallery-text">Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/command-shell-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Shell podle vaší volby" data-pswp-caption="Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu."
+       target="_blank" rel="noopener"
+       aria-label="Shell podle vaší volby - zobrazit v plné velikosti">
+      <img class="shot-img"
+           src="/assets/gallery/command-shell-light-640.webp" srcset="/assets/gallery/command-shell-light-640.webp 640w, /assets/gallery/command-shell-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="Dialog Konfigurace otevřený na stránce Command Shell se seznamem shellů, které lze otevřít klávesou Command Shell."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+    </div>
+  </div>
+  <span class="visually-hidden" data-gallery-strings
+      data-close-title="Zavřít zvětšený náhled"
+      data-prev-title="Předchozí obrázek"
+      data-next-title="Další obrázek"
+      data-zoom-title="Přiblížit"
+      data-fullscreen-title="Celá obrazovka"
+      data-error-msg="Obrázek se nepodařilo načíst."></span>
+
 </section>
 
 <section class="section band">
@@ -165,17 +339,32 @@
       <article class="card">
         <p class="card-num">01</p>
         <h3 class="card-title">Dva panely</h3>
-        <p class="card-text">Zdroj vlevo, cíl vpravo. Kopírujte, přesouvejte, balte a porovnávejte bez otevírání druhého okna a bez sahání po myši.</p>
+        <p class="card-text">Zdroj vlevo, cíl vpravo - a každý panel udrží několik adresářů otevřených v záložkách. Kopírujte, přesouvejte, balte a porovnávejte bez otevírání druhého okna a bez sahání po myši.</p>
       </article>
       <article class="card">
         <p class="card-num">02</p>
         <h3 class="card-title">Klávesnice na prvním místě</h3>
-        <p class="card-text">Funkční klávesy podél spodního okraje, zkratka na všechno a příkazová řádka přesně tam, kde už vaše ruce jsou.</p>
+        <p class="card-text">Funkční klávesy podél spodního okraje, zkratka na všechno, příkazová řádka přesně tam, kde už vaše ruce jsou - a klávesa Command Shell, která otevře shell podle vaší volby, od PowerShellu po Git Bash.</p>
       </article>
       <article class="card card--accent">
         <p class="card-num card-num--brand">03</p>
         <h3 class="card-title">Vlastní jádro</h3>
-        <p class="card-text"><span class="mono">tandemcommander.exe</span> je program s vlastní identitou: vlastní ikona, vlastní titulky oken, vlastní nastavení – a aktualizované jádro postavené pro Windows 11, s plnou podporou Unicode a dlouhých cest napříč celým programem.</p>
+        <p class="card-text"><span class="mono">tandemcommander.exe</span> je program s vlastní identitou: vlastní ikona, vlastní titulky oken, vlastní nastavení - a aktualizované jádro postavené pro Windows 11, s plnou podporou Unicode a dlouhých cest napříč celým programem.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">04</p>
+        <h3 class="card-title">Prohlížeče na F3</h3>
+        <p class="card-text">Zdrojové a konfigurační soubory se zvýrazněním syntaxe ve více než 200 formátech, vykreslený Markdown, obrázky, databáze i spustitelné soubory - F3 otevře ten správný prohlížeč, Alt+F3 ten obyčejný.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">05</p>
+        <h3 class="card-title">Servery a cloudy</h3>
+        <p class="card-text">Linuxový server přes SFTP v jednom panelu, váš disk ve druhém. V cloudových složkách ukazují panely stejné odznaky synchronizace jako Průzkumník - OneDrive, Disk Google - a vedle nich stav TortoiseGit a TortoiseSVN.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">06</p>
+        <h3 class="card-title">Snadné nastěhování</h3>
+        <p class="card-text">Jednorázový nástroj přenese oblíbené cesty, FTP záložky, uživatelské menu, barvy a nastavení pluginů z Altap Salamanderu. Instaluje se podepsaným instalátorem; balíček pro winget je na cestě.</p>
       </article>
     </div>
   </div>
@@ -186,26 +375,48 @@
     <div class="section-head">
       <p class="kicker">Novinky</p>
       <h2 class="section-title">Co je nového v Tandem Commanderu.</h2>
-      <p class="section-lead">Hlavní novinky a vylepšení.</p>
+      <p class="section-lead">Nejdřív aktuální vydání, pod ním nejnovější novinky z těch předchozích.</p>
+    </div>
+    <div class="whats-new-current">
+      <p class="whats-new-version">Verze 0.1.8 · 20. září 2026</p>
+      <p class="whats-new-summary">Panely dostaly záložky jako v prohlížeči, program se spustí i bez Visual C++ runtime a další drobné úpravy.</p>
     </div>
     <div class="card-grid card-grid--news">
-      <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">Plný Unicode, dlouhé cesty</h3>
-        <p class="card-text card-text--sm">Názvy a cesty jsou Unicode od začátku do konce – panely, dialogy, prohlížeče, pluginy. Diakritika i nelatinková písma se vykreslují správně a cesty přesahující starý limit 260 znaků fungují. Stále ladím a opravuji - je toho hodně :)</p>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.8</p>
+        <h3 class="card-title card-title--sm">Záložky v panelech</h3>
+        <p class="card-text card-text--sm">Několik adresářů v jednom panelu, jako v prohlížeči. Každá záložka si pamatuje zobrazení, řazení, filtr, výběr i historii a po startu se vše obnoví. Novou otevřete přes <span class="mono">Ctrl+Shift+T</span>.</p>
+        <a class="card-link" href="/cs/#panel-tabs">Ukázka →</a>
+      </article>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.8</p>
+        <h3 class="card-title card-title--sm">Bez instalace runtime</h3>
+        <p class="card-text card-text--sm">Microsoft Visual C++ runtime je nově přímo ve složce programu. Na čistém počítači se starší verze nainstalovaly, ale nespustily - to už neplatí.</p>
       </article>
       <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">Nový SFTP plugin</h3>
-        <p class="card-text card-text--sm">Linuxový server v jednom panelu, váš disk ve druhém – postaveno na libssh2 přes SSH. Přihlášení heslem nebo privátním klíčem s ověřením klíče serveru, unixová oprávnění zobrazená jako <span class="mono">drwxr-xr-x</span>, chmod přímo z panelu. Stále je vývoji, ale už teď je fajn.</p>
+        <p class="version-chip">0.1.6</p>
+        <h3 class="card-title card-title--sm">Prohlížeč kódu</h3>
+        <p class="card-text card-text--sm"><span class="mono">F3</span> na zdrojovém nebo konfiguračním souboru ho zobrazí se zvýrazněním syntaxe - přes 200 jazyků a formátů, dvanáct barevných schémat, čísla řádků. Jen pro čtení: nic se nespouští ani neodesílá.</p>
+        <a class="card-link" href="/cs/#code-viewer">Ukázka →</a>
       </article>
       <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">Markdown View</h3>
-        <p class="card-text card-text--sm">F3 na souboru <span class="mono">.md</span> otevře nový plugin mdview: vykreslené nadpisy, seznamy, tabulky a bloky kódu místo surového značkování.</p>
+        <p class="version-chip">0.1.6</p>
+        <h3 class="card-title card-title--sm">Vlastní příkazový shell</h3>
+        <p class="card-text card-text--sm">Příkaz Command Shell (<span class="mono">Num /</span>) už není svázaný s Příkazovým řádkem: zvolte Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash nebo libovolný program s vlastními argumenty.</p>
       </article>
       <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">Opravený PictView</h3>
-        <p class="card-text card-text--sm">Prohlížeč obrázků znovu funguje – obrázky se spolehlivě otevírají z obou panelů a opravy se přenesly do nového jádra s čistou podporou Unicode. Optimalizováno vykreslování miniatur souborů u adresářů s desítkami tisíc fotek.</p>
+        <p class="version-chip">0.1.6</p>
+        <h3 class="card-title card-title--sm">Na cestě do wingetu</h3>
+        <p class="card-text card-text--sm">Tandem Commander je odeslán do katalogu Windows Package Manageru. Jakmile ho Microsoft přijme, <span class="mono">winget install tandemcommander</span> ho nainstaluje a <span class="mono">winget upgrade</span> udrží aktuální.</p>
+      </article>
+      <article class="card card--accent card--tight">
+        <p class="version-chip">0.1.5</p>
+        <h3 class="card-title card-title--sm">Diakritika funguje všude</h3>
+        <p class="card-text card-text--sm">Porovnání adresářů, příkazová řádka, externí archivátory, cloudové složky v liště disků, zástupci i drag-and-drop zvládají diakritiku a nelatinku. Soubory s poškozeným názvem jde konečně smazat i přejmenovat.</p>
+        <a class="card-link" href="/cs/#unicode-long-paths">Ukázka →</a>
       </article>
     </div>
+    <p class="section-more"><a href="/cs/releases/">Všechna vydání →</a></p>
   </div>
 </section>
 
@@ -213,10 +424,10 @@
   <div class="section-inner project-grid">
     <div>
       <p class="kicker">Projekt</p>
-      <h2 class="section-title">Open source – a otevřený i v tom, jak vzniká.</h2>
-      <p class="project-text">Tandem Commander vyrostl z <a href="https://github.com/OpenSalamander/salamander">Open Salamanderu</a>, klasického správce souborů, jehož zdrojový kód byl otevřen světu, a vděčí mu za všechno, s čím začínal. Náš dík patří původním autorům Salamanderu i všem, kdo kód udržovali při životě – čtvrt století pečlivé práce lidí, kterým záleželo na tom, jak se má správce souborů chovat.</p>
+      <h2 class="section-title">Open source - a otevřený i v tom, jak vzniká.</h2>
+      <p class="project-text">Tandem Commander vyrostl z <a href="https://github.com/OpenSalamander/salamander">Open Salamanderu</a>, klasického správce souborů, jehož zdrojový kód byl otevřen světu, a vděčí mu za všechno, s čím začínal. Náš dík patří původním autorům Salamanderu i všem, kdo kód udržovali při životě - čtvrt století pečlivé práce lidí, kterým záleželo na tom, jak se má správce souborů chovat.</p>
       <p class="project-text">Tandem Commander je svobodný software licencovaný pod <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2 a novější</a>. Jednotlivé soubory a přibalené knihovny nesou kompatibilní licence, a každý, kdo do projektu přispěl, je uveden v souboru <span class="mono mono--md">AUTHORS</span>.</p>
-      <p class="project-text">Pravidla, kterých se projekt drží – reprodukovatelnost sestavení, postupná modernizace, závazek vůči Windows a stabilní API pluginů – jsou zapsaná přímo v repozitáři.</p>
+      <p class="project-text">Pravidla, kterých se projekt drží - reprodukovatelnost sestavení, postupná modernizace, závazek vůči Windows a stabilní API pluginů - jsou zapsaná přímo v repozitáři.</p>
       <div class="agentic-note">
         <p class="project-text project-text--flush">Jedna věc je tu opravdu nová. Vývoj se řídí principy spec-driven developmentu: každá změna začíná jako psaná specifikace, která se ujasní, naplánuje a rozpadne na úkoly dřív, než se sáhne na kód, a implementaci provádějí agentní kódovací frameworky. Celá specifikační stopa je urdžovaná vedle kódu, takže repozitář zaznamenává nejen co se změnilo, ale i proč.</p>
       </div>
@@ -245,12 +456,12 @@
 <section id="story" class="section section--roomy section--divided">
   <div class="story-inner">
     <p class="kicker">Od autora</p>
-    <h2 class="section-title section-title--md">Proč tento projekt existuje – osobní poznámka</h2>
-    <p class="story-text">Kdykoli jsem pracoval na Windows, vždy byl po ruce Salamander. Nejdřív Servant Salamander, později Altap Salamander – podle mě nejlepší správce souborů, se kterým jsem kdy pracoval (a ano, vždy jsem jej chtěl dostat i do Linuxu - ale Krusader to jistí...). Poslední vydaná verze Altap Salamanderu však pochází z roku 2019 a pořád si nese pár neduhů: neúplnou podporu kódování, chybějící podporu dlouhých cest k adresářům a souborům a řadu dalších. Zároveň Altap Salamander dodnes denně používá spousta mých přátel a členů rodiny, v práci i doma.</p>
-    <p class="story-text">Ve chvíli, kdy byl Salamander uvolněn jako Open Salamander, jsem měl jasnou vizi: upravím si ho pro sebe, abych ho mohl prostě používat dál. Ta vize rychle narazila na tvrdou realitu – přestože jsem zkušený softwarový inženýr, vývojář a architekt, chyběl mi ten jediný faktor, který projekt tohoto rozsahu vyžaduje ze všeho nejvíc: čas.</p>
-    <p class="story-text">To se změnilo v podstatě během posledních měsíců s celkovým posunem v tom, jak dnes software může – ne být programován, ale <em>vznikat</em> – s pomocí agentních systémů. Termín, který pro tento přístup používám je <strong class="story-strong">Full Agentic Spec-Driven Development</strong>: jasně definované postupy nejen pro vznik kódu, ale pro vznik celého projektu – včetně dokumentace a artefaktů. Tento projekt je záměrně postaven spec-driven přístupem nad GitHub Spec Kitem, s využitím frontier modelů dostupných v daném okamžiku.</p>
-    <p class="story-text">Tandem Commander samozřejmě není dokonalý. Díky tomuto přístupu jsem ale nakonec získal skutečně použitelný nástroj – a doufám, že poslouží i dalším.</p>
-    <p class="story-text story-text--flush">Nic z toho by neexistovalo bez lidí, kteří vytvořili Servant Salamander, Altap Salamander a nakonec Open Salamander. Přes čtvrt století tvořili a pilovali program, kterému nespočet lidí – já, moji přátelé, moje rodina – svěřovalo svou každodenní práci, a je to znát v každém detailu: v rychlosti, v důrazu na klávesnici, v architektuře pluginů, v poctivosti kódu, který tento repozitář zdědil. Jejich rozhodnutí uvolnit ho pod open-source licencí bylo projevem skutečné velkorysosti, který dal tomuto pozoruhodnému softwaru druhý život. Tandem Commander stojí celý na jejich ramenou a doufám, že dělá čest tomu, co vybudovali. <b>Všem původním autorům a přispěvatelům: Děkuji.</b></p>
+    <h2 class="section-title section-title--md">Proč tento projekt existuje - osobní poznámka</h2>
+    <p class="story-text">Kdykoli jsem pracoval na Windows, vždy byl po ruce Salamander. Nejdřív Servant Salamander, později Altap Salamander - podle mě nejlepší správce souborů, se kterým jsem kdy pracoval (a ano, vždy jsem jej chtěl dostat i do Linuxu - ale Krusader to jistí...). Poslední vydaná verze Altap Salamanderu však pochází z roku 2019 a pořád si nese pár neduhů: neúplnou podporu kódování, chybějící podporu dlouhých cest k adresářům a souborům a řadu dalších. Zároveň Altap Salamander dodnes denně používá spousta mých přátel a členů rodiny, v práci i doma.</p>
+    <p class="story-text">Ve chvíli, kdy byl Salamander uvolněn jako Open Salamander, jsem měl jasnou vizi: upravím si ho pro sebe, abych ho mohl prostě používat dál. Ta vize rychle narazila na tvrdou realitu - přestože jsem zkušený softwarový inženýr, vývojář a architekt, chyběl mi ten jediný faktor, který projekt tohoto rozsahu vyžaduje ze všeho nejvíc: čas.</p>
+    <p class="story-text">To se změnilo v podstatě během posledních měsíců s celkovým posunem v tom, jak dnes software může - ne být programován, ale <em>vznikat</em> - s pomocí agentních systémů. Termín, který pro tento přístup používám je <strong class="story-strong">Full Agentic Spec-Driven Development</strong>: jasně definované postupy nejen pro vznik kódu, ale pro vznik celého projektu - včetně dokumentace a artefaktů. Tento projekt je záměrně postaven spec-driven přístupem nad GitHub Spec Kitem, s využitím frontier modelů dostupných v daném okamžiku.</p>
+    <p class="story-text">Tandem Commander samozřejmě není dokonalý. Díky tomuto přístupu jsem ale nakonec získal skutečně použitelný nástroj - a doufám, že poslouží i dalším.</p>
+    <p class="story-text story-text--flush">Nic z toho by neexistovalo bez lidí, kteří vytvořili Servant Salamander, Altap Salamander a nakonec Open Salamander. Přes čtvrt století tvořili a pilovali program, kterému nespočet lidí - já, moji přátelé, moje rodina - svěřovalo svou každodenní práci, a je to znát v každém detailu: v rychlosti, v důrazu na klávesnici, v architektuře pluginů, v poctivosti kódu, který tento repozitář zdědil. Jejich rozhodnutí uvolnit ho pod open-source licencí bylo projevem skutečné velkorysosti, který dal tomuto pozoruhodnému softwaru druhý život. Tandem Commander stojí celý na jejich ramenou a doufám, že dělá čest tomu, co vybudovali. <b>Všem původním autorům a přispěvatelům: Děkuji.</b></p>
     <p class="story-signature">Pavel Stupka<br><a href="mailto:pavel.stupka@gmail.com" class="story-mail">pavel.stupka@gmail.com</a><br><a href="https://www.linkedin.com/in/pavelstupka/" class="story-mail">LinkedIn</a></p>
   </div>
 </section>
@@ -298,10 +509,11 @@
       </div>
       <div class="footer-col">
         <p class="footer-heading">Program</p>
-        <a href="#screens" class="footer-link">Motivy</a>
+        <a href="#gallery" class="footer-link">Galerie</a>
         <a href="#new" class="footer-link">Novinky</a>
         <a href="#project" class="footer-link">Projekt</a>
         <a href="#download" class="footer-link">Stažení</a>
+        <a href="/cs/releases/" class="footer-link">Historie vydání</a>
       </div>
       <div class="footer-col">
         <p class="footer-heading">Zdrojový kód</p>

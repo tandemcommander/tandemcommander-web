@@ -1,6 +1,6 @@
 # tandemcommander-web
 
-Website for **Tandem Commander** — an open source two-pane file manager.
+Website for **Tandem Commander** - an open source two-pane file manager.
 
 A single-page static site built with [Eleventy](https://www.11ty.dev/) from sources in `src/`
 into `public/`, and hosted on
@@ -11,21 +11,23 @@ Project repository: <https://github.com/tandemcommander/tandemcommander>
 ## Structure
 
 ```
-src/                           # SOURCES — this is what you edit
-  index.njk                    # English page (/) — composes the sections below
-  cs/index.njk                 # Czech page (/cs/) — same sections, lang: cs
-  pad.njk                      # PAD file (/pad.xml) — machine-readable listing for software catalogs
+src/                           # SOURCES - this is what you edit
+  index.njk                    # English page (/) - composes the sections below
+  cs/index.njk                 # Czech page (/cs/) - same sections, lang: cs
+  pad.njk                      # PAD file (/pad.xml) - machine-readable listing for software catalogs
   _includes/
     layout.njk                 # <head> (meta/SEO/OG/hreflang), fonts, theme + language bootstrap
     sections/                  # one file per page section (header, hero, …); no hardcoded text
   _data/
     site.json                  # single source of shared values: version, URLs, contact,
-                               #   installer size in bytes (updated every release)
+                               #   installer size in bytes (written by `release:apply`)
+    releases.js                # release records for the templates (loads + validates content/releases)
+    pages.json                 # page paths per language - drives the generated sitemap
     installer.js               # derived installer file name + download URL (the only place
-                               #   these strings are built — used by the page and the PAD file)
+                               #   these strings are built - used by the page and the PAD file)
     pad.js                     # derived PAD values: release-date split, file sizes, changelog
     languages.json             # language registry (code, URL, labels, Intl/OG locales)
-    i18n/                      # ALL user-visible text — one catalog per language,
+    i18n/                      # ALL user-visible text - one catalog per language,
                                #   same keys everywhere (enforced at build time)
   css/main.css                 # design tokens (light/dark), all styles, responsive rules
   js/main.js                   # theme + language switcher + mobile (hamburger) menu
@@ -34,7 +36,16 @@ src/                           # SOURCES — this is what you edit
   root/                        # files copied to the site root (404, robots, sitemap,
                                #   _headers, favicons)
 
-public/                        # GENERATED output — never edit by hand
+content/                       # structured, list-shaped content - NOT Eleventy input
+  releases/<version>.json      # one release record per published version (EN + CS inline);
+                               #   source of "What's new", the PAD change-info (and the release history)
+lib/content.js                 # loading + validation of content/ - shared by build, tools, tests
+tools/release/                 # website release procedure: release.mjs (facts | apply | check),
+                               #   changelog.mjs, DIGEST-STYLE.md (editorial rules for digests)
+tests/                         # node --test - pure logic only (npm test)
+.claude/skills/release-web/    # /release-web <version> - the assisted layer of the release procedure
+
+public/                        # GENERATED output - never edit by hand
 eleventy.config.js             # Eleventy: src/ → public/, passthrough copies
 wrangler.jsonc                 # Cloudflare Worker configuration (serves ./public)
 specs/                         # spec-driven development artifacts (GitHub SpecKit)
@@ -45,55 +56,99 @@ needs no extra build configuration. Any manual edit in `public/` will be lost.
 
 ## Everyday tasks
 
-**Edit content** — change the string in `src/_data/i18n/en.json` **and** `cs.json` (the
+**Edit content** - change the string in `src/_data/i18n/en.json` **and** `cs.json` (the
 templates in `src/_includes/sections/` only hold structure), then rebuild. The build fails
-if any catalog is missing a key or holds an empty value — a page can never ship with a
+if any catalog is missing a key or holds an empty value - a page can never ship with a
 missing or half-done translation. Keys whose values intentionally contain HTML are listed
 in `RICH_TEXT_KEYS` in `eleventy.config.js`.
 
-**Release a new version** — in `src/_data/site.json` update `version`, `releaseDate` and
-`installerSizeBytes` (the exact byte size of the new installer asset on the GitHub release),
-refresh the What's New texts in the i18n catalogs, then rebuild and deploy. The hero badge,
-project card, download section, installer file name, download URL **and the PAD file**
-(version, release date, file sizes, download URL, changelog) all update from those values —
-no PAD-specific step exists. The build fails if `installerSizeBytes` is missing or implausible.
+**Release a new version** - the website follows the application's release; it can no longer be
+done by bumping three numbers. Every published version has a *release record*
+(`content/releases/<version>.json`): a one-sentence summary and 0-6 highlights, in English and
+Czech. The home page "What's new" (the current release on top, six cards topped up from earlier
+releases) and the PAD change-info are generated from the records. **The build fails** when the
+version in `site.json` has no record, when a text is missing or empty in any language, or when the
+record's date disagrees with `releaseDate` - the message names the file and the field.
 
-**Replace the (temporary) screenshots** — overwrite `src/assets/screenshot-light.png`
-and `src/assets/screenshot-dark.png` (same names), then rebuild. Layout adapts to any
-resolution.
+Order at a release: publish the application release on GitHub (with its installer and a dated
+`CHANGELOG.md` section) → website release → preview → commit, merge, deploy.
 
-**Add a language** — three steps (see `specs/004-multilingual-czech/` for the full design):
+- *Assisted (recommended)* - in Claude Code: `/release-web 0.1.9`. The assistant establishes the
+  facts, drafts the bilingual digest from the application changelog following
+  `tools/release/DIGEST-STYLE.md`, **waits for your approval**, records it, runs the checks and
+  lists what is left for you. It never commits, pushes or deploys.
+- *By hand* - the same steps without an assistant:
+
+  ```bash
+  npm run release:facts -- 0.1.9   # read-only: release published? date, build, exact installer size
+  npm run release:apply -- 0.1.9   # writes site.json, creates the record skeleton (empty texts)
+  #   … fill in summary + highlights in content/releases/0.1.9.json (both languages) …
+  npm run release:check            # tests + build + stale-screenshot report + remaining steps
+  ```
+
+  `release:facts` stops - and nothing is changed - when the GitHub release or its installer asset
+  is missing, or the application changelog has no dated section for the version. The changelog is
+  read from `--changelog <path>`, else `../tandemcommander/CHANGELOG.md`, else GitHub.
+
+A release with nothing a visitor cares about (an installer-only fix like 0.1.7) is a record with a
+summary and `"highlights": []` - valid; the home-page cards then come from earlier releases.
+The hero badge, project card, download section, installer file name, download URL and the PAD file
+still update from `site.json` as before. The winget block in the download section is rendered only
+while `site.json → winget.available` is `true` - flip it once the package is live in the catalogue.
+
+**Screenshots and the gallery** - every picture on the site is produced by one command from the
+officially published installer, inside a throw-away Windows Sandbox, so nothing of your own
+settings, drives or files can reach a published image:
+
+```bash
+npm run shots                  # every automated scene, for the version in site.json
+npm run shots -- --dry-run     # validate the scene catalog; start nothing
+npm run shots -- --scene code-viewer
+```
+
+The gallery lives entirely on the home page and shows only what Tandem Commander added to Open
+Salamander. The scenes live in `content/gallery/scenes.json` (what to show and the captions in
+both languages), the produced images in `src/assets/gallery/`, and `content/gallery/captures.json`
+records which application version each image was captured with - `npm run release:check` reports
+which ones a new release makes stale. **One-time prerequisite: Windows Sandbox must be enabled**
+(the command says how). Full guide, including how to add a scene: `tools/screenshots/README.md`.
+
+`src/assets/screenshot-light.png` and `screenshot-dark.png` are regenerated by the same run; those
+two addresses are permanent, because software catalogues fetch the first one through `/pad.xml`.
+
+**Add a language** - three steps (see `specs/004-multilingual-czech/` for the full design):
 
 1. add an entry to `src/_data/languages.json` (code, label, URL prefix, locales)
 2. create `src/_data/i18n/<code>.json` with every key translated (build enforces parity)
-3. create `src/<code>/index.njk` — a copy of `src/cs/index.njk` with `lang: <code>`
+3. create `src/<code>/index.njk` - a copy of `src/cs/index.njk` with `lang: <code>`
 
 Language behavior: English is the default at `/`, Czech lives at `/cs/`. The header
 switcher stores the visitor's explicit choice in `localStorage` under `tc-lang` (the only
-writer). The root page redirects before paint when a stored choice or — with nothing
-stored — the browser's first preferred language points to another language; a direct visit
+writer). The root page redirects before paint when a stored choice or - with nothing
+stored - the browser's first preferred language points to another language; a direct visit
 to `/cs/` always wins over both. Note for `eleventy --serve`: after editing
 `languages.json` or `RICH_TEXT_KEYS`, restart the server (catalog *values* reload
 automatically).
 
 ```bash
 npm install
-npm run build        # regenerate public/ from src/
-npm run dev          # live-reload dev server (Eleventy) — http://localhost:8080
+npm run build        # regenerate public/ from src/ + content/
+npm run dev          # live-reload dev server (Eleventy) - http://localhost:8080
+npm test             # pure-logic tests (node --test): records, changelog parser, stale report
 ```
 
 ## PAD file (software catalogs)
 
 The site publishes a [PAD file](https://en.wikipedia.org/wiki/Portable_Application_Description)
-— a machine-readable program description that software catalogs (e.g. slunecnice.cz) import
-instead of a hand-filled form — at:
+- a machine-readable program description that software catalogs (e.g. slunecnice.cz) import
+instead of a hand-filled form - at:
 
 **<https://tandemcommander.org/pad.xml>**
 
-⚠️ **This URL is permanent.** Catalogs store it and re-crawl it for updates — renaming or
+⚠️ **This URL is permanent.** Catalogs store it and re-crawl it for updates - renaming or
 moving the file after it has been submitted anywhere breaks every existing listing.
 
-The file targets **PAD 4.0** — the final revision of the format. Its originating association
+The file targets **PAD 4.0** - the final revision of the format. Its originating association
 dissolved in 2021 and released the specification into the public domain, and the host that
 served it is gone, so the machine-readable specification is **vendored** in this repository at
 `vendor/pad-4.0-spec.xml` (104 field definitions, each with a validation pattern). The build
@@ -105,11 +160,11 @@ How it fits together (full design in `specs/006-pad-v4-compliance/`, originally 
   keys in the i18n catalogs (English **and** Czech description blocks in one file).
 - A build gate in `eleventy.config.js` (`validatePad`) checks the rendered file in two layers
   and **fails the build** on any violation, so a non-compliant PAD never ships:
-  1. **PAD 4.0 conformance**, read from the vendored specification — element paths, value
+  1. **PAD 4.0 conformance**, read from the vendored specification - element paths, value
      patterns and every controlled vocabulary. There is no hand-maintained list of allowed
      values here; adding one would be a step backwards, because hand-transcribed tables are
      exactly what drifted out of spec before.
-  2. **Project facts the format cannot express** — which elements this project treats as
+  2. **Project facts the format cannot express** - which elements this project treats as
      mandatory, plus agreement with `site.json` (release date, installer size, canonical URLs,
      screenshot/icon files present).
 - The catalog-facing texts live under the `pad` namespace in `src/_data/i18n/en.json` and
@@ -118,23 +173,23 @@ How it fits together (full design in `specs/006-pad-v4-compliance/`, originally 
 ### Operating-system value: use `WinOther`
 
 PAD 4.0's operating-system vocabulary was frozen around 2012. Its newest Windows entries are
-`Windows 8`, `Windows RT` and `Windows Phone 7`/`8` — **there is no Windows 10 or Windows 11
+`Windows 8`, `Windows RT` and `Windows Phone 7`/`8` - **there is no Windows 10 or Windows 11
 token, and there never will be.** So `Program_OS_Support` carries the generic **`WinOther`**,
 and the real requirement lives in `Program_System_Requirements` (`Windows 11, x64`), which
 catalogs display to visitors.
 
-**Never pick a lower Windows token to look more specific** — `Windows 8` would publish a false
+**Never pick a lower Windows token to look more specific** - `Windows 8` would publish a false
 compatibility claim. This rule applies unchanged to every future Windows release: when the
 actual version has no PAD 4.0 token, it is `WinOther` plus accurate system requirements.
 
-To list the program on a new catalog, hand it the URL above — no other data entry needed.
+To list the program on a new catalog, hand it the URL above - no other data entry needed.
 
 ## Verifying and deploying
 
 > **Note**: Wrangler v4 requires Node.js ≥ 22 (`build` and `dev` are fine on Node 20).
 
 ```bash
-npm run preview      # wrangler dev — the real Cloudflare runtime locally
+npm run preview      # wrangler dev - the real Cloudflare runtime locally
 npm run check        # build + validate the config without deploying
 npm run deploy       # build + deploy (never deploys a stale public/)
 ```
@@ -142,19 +197,19 @@ npm run deploy       # build + deploy (never deploys a stale public/)
 Pushing to `main` triggers an automatic deploy through Cloudflare Workers Builds.
 
 The Cloudflare Worker is named **`tandemcommander-web`**. This name must stay in sync between
-`wrangler.jsonc` and the Cloudflare dashboard — a mismatch is the most common cause of a failed build.
+`wrangler.jsonc` and the Cloudflare dashboard - a mismatch is the most common cause of a failed build.
 
 ## Domain
 
 The site is served from **<https://tandemcommander.org>**, attached to the Worker as a Custom Domain
 in the Cloudflare dashboard (Worker → Settings → Domains & Routes). Cloudflare manages the DNS
-record and the TLS certificate — do not add a DNS record for the apex by hand.
+record and the TLS certificate - do not add a DNS record for the apex by hand.
 
 If the domain ever changes, update it in:
 
-- `src/_data/site.json` — `domain` and `url` (canonical, `og:url`, `og:image` derive from it)
-- `src/root/robots.txt` — the `Sitemap:` line
-- `src/root/sitemap.xml` — the `<loc>` element
+- `src/_data/site.json` - `domain` and `url` (canonical, `og:url`, `og:image` and the generated
+  `sitemap.xml` derive from it)
+- `src/root/robots.txt` - the `Sitemap:` line
 
 `www.tandemcommander.org` should redirect to the apex with a 301 (Cloudflare → Rules → Redirect Rules)
 so search engines do not index the site twice.
@@ -166,11 +221,11 @@ light (default) and a dark theme; both palettes live as CSS custom properties at
 `src/css/main.css`. The visitor's choice is stored in `localStorage` under `tc-theme`.
 
 - Brand orange `#F97316` (highlight `#FFB35C`, deep `#EA6A0B`)
-- Typefaces: Archivo (400–800) and IBM Plex Mono (400/500), self-hosted from `/fonts/`
-- Logo lockups (`src/assets/tandem-commander-lockup-*.svg`) — do not recolour or rebuild
+- Typefaces: Archivo (400-800) and IBM Plex Mono (400/500), self-hosted from `/fonts/`
+- Logo lockups (`src/assets/tandem-commander-lockup-*.svg`) - do not recolour or rebuild
 
 ## Licence
 
-Site code: MIT. Brand assets (logo, icon, wordmark) are not covered — they belong to the
+Site code: MIT. Brand assets (logo, icon, wordmark) are not covered - they belong to the
 Tandem Commander project. Archivo and IBM Plex Mono are licensed under the SIL Open Font
 License; see `src/fonts/`.

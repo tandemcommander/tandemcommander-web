@@ -1,0 +1,3 @@
+Ideas
+- tile-based rendering
+- PNG writer without zlib

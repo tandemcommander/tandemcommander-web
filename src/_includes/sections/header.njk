@@ -1,21 +1,25 @@
+{%- set locale = lang | locale -%}
+{%- set pagePath = pagePath or "" -%}
+{#- On sub-pages the section links lead back to the home page. -#}
+{%- set home = (locale.url if pagePath else "") -%}
 <header class="site-header">
   <div class="header-inner">
-    <a href="#top" class="brand">
+    <a href="{{ home }}#top" class="brand">
       <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
       <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
     </a>
     <nav class="site-nav" aria-label="{{ lang | t("nav.mainLabel") }}">
-      <a href="#screens" class="nav-link">{{ lang | t("nav.themes") }}</a>
-      <a href="#new" class="nav-link">{{ lang | t("nav.whatsNew") }}</a>
-      <a href="#project" class="nav-link">{{ lang | t("nav.project") }}</a>
-      <a href="#download" class="nav-link">{{ lang | t("nav.download") }}</a>
+      <a href="{{ home }}#gallery" class="nav-link">{{ lang | t("nav.gallery") }}</a>
+      <a href="{{ home }}#new" class="nav-link">{{ lang | t("nav.whatsNew") }}</a>
+      <a href="{{ home }}#project" class="nav-link">{{ lang | t("nav.project") }}</a>
+      <a href="{{ home }}#download" class="nav-link">{{ lang | t("nav.download") }}</a>
       <div class="theme-toggle" role="group" aria-label="{{ lang | t("nav.themeLabel") }}">
         <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">{{ lang | t("nav.themeLight") }}</button>
         <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">{{ lang | t("nav.themeDark") }}</button>
       </div>
       <nav class="lang-toggle" aria-label="{{ lang | t("nav.langLabel") }}">
         {%- for l in languages %}
-        <a href="{{ l.url }}" hreflang="{{ l.code }}" lang="{{ l.code }}" data-set-lang="{{ l.code }}" class="lang-link"{% if l.code == lang %} aria-current="true"{% endif %}>{{ l.label }}</a>
+        <a href="{{ l.url }}{{ pagePath }}" hreflang="{{ l.code }}" lang="{{ l.code }}" data-set-lang="{{ l.code }}" class="lang-link"{% if l.code == lang %} aria-current="true"{% endif %}>{{ l.label }}</a>
         {%- endfor %}
       </nav>
     </nav>
@@ -26,17 +30,17 @@
     </button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="{{ lang | t("nav.mobileMenuLabel") }}">
-    <a href="#screens" class="mobile-link">{{ lang | t("nav.themes") }}</a>
-    <a href="#new" class="mobile-link">{{ lang | t("nav.whatsNew") }}</a>
-    <a href="#project" class="mobile-link">{{ lang | t("nav.project") }}</a>
-    <a href="#download" class="mobile-link">{{ lang | t("nav.download") }}</a>
+    <a href="{{ home }}#gallery" class="mobile-link">{{ lang | t("nav.gallery") }}</a>
+    <a href="{{ home }}#new" class="mobile-link">{{ lang | t("nav.whatsNew") }}</a>
+    <a href="{{ home }}#project" class="mobile-link">{{ lang | t("nav.project") }}</a>
+    <a href="{{ home }}#download" class="mobile-link">{{ lang | t("nav.download") }}</a>
     <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="{{ lang | t("nav.themeLabel") }}">
       <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">{{ lang | t("nav.themeLight") }}</button>
       <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">{{ lang | t("nav.themeDark") }}</button>
     </div>
     <nav class="lang-toggle lang-toggle--mobile" aria-label="{{ lang | t("nav.langLabel") }}">
       {%- for l in languages %}
-      <a href="{{ l.url }}" hreflang="{{ l.code }}" lang="{{ l.code }}" data-set-lang="{{ l.code }}" class="lang-link"{% if l.code == lang %} aria-current="true"{% endif %}>{{ l.label }}</a>
+      <a href="{{ l.url }}{{ pagePath }}" hreflang="{{ l.code }}" lang="{{ l.code }}" data-set-lang="{{ l.code }}" class="lang-link"{% if l.code == lang %} aria-current="true"{% endif %}>{{ l.label }}</a>
       {%- endfor %}
     </nav>
   </nav>

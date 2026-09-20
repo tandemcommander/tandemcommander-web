@@ -1,0 +1,7 @@
+{
+  "name": "engine-tools",
+  "private": true,
+  "scripts": {
+    "preview": "node tools/preview.js out/frame.png"
+  }
+}

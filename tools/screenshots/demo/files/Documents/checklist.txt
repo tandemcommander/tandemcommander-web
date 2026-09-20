@@ -1,0 +1,4 @@
+[ ] renew domain
+[ ] back up laptop
+[x] send Q3 report
+[ ] book train tickets

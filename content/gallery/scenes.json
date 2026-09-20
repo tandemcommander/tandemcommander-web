@@ -1,0 +1,540 @@
+[
+  {
+    "id": "main-window",
+    "title": {
+      "en": "Two panels, many tabs",
+      "cs": "Dva panely, spousta záložek"
+    },
+    "caption": {
+      "en": "Source on the left, target on the right - and each panel keeps several directories open in tabs.",
+      "cs": "Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+    },
+    "alt": {
+      "en": "The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom.",
+      "cs": "Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": true,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "settle": {
+            "timeoutMs": 6000
+          }
+        },
+        {
+          "capture": "main"
+        }
+      ]
+    }
+  },
+  {
+    "id": "dark-theme",
+    "title": {
+      "en": "Dark theme",
+      "cs": "Tmavý motiv"
+    },
+    "caption": {
+      "en": "The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m.",
+      "cs": "Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+    },
+    "alt": {
+      "en": "The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background.",
+      "cs": "Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí."
+    },
+    "themes": [
+      "dark"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": true,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "settle": {
+            "timeoutMs": 6000
+          }
+        },
+        {
+          "capture": "main"
+        }
+      ]
+    }
+  },
+  {
+    "id": "panel-tabs",
+    "title": {
+      "en": "Tabs in a panel",
+      "cs": "Záložky v panelu"
+    },
+    "caption": {
+      "en": "Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history.",
+      "cs": "Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+    },
+    "alt": {
+      "en": "The main window with several directory tabs open above the left panel, the active tab carrying a close button.",
+      "cs": "Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": true,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "keys": "Ctrl+Shift+T"
+        },
+        {
+          "focus": "Contracts"
+        },
+        {
+          "keys": "Enter"
+        },
+        {
+          "keys": "Ctrl+Shift+T"
+        },
+        {
+          "keys": "Backspace"
+        },
+        {
+          "focus": "Reports"
+        },
+        {
+          "keys": "Enter"
+        },
+        {
+          "settle": {
+            "timeoutMs": 5000
+          }
+        },
+        {
+          "capture": "main"
+        }
+      ]
+    }
+  },
+  {
+    "id": "code-viewer",
+    "title": {
+      "en": "Code Viewer",
+      "cs": "Prohlížeč kódu"
+    },
+    "caption": {
+      "en": "F3 on a source file: syntax highlighting for over 200 formats in twelve colour schemes.",
+      "cs": "F3 na zdrojovém souboru: zvýraznění syntaxe pro více než 200 formátů ve dvanácti barevných schématech."
+    },
+    "alt": {
+      "en": "The Code Viewer window showing a C++ file with line numbers and coloured keywords, strings and comments.",
+      "cs": "Okno prohlížeče kódu se souborem C++, čísly řádků a barevně odlišenými klíčovými slovy, řetězci a komentáři."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": false,
+    "stage": {
+      "window": {
+        "width": 1100,
+        "height": 760
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Projects\\engine\\src"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects\\engine"
+        }
+      },
+      "steps": [
+        {
+          "focus": "renderer.cpp"
+        },
+        {
+          "keys": "F3"
+        },
+        {
+          "waitWindow": {
+            "titleContains": "renderer.cpp",
+            "timeoutMs": 45000
+          }
+        },
+        {
+          "resize": {
+            "width": 1100,
+            "height": 760
+          }
+        },
+        {
+          "settle": {
+            "timeoutMs": 20000
+          }
+        },
+        {
+          "capture": "foreground"
+        },
+        {
+          "close": "foreground"
+        }
+      ]
+    }
+  },
+  {
+    "id": "markdown-viewer",
+    "title": {
+      "en": "Markdown on F3",
+      "cs": "Markdown na F3"
+    },
+    "caption": {
+      "en": "Headings, lists, tables and code blocks instead of raw markup - rendered, scrollable, read-only.",
+      "cs": "Nadpisy, seznamy, tabulky a bloky kódu místo surového značkování - vykreslené, rolovatelné, jen pro čtení."
+    },
+    "alt": {
+      "en": "The Markdown viewer window showing a rendered README: headings, a table of file paths and a fenced code block.",
+      "cs": "Okno prohlížeče Markdownu s vykresleným souborem README: nadpisy, tabulka cest k souborům a blok kódu."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": false,
+    "stage": {
+      "window": {
+        "width": 1100,
+        "height": 760
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Projects\\engine"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "focus": "README.md"
+        },
+        {
+          "keys": "F3"
+        },
+        {
+          "waitWindow": {
+            "titleContains": "README",
+            "timeoutMs": 45000
+          }
+        },
+        {
+          "resize": {
+            "width": 1100,
+            "height": 760
+          }
+        },
+        {
+          "settle": {
+            "timeoutMs": 20000
+          }
+        },
+        {
+          "capture": "foreground"
+        },
+        {
+          "close": "foreground"
+        }
+      ]
+    }
+  },
+  {
+    "id": "unicode-long-paths",
+    "title": {
+      "en": "Unicode and long paths",
+      "cs": "Unicode a dlouhé cesty"
+    },
+    "caption": {
+      "en": "Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit.",
+      "cs": "Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+    },
+    "alt": {
+      "en": "A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters.",
+      "cs": "Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": false,
+    "showsVersion": true,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Unicode"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Unicode\\long\\a-very-long-directory-name-used-to-pass-260-characters\\a-very-long-directory-name-used-to-pass-260-characters\\a-very-long-directory-name-used-to-pass-260-characters\\a-very-long-directory-name-used-to-pass-260-characters\\a-very-long-directory-name-used-to-pass-260-characters"
+        }
+      },
+      "steps": [
+        {
+          "settle": {
+            "timeoutMs": 5000
+          }
+        },
+        {
+          "capture": "main"
+        }
+      ]
+    }
+  },
+  {
+    "id": "thumbnails",
+    "title": {
+      "en": "Thumbnails without the wait",
+      "cs": "Náhledy bez čekání"
+    },
+    "caption": {
+      "en": "A folder of photographs fills in at once, and pictures taken sideways are shown the right way up.",
+      "cs": "Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+    },
+    "alt": {
+      "en": "A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation.",
+      "cs": "Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": false,
+    "showsVersion": true,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Pictures"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Documents"
+        }
+      },
+      "steps": [
+        {
+          "keys": "Alt+5"
+        },
+        {
+          "settle": {
+            "timeoutMs": 15000
+          }
+        },
+        {
+          "capture": "main"
+        }
+      ]
+    }
+  },
+  {
+    "id": "command-shell",
+    "title": {
+      "en": "The shell you choose",
+      "cs": "Shell podle vaší volby"
+    },
+    "caption": {
+      "en": "Command Prompt, PowerShell 7, Windows Terminal, Git Bash or any program of your own - on one key.",
+      "cs": "Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu."
+    },
+    "alt": {
+      "en": "The Configuration dialog open on its Command Shell page, listing the shells that can be opened with the Command Shell key.",
+      "cs": "Dialog Konfigurace otevřený na stránce Command Shell se seznamem shellů, které lze otevřít klávesou Command Shell."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": false,
+    "showsVersion": false,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "keys": "Alt+O"
+        },
+        {
+          "keys": "C"
+        },
+        {
+          "waitWindow": {
+            "titleContains": "Configuration",
+            "timeoutMs": 30000
+          }
+        },
+        {
+          "keys": "Down*15"
+        },
+        {
+          "settle": {
+            "timeoutMs": 8000
+          }
+        },
+        {
+          "capture": "withDialog"
+        },
+        {
+          "close": "foreground"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sftp",
+    "title": {
+      "en": "A Linux server in a panel",
+      "cs": "Linuxový server v panelu"
+    },
+    "caption": {
+      "en": "Browse, copy and rename over SSH with the same keys as on your own disk; unix permissions right in the panel.",
+      "cs": "Procházejte, kopírujte a přejmenovávejte přes SSH stejnými klávesami jako na svém disku; unixová práva přímo v panelu."
+    },
+    "alt": {
+      "en": "The left panel showing a directory on a remote SSH server with unix permissions in a column, the right panel a local directory.",
+      "cs": "Levý panel s adresářem na vzdáleném SSH serveru a sloupcem unixových práv, pravý panel s místním adresářem."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "manual-sandbox",
+    "featured": false,
+    "showsVersion": false,
+    "published": false,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "capture": "main"
+        }
+      ]
+    },
+    "manualSteps": [
+      "Connect the left panel to an SSH server you are willing to publish (F11, or Plugins - SFTP Client).",
+      "Open a directory with a few files so the unix permission column is filled.",
+      "Leave the right panel on C:\\Workspace\\Documents.",
+      "Check the picture for personal data before accepting it: host name, user name, private paths."
+    ]
+  },
+  {
+    "id": "cloud-sync-badges",
+    "title": {
+      "en": "Cloud status, as in Explorer",
+      "cs": "Stav cloudu jako v Průzkumníku"
+    },
+    "caption": {
+      "en": "Synced, online-only, syncing or error - the panels show the same badges as Windows Explorer does.",
+      "cs": "Synchronizováno, jen online, probíhá nebo chyba - panely ukazují stejné odznaky jako Průzkumník Windows."
+    },
+    "alt": {
+      "en": "A panel showing a cloud-synced folder where each item carries the same overlay badge Windows Explorer shows.",
+      "cs": "Panel se složkou synchronizovanou s cloudem, kde každá položka nese stejný odznak jako v Průzkumníku Windows."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "manual-host",
+    "featured": false,
+    "showsVersion": false,
+    "published": false,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "capture": "main"
+        }
+      ]
+    },
+    "manualSteps": [
+      "Open a cloud-synced folder (OneDrive, Google Drive) in the left panel with a mix of synced and online-only items.",
+      "Keep the right panel on a neutral local folder.",
+      "Resize the window to 1200x800 with the helper, then capture.",
+      "Check the picture for personal data before accepting it: account name, private file names, drive labels."
+    ]
+  }
+]

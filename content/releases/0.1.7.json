@@ -1,0 +1,11 @@
+{
+  "version": "0.1.7",
+  "date": "2026-08-29",
+  "build": 191,
+  "kind": "installer",
+  "summary": {
+    "en": "Installer fix: unattended installation with `/VERYSILENT` works for the first time - the precondition for winget and managed deployment. The application itself is unchanged.",
+    "cs": "Oprava instalátoru: bezobslužná instalace s `/VERYSILENT` poprvé funguje - což je podmínka pro winget i hromadné nasazení. Samotná aplikace se nezměnila."
+  },
+  "highlights": []
+}

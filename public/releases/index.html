@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Release history - Tandem Commander</title>
+<meta name="description" content="What changed in every version of Tandem Commander, the two-pane file manager for Windows 11 - newest first, with links to the full release notes.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1424" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://tandemcommander.org/releases/">
+<link rel="alternate" hreflang="en" href="https://tandemcommander.org/releases/">
+<link rel="alternate" hreflang="cs" href="https://tandemcommander.org/cs/releases/">
+<link rel="alternate" hreflang="x-default" href="https://tandemcommander.org/releases/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tandem Commander">
+<meta property="og:url" content="https://tandemcommander.org/releases/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="cs_CZ">
+<meta property="og:title" content="Release history - Tandem Commander">
+<meta property="og:description" content="What changed in every version of Tandem Commander, the two-pane file manager for Windows 11 - newest first, with links to the full release notes.">
+<meta property="og:image" content="https://tandemcommander.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tandem Commander - two-pane file manager for Windows">
+<meta name="twitter:card" content="summary_large_image">
+
+<script>(function(){try{var t=localStorage.getItem('tc-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+
+
+<link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="/css/main.css">
+<script defer src="/js/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/#top" class="brand">
+      <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
+      <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#gallery" class="nav-link">Gallery</a>
+      <a href="/#new" class="nav-link">What&#39;s new</a>
+      <a href="/#project" class="nav-link">Project</a>
+      <a href="/#download" class="nav-link">Download</a>
+      <div class="theme-toggle" role="group" aria-label="Theme">
+        <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Light</button>
+        <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Dark</button>
+      </div>
+      <nav class="lang-toggle" aria-label="Language">
+        <a href="/releases/" hreflang="en" lang="en" data-set-lang="en" class="lang-link" aria-current="true">EN</a>
+        <a href="/cs/releases/" hreflang="cs" lang="cs" data-set-lang="cs" class="lang-link">CS</a>
+      </nav>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Main menu">
+    <a href="/#gallery" class="mobile-link">Gallery</a>
+    <a href="/#new" class="mobile-link">What&#39;s new</a>
+    <a href="/#project" class="mobile-link">Project</a>
+    <a href="/#download" class="mobile-link">Download</a>
+    <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="Theme">
+      <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Light</button>
+      <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Dark</button>
+    </div>
+    <nav class="lang-toggle lang-toggle--mobile" aria-label="Language">
+      <a href="/releases/" hreflang="en" lang="en" data-set-lang="en" class="lang-link" aria-current="true">EN</a>
+      <a href="/cs/releases/" hreflang="cs" lang="cs" data-set-lang="cs" class="lang-link">CS</a>
+    </nav>
+  </nav>
+</header>
+
+<main>
+<section id="top" class="section section--page">
+  <div class="section-inner section-inner--narrow">
+    <div class="section-head">
+      <p class="kicker">Release history</p>
+      <h1 class="section-title">Every release, newest first.</h1>
+      <p class="section-lead">What each version of Tandem Commander brought, in a few sentences. The complete, technical notes of every release are on GitHub.</p>
+    </div>
+    <div class="release-list">
+      <article class="release release--current" id="v0.1.8">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.8">0.1.8</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-09-20">September 20, 2026</time>
+            <span class="release-kind">Feature release</span>
+            <span class="version-chip version-chip--current">current</span>
+          </p>
+        </header>
+        <p class="release-summary">Panels get browser-style tabs, the program starts without the Visual C++ runtime, and other minor upgrades.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Panel tabs</strong>
+            <span class="release-highlight-text">Several directories per panel, the way a browser does it. Each tab keeps its own view, sorting, filter, selection and history, and the whole set returns at the next start. <span class="mono">Ctrl+Shift+T</span> opens one.</span>
+            <a class="card-link card-link--inline" href="/#panel-tabs">See it →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">No runtime to install</strong>
+            <span class="release-highlight-text">The Microsoft Visual C++ runtime now ships inside the program folder. On a clean PC, earlier versions installed fine and then refused to start - that is over.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.8">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.7">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.7">0.1.7</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-29">August 29, 2026</time>
+            <span class="release-kind">Installer fix</span>
+          </p>
+        </header>
+        <p class="release-summary">Installer fix: unattended installation with <span class="mono">/VERYSILENT</span> works for the first time - the precondition for winget and managed deployment. The application itself is unchanged.</p>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.7">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.6">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.6">0.1.6</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-29">August 29, 2026</time>
+            <span class="release-kind">Feature release</span>
+          </p>
+        </header>
+        <p class="release-summary">A new Code Viewer with syntax highlighting, a Command Shell command that opens the shell you choose, and the first release submitted to the winget catalogue.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Code Viewer</strong>
+            <span class="release-highlight-text"><span class="mono">F3</span> on a source or configuration file shows it with syntax highlighting - over 200 languages and formats, twelve colour schemes, line numbers. Read-only: nothing is executed, no network request is made.</span>
+            <a class="card-link card-link--inline" href="/#code-viewer">See it →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Choose your command shell</strong>
+            <span class="release-highlight-text">The Command Shell command (<span class="mono">Num /</span>) is no longer tied to Command Prompt: pick Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash or any program with your own arguments.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">On the way to winget</strong>
+            <span class="release-highlight-text">Tandem Commander is submitted to the Windows Package Manager catalogue. Once Microsoft accepts it, <span class="mono">winget install tandemcommander</span> installs it and <span class="mono">winget upgrade</span> keeps it current.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.6">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.5">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.5">0.1.5</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-25">August 25, 2026</time>
+            <span class="release-kind">Bug-fix release</span>
+          </p>
+        </header>
+        <p class="release-summary">A product-wide review of accented and non-Latin text fixes names in dozens of places, removes a crash on long names, and Markdown files now open instantly.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Accents work everywhere</strong>
+            <span class="release-highlight-text">Compare Directories, the command line, external archivers, cloud folders in the drive bar, shortcuts and drag-and-drop now handle accented and non-Latin names. Files with broken names can finally be deleted or renamed.</span>
+            <a class="card-link card-link--inline" href="/#unicode-long-paths">See it →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Instant Markdown</strong>
+            <span class="release-highlight-text">The rendering engine stays ready after the first Markdown view of a session, so every later <span class="mono">F3</span> and every followed link renders immediately.</span>
+            <a class="card-link card-link--inline" href="/#markdown-viewer">See it →</a>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.5">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.4">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.4">0.1.4</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-19">August 19, 2026</time>
+            <span class="release-kind">Bug-fix release</span>
+          </p>
+        </header>
+        <p class="release-summary">Thumbnails appear immediately even in huge photo folders, DEL uses the Recycle Bin again in folders with accented paths, and TortoiseGit and TortoiseSVN badges are back.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Thumbnails without the wait</strong>
+            <span class="release-highlight-text">Thumbnails view (<span class="mono">Alt+5</span>) starts with the files on screen and uses embedded previews, so a folder with thousands of photos fills in at once. Portrait photos are rotated correctly.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">DEL goes to the Recycle Bin</strong>
+            <span class="release-highlight-text">In folders whose path contains accented characters - typical for localized OneDrive trees - DEL deleted permanently. It moves files to the Recycle Bin again, and fails safe when unsure.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Tortoise badges are back</strong>
+            <span class="release-highlight-text">Status badges of TortoiseGit and TortoiseSVN show again at display scaling other than 100 % and refresh in folders with accented names.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.4">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.3">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.3">0.1.3</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-18">August 18, 2026</time>
+            <span class="release-kind">Feature release</span>
+          </p>
+        </header>
+        <p class="release-summary">A one-time utility migrates your settings from Altap Salamander, and cloud sync-status badges now display as they do in Windows Explorer.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Migrate from Altap Salamander</strong>
+            <span class="release-highlight-text">A standalone utility copies hot paths, FTP bookmarks, the user menu, associations, colours and plugin settings from Altap Salamander - with a backup and a one-click restore. Your Salamander setup is never modified.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Cloud sync badges</strong>
+            <span class="release-highlight-text">OneDrive and Google Drive status badges - synced, online-only, syncing, error - appear as in Explorer, including the sync-in-progress arrows and folders with non-ASCII names.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.3">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.2">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.2">0.1.2</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-07">August 7, 2026</time>
+            <span class="release-kind">Maintenance release</span>
+          </p>
+        </header>
+        <p class="release-summary">The SFTP plugin's dialogs and connection handling were reworked, and every machine-translated text in all eight non-English languages was redone with context.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">SFTP dialogs that fit</strong>
+            <span class="release-highlight-text">The settings window opens again, labels are no longer cut off in translated interfaces, a host with an unreachable first address connects in a second, and Quick Connect no longer stores anything.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Translations with context</strong>
+            <span class="release-highlight-text">About 3,300 strings across the file manager and 18 plugins were re-translated knowing where they appear - no more server address field labelled as a talk-show host.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.2">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.1">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.1">0.1.1</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-05">August 5, 2026</time>
+            <span class="release-kind">Bug-fix release</span>
+          </p>
+        </header>
+        <p class="release-summary">SFTP fixes: connecting with an OpenSSH-format private key no longer freezes the application, and no SFTP operation can hang it any more.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">SFTP private keys work</strong>
+            <span class="release-highlight-text">OpenSSH-format RSA and ECDSA keys authenticate, passphrases are honoured and asked again when wrong, unsupported key types are refused with the reason, and a lost connection reconnects on the next operation.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.1">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.0">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.0">0.1.0</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-05">August 5, 2026</time>
+            <span class="release-kind">First release</span>
+          </p>
+        </header>
+        <p class="release-summary">First public release: Tandem Commander's own identity, Unicode and long paths throughout, an SFTP plugin, a Markdown viewer and a dark theme.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Full Unicode, long paths</strong>
+            <span class="release-highlight-text">Names and paths are Unicode end to end - panels, dialogs, viewers, plugins. Accents and non-Latin scripts render correctly, and paths past the old 260-character limit just work.</span>
+            <a class="card-link card-link--inline" href="/#unicode-long-paths">See it →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">SFTP plugin</strong>
+            <span class="release-highlight-text">A Linux server in one panel, your disk in the other. Password or private-key login with host-key verification, unix permissions shown as <span class="mono">drwxr-xr-x</span>, chmod straight from the panel.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Markdown viewer</strong>
+            <span class="release-highlight-text"><span class="mono">F3</span> on an <span class="mono">.md</span> file opens a rendered view - headings, lists, tables and code blocks instead of raw markup.</span>
+            <a class="card-link card-link--inline" href="/#markdown-viewer">See it →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Light and dark themes</strong>
+            <span class="release-highlight-text">The classic light look stays the default; a new dark theme covers the application, its dialogs, toolbars, panels and plugin windows with the same layout and density.</span>
+            <a class="card-link card-link--inline" href="/#dark-theme">See it →</a>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.0">Full release notes on GitHub ↗</a></p>
+      </article>
+    </div>
+    <p class="release-get"><a href="/#download" class="btn btn--primary">Get version 0.1.8</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="brand brand--footer">
+          <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
+          <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
+        </div>
+        <p class="footer-tagline">A fast, keyboard-friendly two-pane file manager for Windows.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Program</p>
+        <a href="/#gallery" class="footer-link">Gallery</a>
+        <a href="/#new" class="footer-link">What&#39;s new</a>
+        <a href="/#project" class="footer-link">Project</a>
+        <a href="/#download" class="footer-link">Download</a>
+        <a href="/releases/" class="footer-link">Release history</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Source</p>
+        <a href="https://github.com/tandemcommander/tandemcommander" class="footer-link">GitHub</a>
+        <a href="https://github.com/tandemcommander/tandemcommander/issues" class="footer-link">Issues</a>
+        <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" class="footer-link">GPLv2 licence</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Contact</p>
+        <span class="footer-plain">Pavel Stupka</span>
+        <a href="mailto:pavel.stupka@gmail.com" class="footer-link">pavel.stupka@gmail.com</a>
+        <a href="https://www.linkedin.com/in/pavelstupka/" class="footer-link">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">tandemcommander.org · GPLv2 or later</p>
+      <p class="footer-note">Free software, built in the open. Issues and pull requests are welcome.</p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

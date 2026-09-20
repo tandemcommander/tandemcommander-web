@@ -1,0 +1,36 @@
+{
+  "version": "0.1.5",
+  "date": "2026-08-25",
+  "build": 189,
+  "kind": "bugfix",
+  "summary": {
+    "en": "A product-wide review of accented and non-Latin text fixes names in dozens of places, removes a crash on long names, and Markdown files now open instantly.",
+    "cs": "Celoplošná revize práce s diakritikou a nelatinkou opravuje názvy na desítkách míst, odstraňuje pád u dlouhých názvů a soubory Markdown se nově otevírají okamžitě."
+  },
+  "highlights": [
+    {
+      "id": "unicode-review",
+      "title": {
+        "en": "Accents work everywhere",
+        "cs": "Diakritika funguje všude"
+      },
+      "text": {
+        "en": "Compare Directories, the command line, external archivers, cloud folders in the drive bar, shortcuts and drag-and-drop now handle accented and non-Latin names. Files with broken names can finally be deleted or renamed.",
+        "cs": "Porovnání adresářů, příkazová řádka, externí archivátory, cloudové složky v liště disků, zástupci i drag-and-drop zvládají diakritiku a nelatinku. Soubory s poškozeným názvem jde konečně smazat i přejmenovat."
+      },
+      "scene": "unicode-long-paths"
+    },
+    {
+      "id": "instant-markdown",
+      "title": {
+        "en": "Instant Markdown",
+        "cs": "Markdown bez čekání"
+      },
+      "text": {
+        "en": "The rendering engine stays ready after the first Markdown view of a session, so every later `F3` and every followed link renders immediately.",
+        "cs": "Vykreslovací jádro zůstává po prvním zobrazení Markdownu připravené, takže každé další `F3` i přechod přes odkaz se vykreslí okamžitě."
+      },
+      "scene": "markdown-viewer"
+    }
+  ]
+}

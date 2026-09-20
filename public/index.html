@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tandem Commander – two-pane file manager for Windows</title>
-<meta name="description" content="A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase – full Unicode, long paths, SFTP, Markdown viewer, light and dark themes and ongoing development. Free under GPLv2.">
+<title>Tandem Commander - two-pane file manager for Windows</title>
+<meta name="description" content="A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase - panel tabs, full Unicode and long paths, SFTP, Code and Markdown viewers, cloud sync badges, light and dark themes. Free under GPLv2.">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0A1424" media="(prefers-color-scheme: dark)">
 
@@ -21,18 +21,18 @@
 <meta property="og:url" content="https://tandemcommander.org/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="cs_CZ">
-<meta property="og:title" content="Tandem Commander – two-pane file manager for Windows">
-<meta property="og:description" content="A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase – full Unicode, long paths, SFTP, Markdown viewer, light and dark themes and ongoing development. Free under GPLv2.">
+<meta property="og:title" content="Tandem Commander - two-pane file manager for Windows">
+<meta property="og:description" content="A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase - panel tabs, full Unicode and long paths, SFTP, Code and Markdown viewers, cloud sync badges, light and dark themes. Free under GPLv2.">
 <meta property="og:image" content="https://tandemcommander.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Tandem Commander – two-pane file manager for Windows">
+<meta property="og:image:alt" content="Tandem Commander - two-pane file manager for Windows">
 <meta name="twitter:card" content="summary_large_image">
 
 <script>(function(){try{var t=localStorage.getItem('tc-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <script>(function(){try{
 /* Language routing (spec 004, contracts/language-routing.md). Runs only on the
-   default-language page, before paint. Never writes to storage — only the
+   default-language page, before paint. Never writes to storage - only the
    switcher does. Any error leaves the page as it is (English). */
 var locales={"en":null,"cs":"/cs/"};
 var stored=null;try{stored=localStorage.getItem('tc-lang');}catch(e){}
@@ -50,6 +50,7 @@ if(target){location.replace(target+location.search+location.hash);}
 
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 
+<link rel="stylesheet" href="/js/vendor/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/css/main.css">
 <script defer src="/js/main.js"></script>
 </head>
@@ -61,7 +62,7 @@ if(target){location.replace(target+location.search+location.hash);}
       <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
     </a>
     <nav class="site-nav" aria-label="Main">
-      <a href="#screens" class="nav-link">Themes</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
       <a href="#new" class="nav-link">What&#39;s new</a>
       <a href="#project" class="nav-link">Project</a>
       <a href="#download" class="nav-link">Download</a>
@@ -81,7 +82,7 @@ if(target){location.replace(target+location.search+location.hash);}
     </button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Main menu">
-    <a href="#screens" class="mobile-link">Themes</a>
+    <a href="#gallery" class="mobile-link">Gallery</a>
     <a href="#new" class="mobile-link">What&#39;s new</a>
     <a href="#project" class="mobile-link">Project</a>
     <a href="#download" class="mobile-link">Download</a>
@@ -100,11 +101,11 @@ if(target){location.replace(target+location.search+location.hash);}
 <section id="top" class="hero">
   <div class="hero-inner">
     <div class="hero-lockup">
-      <img src="/assets/tandem-commander-lockup-light.svg" alt="Tandem Commander – two-pane file manager" class="lockup lockup--light">
+      <img src="/assets/tandem-commander-lockup-light.svg" alt="Tandem Commander - two-pane file manager" class="lockup lockup--light">
       <img src="/assets/tandem-commander-lockup-dark.svg" alt="" aria-hidden="true" class="lockup lockup--dark">
     </div>
     <h1 class="hero-title">The two-pane <br>legend&nbsp;<span class="accent">reborn</span></h1>
-    <p class="hero-lead">Two panels, function keys along the bottom, a plugin for everything – the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, connects over SFTP, renders Markdown on F3 – and ships in a dark theme as well as the light one.</p>
+    <p class="hero-lead">Two panels, function keys along the bottom, a plugin for everything - the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, keeps directories open in panel tabs, connects over SFTP, shows source code and Markdown on F3, mirrors your cloud sync status - and ships in a dark theme as well as the light one.</p>
     <div class="hero-cta">
       <a href="#download" class="btn btn--primary">Download for Windows<span class="btn-badge">v0.1.8</span></a>
       <a href="https://github.com/tandemcommander/tandemcommander" class="btn btn--secondary">Browse the source</a>
@@ -113,60 +114,233 @@ if(target){location.replace(target+location.search+location.hash);}
   </div>
 </section>
 
-<section id="screens" class="section">
+<section id="gallery" class="section">
+  <span id="screens" class="anchor-alias" aria-hidden="true"></span>
   <div class="section-inner">
     <div class="section-head">
-      <p class="kicker">Two themes, one binary</p>
-      <h2 class="section-title">Light by default. Dark when you want it.</h2>
-      <p class="section-lead">The classic light panels are still the default – nothing moved, nothing was reflowed. The new dark theme is the same layout with the same information density, for the people who stopped enjoying white rectangles at 2 a.m. It is still experimental – a few places are not quite final yet.</p>
+      <p class="kicker">See it working</p>
+      <h2 class="section-title">Tandem Commander features gallery.</h2>
+      <p class="section-lead">The classic light panels are still the default - nothing moved, nothing was reflowed. The dark theme is the same layout with the same information density. Below: the program at work.</p>
     </div>
-    <div class="screens-grid">
-      <figure class="shot">
-        <figcaption class="shot-caption">
-          <span class="swatch swatch--light"></span>
-          <span class="shot-label">Light</span>
-          <span class="shot-note">– the default, unchanged</span>
-        </figcaption>
-        <div class="shot-frame">
-          <button type="button" class="shot-zoom" aria-label="View screenshot full size">
-            <img src="/assets/screenshot-light.png" alt="Tandem Commander in its light theme, two file panels side by side">
-            <span class="shot-zoom-icon">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </span>
-          </button>
-        </div>
-      </figure>
-      <figure class="shot">
-        <figcaption class="shot-caption">
-          <span class="swatch swatch--dark"></span>
-          <span class="shot-label">Dark</span>
-          <span class="shot-note">– new in Tandem Commander</span>
-        </figcaption>
-        <div class="shot-frame">
-          <button type="button" class="shot-zoom" aria-label="View screenshot full size">
-            <img src="/assets/screenshot-dark.png" alt="Tandem Commander in its dark theme, the same two panels">
-            <span class="shot-zoom-icon">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </span>
-          </button>
-        </div>
-      </figure>
-    </div>
-    <dialog class="lightbox" aria-label="Enlarged screenshot">
-      <button type="button" class="lightbox-close" aria-label="Close enlarged view">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
-          <path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <div data-gallery class="gallery-grid">
+      <figure class="gallery-item" id="main-window">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Two panels, many tabs</h3>
+    <p class="gallery-text">Source on the left, target on the right - and each panel keeps several directories open in tabs.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/main-window-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Two panels, many tabs" data-pswp-caption="Source on the left, target on the right - and each panel keeps several directories open in tabs."
+       target="_blank" rel="noopener"
+       aria-label="Two panels, many tabs - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/main-window-light-640.webp" srcset="/assets/gallery/main-window-light-640.webp 640w, /assets/gallery/main-window-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom."
+           loading="eager" fetchpriority="high" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-      </button>
-      <img class="lightbox-img" src="" alt="">
-    </dialog>
+      </span>
+    </a>
   </div>
+</figure>
+      <figure class="gallery-item" id="dark-theme">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Dark theme</h3>
+    <p class="gallery-text">The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/dark-theme-dark.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Dark theme" data-pswp-caption="The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m."
+       target="_blank" rel="noopener"
+       aria-label="Dark theme - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/dark-theme-dark-640.webp" srcset="/assets/gallery/dark-theme-dark-640.webp 640w, /assets/gallery/dark-theme-dark.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background."
+           loading="eager" fetchpriority="high" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="panel-tabs">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Tabs in a panel</h3>
+    <p class="gallery-text">Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/panel-tabs-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Tabs in a panel" data-pswp-caption="Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history."
+       target="_blank" rel="noopener"
+       aria-label="Tabs in a panel - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/panel-tabs-light-640.webp" srcset="/assets/gallery/panel-tabs-light-640.webp 640w, /assets/gallery/panel-tabs-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="The main window with several directory tabs open above the left panel, the active tab carrying a close button."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="code-viewer">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Code Viewer</h3>
+    <p class="gallery-text">F3 on a source file: syntax highlighting for over 200 formats in twelve colour schemes.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/code-viewer-light.webp"
+       data-pswp-width="1100" data-pswp-height="760"
+       data-pswp-title="Code Viewer" data-pswp-caption="F3 on a source file: syntax highlighting for over 200 formats in twelve colour schemes."
+       target="_blank" rel="noopener"
+       aria-label="Code Viewer - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/code-viewer-light-640.webp" srcset="/assets/gallery/code-viewer-light-640.webp 640w, /assets/gallery/code-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="442"
+           alt="The Code Viewer window showing a C++ file with line numbers and coloured keywords, strings and comments."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="markdown-viewer">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Markdown on F3</h3>
+    <p class="gallery-text">Headings, lists, tables and code blocks instead of raw markup - rendered, scrollable, read-only.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/markdown-viewer-light.webp"
+       data-pswp-width="1100" data-pswp-height="760"
+       data-pswp-title="Markdown on F3" data-pswp-caption="Headings, lists, tables and code blocks instead of raw markup - rendered, scrollable, read-only."
+       target="_blank" rel="noopener"
+       aria-label="Markdown on F3 - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/markdown-viewer-light-640.webp" srcset="/assets/gallery/markdown-viewer-light-640.webp 640w, /assets/gallery/markdown-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="442"
+           alt="The Markdown viewer window showing a rendered README: headings, a table of file paths and a fenced code block."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="unicode-long-paths">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Unicode and long paths</h3>
+    <p class="gallery-text">Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/unicode-long-paths-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Unicode and long paths" data-pswp-caption="Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit."
+       target="_blank" rel="noopener"
+       aria-label="Unicode and long paths - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/unicode-long-paths-light-640.webp" srcset="/assets/gallery/unicode-long-paths-light-640.webp 640w, /assets/gallery/unicode-long-paths-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="thumbnails">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Thumbnails without the wait</h3>
+    <p class="gallery-text">A folder of photographs fills in at once, and pictures taken sideways are shown the right way up.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/thumbnails-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Thumbnails without the wait" data-pswp-caption="A folder of photographs fills in at once, and pictures taken sideways are shown the right way up."
+       target="_blank" rel="noopener"
+       aria-label="Thumbnails without the wait - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/thumbnails-light-640.webp" srcset="/assets/gallery/thumbnails-light-640.webp 640w, /assets/gallery/thumbnails-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+      <figure class="gallery-item" id="command-shell">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">The shell you choose</h3>
+    <p class="gallery-text">Command Prompt, PowerShell 7, Windows Terminal, Git Bash or any program of your own - on one key.</p>
+  </figcaption>
+  <div class="gallery-shots">
+    <a class="gallery-link gallery-link--any"
+       href="/assets/gallery/command-shell-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="The shell you choose" data-pswp-caption="Command Prompt, PowerShell 7, Windows Terminal, Git Bash or any program of your own - on one key."
+       target="_blank" rel="noopener"
+       aria-label="The shell you choose - view full size">
+      <img class="shot-img"
+           src="/assets/gallery/command-shell-light-640.webp" srcset="/assets/gallery/command-shell-light-640.webp 640w, /assets/gallery/command-shell-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+           width="640" height="427"
+           alt="The Configuration dialog open on its Command Shell page, listing the shells that can be opened with the Command Shell key."
+           loading="lazy" decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</figure>
+    </div>
+  </div>
+  <span class="visually-hidden" data-gallery-strings
+      data-close-title="Close enlarged view"
+      data-prev-title="Previous picture"
+      data-next-title="Next picture"
+      data-zoom-title="Zoom"
+      data-fullscreen-title="Full screen"
+      data-error-msg="The picture could not be loaded."></span>
+
 </section>
 
 <section class="section band">
@@ -180,17 +354,32 @@ if(target){location.replace(target+location.search+location.hash);}
       <article class="card">
         <p class="card-num">01</p>
         <h3 class="card-title">Two panels</h3>
-        <p class="card-text">Source on the left, target on the right. Copy, move, pack and compare without opening a second window or reaching for the mouse.</p>
+        <p class="card-text">Source on the left, target on the right - and each panel keeps several directories open in tabs. Copy, move, pack and compare without opening a second window or reaching for the mouse.</p>
       </article>
       <article class="card">
         <p class="card-num">02</p>
         <h3 class="card-title">Keyboard first</h3>
-        <p class="card-text">Function keys along the bottom edge, a shortcut for everything, and a command line that stays exactly where your hands already are.</p>
+        <p class="card-text">Function keys along the bottom edge, a shortcut for everything, a command line that stays exactly where your hands already are - and a Command Shell key that opens the shell you choose, from PowerShell to Git Bash.</p>
       </article>
       <article class="card card--accent">
         <p class="card-num card-num--brand">03</p>
         <h3 class="card-title">Its own core</h3>
-        <p class="card-text"><span class="mono">tandemcommander.exe</span> is a program with its own identity: own icon, own window titles, own settings – and a modern core built for Windows 11, with full Unicode and long paths throughout.</p>
+        <p class="card-text"><span class="mono">tandemcommander.exe</span> is a program with its own identity: own icon, own window titles, own settings - and a modern core built for Windows 11, with full Unicode and long paths throughout.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">04</p>
+        <h3 class="card-title">Viewers on F3</h3>
+        <p class="card-text">Source and configuration files with syntax highlighting in over 200 formats, rendered Markdown, images, databases and executables - F3 opens the right viewer, Alt+F3 the plain one.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">05</p>
+        <h3 class="card-title">Servers and clouds</h3>
+        <p class="card-text">A Linux server over SFTP in one panel, your disk in the other. In cloud folders the panels show the same sync badges as Explorer - OneDrive, Google Drive - with TortoiseGit and TortoiseSVN status next to them.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">06</p>
+        <h3 class="card-title">Easy to move in</h3>
+        <p class="card-text">A one-time utility brings your hot paths, FTP bookmarks, user menu, colours and plugin settings over from Altap Salamander. Install with the signed installer; a winget package is on its way.</p>
       </article>
     </div>
   </div>
@@ -201,26 +390,48 @@ if(target){location.replace(target+location.search+location.hash);}
     <div class="section-head">
       <p class="kicker">What&#39;s new</p>
       <h2 class="section-title">What&#39;s new in Tandem Commander.</h2>
-      <p class="section-lead">The main additions and improvements in this release.</p>
+      <p class="section-lead">The current release first, followed by the most recent highlights of the releases before it.</p>
+    </div>
+    <div class="whats-new-current">
+      <p class="whats-new-version">Version 0.1.8 · September 20, 2026</p>
+      <p class="whats-new-summary">Panels get browser-style tabs, the program starts without the Visual C++ runtime, and other minor upgrades.</p>
     </div>
     <div class="card-grid card-grid--news">
-      <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">Full Unicode, long paths</h3>
-        <p class="card-text card-text--sm">Names and paths are Unicode end to end – panels, dialogs, viewers, plugins. Accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work.</p>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.8</p>
+        <h3 class="card-title card-title--sm">Panel tabs</h3>
+        <p class="card-text card-text--sm">Several directories per panel, the way a browser does it. Each tab keeps its own view, sorting, filter, selection and history, and the whole set returns at the next start. <span class="mono">Ctrl+Shift+T</span> opens one.</p>
+        <a class="card-link" href="/#panel-tabs">See it →</a>
+      </article>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.8</p>
+        <h3 class="card-title card-title--sm">No runtime to install</h3>
+        <p class="card-text card-text--sm">The Microsoft Visual C++ runtime now ships inside the program folder. On a clean PC, earlier versions installed fine and then refused to start - that is over.</p>
       </article>
       <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">New SFTP plugin</h3>
-        <p class="card-text card-text--sm">A Linux server in one panel, your disk in the other – built on libssh2 over SSH. Password or private-key auth with host-key verification, unix permissions shown as <span class="mono">drwxr-xr-x</span>, chmod from the panel.</p>
+        <p class="version-chip">0.1.6</p>
+        <h3 class="card-title card-title--sm">Code Viewer</h3>
+        <p class="card-text card-text--sm"><span class="mono">F3</span> on a source or configuration file shows it with syntax highlighting - over 200 languages and formats, twelve colour schemes, line numbers. Read-only: nothing is executed, no network request is made.</p>
+        <a class="card-link" href="/#code-viewer">See it →</a>
       </article>
       <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">Markdown View</h3>
-        <p class="card-text card-text--sm">F3 on a <span class="mono">.md</span> file opens the new mdview plugin: rendered headings, lists, tables and code blocks instead of raw markup.</p>
+        <p class="version-chip">0.1.6</p>
+        <h3 class="card-title card-title--sm">Choose your command shell</h3>
+        <p class="card-text card-text--sm">The Command Shell command (<span class="mono">Num /</span>) is no longer tied to Command Prompt: pick Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash or any program with your own arguments.</p>
       </article>
       <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">PictView, repaired</h3>
-        <p class="card-text card-text--sm">The image viewer works again – pictures open reliably from either panel, with the fixes carried into the new Unicode-clean core. Optimized file thumbnail rendering in directories containing tens of thousands of photos.</p>
+        <p class="version-chip">0.1.6</p>
+        <h3 class="card-title card-title--sm">On the way to winget</h3>
+        <p class="card-text card-text--sm">Tandem Commander is submitted to the Windows Package Manager catalogue. Once Microsoft accepts it, <span class="mono">winget install tandemcommander</span> installs it and <span class="mono">winget upgrade</span> keeps it current.</p>
+      </article>
+      <article class="card card--accent card--tight">
+        <p class="version-chip">0.1.5</p>
+        <h3 class="card-title card-title--sm">Accents work everywhere</h3>
+        <p class="card-text card-text--sm">Compare Directories, the command line, external archivers, cloud folders in the drive bar, shortcuts and drag-and-drop now handle accented and non-Latin names. Files with broken names can finally be deleted or renamed.</p>
+        <a class="card-link" href="/#unicode-long-paths">See it →</a>
       </article>
     </div>
+    <p class="section-more"><a href="/releases/">All releases →</a></p>
   </div>
 </section>
 
@@ -229,9 +440,9 @@ if(target){location.replace(target+location.search+location.hash);}
     <div>
       <p class="kicker">The project</p>
       <h2 class="section-title">Open source, and open about how it is made.</h2>
-      <p class="project-text">Tandem Commander grew out of <a href="https://github.com/OpenSalamander/salamander">Open Salamander</a>, the classic file manager whose source was opened to the world, and it owes that project everything it started with. Our thanks go to the original Salamander authors and to everyone who kept the code alive after them – a quarter century of careful work by people who cared how a file manager should feel. The core has since gone its own way, but the debt stands.</p>
+      <p class="project-text">Tandem Commander grew out of <a href="https://github.com/OpenSalamander/salamander">Open Salamander</a>, the classic file manager whose source was opened to the world, and it owes that project everything it started with. Our thanks go to the original Salamander authors and to everyone who kept the code alive after them - a quarter century of careful work by people who cared how a file manager should feel. The core has since gone its own way, but the debt stands.</p>
       <p class="project-text">Tandem Commander is free software, licensed under <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2 and later</a>. Individual files and bundled libraries carry different but compatible licenses, and everyone who has contributed to it is credited in <span class="mono mono--md">AUTHORS</span>.</p>
-      <p class="project-text">The rules the project holds itself to – build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API – are written down in the repository rather than kept in someone&#39;s head.</p>
+      <p class="project-text">The rules the project holds itself to - build reproducibility, incremental modernization, a commitment to Windows, and a stable plugin API - are written down in the repository rather than kept in someone&#39;s head.</p>
       <div class="agentic-note">
         <p class="project-text project-text--flush">There is one genuinely new thing here. Development follows spec-driven principles: every change starts as a written specification that is clarified, planned and broken into tasks before any code is touched, and the implementation is carried out by agentic coding frameworks. The whole paper trail is committed next to the code, so the repository records not only what changed in this quarter-century-old C++ codebase, but why.</p>
       </div>
@@ -260,12 +471,12 @@ if(target){location.replace(target+location.search+location.hash);}
 <section id="story" class="section section--roomy section--divided">
   <div class="story-inner">
     <p class="kicker">From the author</p>
-    <h2 class="section-title section-title--md">Why This Project Exists – A Personal Note</h2>
-    <p class="story-text">Whenever I have worked on Windows, there has always been a Salamander close at hand. First Servant Salamander, later Altap Salamander – in my view one of the finest pieces of software I have ever worked with. But the last released version of Altap Salamander dates back to 2019, and it still carries a few aches inherited from the original versions: incomplete encoding support, missing long directory and file path support, and quite a few others. At the same time, many of my friends and family members use Altap Salamander every day, both at work and at home.</p>
-    <p class="story-text">The moment Salamander was released as Open Salamander, I had a clear vision: I would adapt it for myself so I could simply keep using it. That vision quickly ran into hard reality – even though I am a very experienced software engineer, developer, and architect, I was missing the one factor a project of this scale demands above all else: time.</p>
-    <p class="story-text">That has changed, essentially within the last few months, with the overall shift in how software can now be – not programmed, but <em>created</em> – with agentic systems. To be clear, I am emphatically not talking about "vibe coding"; I consider that a bit of a buzzword and I do not like it. The term I would choose is <strong class="story-strong">Full Agentic Spec-Driven Development</strong>: clearly defined procedures not just for producing code, but for producing the entire project – documentation and artifacts included. This project is deliberately built with the spec-driven approach on top of GitHub SpecKit, using the frontier models available at the time.</p>
-    <p class="story-text">Tandem Commander is, of course, not perfect. But thanks to this approach I ended up with a genuinely usable tool – one that I hope can serve others as well.</p>
-    <p class="story-text story-text--flush">None of this would exist without the people who built Servant Salamander, Altap Salamander, and finally Open Salamander. Over a quarter of a century they created and refined a program that countless people – me, my friends, my family – have trusted with their daily work, and it shows in every detail: the speed, the keyboard-first design, the plugin architecture, the sheer care in the code this repository inherited. Their decision to release it under an open-source license was an act of real generosity that gave this remarkable software a second life. Tandem Commander stands entirely on their shoulders, and I hope it honors what they built. <b>To all the original authors and contributors: Thank you.</b></p>
+    <h2 class="section-title section-title--md">Why This Project Exists - A Personal Note</h2>
+    <p class="story-text">Whenever I have worked on Windows, there has always been a Salamander close at hand. First Servant Salamander, later Altap Salamander - in my view one of the finest pieces of software I have ever worked with. But the last released version of Altap Salamander dates back to 2019, and it still carries a few aches inherited from the original versions: incomplete encoding support, missing long directory and file path support, and quite a few others. At the same time, many of my friends and family members use Altap Salamander every day, both at work and at home.</p>
+    <p class="story-text">The moment Salamander was released as Open Salamander, I had a clear vision: I would adapt it for myself so I could simply keep using it. That vision quickly ran into hard reality - even though I am a very experienced software engineer, developer, and architect, I was missing the one factor a project of this scale demands above all else: time.</p>
+    <p class="story-text">That has changed, essentially within the last few months, with the overall shift in how software can now be - not programmed, but <em>created</em> - with agentic systems. To be clear, I am emphatically not talking about "vibe coding"; I consider that a bit of a buzzword and I do not like it. The term I would choose is <strong class="story-strong">Full Agentic Spec-Driven Development</strong>: clearly defined procedures not just for producing code, but for producing the entire project - documentation and artifacts included. This project is deliberately built with the spec-driven approach on top of GitHub SpecKit, using the frontier models available at the time.</p>
+    <p class="story-text">Tandem Commander is, of course, not perfect. But thanks to this approach I ended up with a genuinely usable tool - one that I hope can serve others as well.</p>
+    <p class="story-text story-text--flush">None of this would exist without the people who built Servant Salamander, Altap Salamander, and finally Open Salamander. Over a quarter of a century they created and refined a program that countless people - me, my friends, my family - have trusted with their daily work, and it shows in every detail: the speed, the keyboard-first design, the plugin architecture, the sheer care in the code this repository inherited. Their decision to release it under an open-source license was an act of real generosity that gave this remarkable software a second life. Tandem Commander stands entirely on their shoulders, and I hope it honors what they built. <b>To all the original authors and contributors: Thank you.</b></p>
     <p class="story-signature">Pavel Stupka<br><a href="mailto:pavel.stupka@gmail.com" class="story-mail">pavel.stupka@gmail.com</a><br><a href="https://www.linkedin.com/in/pavelstupka/" class="story-mail">LinkedIn</a></p>
   </div>
 </section>
@@ -288,7 +499,7 @@ if(target){location.replace(target+location.search+location.hash);}
     <p class="download-meta">Windows 11 · x64 · GPLv2 or later · <a href="https://github.com/tandemcommander/tandemcommander/releases">all releases</a> · <a href="https://github.com/tandemcommander/tandemcommander/issues">report an issue</a></p>
     <div class="disclaimer">
       <p class="disclaimer-label">⚠ Disclaimer</p>
-      <p class="disclaimer-text">This is a first release, created through agentic AI development. The software is provided &quot;as is&quot;, without warranty of any kind, and the author accepts no responsibility or liability for its use.</p>
+      <p class="disclaimer-text">Tandem Commander is created through agentic AI development. The software is provided &quot;as is&quot;, without warranty of any kind, and the author accepts no responsibility or liability for its use.</p>
     </div>
     <div class="build-box">
       <p class="build-label">Build from source</p>
@@ -313,10 +524,11 @@ if(target){location.replace(target+location.search+location.hash);}
       </div>
       <div class="footer-col">
         <p class="footer-heading">Program</p>
-        <a href="#screens" class="footer-link">Themes</a>
+        <a href="#gallery" class="footer-link">Gallery</a>
         <a href="#new" class="footer-link">What&#39;s new</a>
         <a href="#project" class="footer-link">Project</a>
         <a href="#download" class="footer-link">Download</a>
+        <a href="/releases/" class="footer-link">Release history</a>
       </div>
       <div class="footer-col">
         <p class="footer-heading">Source</p>

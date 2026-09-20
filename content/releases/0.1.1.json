@@ -1,0 +1,23 @@
+{
+  "version": "0.1.1",
+  "date": "2026-08-05",
+  "build": 185,
+  "kind": "bugfix",
+  "summary": {
+    "en": "SFTP fixes: connecting with an OpenSSH-format private key no longer freezes the application, and no SFTP operation can hang it any more.",
+    "cs": "Opravy SFTP: připojení privátním klíčem ve formátu OpenSSH už aplikaci nezmrazí a žádná operace SFTP ji už nemůže zablokovat."
+  },
+  "highlights": [
+    {
+      "id": "sftp-key-auth",
+      "title": {
+        "en": "SFTP private keys work",
+        "cs": "SFTP: privátní klíče fungují"
+      },
+      "text": {
+        "en": "OpenSSH-format RSA and ECDSA keys authenticate, passphrases are honoured and asked again when wrong, unsupported key types are refused with the reason, and a lost connection reconnects on the next operation.",
+        "cs": "Klíče RSA a ECDSA ve formátu OpenSSH fungují, heslo ke klíči se respektuje a při chybě se zeptá znovu, nepodporované typy klíčů se odmítnou s vysvětlením a ztracené spojení se při další operaci obnoví."
+      }
+    }
+  ]
+}

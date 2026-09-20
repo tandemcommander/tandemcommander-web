@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historie vydání - Tandem Commander</title>
+<meta name="description" content="Co se změnilo v každé verzi Tandem Commanderu, dvoupanelového správce souborů pro Windows 11 - od nejnovější, s odkazy na úplné poznámky k vydání.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1424" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://tandemcommander.org/cs/releases/">
+<link rel="alternate" hreflang="en" href="https://tandemcommander.org/releases/">
+<link rel="alternate" hreflang="cs" href="https://tandemcommander.org/cs/releases/">
+<link rel="alternate" hreflang="x-default" href="https://tandemcommander.org/releases/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tandem Commander">
+<meta property="og:url" content="https://tandemcommander.org/cs/releases/">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Historie vydání - Tandem Commander">
+<meta property="og:description" content="Co se změnilo v každé verzi Tandem Commanderu, dvoupanelového správce souborů pro Windows 11 - od nejnovější, s odkazy na úplné poznámky k vydání.">
+<meta property="og:image" content="https://tandemcommander.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tandem Commander - dvoupanelový správce souborů pro Windows">
+<meta name="twitter:card" content="summary_large_image">
+
+<script>(function(){try{var t=localStorage.getItem('tc-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+
+
+<link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/archivo-latin-ext-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="/css/main.css">
+<script defer src="/js/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/cs/#top" class="brand">
+      <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
+      <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Hlavní">
+      <a href="/cs/#gallery" class="nav-link">Galerie</a>
+      <a href="/cs/#new" class="nav-link">Novinky</a>
+      <a href="/cs/#project" class="nav-link">Projekt</a>
+      <a href="/cs/#download" class="nav-link">Stažení</a>
+      <div class="theme-toggle" role="group" aria-label="Motiv">
+        <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Světlý</button>
+        <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Tmavý</button>
+      </div>
+      <nav class="lang-toggle" aria-label="Jazyk">
+        <a href="/releases/" hreflang="en" lang="en" data-set-lang="en" class="lang-link">EN</a>
+        <a href="/cs/releases/" hreflang="cs" lang="cs" data-set-lang="cs" class="lang-link" aria-current="true">CS</a>
+      </nav>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Nabídka">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Hlavní nabídka">
+    <a href="/cs/#gallery" class="mobile-link">Galerie</a>
+    <a href="/cs/#new" class="mobile-link">Novinky</a>
+    <a href="/cs/#project" class="mobile-link">Projekt</a>
+    <a href="/cs/#download" class="mobile-link">Stažení</a>
+    <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="Motiv">
+      <button type="button" class="theme-btn theme-btn--light" data-set-theme="light">Světlý</button>
+      <button type="button" class="theme-btn theme-btn--dark" data-set-theme="dark">Tmavý</button>
+    </div>
+    <nav class="lang-toggle lang-toggle--mobile" aria-label="Jazyk">
+      <a href="/releases/" hreflang="en" lang="en" data-set-lang="en" class="lang-link">EN</a>
+      <a href="/cs/releases/" hreflang="cs" lang="cs" data-set-lang="cs" class="lang-link" aria-current="true">CS</a>
+    </nav>
+  </nav>
+</header>
+
+<main>
+<section id="top" class="section section--page">
+  <div class="section-inner section-inner--narrow">
+    <div class="section-head">
+      <p class="kicker">Historie vydání</p>
+      <h1 class="section-title">Všechna vydání, od nejnovějšího.</h1>
+      <p class="section-lead">Co přinesla každá verze Tandem Commanderu, v několika větách. Úplné technické poznámky ke každému vydání najdete na GitHubu.</p>
+    </div>
+    <div class="release-list">
+      <article class="release release--current" id="v0.1.8">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.8">0.1.8</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-09-20">20. září 2026</time>
+            <span class="release-kind">Vydání s novinkami</span>
+            <span class="version-chip version-chip--current">aktuální</span>
+          </p>
+        </header>
+        <p class="release-summary">Panely dostaly záložky jako v prohlížeči, program se spustí i bez Visual C++ runtime a další drobné úpravy.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Záložky v panelech</strong>
+            <span class="release-highlight-text">Několik adresářů v jednom panelu, jako v prohlížeči. Každá záložka si pamatuje zobrazení, řazení, filtr, výběr i historii a po startu se vše obnoví. Novou otevřete přes <span class="mono">Ctrl+Shift+T</span>.</span>
+            <a class="card-link card-link--inline" href="/cs/#panel-tabs">Ukázka →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Bez instalace runtime</strong>
+            <span class="release-highlight-text">Microsoft Visual C++ runtime je nově přímo ve složce programu. Na čistém počítači se starší verze nainstalovaly, ale nespustily - to už neplatí.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.8">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.7">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.7">0.1.7</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-29">29. srpna 2026</time>
+            <span class="release-kind">Oprava instalátoru</span>
+          </p>
+        </header>
+        <p class="release-summary">Oprava instalátoru: bezobslužná instalace s <span class="mono">/VERYSILENT</span> poprvé funguje - což je podmínka pro winget i hromadné nasazení. Samotná aplikace se nezměnila.</p>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.7">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.6">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.6">0.1.6</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-29">29. srpna 2026</time>
+            <span class="release-kind">Vydání s novinkami</span>
+          </p>
+        </header>
+        <p class="release-summary">Nový Prohlížeč kódu se zvýrazněním syntaxe, příkaz Command Shell otevírající shell podle vaší volby a první vydání odeslané do katalogu winget.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Prohlížeč kódu</strong>
+            <span class="release-highlight-text"><span class="mono">F3</span> na zdrojovém nebo konfiguračním souboru ho zobrazí se zvýrazněním syntaxe - přes 200 jazyků a formátů, dvanáct barevných schémat, čísla řádků. Jen pro čtení: nic se nespouští ani neodesílá.</span>
+            <a class="card-link card-link--inline" href="/cs/#code-viewer">Ukázka →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Vlastní příkazový shell</strong>
+            <span class="release-highlight-text">Příkaz Command Shell (<span class="mono">Num /</span>) už není svázaný s Příkazovým řádkem: zvolte Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash nebo libovolný program s vlastními argumenty.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Na cestě do wingetu</strong>
+            <span class="release-highlight-text">Tandem Commander je odeslán do katalogu Windows Package Manageru. Jakmile ho Microsoft přijme, <span class="mono">winget install tandemcommander</span> ho nainstaluje a <span class="mono">winget upgrade</span> udrží aktuální.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.6">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.5">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.5">0.1.5</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-25">25. srpna 2026</time>
+            <span class="release-kind">Opravné vydání</span>
+          </p>
+        </header>
+        <p class="release-summary">Celoplošná revize práce s diakritikou a nelatinkou opravuje názvy na desítkách míst, odstraňuje pád u dlouhých názvů a soubory Markdown se nově otevírají okamžitě.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Diakritika funguje všude</strong>
+            <span class="release-highlight-text">Porovnání adresářů, příkazová řádka, externí archivátory, cloudové složky v liště disků, zástupci i drag-and-drop zvládají diakritiku a nelatinku. Soubory s poškozeným názvem jde konečně smazat i přejmenovat.</span>
+            <a class="card-link card-link--inline" href="/cs/#unicode-long-paths">Ukázka →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Markdown bez čekání</strong>
+            <span class="release-highlight-text">Vykreslovací jádro zůstává po prvním zobrazení Markdownu připravené, takže každé další <span class="mono">F3</span> i přechod přes odkaz se vykreslí okamžitě.</span>
+            <a class="card-link card-link--inline" href="/cs/#markdown-viewer">Ukázka →</a>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.5">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.4">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.4">0.1.4</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-19">19. srpna 2026</time>
+            <span class="release-kind">Opravné vydání</span>
+          </p>
+        </header>
+        <p class="release-summary">Náhledy se objevují okamžitě i ve velkých složkách fotek, DEL v cestách s diakritikou zase maže do Koše a vrátily se odznaky TortoiseGit a TortoiseSVN.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Náhledy bez čekání</strong>
+            <span class="release-highlight-text">Zobrazení náhledů (<span class="mono">Alt+5</span>) začíná soubory na obrazovce a využívá vložené náhledy, takže se složka s tisíci fotek plní hned. Fotky na výšku jsou správně otočené.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">DEL maže do Koše</strong>
+            <span class="release-highlight-text">Ve složkách s diakritikou v cestě - typicky v lokalizovaném OneDrivu - mazal DEL natrvalo. Teď soubory opět přesouvá do Koše a v nejistotě volí bezpečnější cestu.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Odznaky Tortoise jsou zpět</strong>
+            <span class="release-highlight-text">Stavové odznaky TortoiseGit a TortoiseSVN se opět zobrazují i při jiném měřítku displeje než 100 % a obnovují se i ve složkách s diakritikou.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.4">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.3">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.3">0.1.3</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-18">18. srpna 2026</time>
+            <span class="release-kind">Vydání s novinkami</span>
+          </p>
+        </header>
+        <p class="release-summary">Jednorázový nástroj převede nastavení z Altap Salamanderu a stavové odznaky cloudové synchronizace se zobrazují stejně jako v Průzkumníku Windows.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Přechod z Altap Salamanderu</strong>
+            <span class="release-highlight-text">Samostatný nástroj přenese oblíbené cesty, FTP záložky, uživatelské menu, asociace, barvy a nastavení pluginů z Altap Salamanderu - se zálohou a obnovou na jedno kliknutí. Nastavení Salamanderu zůstane nedotčené.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Odznaky cloudové synchronizace</strong>
+            <span class="release-highlight-text">Stavové odznaky OneDrivu a Disku Google - synchronizováno, jen online, probíhá, chyba - se zobrazují jako v Průzkumníku, včetně šipek probíhající synchronizace a složek s diakritikou.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.3">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.2">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.2">0.1.2</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-07">7. srpna 2026</time>
+            <span class="release-kind">Údržbové vydání</span>
+          </p>
+        </header>
+        <p class="release-summary">Dialogy a připojování pluginu SFTP prošly přepracováním a všechny strojově přeložené texty v osmi jazycích byly přeloženy znovu s ohledem na kontext.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Dialogy SFTP, které se vejdou</strong>
+            <span class="release-highlight-text">Okno nastavení se zase otevře, popisky v přeložených rozhraních nejsou oříznuté, server s nedostupnou první adresou se připojí do sekundy a Rychlé připojení už nic neukládá.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Překlady s kontextem</strong>
+            <span class="release-highlight-text">Přibližně 3 300 textů ve správci souborů a 18 pluginech bylo přeloženo znovu se znalostí místa, kde se zobrazují - adresa serveru už se nejmenuje „Moderátor“.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.2">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.1">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.1">0.1.1</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-05">5. srpna 2026</time>
+            <span class="release-kind">Opravné vydání</span>
+          </p>
+        </header>
+        <p class="release-summary">Opravy SFTP: připojení privátním klíčem ve formátu OpenSSH už aplikaci nezmrazí a žádná operace SFTP ji už nemůže zablokovat.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">SFTP: privátní klíče fungují</strong>
+            <span class="release-highlight-text">Klíče RSA a ECDSA ve formátu OpenSSH fungují, heslo ke klíči se respektuje a při chybě se zeptá znovu, nepodporované typy klíčů se odmítnou s vysvětlením a ztracené spojení se při další operaci obnoví.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.1">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.0">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.0">0.1.0</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-08-05">5. srpna 2026</time>
+            <span class="release-kind">První vydání</span>
+          </p>
+        </header>
+        <p class="release-summary">První veřejné vydání: vlastní identita Tandem Commanderu, Unicode a dlouhé cesty v celém programu, plugin SFTP, prohlížeč Markdownu a tmavý motiv.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Plný Unicode, dlouhé cesty</strong>
+            <span class="release-highlight-text">Názvy a cesty jsou Unicode od začátku do konce - panely, dialogy, prohlížeče, pluginy. Diakritika i nelatinková písma se vykreslují správně a cesty za starým limitem 260 znaků prostě fungují.</span>
+            <a class="card-link card-link--inline" href="/cs/#unicode-long-paths">Ukázka →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Plugin SFTP</strong>
+            <span class="release-highlight-text">Linuxový server v jednom panelu, váš disk ve druhém. Přihlášení heslem nebo privátním klíčem s ověřením klíče serveru, unixová oprávnění jako <span class="mono">drwxr-xr-x</span>, chmod přímo z panelu.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Prohlížeč Markdownu</strong>
+            <span class="release-highlight-text"><span class="mono">F3</span> na souboru <span class="mono">.md</span> otevře vykreslený náhled - nadpisy, seznamy, tabulky a bloky kódu místo surového značkování.</span>
+            <a class="card-link card-link--inline" href="/cs/#markdown-viewer">Ukázka →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Světlý a tmavý motiv</strong>
+            <span class="release-highlight-text">Klasický světlý vzhled zůstává výchozí; nový tmavý motiv pokrývá aplikaci, dialogy, nástrojové lišty, panely i okna pluginů se stejným rozložením a hustotou informací.</span>
+            <a class="card-link card-link--inline" href="/cs/#dark-theme">Ukázka →</a>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.0">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+    </div>
+    <p class="release-get"><a href="/cs/#download" class="btn btn--primary">Stáhnout verzi 0.1.8</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="brand brand--footer">
+          <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="brand-mark">
+          <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
+        </div>
+        <p class="footer-tagline">Rychlý dvoupanelový správce souborů pro Windows, ovládaný především klávesnicí.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Program</p>
+        <a href="/cs/#gallery" class="footer-link">Galerie</a>
+        <a href="/cs/#new" class="footer-link">Novinky</a>
+        <a href="/cs/#project" class="footer-link">Projekt</a>
+        <a href="/cs/#download" class="footer-link">Stažení</a>
+        <a href="/cs/releases/" class="footer-link">Historie vydání</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Zdrojový kód</p>
+        <a href="https://github.com/tandemcommander/tandemcommander" class="footer-link">GitHub</a>
+        <a href="https://github.com/tandemcommander/tandemcommander/issues" class="footer-link">Issues</a>
+        <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" class="footer-link">Licence GPLv2</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Kontakt</p>
+        <span class="footer-plain">Pavel Stupka</span>
+        <a href="mailto:pavel.stupka@gmail.com" class="footer-link">pavel.stupka@gmail.com</a>
+        <a href="https://www.linkedin.com/in/pavelstupka/" class="footer-link">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">tandemcommander.org · GPLv2 or later</p>
+      <p class="footer-note">Svobodný software, vyvíjený otevřeně. Issues i pull requesty jsou vítány.</p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

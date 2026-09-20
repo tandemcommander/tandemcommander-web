@@ -1,0 +1,59 @@
+{
+  "version": "0.1.0",
+  "date": "2026-08-05",
+  "build": 184,
+  "kind": "first",
+  "summary": {
+    "en": "First public release: Tandem Commander's own identity, Unicode and long paths throughout, an SFTP plugin, a Markdown viewer and a dark theme.",
+    "cs": "První veřejné vydání: vlastní identita Tandem Commanderu, Unicode a dlouhé cesty v celém programu, plugin SFTP, prohlížeč Markdownu a tmavý motiv."
+  },
+  "highlights": [
+    {
+      "id": "unicode-long-paths",
+      "title": {
+        "en": "Full Unicode, long paths",
+        "cs": "Plný Unicode, dlouhé cesty"
+      },
+      "text": {
+        "en": "Names and paths are Unicode end to end - panels, dialogs, viewers, plugins. Accents and non-Latin scripts render correctly, and paths past the old 260-character limit just work.",
+        "cs": "Názvy a cesty jsou Unicode od začátku do konce - panely, dialogy, prohlížeče, pluginy. Diakritika i nelatinková písma se vykreslují správně a cesty za starým limitem 260 znaků prostě fungují."
+      },
+      "scene": "unicode-long-paths"
+    },
+    {
+      "id": "sftp",
+      "title": {
+        "en": "SFTP plugin",
+        "cs": "Plugin SFTP"
+      },
+      "text": {
+        "en": "A Linux server in one panel, your disk in the other. Password or private-key login with host-key verification, unix permissions shown as `drwxr-xr-x`, chmod straight from the panel.",
+        "cs": "Linuxový server v jednom panelu, váš disk ve druhém. Přihlášení heslem nebo privátním klíčem s ověřením klíče serveru, unixová oprávnění jako `drwxr-xr-x`, chmod přímo z panelu."
+      }
+    },
+    {
+      "id": "markdown-viewer",
+      "title": {
+        "en": "Markdown viewer",
+        "cs": "Prohlížeč Markdownu"
+      },
+      "text": {
+        "en": "`F3` on an `.md` file opens a rendered view - headings, lists, tables and code blocks instead of raw markup.",
+        "cs": "`F3` na souboru `.md` otevře vykreslený náhled - nadpisy, seznamy, tabulky a bloky kódu místo surového značkování."
+      },
+      "scene": "markdown-viewer"
+    },
+    {
+      "id": "themes",
+      "title": {
+        "en": "Light and dark themes",
+        "cs": "Světlý a tmavý motiv"
+      },
+      "text": {
+        "en": "The classic light look stays the default; a new dark theme covers the application, its dialogs, toolbars, panels and plugin windows with the same layout and density.",
+        "cs": "Klasický světlý vzhled zůstává výchozí; nový tmavý motiv pokrývá aplikaci, dialogy, nástrojové lišty, panely i okna pluginů se stejným rozložením a hustotou informací."
+      },
+      "scene": "dark-theme"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{#- One gallery item (spec 007, contracts/pages-ui.md).
+    galleryCard(scene, lang, opts) - opts: { eager, wide, level, prefix }
+
+    The title and the caption come FIRST and are separated from the picture, so
+    a visitor reads what a picture shows before looking at it. The link is what
+    PhotoSwipe opens; without scripting it simply leads to the full-size image,
+    so the gallery works either way.
+
+    A two-theme scene renders BOTH images; CSS shows the one matching the site
+    theme and hides the other, so a theme switch needs no script and a lazy,
+    hidden image is never fetched. -#}
+{%- macro galleryCard(scene, lang, opts = {}) -%}
+{%- set level = opts.level | default(3) -%}
+<figure class="gallery-item" id="{{ opts.prefix | default("") }}{{ scene.id }}">
+  <figcaption class="gallery-caption">
+    <h{{ level }} class="gallery-title">{{ scene.title[lang] }}</h{{ level }}>
+    <p class="gallery-text">{{ scene.caption[lang] | inline | safe }}</p>
+  </figcaption>
+  <div class="gallery-shots">
+    {%- for theme, image in scene.images %}
+    <a class="gallery-link{% if scene.themes.length > 1 %} gallery-link--{{ theme }}{% else %} gallery-link--any{% endif %}"
+       href="{{ image.full }}"
+       data-pswp-width="{{ image.width }}" data-pswp-height="{{ image.height }}"
+       data-pswp-title="{{ scene.title[lang] }}" data-pswp-caption="{{ scene.caption[lang] }}"
+       target="_blank" rel="noopener"
+       aria-label="{{ scene.title[lang] }} - {{ lang | t("gallery.zoomLabel") }}">
+      <img class="shot-img"
+           src="{{ image.card }}"
+           {%- if opts.wide %} srcset="{{ image.card }} {{ image.cardWidth }}w, {{ image.full }} {{ image.width }}w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"{% endif %}
+           width="{{ image.cardWidth }}" height="{{ image.cardHeight }}"
+           alt="{{ scene.alt[lang] }}"
+           {% if opts.eager %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+      <span class="shot-zoom-icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+    {%- endfor %}
+  </div>
+</figure>
+{%- endmacro -%}

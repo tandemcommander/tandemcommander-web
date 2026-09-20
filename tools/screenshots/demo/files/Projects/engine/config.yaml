@@ -1,0 +1,13 @@
+# Renderer settings
+output:
+  path: out/frame.png
+  width: 1280
+  height: 720
+quality:
+  samples: 4
+  depth_buffer: true
+scene:
+  background: "#101820"
+  meshes:
+    - teapot.obj
+    - floor.obj

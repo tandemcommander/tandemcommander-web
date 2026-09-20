@@ -1,0 +1,121 @@
+{
+  "_comment": "Content the guest generates in the workspace on top of demo/files (spec 007, data-model section 4). Unicode names are written as JSON escapes so this file stays ASCII; times make every date shown in a panel deterministic.",
+  "generate": [
+    {
+      "type": "dir",
+      "path": "Unicode"
+    },
+    {
+      "type": "file",
+      "path": "Unicode/české-jméno.txt",
+      "content": "Czech name with diacritics"
+    },
+    {
+      "type": "file",
+      "path": "Unicode/δοκιμή.txt",
+      "content": "Greek name"
+    },
+    {
+      "type": "file",
+      "path": "Unicode/テスト.txt",
+      "content": "Japanese name"
+    },
+    {
+      "type": "file",
+      "path": "Unicode/📁report.txt",
+      "content": "Name outside the basic plane"
+    },
+    {
+      "type": "longpath",
+      "path": "Unicode/long",
+      "depth": 5,
+      "segment": "a-very-long-directory-name-used-to-pass-260-characters",
+      "leaf": "deep-file.txt"
+    },
+    {
+      "type": "dir",
+      "path": "Compare"
+    },
+    {
+      "type": "file",
+      "path": "Compare/config-old.ini",
+      "content": "[render]\nwidth=1280\nheight=720\nsamples=2\nvsync=off\n"
+    },
+    {
+      "type": "file",
+      "path": "Compare/config-new.ini",
+      "content": "[render]\nwidth=1920\nheight=1080\nsamples=4\nvsync=on\n"
+    },
+    {
+      "type": "dir",
+      "path": "Rename"
+    },
+    {
+      "type": "bulk",
+      "path": "Rename",
+      "pattern": "IMG_{n}.txt",
+      "count": 12,
+      "bytes": 2048
+    },
+    {
+      "type": "zip",
+      "path": "Archives/project-backup.zip",
+      "from": "Projects/engine"
+    },
+    {
+      "type": "bulk",
+      "path": "DiskUsage/video",
+      "pattern": "clip-{n}.bin",
+      "count": 4,
+      "bytes": 8388608
+    },
+    {
+      "type": "bulk",
+      "path": "DiskUsage/photos",
+      "pattern": "img-{n}.bin",
+      "count": 18,
+      "bytes": 1572864
+    },
+    {
+      "type": "bulk",
+      "path": "DiskUsage/music",
+      "pattern": "track-{n}.bin",
+      "count": 12,
+      "bytes": 5242880
+    },
+    {
+      "type": "bulk",
+      "path": "DiskUsage/backup",
+      "pattern": "snapshot-{n}.bin",
+      "count": 3,
+      "bytes": 20971520
+    },
+    {
+      "type": "bulk",
+      "path": "DiskUsage/cache",
+      "pattern": "block-{n}.bin",
+      "count": 40,
+      "bytes": 131072
+    },
+    {
+      "type": "bulk",
+      "path": "DiskUsage/logs",
+      "pattern": "service-{n}.bin",
+      "count": 25,
+      "bytes": 65536
+    },
+    {
+      "type": "bulk",
+      "path": "DiskUsage/documents",
+      "pattern": "report-{n}.bin",
+      "count": 14,
+      "bytes": 393216
+    }
+  ],
+  "times": {
+    "default": "2026-09-01T10:00:00",
+    "Documents/Reports/**": "2026-08-14T16:20:00",
+    "Projects/engine/src/**": "2026-08-28T09:05:00",
+    "Compare/config-new.ini": "2026-09-03T11:42:00"
+  }
+}

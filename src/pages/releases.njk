@@ -1,0 +1,59 @@
+---
+layout: layout.njk
+pagination:
+  data: languages
+  size: 1
+  alias: pageLang
+permalink: "{{ pageLang.url }}releases/"
+pagePath: "releases/"
+metaKey: metaReleases
+eleventyComputed:
+  lang: "{{ pageLang.code }}"
+---
+{#- Release history (spec 007, US5) - one template for every language,
+    generated from the release records in content/releases/. -#}
+{% include "sections/header.njk" %}
+<main>
+<section id="top" class="section section--page">
+  <div class="section-inner section-inner--narrow">
+    <div class="section-head">
+      <p class="kicker">{{ lang | t("releases.kicker") }}</p>
+      <h1 class="section-title">{{ lang | t("releases.pageTitle") }}</h1>
+      <p class="section-lead">{{ lang | t("releases.pageLead") }}</p>
+    </div>
+    <div class="release-list">
+      {%- for r in releases.all %}
+      <article class="release{% if r.isCurrent %} release--current{% endif %}" id="v{{ r.version }}">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v{{ r.version }}">{{ r.version }}</a></h2>
+          <p class="release-meta">
+            <time datetime="{{ r.date }}">{{ r.date | releaseDate(pageLang.intl) }}</time>
+            <span class="release-kind">{{ lang | t("releases.kind." + r.kind) }}</span>
+            {%- if r.isCurrent %}
+            <span class="version-chip version-chip--current">{{ lang | t("releases.current") }}</span>
+            {%- endif %}
+          </p>
+        </header>
+        <p class="release-summary">{{ r.summary[lang] | inline | safe }}</p>
+        {%- if r.highlights.length %}
+        <ul class="release-highlights">
+          {%- for h in r.highlights %}
+          <li>
+            <strong class="release-highlight-title">{{ h.title[lang] }}</strong>
+            <span class="release-highlight-text">{{ h.text[lang] | inline | safe }}</span>
+            {%- if h.scene and releases.linkScenes %}
+            <a class="card-link card-link--inline" href="{{ pageLang.url }}#{{ h.scene }}">{{ lang | t("whatsNew.seeIt") }}</a>
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        <p class="release-notes"><a href="{{ r.notesUrl }}">{{ lang | t("releases.fullNotes") }}</a></p>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="release-get"><a href="{{ pageLang.url }}#download" class="btn btn--primary">{{ lang | t("releases.getIt") | replace("{version}", site.version) }}</a></p>
+  </div>
+</section>
+</main>
+{% include "sections/footer.njk" %}

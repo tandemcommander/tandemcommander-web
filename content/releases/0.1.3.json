@@ -1,0 +1,34 @@
+{
+  "version": "0.1.3",
+  "date": "2026-08-18",
+  "build": 187,
+  "kind": "feature",
+  "summary": {
+    "en": "A one-time utility migrates your settings from Altap Salamander, and cloud sync-status badges now display as they do in Windows Explorer.",
+    "cs": "Jednorázový nástroj převede nastavení z Altap Salamanderu a stavové odznaky cloudové synchronizace se zobrazují stejně jako v Průzkumníku Windows."
+  },
+  "highlights": [
+    {
+      "id": "altap-migration",
+      "title": {
+        "en": "Migrate from Altap Salamander",
+        "cs": "Přechod z Altap Salamanderu"
+      },
+      "text": {
+        "en": "A standalone utility copies hot paths, FTP bookmarks, the user menu, associations, colours and plugin settings from Altap Salamander - with a backup and a one-click restore. Your Salamander setup is never modified.",
+        "cs": "Samostatný nástroj přenese oblíbené cesty, FTP záložky, uživatelské menu, asociace, barvy a nastavení pluginů z Altap Salamanderu - se zálohou a obnovou na jedno kliknutí. Nastavení Salamanderu zůstane nedotčené."
+      }
+    },
+    {
+      "id": "cloud-sync-badges",
+      "title": {
+        "en": "Cloud sync badges",
+        "cs": "Odznaky cloudové synchronizace"
+      },
+      "text": {
+        "en": "OneDrive and Google Drive status badges - synced, online-only, syncing, error - appear as in Explorer, including the sync-in-progress arrows and folders with non-ASCII names.",
+        "cs": "Stavové odznaky OneDrivu a Disku Google - synchronizováno, jen online, probíhá, chyba - se zobrazují jako v Průzkumníku, včetně šipek probíhající synchronizace a složek s diakritikou."
+      }
+    }
+  ]
+}

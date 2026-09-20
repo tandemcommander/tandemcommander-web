@@ -1,0 +1,154 @@
+{
+  "code-viewer/light": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1100,
+    "height": 760,
+    "files": {
+      "full": "assets/gallery/code-viewer-light.webp",
+      "card": "assets/gallery/code-viewer-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 442
+    },
+    "bytes": {
+      "full": 18016,
+      "card": 16432
+    }
+  },
+  "command-shell/light": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/command-shell-light.webp",
+      "card": "assets/gallery/command-shell-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 26986,
+      "card": 19770
+    }
+  },
+  "dark-theme/dark": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/dark-theme-dark.webp",
+      "card": "assets/gallery/dark-theme-dark-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 16884,
+      "card": 13152
+    }
+  },
+  "main-window/light": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/main-window-light.webp",
+      "card": "assets/gallery/main-window-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 18820,
+      "card": 15950
+    }
+  },
+  "markdown-viewer/light": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1100,
+    "height": 760,
+    "files": {
+      "full": "assets/gallery/markdown-viewer-light.webp",
+      "card": "assets/gallery/markdown-viewer-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 442
+    },
+    "bytes": {
+      "full": 14106,
+      "card": 12550
+    }
+  },
+  "panel-tabs/light": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/panel-tabs-light.webp",
+      "card": "assets/gallery/panel-tabs-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 18860,
+      "card": 13770
+    }
+  },
+  "thumbnails/light": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/thumbnails-light.webp",
+      "card": "assets/gallery/thumbnails-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 137824,
+      "card": 23260
+    }
+  },
+  "unicode-long-paths/light": {
+    "appVersion": "0.1.8",
+    "appBuild": 192,
+    "capturedAt": "2026-09-20",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/unicode-long-paths-light.webp",
+      "card": "assets/gallery/unicode-long-paths-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 18966,
+      "card": 14714
+    }
+  }
+}

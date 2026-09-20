@@ -1,3 +1,7 @@
+{#- Generated from the release records in content/releases/ (spec 007):
+    the current release's summary, then six highlight cards - the current
+    release's first, topped up from the releases before it. -#}
+{%- set locale = lang | locale -%}
 <section id="new" class="section section--roomy">
   <div class="section-inner">
     <div class="section-head">
@@ -5,23 +9,22 @@
       <h2 class="section-title">{{ lang | t("whatsNew.title") }}</h2>
       <p class="section-lead">{{ lang | t("whatsNew.lead") }}</p>
     </div>
-    <div class="card-grid card-grid--news">
-      <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">{{ lang | t("whatsNew.entry1Title") }}</h3>
-        <p class="card-text card-text--sm">{{ lang | t("whatsNew.entry1Text") }}</p>
-      </article>
-      <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">{{ lang | t("whatsNew.entry2Title") }}</h3>
-        <p class="card-text card-text--sm">{{ lang | t("whatsNew.entry2Text") | safe }}</p>
-      </article>
-      <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">{{ lang | t("whatsNew.entry3Title") }}</h3>
-        <p class="card-text card-text--sm">{{ lang | t("whatsNew.entry3Text") | safe }}</p>
-      </article>
-      <article class="card card--accent card--tight">
-        <h3 class="card-title card-title--sm">{{ lang | t("whatsNew.entry4Title") }}</h3>
-        <p class="card-text card-text--sm">{{ lang | t("whatsNew.entry4Text") }}</p>
-      </article>
+    <div class="whats-new-current">
+      <p class="whats-new-version">{{ lang | t("whatsNew.currentLine") | replace("{version}", releases.current.version) | replace("{date}", releases.current.date | releaseDate(locale.intl)) }}</p>
+      <p class="whats-new-summary">{{ releases.current.summary[lang] | inline | safe }}</p>
     </div>
+    <div class="card-grid card-grid--news">
+      {%- for card in releases.homeCards %}
+      <article class="card card--accent card--tight{% if card.isCurrent %} card--current{% endif %}">
+        <p class="version-chip">{{ card.version }}</p>
+        <h3 class="card-title card-title--sm">{{ card.title[lang] }}</h3>
+        <p class="card-text card-text--sm">{{ card.text[lang] | inline | safe }}</p>
+        {%- if card.scene and releases.linkScenes %}
+        <a class="card-link" href="{{ locale.url }}#{{ card.scene }}">{{ lang | t("whatsNew.seeIt") }}</a>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="section-more"><a href="{{ locale.url }}releases/">{{ lang | t("whatsNew.allReleases") }}</a></p>
   </div>
 </section>

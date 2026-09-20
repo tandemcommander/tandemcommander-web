@@ -5,14 +5,14 @@ eleventyExcludeFromCollections: true
 {#-
   PAD 4.0 file (spec: specs/006-pad-v4-compliance/).
 
-  Element set and order mirror the reference PAD 4.0 implementation — AppVisor's
+  Element set and order mirror the reference PAD 4.0 implementation - AppVisor's
   output, as published by PSPad (http://www.pspad.com/pad_file.xml), a Czech
   program listed on slunecnice.cz and the only PAD 4.0 file we can confirm a
   target catalog accepts. The vendored specification's flat field list is NOT a
   document-order description, so the reference's order is authoritative here.
 
   Sections deliberately not emitted: PublisherID / BrandID / AppID / CERTIFICATE_ID
-  (identifiers issued by the defunct AppVisor registry — unobtainable), and the
+  (identifiers issued by the defunct AppVisor registry - unobtainable), and the
   RoboSoft, Dynamic_PAD, Site, Affiliates and NewsFeed sections (AppVisor's own
   submission bookkeeping, carrying no product information).
 -#}
@@ -135,7 +135,7 @@ eleventyExcludeFromCollections: true
 			<Char_Desc_2000>{{ "en" | t("pad.desc2000") }}</Char_Desc_2000>
 		</English>
 		{#-
-		  English only, deliberately — see research R10. A <Czech> sibling block is
+		  English only, deliberately - see research R10. A <Czech> sibling block is
 		  the one place this file diverged from BOTH the vendored specification
 		  (which enumerates description paths under English only) and the reference
 		  implementation (English only), so it is the prime suspect for slunecnice's
@@ -152,7 +152,7 @@ eleventyExcludeFromCollections: true
 	{#- Press_Release reuses the already-reviewed English copy; no new prose. -#}
 	<Press_Release>
 		<Keywords>{{ "en" | t("pad.keywords") }}</Keywords>
-		<Headline>{{ site.name }} {{ site.version }} — {{ "en" | t("pad.desc45") }}</Headline>
+		<Headline>{{ site.name }} {{ site.version }} - {{ "en" | t("pad.desc45") }}</Headline>
 		<Summary>{{ "en" | t("pad.desc250") }}</Summary>
 		<Press_Release>{{ "en" | t("pad.desc2000") }}</Press_Release>
 		<Press_Release_Plain>{{ "en" | t("pad.desc450") }}</Press_Release_Plain>

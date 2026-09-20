@@ -12,14 +12,13 @@ const path = require("path");
 // ---------------------------------------------------------------------------
 
 const LANGUAGES = require("./src/_data/languages.json");
+const { renderInline } = require("./lib/content.js");
 
 // Keys whose values intentionally contain HTML; templates render exactly
 // these with `| safe`. Any other value containing markup fails the build.
 const RICH_TEXT_KEYS = [
   "hero.title",
   "features.card3Text",
-  "whatsNew.entry2Text",
-  "whatsNew.entry3Text",
   "project.text1",
   "project.text2",
   "story.p3",
@@ -513,6 +512,15 @@ module.exports = function (eleventyConfig) {
     }
     return value;
   });
+
+  // {{ text | inline | safe }} — release-record and scene texts are plain text
+  // whose only markup is `backticks`; this escapes the text and renders those
+  // as the site's mono span (spec: specs/007-release-news-gallery/).
+  eleventyConfig.addFilter("inline", (text) => renderInline(text));
+
+  // Structured content lives outside the input dir; rebuild on change.
+  eleventyConfig.addWatchTarget("./content/");
+  eleventyConfig.addWatchTarget("./lib/");
 
   // {{ lang | locale }} — the languages.json entry for a page's language.
   eleventyConfig.addFilter("locale", function (lang) {

@@ -1,0 +1,3 @@
+Invoice 2026-06
+Services rendered: consulting, 12 h
+Total: 1 440,00

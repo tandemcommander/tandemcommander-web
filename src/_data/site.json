@@ -13,6 +13,11 @@
     "issuesUrl": "https://github.com/tandemcommander/tandemcommander/issues",
     "releasesUrl": "https://github.com/tandemcommander/tandemcommander/releases"
   },
+  "winget": {
+    "id": "PavelStupka.TandemCommander",
+    "command": "winget install tandemcommander",
+    "available": false
+  },
   "author": {
     "name": "Pavel Stupka",
     "email": "pavel.stupka@gmail.com",

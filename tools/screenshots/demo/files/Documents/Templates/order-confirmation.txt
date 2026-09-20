@@ -1,0 +1,3 @@
+Dear {name},
+
+thank you for your order.

@@ -7,6 +7,7 @@
 // named-export hoisting that a plain `module.exports = {…}` is subject to.
 const fs = require("fs");
 const path = require("path");
+const { loadReleases } = require("../../lib/content.js");
 
 function readJson(relative) {
   return JSON.parse(fs.readFileSync(path.join(__dirname, relative), "utf8"));
@@ -14,7 +15,6 @@ function readJson(relative) {
 
 module.exports = function () {
   const site = readJson("site.json");
-  const en = readJson(path.join("i18n", "en.json"));
 
   // "YYYY-MM-DD" — the format itself is gated by the releaseDate filter.
   const [releaseYear, releaseMonth, releaseDay] = site.releaseDate.split("-");
@@ -25,14 +25,10 @@ module.exports = function () {
   // rest is the last name (contracts/pad-file.md).
   const nameParts = String(site.author.name).trim().split(/\s+/);
 
-  // Program_Change_Info: the English "What's New" entry titles, in numeric
-  // order — titles are plain-text keys (only entry *texts* carry markup).
-  const changeInfo = Object.keys(en.whatsNew)
-    .map((key) => /^entry(\d+)Title$/.exec(key))
-    .filter(Boolean)
-    .sort((a, b) => Number(a[1]) - Number(b[1]))
-    .map((match) => en.whatsNew[match[0]])
-    .join("; ");
+  // Program_Change_Info: derived from the current release record — summary
+  // plus highlight titles, English, single line, within the PAD 4.0 limit
+  // (spec: specs/007-release-news-gallery/, contracts/release-record.md).
+  const changeInfo = loadReleases(site).padChangeInfo;
 
   return {
     releaseYear,
