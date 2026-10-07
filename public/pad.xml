@@ -47,9 +47,9 @@
 	</ASP>
 	<Program_Info>
 		<Program_Name>Tandem Commander</Program_Name>
-		<Program_Version>0.1.8</Program_Version>
-		<Program_Release_Month>09</Program_Release_Month>
-		<Program_Release_Day>20</Program_Release_Day>
+		<Program_Version>0.1.9</Program_Version>
+		<Program_Release_Month>10</Program_Release_Month>
+		<Program_Release_Day>07</Program_Release_Day>
 		<Program_Release_Year>2026</Program_Release_Year>
 		<Program_Cost_Dollars>0</Program_Cost_Dollars>
 		<Program_Cost_Other_Code></Program_Cost_Other_Code>
@@ -63,14 +63,14 @@
 		<Program_Target_Platform>Windows</Program_Target_Platform>
 		<Program_OS_Support>WinOther</Program_OS_Support>
 		<Program_Language>English</Program_Language>
-		<Program_Change_Info>Panels get browser-style tabs, the program starts without the Visual C++ runtime, and other minor upgrades. New: Panel tabs; No runtime to install</Program_Change_Info>
+		<Program_Change_Info>The program tells you when a newer version is out, RAR archives open without installing anything, and a long series of fixes ends silent data loss around archives. New: New version check; RAR archives built in; Edits inside archives are kept; Names and passwords in any script; PictView saves again</Program_Change_Info>
 		<Program_System_Requirements>Windows 11, x64</Program_System_Requirements>
 		<Limitations>none</Limitations>
 		<Awards></Awards>
 		<File_Info>
-			<File_Size_Bytes>8247136</File_Size_Bytes>
-			<File_Size_K>8054</File_Size_K>
-			<File_Size_MB>7.87</File_Size_MB>
+			<File_Size_Bytes>8013936</File_Size_Bytes>
+			<File_Size_K>7826</File_Size_K>
+			<File_Size_MB>7.64</File_Size_MB>
 		</File_Info>
 		<FacebookFanPage></FacebookFanPage>
 		<VideoLink1URL></VideoLink1URL>
@@ -98,7 +98,7 @@
 			<Application_XML_File_URL>https://tandemcommander.org/pad.xml</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.8/tandemcommander-0.1.8-x64-setup.exe</Primary_Download_URL>
+			<Primary_Download_URL>https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.9/tandemcommander-0.1.9-x64-setup.exe</Primary_Download_URL>
 			<Secondary_Download_URL></Secondary_Download_URL>
 			<Additional_Download_URL_1></Additional_Download_URL_1>
 			<Additional_Download_URL_2></Additional_Download_URL_2>
@@ -118,7 +118,7 @@
 		<EULA>Tandem Commander is distributed under the GNU General Public License version 2 or later (GPLv2+). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LICENSE file in the source repository for the full license text: https://github.com/tandemcommander/tandemcommander</EULA>
 	</Permissions><Press_Release>
 		<Keywords>file manager, two-pane file manager, dual-pane, orthodox file manager, file commander, panel tabs, Windows 11, x64, Unicode, long paths, SFTP, code viewer, syntax highlighting, Markdown viewer, dark theme, Open Salamander, open source, free, GPL</Keywords>
-		<Headline>Tandem Commander 0.1.8 - Fast two-pane file manager for Windows 11.</Headline>
+		<Headline>Tandem Commander 0.1.9 - Fast two-pane file manager for Windows 11.</Headline>
 		<Summary>A fast, keyboard-friendly two-pane file manager for Windows 11, born from the Open Salamander codebase: panel tabs, full Unicode, long paths, SFTP, a syntax-highlighting Code Viewer, a Markdown viewer and a dark theme. Free under GPLv2 or later.</Summary>
 		<Press_Release>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11. It carries on the classic orthodox file manager working style: source panel on the left, target on the right, function keys along the bottom edge, a shortcut for everything, and a command line that stays exactly where your hands already are. Each panel can keep several directories open in tabs, browser-style: every tab remembers its own view, sort order, filter, selection and history, and the whole set is restored at the next start. The program was born from the open source Open Salamander codebase and now runs on its own modernized core built for Windows 11: names and paths are Unicode end to end, so accents and non-Latin scripts render correctly everywhere, and paths past the old 260-character limit just work. An SFTP plugin puts a Linux server in one panel and your disk in the other, with password or private-key authentication, host-key verification and unix permissions shown directly in the panel. Pressing F3 on a source or configuration file opens the Code Viewer with syntax highlighting for more than 200 languages and formats in twelve colour schemes; on a Markdown file it opens a rendered view with headings, lists, tables and code blocks; the image viewer and fast, correctly rotated thumbnails handle large photo folders. In cloud-synced folders the panels show the same sync-status badges as Windows Explorer, and TortoiseGit and TortoiseSVN badges appear next to them. The Command Shell key opens the shell you choose - Command Prompt, PowerShell, Windows Terminal, Git Bash or any program. A one-time utility migrates hot paths, FTP bookmarks, the user menu and plugin settings from Altap Salamander. The classic light look remains the default, and a dark theme offers the same layout and information density. Tandem Commander is free software, open source under GPLv2 or later, with the full source code, issue tracker and all releases available on GitHub.</Press_Release>
 		<Press_Release_Plain>Tandem Commander is a fast, keyboard-friendly two-pane file manager for Windows 11, born from the open source Open Salamander codebase. Each panel keeps several directories open in tabs, names are full Unicode and paths may exceed 260 characters. It connects to Linux servers over SFTP, shows source code with syntax highlighting and rendered Markdown on F3, displays cloud sync badges, and has light and dark themes. Free under GPLv2 or later.</Press_Release_Plain>

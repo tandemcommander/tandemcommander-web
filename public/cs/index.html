@@ -92,7 +92,7 @@
     <h1 class="hero-title">Znovuzrození <br>dvoupanelové&nbsp;<span class="accent">legendy</span></h1>
     <p class="hero-lead">Dva panely, funkční klávesové zkratky a pluginy - pracovní styl, na který jsou zvyklí tisíce uživatelů. Znovuzrozené z otevřeného kódu Open Salamander, dnes plně podporuje Unicode, zvládá dlouhé cesty, drží adresáře v záložkách panelů, připojí se přes SFTP, na F3 zobrazí zdrojový kód i Markdown, ukazuje stav cloudové synchronizace - a přináší i experimentální tmavý motiv. Projekt je živý a průběžně vylepšován.</p>
     <div class="hero-cta">
-      <a href="#download" class="btn btn--primary">Stáhnout pro Windows<span class="btn-badge">v0.1.8</span></a>
+      <a href="#download" class="btn btn--primary">Stáhnout pro Windows<span class="btn-badge">v0.1.9</span></a>
       <a href="https://github.com/tandemcommander/tandemcommander" class="btn btn--secondary">Prohlédnout zdrojový kód</a>
     </div>
     <p class="hero-note">Instalátor pro Windows · Windows 11 · x64 · zdarma pod GPLv2</p>
@@ -378,42 +378,39 @@
       <p class="section-lead">Nejdřív aktuální vydání, pod ním nejnovější novinky z těch předchozích.</p>
     </div>
     <div class="whats-new-current">
-      <p class="whats-new-version">Verze 0.1.8 · 20. září 2026</p>
-      <p class="whats-new-summary">Panely dostaly záložky jako v prohlížeči, program se spustí i bez Visual C++ runtime a další drobné úpravy.</p>
+      <p class="whats-new-version">Verze 0.1.9 · 7. října 2026</p>
+      <p class="whats-new-summary">Program nově upozorní na novější verzi, archivy RAR otevře bez instalace čehokoli dalšího a dlouhá řada oprav ukončuje tiché ztráty dat při práci s archivy.</p>
     </div>
     <div class="card-grid card-grid--news">
       <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.1.8</p>
-        <h3 class="card-title card-title--sm">Záložky v panelech</h3>
-        <p class="card-text card-text--sm">Několik adresářů v jednom panelu, jako v prohlížeči. Každá záložka si pamatuje zobrazení, řazení, filtr, výběr i historii a po startu se vše obnoví. Novou otevřete přes <span class="mono">Ctrl+Shift+T</span>.</p>
-        <a class="card-link" href="/cs/#panel-tabs">Ukázka →</a>
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">Kontrola nové verze</h3>
+        <p class="card-text card-text--sm">Zhruba jednou denně se program při startu zeptá GitHubu na nejnovější vydání a dá vědět, když vyšlo novější. Neposílá nic o vás ani o počítači, sám nic nestahuje a jednou volbou jde vypnout.</p>
       </article>
       <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.1.8</p>
-        <h3 class="card-title card-title--sm">Bez instalace runtime</h3>
-        <p class="card-text card-text--sm">Microsoft Visual C++ runtime je nově přímo ve složce programu. Na čistém počítači se starší verze nainstalovaly, ale nespustily - to už neplatí.</p>
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">Archivy RAR bez dalšího programu</h3>
+        <p class="card-text card-text--sm">Archivy RAR včetně RAR5 se v panelu otevřou jako složka: <span class="mono">F3</span> zobrazí, <span class="mono">F5</span> zkopíruje ven, <span class="mono">Alt+F9</span> rozbalí. Fungují i šifrované a rozdělené archivy. Vytváření archivů RAR zůstává na WinRARu.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.6</p>
-        <h3 class="card-title card-title--sm">Prohlížeč kódu</h3>
-        <p class="card-text card-text--sm"><span class="mono">F3</span> na zdrojovém nebo konfiguračním souboru ho zobrazí se zvýrazněním syntaxe - přes 200 jazyků a formátů, dvanáct barevných schémat, čísla řádků. Jen pro čtení: nic se nespouští ani neodesílá.</p>
-        <a class="card-link" href="/cs/#code-viewer">Ukázka →</a>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">Úpravy v archivech se neztrácejí</h3>
+        <p class="card-text card-text--sm">Soubor upravený v archivu přes <span class="mono">F4</span> se zabalí zpět, i když má v názvu diakritiku - dosud se taková úprava beze slova ztratila. Další opravy ukončují tiché ztráty dat při přidávání a přesouvání do archivů.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.6</p>
-        <h3 class="card-title card-title--sm">Vlastní příkazový shell</h3>
-        <p class="card-text card-text--sm">Příkaz Command Shell (<span class="mono">Num /</span>) už není svázaný s Příkazovým řádkem: zvolte Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash nebo libovolný program s vlastními argumenty.</p>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">Názvy a hesla v libovolném písmu</h3>
+        <p class="card-text card-text--sm">Azbuka, čínština nebo emoji napsané do hledání souborů, Konfigurace či příkazové řádky zůstanou tak, jak jste je napsali, místo otazníků. S takovými znaky fungují i hesla k archivům a FTP a také pluginy.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.6</p>
-        <h3 class="card-title card-title--sm">Na cestě do wingetu</h3>
-        <p class="card-text card-text--sm">Tandem Commander je odeslán do katalogu Windows Package Manageru. Jakmile ho Microsoft přijme, <span class="mono">winget install tandemcommander</span> ho nainstaluje a <span class="mono">winget upgrade</span> udrží aktuální.</p>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">PictView zase ukládá</h3>
+        <p class="card-text card-text--sm">Uložit jako (<span class="mono">Ctrl+S</span>) znovu zapisuje BMP, PNG, JPEG, GIF a TIFF a nepřijde o soubor, který nahrazuje: když se něco pokazí, původní soubor zůstane beze změny. Zobrazený obrázek lze i přejmenovat a smazat.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.5</p>
-        <h3 class="card-title card-title--sm">Diakritika funguje všude</h3>
-        <p class="card-text card-text--sm">Porovnání adresářů, příkazová řádka, externí archivátory, cloudové složky v liště disků, zástupci i drag-and-drop zvládají diakritiku a nelatinku. Soubory s poškozeným názvem jde konečně smazat i přejmenovat.</p>
-        <a class="card-link" href="/cs/#unicode-long-paths">Ukázka →</a>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">Hesla už nejsou v historii</h3>
+        <p class="card-text card-text--sm">Heslo napsané přímo v adrese typu <span class="mono">ftp://user:password@server</span> se už neukládá do historie - dosud leželo v registru jako čitelný text. Dokument Markdown už sám od sebe neotevře webovou stránku.</p>
       </article>
     </div>
     <p class="section-more"><a href="/cs/releases/">Všechna vydání →</a></p>
@@ -435,7 +432,7 @@
     <div class="facts">
       <div class="fact">
         <span class="fact-label">Verze</span>
-        <span class="fact-value">0.1.8</span>
+        <span class="fact-value">0.1.9</span>
       </div>
       <div class="fact">
         <span class="fact-label">Platforma</span>
@@ -472,13 +469,13 @@
 <section id="download" class="section section--download">
   <div class="download-inner">
     <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="download-mark">
-    <h2 class="section-title section-title--md">Stáhněte si verzi 0.1.8</h2>
+    <h2 class="section-title section-title--md">Stáhněte si verzi 0.1.9</h2>
     <div class="installer-wrap">
       <div class="installer-card">
         <h3 class="installer-title">Instalátor</h3>
-        <p class="installer-desc">Verze 0.1.8 pro Windows 11, x64.<br>Vydáno 20. září 2026</p>
-        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.8/tandemcommander-0.1.8-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Stáhnout instalátor</a>
-        <p class="installer-file">tandemcommander-0.1.8-x64-setup.exe</p>
+        <p class="installer-desc">Verze 0.1.9 pro Windows 11, x64.<br>Vydáno 7. října 2026</p>
+        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.9/tandemcommander-0.1.9-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Stáhnout instalátor</a>
+        <p class="installer-file">tandemcommander-0.1.9-x64-setup.exe</p>
       </div>
     </div>
     <p class="download-meta">Windows 11 · x64 · GPLv2 nebo novější · <a href="https://github.com/tandemcommander/tandemcommander/releases">všechna vydání</a> · <a href="https://github.com/tandemcommander/tandemcommander/issues">nahlásit problém</a></p>

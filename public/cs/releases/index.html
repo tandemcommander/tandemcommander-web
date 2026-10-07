@@ -90,13 +90,50 @@
       <p class="section-lead">Co přinesla každá verze Tandem Commanderu, v několika větách. Úplné technické poznámky ke každému vydání najdete na GitHubu.</p>
     </div>
     <div class="release-list">
-      <article class="release release--current" id="v0.1.8">
+      <article class="release release--current" id="v0.1.9">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.9">0.1.9</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-10-07">7. října 2026</time>
+            <span class="release-kind">Vydání s novinkami</span>
+            <span class="version-chip version-chip--current">aktuální</span>
+          </p>
+        </header>
+        <p class="release-summary">Program nově upozorní na novější verzi, archivy RAR otevře bez instalace čehokoli dalšího a dlouhá řada oprav ukončuje tiché ztráty dat při práci s archivy.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Kontrola nové verze</strong>
+            <span class="release-highlight-text">Zhruba jednou denně se program při startu zeptá GitHubu na nejnovější vydání a dá vědět, když vyšlo novější. Neposílá nic o vás ani o počítači, sám nic nestahuje a jednou volbou jde vypnout.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Archivy RAR bez dalšího programu</strong>
+            <span class="release-highlight-text">Archivy RAR včetně RAR5 se v panelu otevřou jako složka: <span class="mono">F3</span> zobrazí, <span class="mono">F5</span> zkopíruje ven, <span class="mono">Alt+F9</span> rozbalí. Fungují i šifrované a rozdělené archivy. Vytváření archivů RAR zůstává na WinRARu.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Úpravy v archivech se neztrácejí</strong>
+            <span class="release-highlight-text">Soubor upravený v archivu přes <span class="mono">F4</span> se zabalí zpět, i když má v názvu diakritiku - dosud se taková úprava beze slova ztratila. Další opravy ukončují tiché ztráty dat při přidávání a přesouvání do archivů.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Názvy a hesla v libovolném písmu</strong>
+            <span class="release-highlight-text">Azbuka, čínština nebo emoji napsané do hledání souborů, Konfigurace či příkazové řádky zůstanou tak, jak jste je napsali, místo otazníků. S takovými znaky fungují i hesla k archivům a FTP a také pluginy.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">PictView zase ukládá</strong>
+            <span class="release-highlight-text">Uložit jako (<span class="mono">Ctrl+S</span>) znovu zapisuje BMP, PNG, JPEG, GIF a TIFF a nepřijde o soubor, který nahrazuje: když se něco pokazí, původní soubor zůstane beze změny. Zobrazený obrázek lze i přejmenovat a smazat.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Hesla už nejsou v historii</strong>
+            <span class="release-highlight-text">Heslo napsané přímo v adrese typu <span class="mono">ftp://user:password@server</span> se už neukládá do historie - dosud leželo v registru jako čitelný text. Dokument Markdown už sám od sebe neotevře webovou stránku.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.9">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.8">
         <header class="release-head">
           <h2 class="release-version"><a href="#v0.1.8">0.1.8</a></h2>
           <p class="release-meta">
             <time datetime="2026-09-20">20. září 2026</time>
             <span class="release-kind">Vydání s novinkami</span>
-            <span class="version-chip version-chip--current">aktuální</span>
           </p>
         </header>
         <p class="release-summary">Panely dostaly záložky jako v prohlížeči, program se spustí i bez Visual C++ runtime a další drobné úpravy.</p>
@@ -290,7 +327,7 @@
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.0">Úplné poznámky k vydání na GitHubu ↗</a></p>
       </article>
     </div>
-    <p class="release-get"><a href="/cs/#download" class="btn btn--primary">Stáhnout verzi 0.1.8</a></p>
+    <p class="release-get"><a href="/cs/#download" class="btn btn--primary">Stáhnout verzi 0.1.9</a></p>
   </div>
 </section>
 </main>

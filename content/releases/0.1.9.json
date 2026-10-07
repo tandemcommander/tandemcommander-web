@@ -1,0 +1,78 @@
+{
+  "version": "0.1.9",
+  "date": "2026-10-07",
+  "build": 193,
+  "kind": "feature",
+  "summary": {
+    "en": "The program tells you when a newer version is out, RAR archives open without installing anything, and a long series of fixes ends silent data loss around archives.",
+    "cs": "Program nově upozorní na novější verzi, archivy RAR otevře bez instalace čehokoli dalšího a dlouhá řada oprav ukončuje tiché ztráty dat při práci s archivy."
+  },
+  "highlights": [
+    {
+      "id": "update-check",
+      "title": {
+        "en": "New version check",
+        "cs": "Kontrola nové verze"
+      },
+      "text": {
+        "en": "About once a day at start-up the program asks GitHub which release is the latest and tells you when a newer one is out. It sends nothing about you or your PC, downloads nothing itself, and one option turns it off.",
+        "cs": "Zhruba jednou denně se program při startu zeptá GitHubu na nejnovější vydání a dá vědět, když vyšlo novější. Neposílá nic o vás ani o počítači, sám nic nestahuje a jednou volbou jde vypnout."
+      }
+    },
+    {
+      "id": "rar-built-in",
+      "title": {
+        "en": "RAR archives built in",
+        "cs": "Archivy RAR bez dalšího programu"
+      },
+      "text": {
+        "en": "RAR archives, RAR5 included, open in the panel like a folder: `F3` views, `F5` copies out, `Alt+F9` unpacks. Encrypted and split archives work too. Creating RAR archives remains WinRAR's job.",
+        "cs": "Archivy RAR včetně RAR5 se v panelu otevřou jako složka: `F3` zobrazí, `F5` zkopíruje ven, `Alt+F9` rozbalí. Fungují i šifrované a rozdělené archivy. Vytváření archivů RAR zůstává na WinRARu."
+      }
+    },
+    {
+      "id": "archive-edits-kept",
+      "title": {
+        "en": "Edits inside archives are kept",
+        "cs": "Úpravy v archivech se neztrácejí"
+      },
+      "text": {
+        "en": "A file edited inside an archive with `F4` is packed back even when its name has accents - until now such an edit was lost without a word. More fixes end silent data loss when adding or moving files into archives.",
+        "cs": "Soubor upravený v archivu přes `F4` se zabalí zpět, i když má v názvu diakritiku - dosud se taková úprava beze slova ztratila. Další opravy ukončují tiché ztráty dat při přidávání a přesouvání do archivů."
+      }
+    },
+    {
+      "id": "any-script-text",
+      "title": {
+        "en": "Names and passwords in any script",
+        "cs": "Názvy a hesla v libovolném písmu"
+      },
+      "text": {
+        "en": "Cyrillic, Chinese or emoji typed into Find Files, Configuration or the command line stays as typed instead of turning into question marks. Archive and FTP passwords with such characters work, and so do the plugins.",
+        "cs": "Azbuka, čínština nebo emoji napsané do hledání souborů, Konfigurace či příkazové řádky zůstanou tak, jak jste je napsali, místo otazníků. S takovými znaky fungují i hesla k archivům a FTP a také pluginy."
+      }
+    },
+    {
+      "id": "pictview-save-as",
+      "title": {
+        "en": "PictView saves again",
+        "cs": "PictView zase ukládá"
+      },
+      "text": {
+        "en": "Save As (`Ctrl+S`) writes BMP, PNG, JPEG, GIF and TIFF again and never loses the file it replaces: if anything goes wrong, the existing file stays as it was. The picture on screen can be renamed and deleted too.",
+        "cs": "Uložit jako (`Ctrl+S`) znovu zapisuje BMP, PNG, JPEG, GIF a TIFF a nepřijde o soubor, který nahrazuje: když se něco pokazí, původní soubor zůstane beze změny. Zobrazený obrázek lze i přejmenovat a smazat."
+      }
+    },
+    {
+      "id": "no-password-in-history",
+      "title": {
+        "en": "No passwords in history",
+        "cs": "Hesla už nejsou v historii"
+      },
+      "text": {
+        "en": "A password typed inside an address like `ftp://user:password@server` is no longer saved in history - until now it sat in the registry as plain text. A Markdown document can no longer open a web page by itself.",
+        "cs": "Heslo napsané přímo v adrese typu `ftp://user:password@server` se už neukládá do historie - dosud leželo v registru jako čitelný text. Dokument Markdown už sám od sebe neotevře webovou stránku."
+      }
+    }
+  ]
+}

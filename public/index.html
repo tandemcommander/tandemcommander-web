@@ -107,7 +107,7 @@ if(target){location.replace(target+location.search+location.hash);}
     <h1 class="hero-title">The two-pane <br>legend&nbsp;<span class="accent">reborn</span></h1>
     <p class="hero-lead">Two panels, function keys along the bottom, a plugin for everything - the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, keeps directories open in panel tabs, connects over SFTP, shows source code and Markdown on F3, mirrors your cloud sync status - and ships in a dark theme as well as the light one.</p>
     <div class="hero-cta">
-      <a href="#download" class="btn btn--primary">Download for Windows<span class="btn-badge">v0.1.8</span></a>
+      <a href="#download" class="btn btn--primary">Download for Windows<span class="btn-badge">v0.1.9</span></a>
       <a href="https://github.com/tandemcommander/tandemcommander" class="btn btn--secondary">Browse the source</a>
     </div>
     <p class="hero-note">Windows installer · Windows 11 · x64 · free under GPLv2</p>
@@ -393,42 +393,39 @@ if(target){location.replace(target+location.search+location.hash);}
       <p class="section-lead">The current release first, followed by the most recent highlights of the releases before it.</p>
     </div>
     <div class="whats-new-current">
-      <p class="whats-new-version">Version 0.1.8 · September 20, 2026</p>
-      <p class="whats-new-summary">Panels get browser-style tabs, the program starts without the Visual C++ runtime, and other minor upgrades.</p>
+      <p class="whats-new-version">Version 0.1.9 · October 7, 2026</p>
+      <p class="whats-new-summary">The program tells you when a newer version is out, RAR archives open without installing anything, and a long series of fixes ends silent data loss around archives.</p>
     </div>
     <div class="card-grid card-grid--news">
       <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.1.8</p>
-        <h3 class="card-title card-title--sm">Panel tabs</h3>
-        <p class="card-text card-text--sm">Several directories per panel, the way a browser does it. Each tab keeps its own view, sorting, filter, selection and history, and the whole set returns at the next start. <span class="mono">Ctrl+Shift+T</span> opens one.</p>
-        <a class="card-link" href="/#panel-tabs">See it →</a>
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">New version check</h3>
+        <p class="card-text card-text--sm">About once a day at start-up the program asks GitHub which release is the latest and tells you when a newer one is out. It sends nothing about you or your PC, downloads nothing itself, and one option turns it off.</p>
       </article>
       <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.1.8</p>
-        <h3 class="card-title card-title--sm">No runtime to install</h3>
-        <p class="card-text card-text--sm">The Microsoft Visual C++ runtime now ships inside the program folder. On a clean PC, earlier versions installed fine and then refused to start - that is over.</p>
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">RAR archives built in</h3>
+        <p class="card-text card-text--sm">RAR archives, RAR5 included, open in the panel like a folder: <span class="mono">F3</span> views, <span class="mono">F5</span> copies out, <span class="mono">Alt+F9</span> unpacks. Encrypted and split archives work too. Creating RAR archives remains WinRAR's job.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.6</p>
-        <h3 class="card-title card-title--sm">Code Viewer</h3>
-        <p class="card-text card-text--sm"><span class="mono">F3</span> on a source or configuration file shows it with syntax highlighting - over 200 languages and formats, twelve colour schemes, line numbers. Read-only: nothing is executed, no network request is made.</p>
-        <a class="card-link" href="/#code-viewer">See it →</a>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">Edits inside archives are kept</h3>
+        <p class="card-text card-text--sm">A file edited inside an archive with <span class="mono">F4</span> is packed back even when its name has accents - until now such an edit was lost without a word. More fixes end silent data loss when adding or moving files into archives.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.6</p>
-        <h3 class="card-title card-title--sm">Choose your command shell</h3>
-        <p class="card-text card-text--sm">The Command Shell command (<span class="mono">Num /</span>) is no longer tied to Command Prompt: pick Windows PowerShell, PowerShell 7, Windows Terminal, Git Bash or any program with your own arguments.</p>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">Names and passwords in any script</h3>
+        <p class="card-text card-text--sm">Cyrillic, Chinese or emoji typed into Find Files, Configuration or the command line stays as typed instead of turning into question marks. Archive and FTP passwords with such characters work, and so do the plugins.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.6</p>
-        <h3 class="card-title card-title--sm">On the way to winget</h3>
-        <p class="card-text card-text--sm">Tandem Commander is submitted to the Windows Package Manager catalogue. Once Microsoft accepts it, <span class="mono">winget install tandemcommander</span> installs it and <span class="mono">winget upgrade</span> keeps it current.</p>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">PictView saves again</h3>
+        <p class="card-text card-text--sm">Save As (<span class="mono">Ctrl+S</span>) writes BMP, PNG, JPEG, GIF and TIFF again and never loses the file it replaces: if anything goes wrong, the existing file stays as it was. The picture on screen can be renamed and deleted too.</p>
       </article>
-      <article class="card card--accent card--tight">
-        <p class="version-chip">0.1.5</p>
-        <h3 class="card-title card-title--sm">Accents work everywhere</h3>
-        <p class="card-text card-text--sm">Compare Directories, the command line, external archivers, cloud folders in the drive bar, shortcuts and drag-and-drop now handle accented and non-Latin names. Files with broken names can finally be deleted or renamed.</p>
-        <a class="card-link" href="/#unicode-long-paths">See it →</a>
+      <article class="card card--accent card--tight card--current">
+        <p class="version-chip">0.1.9</p>
+        <h3 class="card-title card-title--sm">No passwords in history</h3>
+        <p class="card-text card-text--sm">A password typed inside an address like <span class="mono">ftp://user:password@server</span> is no longer saved in history - until now it sat in the registry as plain text. A Markdown document can no longer open a web page by itself.</p>
       </article>
     </div>
     <p class="section-more"><a href="/releases/">All releases →</a></p>
@@ -450,7 +447,7 @@ if(target){location.replace(target+location.search+location.hash);}
     <div class="facts">
       <div class="fact">
         <span class="fact-label">Version</span>
-        <span class="fact-value">0.1.8</span>
+        <span class="fact-value">0.1.9</span>
       </div>
       <div class="fact">
         <span class="fact-label">Platform</span>
@@ -487,13 +484,13 @@ if(target){location.replace(target+location.search+location.hash);}
 <section id="download" class="section section--download">
   <div class="download-inner">
     <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="download-mark">
-    <h2 class="section-title section-title--md">Get version 0.1.8</h2>
+    <h2 class="section-title section-title--md">Get version 0.1.9</h2>
     <div class="installer-wrap">
       <div class="installer-card">
         <h3 class="installer-title">Installer</h3>
-        <p class="installer-desc">Version 0.1.8 for Windows 11, x64.<br>Released September 20, 2026</p>
-        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.8/tandemcommander-0.1.8-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Download installer</a>
-        <p class="installer-file">tandemcommander-0.1.8-x64-setup.exe</p>
+        <p class="installer-desc">Version 0.1.9 for Windows 11, x64.<br>Released October 7, 2026</p>
+        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.9/tandemcommander-0.1.9-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Download installer</a>
+        <p class="installer-file">tandemcommander-0.1.9-x64-setup.exe</p>
       </div>
     </div>
     <p class="download-meta">Windows 11 · x64 · GPLv2 or later · <a href="https://github.com/tandemcommander/tandemcommander/releases">all releases</a> · <a href="https://github.com/tandemcommander/tandemcommander/issues">report an issue</a></p>

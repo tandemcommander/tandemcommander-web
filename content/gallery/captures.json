@@ -38,9 +38,9 @@
     }
   },
   "dark-theme/dark": {
-    "appVersion": "0.1.8",
-    "appBuild": 192,
-    "capturedAt": "2026-09-20",
+    "appVersion": "0.1.9",
+    "appBuild": 193,
+    "capturedAt": "2026-10-07",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -52,14 +52,14 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 16884,
-      "card": 13152
+      "full": 15272,
+      "card": 12540
     }
   },
   "main-window/light": {
-    "appVersion": "0.1.8",
-    "appBuild": 192,
-    "capturedAt": "2026-09-20",
+    "appVersion": "0.1.9",
+    "appBuild": 193,
+    "capturedAt": "2026-10-07",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -71,8 +71,8 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 18820,
-      "card": 15950
+      "full": 18924,
+      "card": 15922
     }
   },
   "markdown-viewer/light": {
@@ -95,9 +95,9 @@
     }
   },
   "panel-tabs/light": {
-    "appVersion": "0.1.8",
-    "appBuild": 192,
-    "capturedAt": "2026-09-20",
+    "appVersion": "0.1.9",
+    "appBuild": 193,
+    "capturedAt": "2026-10-07",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -109,14 +109,14 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 18860,
-      "card": 13770
+      "full": 18880,
+      "card": 13746
     }
   },
   "thumbnails/light": {
-    "appVersion": "0.1.8",
-    "appBuild": 192,
-    "capturedAt": "2026-09-20",
+    "appVersion": "0.1.9",
+    "appBuild": 193,
+    "capturedAt": "2026-10-07",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -128,14 +128,14 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 137824,
-      "card": 23260
+      "full": 137680,
+      "card": 23334
     }
   },
   "unicode-long-paths/light": {
-    "appVersion": "0.1.8",
-    "appBuild": 192,
-    "capturedAt": "2026-09-20",
+    "appVersion": "0.1.9",
+    "appBuild": 193,
+    "capturedAt": "2026-10-07",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -147,8 +147,8 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 18966,
-      "card": 14714
+      "full": 18944,
+      "card": 14764
     }
   }
 }
