@@ -56,7 +56,9 @@
     "card5Title": "Servers and clouds",
     "card5Text": "A Linux server over SFTP in one panel, your disk in the other. In cloud folders the panels show the same sync badges as Explorer - OneDrive, Google Drive - with TortoiseGit and TortoiseSVN status next to them.",
     "card6Title": "Easy to move in",
-    "card6Text": "A one-time utility brings your hot paths, FTP bookmarks, user menu, colours and plugin settings over from Altap Salamander. Install with the signed installer; a winget package is on its way."
+    "card6Text": "A one-time utility brings your hot paths, FTP bookmarks, user menu, colours and plugin settings over from Altap Salamander.",
+    "card6Install": "Install with the signed installer.",
+    "card6InstallWinget": "Install with the signed installer or through winget."
   },
   "whatsNew": {
     "kicker": "What's new",
@@ -117,7 +119,7 @@
     "buildLabel": "Build from source",
     "buildComment": ":: app + plugins + language modules",
     "wingetLabel": "Or install with winget",
-    "wingetHint": "Later updates arrive with `winget upgrade tandemcommander`.",
+    "wingetHint": "Later updates arrive with `{command}`.",
     "wingetCopy": "Copy",
     "wingetCopied": "Copied"
   },

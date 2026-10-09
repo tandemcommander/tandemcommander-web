@@ -93,8 +93,11 @@ Order at a release: publish the application release on GitHub (with its installe
 A release with nothing a visitor cares about (an installer-only fix like 0.1.7) is a record with a
 summary and `"highlights": []` - valid; the home-page cards then come from earlier releases.
 The hero badge, project card, download section, installer file name, download URL and the PAD file
-still update from `site.json` as before. The winget block in the download section is rendered only
-while `site.json → winget.available` is `true` - flip it once the package is live in the catalogue.
+still update from `site.json` as before. The package has been live in the winget catalogue since
+2026-10-09. `site.json → winget` holds the install and update commands - the only place they are
+written - and `winget.available` is the withdrawal switch: set it to `false` and the winget option
+leaves the download section and the "Easy to move in" card drops its winget wording. A release
+does not touch any of it.
 
 **Screenshots and the gallery** - every picture on the site is produced by one command from the
 officially published installer, inside a throw-away Windows Sandbox, so nothing of your own

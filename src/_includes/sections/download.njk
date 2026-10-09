@@ -13,8 +13,9 @@
         <p class="installer-file">{{ installerFile }}</p>
       </div>
     </div>
-    {#- Shown only once the package is live in the winget catalogue
-        (site.json → winget.available); a command that fails is worse than none. -#}
+    {#- The package is live in the winget catalogue since 2026-10-09. site.json →
+        winget.available withdraws the option if it ever leaves the catalogue;
+        a command that fails is worse than none. -#}
     {%- if site.winget.available %}
     <div class="winget">
       <p class="winget-label">{{ lang | t("download.wingetLabel") }}</p>
@@ -22,15 +23,18 @@
         <code class="winget-cmd" id="winget-cmd">{{ site.winget.command }}</code>
         <button type="button" class="winget-copy" data-copy-target="winget-cmd" data-copied-label="{{ lang | t("download.wingetCopied") }}" hidden>{{ lang | t("download.wingetCopy") }}</button>
       </div>
-      <p class="winget-hint">{{ lang | t("download.wingetHint") | inline | safe }}</p>
+      <p class="winget-hint">{{ lang | t("download.wingetHint") | replace("{command}", site.winget.upgradeCommand) | inline | safe }}</p>
       <span class="visually-hidden" aria-live="polite" data-copy-status></span>
     </div>
     {%- endif %}
     <p class="download-meta">{{ lang | t("download.meta") }} · <a href="{{ site.github.releasesUrl }}">{{ lang | t("download.metaAllReleases") }}</a> · <a href="{{ site.github.issuesUrl }}">{{ lang | t("download.metaReportIssue") }}</a></p>
+    {#- Disclaimer box hidden at the author's request (2026-10-09); its texts stay in
+        the catalogs (download.disclaimerLabel / disclaimerText) and its styles in main.css.
     <div class="disclaimer">
       <p class="disclaimer-label">{{ lang | t("download.disclaimerLabel") }}</p>
       <p class="disclaimer-text">{{ lang | t("download.disclaimerText") }}</p>
     </div>
+    -#}
     <div class="build-box">
       <p class="build-label">{{ lang | t("download.buildLabel") }}</p>
       <div class="build-lines">

@@ -34,7 +34,7 @@
       <article class="card">
         <p class="card-num">06</p>
         <h3 class="card-title">{{ lang | t("features.card6Title") }}</h3>
-        <p class="card-text">{{ lang | t("features.card6Text") }}</p>
+        <p class="card-text">{{ lang | t("features.card6Text") }} {{ lang | t("features.card6InstallWinget" if site.winget.available else "features.card6Install") }}</p>
       </article>
     </div>
   </div>

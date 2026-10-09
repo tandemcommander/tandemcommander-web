@@ -379,7 +379,7 @@ if(target){location.replace(target+location.search+location.hash);}
       <article class="card">
         <p class="card-num">06</p>
         <h3 class="card-title">Easy to move in</h3>
-        <p class="card-text">A one-time utility brings your hot paths, FTP bookmarks, user menu, colours and plugin settings over from Altap Salamander. Install with the signed installer; a winget package is on its way.</p>
+        <p class="card-text">A one-time utility brings your hot paths, FTP bookmarks, user menu, colours and plugin settings over from Altap Salamander. Install with the signed installer or through winget.</p>
       </article>
     </div>
   </div>
@@ -493,12 +493,16 @@ if(target){location.replace(target+location.search+location.hash);}
         <p class="installer-file">tandemcommander-0.1.9-x64-setup.exe</p>
       </div>
     </div>
-    <p class="download-meta">Windows 11 · x64 · GPLv2 or later · <a href="https://github.com/tandemcommander/tandemcommander/releases">all releases</a> · <a href="https://github.com/tandemcommander/tandemcommander/issues">report an issue</a></p>
-    <div class="disclaimer">
-      <p class="disclaimer-label">⚠ Disclaimer</p>
-      <p class="disclaimer-text">Tandem Commander is created through agentic AI development. The software is provided &quot;as is&quot;, without warranty of any kind, and the author accepts no responsibility or liability for its use.</p>
+    <div class="winget">
+      <p class="winget-label">Or install with winget</p>
+      <div class="winget-line">
+        <code class="winget-cmd" id="winget-cmd">winget install --id PavelStupka.TandemCommander -e</code>
+        <button type="button" class="winget-copy" data-copy-target="winget-cmd" data-copied-label="Copied" hidden>Copy</button>
+      </div>
+      <p class="winget-hint">Later updates arrive with <span class="mono">winget upgrade --id PavelStupka.TandemCommander -e</span>.</p>
+      <span class="visually-hidden" aria-live="polite" data-copy-status></span>
     </div>
-    <div class="build-box">
+    <p class="download-meta">Windows 11 · x64 · GPLv2 or later · <a href="https://github.com/tandemcommander/tandemcommander/releases">all releases</a> · <a href="https://github.com/tandemcommander/tandemcommander/issues">report an issue</a></p><div class="build-box">
       <p class="build-label">Build from source</p>
       <div class="build-lines">
         <div><span class="code-cmd">git</span> clone https://github.com/tandemcommander/tandemcommander.git</div>

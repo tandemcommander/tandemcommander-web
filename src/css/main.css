@@ -611,41 +611,57 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
   .release { padding: 22px 20px; }
 }
 
-/* Download — winget alternative (spec 007; rendered when site.json winget.available) */
-.winget { margin: 22px auto 0; max-width: 460px; text-align: center; }
-.winget-label { font-size: 13px; color: var(--fg-3); margin: 0 0 8px; }
+/* Download — winget alternative (specs 007, 010; rendered while site.json winget.available).
+   A card of its own so it reads as a second way to install; the command sits on
+   a dark terminal strip. Same width as the build-from-source box below. */
+.winget {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 22px 24px 20px;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+.winget-label { font-size: 17px; font-weight: 700; color: var(--fg); margin: 0 0 12px; }
+/* The command is always shown whole: it wraps instead of scrolling, and the
+   copy button drops below it when the two no longer fit on one line. */
 .winget-line {
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
-  border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--surface);
+  background: var(--code-bg);
   overflow: hidden;
 }
 .winget-cmd {
-  flex: 1;
+  flex: 999 1 auto;
+  min-width: 0;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
-  color: var(--fg);
-  padding: 11px 14px;
-  text-align: left;
-  overflow-x: auto;
-  white-space: nowrap;
+  color: var(--code-fg);
+  padding: 13px 16px;
+  overflow-wrap: anywhere;
 }
 .winget-copy {
   font: inherit;
   font-size: 13px;
   font-weight: 600;
-  color: var(--fg-2);
-  background: var(--surface-alt);
+  color: var(--code-fg);
+  background: rgba(255,255,255,.08);
   border: 0;
-  border-left: 1px solid var(--line);
-  padding: 0 16px;
+  /* divider on the left when beside the command, on top when below it;
+     .winget-line clips whichever one falls outside */
+  box-shadow: -1px 0 0 rgba(255,255,255,.14), 0 -1px 0 rgba(255,255,255,.14);
+  flex: 1 0 auto;
+  padding: 13px 18px;
   cursor: pointer;
 }
-.winget-copy:hover { color: var(--brand); }
+.winget-copy:hover { color: #FFFFFF; background: var(--brand-solid); }
 .winget-copy:focus-visible { outline: 2px solid var(--brand-solid); outline-offset: -2px; }
-.winget-hint { font-size: 13px; color: var(--fg-3); margin: 8px 0 0; }
+.winget-hint { font-size: 13px; color: var(--fg-2); margin: 12px 0 0; }
+.winget-hint .mono { color: var(--fg); overflow-wrap: anywhere; }
 .visually-hidden {
   position: absolute;
   width: 1px; height: 1px;
@@ -768,21 +784,24 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
   margin: 0 0 8px;
 }
 .disclaimer-text { font-size: 15px; font-weight: 600; color: var(--fg); margin: 0; }
+/* Build from source: deliberately quiet, same width as the winget card; the
+   lines wrap rather than scroll. */
 .build-box {
-  background: var(--code-bg);
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 24px 26px;
+  padding: 20px 24px;
   text-align: left;
-  overflow-x: auto;
-  box-shadow: var(--shadow-lg);
 }
 .build-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #8FA6C4;
-  margin: 0 0 14px;
+  color: var(--fg-3);
+  margin: 0 0 12px;
 }
 .build-lines {
   display: grid;
@@ -790,11 +809,11 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
   font-family: 'IBM Plex Mono', monospace;
   font-size: 13.5px;
   line-height: 1.7;
-  color: var(--code-fg);
-  white-space: nowrap;
+  color: var(--fg-2);
+  overflow-wrap: anywhere;
 }
-.code-cmd { color: #F97316; }
-.code-comment { color: #5D82B8; }
+.code-cmd { color: var(--brand); }
+.code-comment { color: var(--fg-3); }
 
 /* ==========================================================================
    Footer
@@ -905,6 +924,9 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
   .section,
   .section--roomy,
   .section--download { padding: 64px 20px 72px; }
+  .winget { padding: 18px 16px 16px; }
+  .winget-cmd { padding: 12px; }
+  .build-box { padding: 18px 16px; }
   .band { padding-top: 64px; padding-bottom: 64px; }
   .site-footer { padding: 44px 20px 28px; }
   .project-grid { gap: 40px; }

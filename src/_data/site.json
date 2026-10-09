@@ -15,8 +15,9 @@
   },
   "winget": {
     "id": "PavelStupka.TandemCommander",
-    "command": "winget install tandemcommander",
-    "available": false
+    "command": "winget install --id PavelStupka.TandemCommander -e",
+    "upgradeCommand": "winget upgrade --id PavelStupka.TandemCommander -e",
+    "available": true
   },
   "author": {
     "name": "Pavel Stupka",

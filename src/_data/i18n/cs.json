@@ -56,7 +56,9 @@
     "card5Title": "Servery a cloudy",
     "card5Text": "Linuxový server přes SFTP v jednom panelu, váš disk ve druhém. V cloudových složkách ukazují panely stejné odznaky synchronizace jako Průzkumník - OneDrive, Disk Google - a vedle nich stav TortoiseGit a TortoiseSVN.",
     "card6Title": "Snadné nastěhování",
-    "card6Text": "Jednorázový nástroj přenese oblíbené cesty, FTP záložky, uživatelské menu, barvy a nastavení pluginů z Altap Salamanderu. Instaluje se podepsaným instalátorem; balíček pro winget je na cestě."
+    "card6Text": "Jednorázový nástroj přenese oblíbené cesty, FTP záložky, uživatelské menu, barvy a nastavení pluginů z Altap Salamanderu.",
+    "card6Install": "Instaluje se podepsaným instalátorem.",
+    "card6InstallWinget": "Instaluje se podepsaným instalátorem nebo přes winget."
   },
   "whatsNew": {
     "kicker": "Novinky",
@@ -117,7 +119,7 @@
     "buildLabel": "Sestavení ze zdrojových kódů",
     "buildComment": ":: aplikace + pluginy + jazykové moduly",
     "wingetLabel": "Nebo nainstalujte přes winget",
-    "wingetHint": "Další aktualizace pak zajistí `winget upgrade tandemcommander`.",
+    "wingetHint": "Další aktualizace pak zajistí `{command}`.",
     "wingetCopy": "Kopírovat",
     "wingetCopied": "Zkopírováno"
   },
