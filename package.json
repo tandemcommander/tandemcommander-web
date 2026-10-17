@@ -14,6 +14,9 @@
     "release:facts": "node tools/release/release.mjs facts",
     "release:apply": "node tools/release/release.mjs apply",
     "release:check": "node tools/release/release.mjs check",
+    "release:status": "node tools/release/release.mjs status",
+    "release:scan": "node tools/release/release.mjs scan",
+    "release:verify": "node tools/release/release.mjs verify",
     "shots": "node tools/screenshots/capture.mjs"
   },
   "devDependencies": {

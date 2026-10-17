@@ -1,0 +1,9 @@
+{
+  "hero": {
+    "badge": "Vyšla verze 0.1.8"
+  },
+  "features": {
+    "archives": "Podporu RAR připravujeme pro další verzi.",
+    "history": "Dlouhé cesty fungují od v0.1.5."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "hero": {
+    "badge": "Version 0.1.8 is out"
+  },
+  "features": {
+    "archives": "RAR support is planned for a later version.",
+    "history": "Long paths work since v0.1.5."
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+	<Program_Info>
+		<Program_Version>0.1.9</Program_Version>
+		<Program_Release_Month>10</Program_Release_Month>
+		<Program_Release_Day>07</Program_Release_Day>
+		<Program_Release_Year>2026</Program_Release_Year>
+		<Program_Change_Info>Archives &amp; paths are fixed. New: RAR built in; Long paths</Program_Change_Info>
+		<File_Info>
+			<File_Size_Bytes>8013936</File_Size_Bytes>
+		</File_Info>
+	</Program_Info>
+	<Web_Info>
+		<Download_URLs>
+			<Primary_Download_URL>https://github.com/tandemcommander/tandemcommander/releases/download/v0.1.9/tandemcommander-0.1.9-x64-setup.exe</Primary_Download_URL>
+		</Download_URLs>
+	</Web_Info>
+</XML_DIZ_INFO>

@@ -40,10 +40,11 @@ content/                       # structured, list-shaped content - NOT Eleventy 
   releases/<version>.json      # one release record per published version (EN + CS inline);
                                #   source of "What's new", the PAD change-info (and the release history)
 lib/content.js                 # loading + validation of content/ - shared by build, tools, tests
-tools/release/                 # website release procedure: release.mjs (facts | apply | check),
-                               #   changelog.mjs, DIGEST-STYLE.md (editorial rules for digests)
+tools/release/                 # website release procedure: release.mjs (facts | apply | status |
+                               #   scan | verify | check), changelog.mjs, status.mjs, scan.mjs,
+                               #   verify.mjs, DIGEST-STYLE.md (editorial rules for digests)
 tests/                         # node --test - pure logic only (npm test)
-.claude/skills/release-web/    # /release-web <version> - the assisted layer of the release procedure
+.claude/skills/tandem-new-version/  # /tandem-new-version <version> - the assisted release procedure
 
 public/                        # GENERATED output - never edit by hand
 eleventy.config.js             # Eleventy: src/ → public/, passthrough copies
@@ -73,22 +74,35 @@ record's date disagrees with `releaseDate` - the message names the file and the 
 Order at a release: publish the application release on GitHub (with its installer and a dated
 `CHANGELOG.md` section) → website release → preview → commit, merge, deploy.
 
-- *Assisted (recommended)* - in Claude Code: `/release-web 0.1.9`. The assistant establishes the
-  facts, drafts the bilingual digest from the application changelog following
-  `tools/release/DIGEST-STYLE.md`, **waits for your approval**, records it, runs the checks and
-  lists what is left for you. It never commits, pushes or deploys.
-- *By hand* - the same steps without an assistant:
+- *Assisted (recommended)* - in Claude Code: `/tandem-new-version 0.2.0`. The assistant
+  establishes the facts and stops three times: (1) whether to re-capture the screenshots for this
+  version, (2) one combined review of the bilingual digest (drafted from the changelog following
+  `tools/release/DIGEST-STYLE.md`) together with corrections of every website text the version made
+  stale, (3) the commit message. Nothing is written before the review is approved. It then works on
+  the branch `release-<version>` (created from `devel`), records everything, re-captures and checks
+  the pictures if you said so, rebuilds and verifies the site, and commits there after your
+  approval. It never pushes, merges or deploys. Run it again after an interruption: it continues
+  where it stopped (`npm run release:status -- <version>` shows the same state).
+- *By hand* - the same gates without an assistant:
 
   ```bash
-  npm run release:facts -- 0.1.9   # read-only: release published? date, build, exact installer size
-  npm run release:apply -- 0.1.9   # writes site.json, creates the record skeleton (empty texts)
-  #   … fill in summary + highlights in content/releases/0.1.9.json (both languages) …
-  npm run release:check            # tests + build + stale-screenshot report + remaining steps
+  npm run release:facts -- 0.2.0   # read-only: release published? date, build, exact installer size
+  npm run release:scan -- 0.2.0    # read-only: version strings and "planned / coming" phrases to review
+  git switch -c release-0.2.0 devel
+  npm run release:apply -- 0.2.0   # writes site.json, creates the record skeleton (empty texts)
+  #   … fill in summary + highlights in content/releases/0.2.0.json (both languages),
+  #     fix the texts the scan pointed to …
+  npm run shots                    # optional: re-capture the pictures that show the version
+  npm run release:check            # tests + build + verify + stale-screenshot report + remaining steps
+  git add -A -- src content public && git commit
   ```
 
   `release:facts` stops - and nothing is changed - when the GitHub release or its installer asset
-  is missing, or the application changelog has no dated section for the version. The changelog is
-  read from `--changelog <path>`, else `../tandemcommander/CHANGELOG.md`, else GitHub.
+  is missing, or the changelog at the release tag has no dated section for the version. Everything
+  comes from GitHub (the release and `CHANGELOG.md` at tag `v<version>`); no local copy of the
+  application's source is needed or read. `release:verify` (also part of `release:check`) confirms
+  that the generated pages and the PAD file show the recorded version, date, size and change list
+  and no longer link to an older installer.
 
 A release with nothing a visitor cares about (an installer-only fix like 0.1.7) is a record with a
 summary and `"highlights": []` - valid; the home-page cards then come from earlier releases.

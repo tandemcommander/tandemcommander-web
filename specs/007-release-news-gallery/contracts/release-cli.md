@@ -1,5 +1,10 @@
 # Contract: Website release procedure
 
+> **Superseded** by feature 011: layer 1 by
+> [011 contracts/release-cli.md](../../011-tandem-new-version/contracts/release-cli.md), layer 2
+> (`/release-web`, removed) by `/tandem-new-version`
+> ([011 contracts/skill.md](../../011-tandem-new-version/contracts/skill.md)).
+
 Two layers (FR-011a): a deterministic script and an assistant skill that wraps it.
 **Model**: [data-model.md](../data-model.md) · **Decisions**: [research.md R9, R10](../research.md)
 

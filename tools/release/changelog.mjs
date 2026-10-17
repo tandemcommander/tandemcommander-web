@@ -1,11 +1,9 @@
 // Reads the application's CHANGELOG.md (spec: specs/007-release-news-gallery/,
-// contracts/release-cli.md). The changelog is the source of truth for a
-// release's date, build number and content; the website only digests it.
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const REPO_ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+// contracts/release-cli.md; GitHub-only source: specs/011-tandem-new-version/,
+// research R1). The changelog is the source of truth for a release's date,
+// build number and content; the website only digests it.
+const CHANGELOG_URL = (version) =>
+  `https://raw.githubusercontent.com/tandemcommander/tandemcommander/v${version}/CHANGELOG.md`;
 
 // "## [0.1.8] — 2026-09-20" — em dash, en dash or hyphen; "## [Unreleased]".
 const HEADING_RE = /^## \[([^\]]+)\](?:\s*[—–-]\s*(\d{4}-\d{2}-\d{2}))?\s*$/;
@@ -47,18 +45,25 @@ export function kindHint(section) {
   return section.hasAdded ? "feature" : "bugfix";
 }
 
-// --changelog <path>  →  sibling checkout  →  the file at the release tag.
-export async function locateChangelog({ explicitPath, version }) {
-  if (explicitPath) {
-    if (!fs.existsSync(explicitPath)) throw new Error(`changelog not found: ${explicitPath}`);
-    return { source: explicitPath, text: fs.readFileSync(explicitPath, "utf8") };
+// The changelog as published at the release tag — never a local checkout, so
+// the result is the same on every machine (FR-002a). fetchImpl is for tests.
+export async function fetchChangelog(version, { fetchImpl = fetch } = {}) {
+  const url = CHANGELOG_URL(version);
+  let res;
+  try {
+    res = await fetchImpl(url, { signal: AbortSignal.timeout(20000) });
+  } catch (err) {
+    throw new Error(`cannot fetch the changelog from ${url} (${err.message})`);
   }
-  const sibling = path.join(REPO_ROOT, "..", "tandemcommander", "CHANGELOG.md");
-  if (fs.existsSync(sibling)) {
-    return { source: sibling, text: fs.readFileSync(sibling, "utf8") };
+  if (!res.ok) {
+    throw new Error(`the changelog at tag v${version} is not available: ${url} answered ${res.status}${rateLimitNote(res)}`);
   }
-  const url = `https://raw.githubusercontent.com/tandemcommander/tandemcommander/v${version}/CHANGELOG.md`;
-  const res = await fetch(url, { signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error(`changelog not found locally and ${url} answered ${res.status}`);
   return { source: url, text: await res.text() };
+}
+
+// " — rate limit resets at …" for 403/429 answers that say when; else "".
+export function rateLimitNote(res) {
+  if (res.status !== 403 && res.status !== 429) return "";
+  const reset = Number(res.headers && res.headers.get && res.headers.get("x-ratelimit-reset"));
+  return reset > 0 ? ` — GitHub rate limit, resets at ${new Date(reset * 1000).toISOString()}` : "";
 }

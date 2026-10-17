@@ -53,3 +53,50 @@ test("heading variants and an Unreleased section", async () => {
   assert.equal(sections.get("1.2.2").date, "2026-12-01");
   assert.equal(sections.get("9.9.9"), undefined);
 });
+
+// GitHub-only source (specs/011-tandem-new-version/, research R1, R2).
+const answer = (status, body = "", headers = {}) => ({
+  ok: status >= 200 && status < 300,
+  status,
+  headers: { get: (name) => headers[name.toLowerCase()] ?? null },
+  text: async () => body,
+});
+
+test("the changelog is fetched from the release tag on GitHub", async () => {
+  const { fetchChangelog } = await load();
+  const urls = [];
+  const found = await fetchChangelog("0.2.0", {
+    fetchImpl: async (url) => (urls.push(url), answer(200, "## [0.2.0] - 2026-11-02\n")),
+  });
+  const expected = "https://raw.githubusercontent.com/tandemcommander/tandemcommander/v0.2.0/CHANGELOG.md";
+  assert.deepEqual(urls, [expected]);
+  assert.deepEqual(found, { source: expected, text: "## [0.2.0] - 2026-11-02\n" });
+});
+
+test("a missing tag names the URL and the status", async () => {
+  const { fetchChangelog } = await load();
+  await assert.rejects(fetchChangelog("9.9.9", { fetchImpl: async () => answer(404) }),
+    /v9\.9\.9\/CHANGELOG\.md answered 404/);
+});
+
+test("a rate-limited answer names the reset time", async () => {
+  const { fetchChangelog } = await load();
+  const reset = String(Date.UTC(2026, 9, 17, 12, 0, 0) / 1000);
+  await assert.rejects(
+    fetchChangelog("0.2.0", { fetchImpl: async () => answer(403, "", { "x-ratelimit-reset": reset }) }),
+    /answered 403 — GitHub rate limit, resets at 2026-10-17T12:00:00\.000Z/);
+});
+
+test("a network failure is reported with its message", async () => {
+  const { fetchChangelog } = await load();
+  await assert.rejects(
+    fetchChangelog("0.2.0", { fetchImpl: async () => { throw new Error("getaddrinfo ENOTFOUND"); } }),
+    /cannot fetch the changelog from https:\/\/raw\.githubusercontent\.com\/.+ \(getaddrinfo ENOTFOUND\)/);
+});
+
+test("no local checkout of the application is ever read", () => {
+  for (const file of ["changelog.mjs", "release.mjs"]) {
+    const source = fs.readFileSync(path.join(__dirname, "..", "tools", "release", file), "utf8");
+    assert.doesNotMatch(source, /\.\.["'\/\, ]+tandemcommander/, file);
+  }
+});

@@ -2,7 +2,7 @@
 
 How to turn a section of the application's `CHANGELOG.md` into a release record
 (`content/releases/<version>.json`) for the website. Written for whoever drafts the digest - an
-AI assistant running `/release-web`, or the author by hand. Format and validation rules:
+AI assistant running `/tandem-new-version`, or the author by hand. Format and validation rules:
 `specs/007-release-news-gallery/contracts/release-record.md`.
 
 ## Who reads it
