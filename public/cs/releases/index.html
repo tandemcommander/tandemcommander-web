@@ -90,13 +90,51 @@
       <p class="section-lead">Co přinesla každá verze Tandem Commanderu, v několika větách. Úplné technické poznámky ke každému vydání najdete na GitHubu.</p>
     </div>
     <div class="release-list">
-      <article class="release release--current" id="v0.1.9">
+      <article class="release release--current" id="v0.1.10">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.10">0.1.10</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-10-17">17. října 2026</time>
+            <span class="release-kind">Opravné vydání</span>
+            <span class="version-chip version-chip--current">aktuální</span>
+          </p>
+        </header>
+        <p class="release-summary">Opravy uzavírají několik cest ke ztrátě souborů, zástupci otevírají svůj cíl a zprávy i názvy jsou čitelné v každém jazyce.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Uzavřené cesty ke ztrátě souborů</strong>
+            <span class="release-highlight-text">Smazání odkazu ve velmi hluboké složce odstraní jen odkaz - dosud vyprázdnilo složku, na kterou ukazoval. Název, který je krátkým jménem jiného souboru, třeba <span class="mono">LONGFI~1.TXT</span>, už ten soubor nepřepíše.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Zástupci otevírají svůj cíl</strong>
+            <span class="release-highlight-text"><span class="mono">Enter</span> nebo dvojklik na zástupce složky ji otevře, i když cesta k cíli obsahuje diakritiku nebo jiné písmo - dosud skončil chybou syntaxe. Otevírají se i zástupci v hluboko vnořených složkách.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Sdílené složky serveru</strong>
+            <span class="release-highlight-text">Změna adresáře na <span class="mono">\\server</span> nabídne sdílené složky serveru - vyberete jednu a panel ji otevře. Dosud program odpověděl, že chybí název sdílené složky.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Čitelné v každém jazyce</strong>
+            <span class="release-highlight-text">Zprávy, nabídky, FTP klient i pluginy v přeložených verzích zobrazují názvy souborů a texty chyb čitelně - už žádné rozsypané poloviny vět. V nabídkách fungují i zkratková písmena s diakritikou.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Dlouhé názvy zůstávají celé</strong>
+            <span class="release-highlight-text">Dlouhé názvy - třeba čínské, japonské nebo v azbuce - se kopírují, přejmenovávají, rozbalují i přenášejí přes FTP celé, nebo je program se zprávou odmítne. Nikdy se nezkrátí na jiný název.</span>
+            <a class="card-link card-link--inline" href="/cs/#unicode-long-paths">Ukázka →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Bezpečnější přenosy přes SFTP</strong>
+            <span class="release-highlight-text">Už žádné občasné „Unable to exchange encryption keys“ - selhávalo asi jedno spojení z 256. Nahrávání se zeptá, než nahradí soubor na serveru, a starý soubor zůstane, dokud nový nedorazí celý.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.10">Úplné poznámky k vydání na GitHubu ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.9">
         <header class="release-head">
           <h2 class="release-version"><a href="#v0.1.9">0.1.9</a></h2>
           <p class="release-meta">
             <time datetime="2026-10-07">7. října 2026</time>
             <span class="release-kind">Vydání s novinkami</span>
-            <span class="version-chip version-chip--current">aktuální</span>
           </p>
         </header>
         <p class="release-summary">Program nově upozorní na novější verzi, archivy RAR otevře bez instalace čehokoli dalšího a dlouhá řada oprav ukončuje tiché ztráty dat při práci s archivy.</p>
@@ -327,7 +365,7 @@
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.0">Úplné poznámky k vydání na GitHubu ↗</a></p>
       </article>
     </div>
-    <p class="release-get"><a href="/cs/#download" class="btn btn--primary">Stáhnout verzi 0.1.9</a></p>
+    <p class="release-get"><a href="/cs/#download" class="btn btn--primary">Stáhnout verzi 0.1.10</a></p>
   </div>
 </section>
 </main>

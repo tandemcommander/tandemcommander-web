@@ -89,13 +89,51 @@
       <p class="section-lead">What each version of Tandem Commander brought, in a few sentences. The complete, technical notes of every release are on GitHub.</p>
     </div>
     <div class="release-list">
-      <article class="release release--current" id="v0.1.9">
+      <article class="release release--current" id="v0.1.10">
+        <header class="release-head">
+          <h2 class="release-version"><a href="#v0.1.10">0.1.10</a></h2>
+          <p class="release-meta">
+            <time datetime="2026-10-17">October 17, 2026</time>
+            <span class="release-kind">Bug-fix release</span>
+            <span class="version-chip version-chip--current">current</span>
+          </p>
+        </header>
+        <p class="release-summary">Fixes close several ways of losing files, shortcuts open their targets, and messages and names are readable in every language.</p>
+        <ul class="release-highlights">
+          <li>
+            <strong class="release-highlight-title">Several ways of losing files closed</strong>
+            <span class="release-highlight-text">Deleting a link in a very deep folder removes only the link - it used to empty the folder it points to. A name that is another file's short name, such as <span class="mono">LONGFI~1.TXT</span>, no longer overwrites that file.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Shortcuts open their targets</strong>
+            <span class="release-highlight-text"><span class="mono">Enter</span> or a double-click on a shortcut to a folder opens it even when the target path has accents or another script - it used to fail with a syntax error. Shortcuts in deep folders open too.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Shared folders of a server</strong>
+            <span class="release-highlight-text">Change Directory to <span class="mono">\\server</span> lists the server's shared folders - pick one and the panel opens it. Until now it answered that a share name is missing.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Readable in every language</strong>
+            <span class="release-highlight-text">Messages, menus, the FTP client and the plugins show file names and error texts readably in translated versions - no more garbled halves. Accented shortcut letters work in menus too.</span>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Long names kept whole</strong>
+            <span class="release-highlight-text">Long names - in Chinese, Japanese or Cyrillic, for example - are copied, renamed, unpacked and sent over FTP whole, or refused with a message. They are never cut to another name.</span>
+            <a class="card-link card-link--inline" href="/#unicode-long-paths">See it →</a>
+          </li>
+          <li>
+            <strong class="release-highlight-title">Safer SFTP transfers</strong>
+            <span class="release-highlight-text">No more occasional &quot;Unable to exchange encryption keys&quot; - about one connection in 256 failed. An upload asks before it replaces a server file, and the old file stays until the new one has arrived whole.</span>
+          </li>
+        </ul>
+        <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.10">Full release notes on GitHub ↗</a></p>
+      </article>
+      <article class="release" id="v0.1.9">
         <header class="release-head">
           <h2 class="release-version"><a href="#v0.1.9">0.1.9</a></h2>
           <p class="release-meta">
             <time datetime="2026-10-07">October 7, 2026</time>
             <span class="release-kind">Feature release</span>
-            <span class="version-chip version-chip--current">current</span>
           </p>
         </header>
         <p class="release-summary">The program tells you when a newer version is out, RAR archives open without installing anything, and a long series of fixes ends silent data loss around archives.</p>
@@ -326,7 +364,7 @@
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.0">Full release notes on GitHub ↗</a></p>
       </article>
     </div>
-    <p class="release-get"><a href="/#download" class="btn btn--primary">Get version 0.1.9</a></p>
+    <p class="release-get"><a href="/#download" class="btn btn--primary">Get version 0.1.10</a></p>
   </div>
 </section>
 </main>

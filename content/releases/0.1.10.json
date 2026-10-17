@@ -1,0 +1,79 @@
+{
+  "version": "0.1.10",
+  "date": "2026-10-17",
+  "build": 194,
+  "kind": "bugfix",
+  "summary": {
+    "en": "Fixes close several ways of losing files, shortcuts open their targets, and messages and names are readable in every language.",
+    "cs": "Opravy uzavírají několik cest ke ztrátě souborů, zástupci otevírají svůj cíl a zprávy i názvy jsou čitelné v každém jazyce."
+  },
+  "highlights": [
+    {
+      "id": "no-lost-files",
+      "title": {
+        "en": "Several ways of losing files closed",
+        "cs": "Uzavřené cesty ke ztrátě souborů"
+      },
+      "text": {
+        "en": "Deleting a link in a very deep folder removes only the link - it used to empty the folder it points to. A name that is another file's short name, such as `LONGFI~1.TXT`, no longer overwrites that file.",
+        "cs": "Smazání odkazu ve velmi hluboké složce odstraní jen odkaz - dosud vyprázdnilo složku, na kterou ukazoval. Název, který je krátkým jménem jiného souboru, třeba `LONGFI~1.TXT`, už ten soubor nepřepíše."
+      }
+    },
+    {
+      "id": "shortcuts-open",
+      "title": {
+        "en": "Shortcuts open their targets",
+        "cs": "Zástupci otevírají svůj cíl"
+      },
+      "text": {
+        "en": "`Enter` or a double-click on a shortcut to a folder opens it even when the target path has accents or another script - it used to fail with a syntax error. Shortcuts in deep folders open too.",
+        "cs": "`Enter` nebo dvojklik na zástupce složky ji otevře, i když cesta k cíli obsahuje diakritiku nebo jiné písmo - dosud skončil chybou syntaxe. Otevírají se i zástupci v hluboko vnořených složkách."
+      }
+    },
+    {
+      "id": "server-shares",
+      "title": {
+        "en": "Shared folders of a server",
+        "cs": "Sdílené složky serveru"
+      },
+      "text": {
+        "en": "Change Directory to `\\\\server` lists the server's shared folders - pick one and the panel opens it. Until now it answered that a share name is missing.",
+        "cs": "Změna adresáře na `\\\\server` nabídne sdílené složky serveru - vyberete jednu a panel ji otevře. Dosud program odpověděl, že chybí název sdílené složky."
+      }
+    },
+    {
+      "id": "readable-everywhere",
+      "title": {
+        "en": "Readable in every language",
+        "cs": "Čitelné v každém jazyce"
+      },
+      "text": {
+        "en": "Messages, menus, the FTP client and the plugins show file names and error texts readably in translated versions - no more garbled halves. Accented shortcut letters work in menus too.",
+        "cs": "Zprávy, nabídky, FTP klient i pluginy v přeložených verzích zobrazují názvy souborů a texty chyb čitelně - už žádné rozsypané poloviny vět. V nabídkách fungují i zkratková písmena s diakritikou."
+      }
+    },
+    {
+      "id": "long-names-whole",
+      "title": {
+        "en": "Long names kept whole",
+        "cs": "Dlouhé názvy zůstávají celé"
+      },
+      "text": {
+        "en": "Long names - in Chinese, Japanese or Cyrillic, for example - are copied, renamed, unpacked and sent over FTP whole, or refused with a message. They are never cut to another name.",
+        "cs": "Dlouhé názvy - třeba čínské, japonské nebo v azbuce - se kopírují, přejmenovávají, rozbalují i přenášejí přes FTP celé, nebo je program se zprávou odmítne. Nikdy se nezkrátí na jiný název."
+      },
+      "scene": "unicode-long-paths"
+    },
+    {
+      "id": "safer-sftp",
+      "title": {
+        "en": "Safer SFTP transfers",
+        "cs": "Bezpečnější přenosy přes SFTP"
+      },
+      "text": {
+        "en": "No more occasional \"Unable to exchange encryption keys\" - about one connection in 256 failed. An upload asks before it replaces a server file, and the old file stays until the new one has arrived whole.",
+        "cs": "Už žádné občasné „Unable to exchange encryption keys“ - selhávalo asi jedno spojení z 256. Nahrávání se zeptá, než nahradí soubor na serveru, a starý soubor zůstane, dokud nový nedorazí celý."
+      }
+    }
+  ]
+}

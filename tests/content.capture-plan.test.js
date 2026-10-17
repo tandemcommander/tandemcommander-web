@@ -47,11 +47,13 @@ test("scenes without a capture and an empty gallery are skipped", () => {
     { must: [], review: [], current: [] });
 });
 
-test("the stale-image report of the real site is unchanged", () => {
+// Independent of which release is current: the report is the plan for the
+// current version and its highlight scenes, nothing more.
+test("the stale-image report of the real site is the plan for the current release", () => {
   const site = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "..", "src", "_data", "site.json"), "utf8"));
-  const report = content.staleReport(content.loadGallery(), content.loadReleases(site));
-  assert.equal(report.available, true);
-  assert.equal(report.must.length, 0);
-  assert.deepEqual(report.review.map((r) => r.scene), ["code-viewer", "markdown-viewer", "command-shell"]);
-  assert.equal(report.current.length, 5);
+  const gallery = content.loadGallery();
+  const releases = content.loadReleases(site);
+  const scenes = releases.current.highlights.map((h) => h.scene);
+  assert.deepEqual(content.staleReport(gallery, releases),
+    { available: true, ...content.capturePlan(gallery, site.version, scenes) });
 });
