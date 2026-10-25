@@ -34,6 +34,70 @@
     },
     {
       "type": "dir",
+      "path": "Experiments"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/2023_image-classifier/notes.txt",
+      "content": "Image classifier experiment"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/2024_chatbot/README.md",
+      "content": "# Chatbot prototype"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/2024_speech-to-text/notes.txt",
+      "content": "Speech to text experiment"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/2025_route-planner/notes.txt",
+      "content": "Route planner experiment"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/chat-archive/2025-06.txt",
+      "content": "Archived messages"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/data-cleanup/steps.txt",
+      "content": "Data cleanup steps"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/prototypes/list.txt",
+      "content": "Prototype list"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/budget-estimate.csv",
+      "content": "item,cost\nservers,1200\nlicences,300\n"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/livechat-widget.txt",
+      "content": "Live chat widget sketch"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/meeting-notes-2025.md",
+      "content": "# Meeting notes"
+    },
+    {
+      "type": "file",
+      "path": "Experiments/readme.txt",
+      "content": "Small experiments, one folder each."
+    },
+    {
+      "type": "file",
+      "path": "Experiments/roadmap.md",
+      "content": "# Roadmap"
+    },
+    {
+      "type": "dir",
       "path": "Compare"
     },
     {

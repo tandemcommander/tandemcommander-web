@@ -1,0 +1,80 @@
+{
+  "version": "0.2.0",
+  "date": "2026-10-25",
+  "build": 195,
+  "kind": "feature",
+  "summary": {
+    "en": "Quick search finds text anywhere in a name and shows only the matches, settings come over from Altap and Open Salamander, and panel tabs get browser-like shortcuts.",
+    "cs": "Rychlé hledání najde text kdekoli v názvu a ukáže jen shody, nastavení se dá převzít z Altap i Open Salamanderu a záložky v panelech dostaly zkratky jako v prohlížeči."
+  },
+  "highlights": [
+    {
+      "id": "quick-search-anywhere",
+      "title": {
+        "en": "Quick search finds any part of a name",
+        "cs": "Rychlé hledání kdekoli v názvu"
+      },
+      "text": {
+        "en": "Typing `chat` finds \"2024_chatbot\": the panel shows only the matches, lightly tinted, with \"Search: chat (3 of 120)\" in its directory line. Commands act only on what is shown.",
+        "cs": "Napíšete `chat` a najde se i „2024_chatbot“: panel ukáže jen shody, jemně podbarvený, a v řádku s cestou hledaný text a počet shod. Příkazy pracují jen s tím, co je vidět."
+      },
+      "scene": "quick-search"
+    },
+    {
+      "id": "search-without-accents",
+      "title": {
+        "en": "Search ignores accents",
+        "cs": "Hledání bez ohledu na diakritiku"
+      },
+      "text": {
+        "en": "Accents are ignored both ways - `zlut` finds \"žluťoučký\", `strasse` finds \"Straße\". Prefer the previous quick search? It is one option in Configuration ▸ Panels.",
+        "cs": "Diakritika se ignoruje oběma směry - `zlut` najde „žluťoučký“, `strasse` najde „Straße“. Chcete dosavadní rychlé hledání? Stačí jedna volba v Konfiguraci ▸ Panely."
+      }
+    },
+    {
+      "id": "salamander-import",
+      "title": {
+        "en": "Settings from Salamander",
+        "cs": "Nastavení ze Salamanderu"
+      },
+      "text": {
+        "en": "Options ▸ Import Settings from Salamander brings hot paths, FTP connections and passwords, the user menu, viewers, colours and plugin settings from Altap or Open Salamander, after a preview.",
+        "cs": "Volby ▸ Import nastavení ze Salamanderu převezme oblíbené cesty, FTP spojení i hesla, uživatelské menu, prohlížeče, barvy a nastavení pluginů z Altap či Open Salamanderu - po náhledu."
+      }
+    },
+    {
+      "id": "safe-import",
+      "title": {
+        "en": "Import that changes nothing unasked",
+        "cs": "Import, který nic nemění bez ptaní"
+      },
+      "text": {
+        "en": "The old program's settings are only read. Nothing you already have changes without your tick, and a backup of your settings is saved first. The import is also offered once at the first start.",
+        "cs": "Nastavení starého programu se jen čte. Nic, co už máte, se bez vašeho zaškrtnutí nezmění a nejdřív se uloží záloha vašeho nastavení. Při prvním spuštění program import jednou sám nabídne."
+      }
+    },
+    {
+      "id": "tab-shortcuts",
+      "title": {
+        "en": "Browser-like tab shortcuts",
+        "cs": "Zkratky záložek jako v prohlížeči"
+      },
+      "text": {
+        "en": "A new Tabs page in Configuration turns on `Ctrl+T`, `Ctrl+W` and `Ctrl+Page Down` / `Up`. Reopen Closed Tab brings back the last ten tabs closed in a panel.",
+        "cs": "Nová stránka Záložky v Konfiguraci zapne `Ctrl+T`, `Ctrl+W` a `Ctrl+Page Down` / `Up`. Znovu otevřít zavřenou záložku vrátí posledních deset záložek zavřených v panelu."
+      },
+      "scene": "tabs-configuration"
+    },
+    {
+      "id": "settings-move",
+      "title": {
+        "en": "Settings move once",
+        "cs": "Nastavení se jednou přestěhuje"
+      },
+      "text": {
+        "en": "At the first start your settings are copied to a place that no longer changes with the version; the old ones stay as a backup. Going back to 0.1.x afterwards is not supported.",
+        "cs": "Při prvním spuštění se nastavení zkopíruje na místo, které se už s verzí nemění; původní zůstane jako záloha. Návrat k verzi 0.1.x potom není podporován."
+      }
+    }
+  ]
+}

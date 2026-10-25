@@ -156,6 +156,125 @@
     }
   },
   {
+    "id": "quick-search",
+    "title": {
+      "en": "Quick search shows only the matches",
+      "cs": "Rychlé hledání ukáže jen shody"
+    },
+    "caption": {
+      "en": "Type part of a name - here \"chat\" - and the panel keeps only the matching items, lightly tinted, with the number of matches in its directory line.",
+      "cs": "Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
+    },
+    "alt": {
+      "en": "The main window with the left panel filtered by quick search: only the items whose names contain \"chat\" are listed, the panel is lightly tinted and its directory line shows the search text and the number of matches.",
+      "cs": "Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": true,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Experiments"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "settle": {
+            "timeoutMs": 5000
+          }
+        },
+        {
+          "text": "chat"
+        },
+        {
+          "settle": {
+            "timeoutMs": 5000
+          }
+        },
+        {
+          "capture": "main"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tabs-configuration",
+    "title": {
+      "en": "Tab shortcuts your way",
+      "cs": "Zkratky záložek po svém"
+    },
+    "caption": {
+      "en": "The Tabs page of Configuration: switch on browser-like shortcuts - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - and see every tab shortcut at a glance.",
+      "cs": "Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
+    },
+    "alt": {
+      "en": "The Configuration dialog open on its Tabs page, with tabs shown in panels, browser-like tab shortcuts switched on and the list of tab shortcuts that follows them.",
+      "cs": "Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": false,
+    "showsVersion": false,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "keys": "Alt+O"
+        },
+        {
+          "keys": "C"
+        },
+        {
+          "waitWindow": {
+            "titleContains": "Configuration",
+            "timeoutMs": 30000
+          }
+        },
+        {
+          "text": "Tabs"
+        },
+        {
+          "keys": "Alt+R"
+        },
+        {
+          "settle": {
+            "timeoutMs": 8000
+          }
+        },
+        {
+          "capture": "withDialog"
+        },
+        {
+          "close": "foreground"
+        }
+      ]
+    }
+  },
+  {
     "id": "code-viewer",
     "title": {
       "en": "Code Viewer",
