@@ -36,8 +36,8 @@
 <link rel="preload" href="/fonts/archivo-latin-ext-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="/js/vendor/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/css/main.css">
-<script defer src="/js/main.js"></script>
+<link rel="stylesheet" href="/css/main.css?v=b69c426520">
+<script defer src="/js/main.js?v=5bce32de68" data-gallery-module="/js/gallery.js?v=ac511016ba"></script>
 </head>
 <body>
 <header class="site-header">
@@ -47,8 +47,8 @@
       <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
     </a>
     <nav class="site-nav" aria-label="Hlavní">
-      <a href="#gallery" class="nav-link">Galerie</a>
       <a href="#new" class="nav-link">Novinky</a>
+      <a href="#gallery" class="nav-link">Galerie</a>
       <a href="#project" class="nav-link">Projekt</a>
       <a href="#download" class="nav-link">Stažení</a>
       <div class="theme-toggle" role="group" aria-label="Motiv">
@@ -67,8 +67,8 @@
     </button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Hlavní nabídka">
-    <a href="#gallery" class="mobile-link">Galerie</a>
     <a href="#new" class="mobile-link">Novinky</a>
+    <a href="#gallery" class="mobile-link">Galerie</a>
     <a href="#project" class="mobile-link">Projekt</a>
     <a href="#download" class="mobile-link">Stažení</a>
     <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="Motiv">
@@ -99,13 +99,103 @@
   </div>
 </section>
 
+<section id="new" class="section band section--roomy">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker">Novinky</p>
+      <h2 class="section-title">Co je nového v Tandem Commanderu.</h2>
+      <p class="section-lead">Co přinesla aktuální verze - ukázané přímo v programu. Všechna dřívější vydání najdete v historii vydání.</p>
+    </div>
+    <div class="whats-new-current">
+      <p class="whats-new-version">Verze 0.2.0 · 25. října 2026</p>
+      <p class="whats-new-summary">Rychlé hledání najde text kdekoli v názvu a ukáže jen shody, nastavení se dá převzít z Altap i Open Salamanderu a záložky v panelech dostaly zkratky jako v prohlížeči.</p>
+    </div>
+    <div class="showcase" data-showcase>
+      <article class="showcase-block" id="new-quick-search-anywhere">
+        <div class="showcase-text">
+          <h3 class="showcase-title">Rychlé hledání kdekoli v názvu</h3>
+          <p class="showcase-body">Napíšete <span class="mono">chat</span> a najde se i „2024_chatbot“: panel ukáže jen shody, jemně podbarvený, a v řádku s cestou hledaný text a počet shod. Příkazy pracují jen s tím, co je vidět.</p>
+        </div>
+        <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/quick-search-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Rychlé hledání ukáže jen shody" data-pswp-caption="Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
+     target="_blank" rel="noopener"
+     aria-label="Rychlé hledání kdekoli v názvu - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/quick-search-light-640.webp" srcset="/assets/gallery/quick-search-light-640.webp 640w, /assets/gallery/quick-search-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+      </article>
+      <article class="showcase-block" id="new-tab-shortcuts">
+        <div class="showcase-text">
+          <h3 class="showcase-title">Zkratky záložek jako v prohlížeči</h3>
+          <p class="showcase-body">Nová stránka Záložky v Konfiguraci zapne <span class="mono">Ctrl+T</span>, <span class="mono">Ctrl+W</span> a <span class="mono">Ctrl+Page Down</span> / <span class="mono">Up</span>. Znovu otevřít zavřenou záložku vrátí posledních deset záložek zavřených v panelu.</p>
+        </div>
+        <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/tabs-configuration-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Zkratky záložek po svém" data-pswp-caption="Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
+     target="_blank" rel="noopener"
+     aria-label="Zkratky záložek jako v prohlížeči - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/tabs-configuration-light-640.webp" srcset="/assets/gallery/tabs-configuration-light-640.webp 640w, /assets/gallery/tabs-configuration-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+      </article>
+      <section class="showcase-more" aria-labelledby="new-also">
+        <h3 class="showcase-more-title" id="new-also">Také ve verzi 0.2.0</h3>
+        <ul class="showcase-list">
+          <li class="showcase-item" id="new-search-without-accents">
+            <strong class="showcase-item-title">Hledání bez ohledu na diakritiku</strong>
+            <span class="showcase-item-text">Diakritika se ignoruje oběma směry - <span class="mono">zlut</span> najde „žluťoučký“, <span class="mono">strasse</span> najde „Straße“. Chcete dosavadní rychlé hledání? Stačí jedna volba v Konfiguraci ▸ Panely.</span>
+          </li>
+          <li class="showcase-item" id="new-salamander-import">
+            <strong class="showcase-item-title">Nastavení ze Salamanderu</strong>
+            <span class="showcase-item-text">Volby ▸ Import nastavení ze Salamanderu převezme oblíbené cesty, FTP spojení i hesla, uživatelské menu, prohlížeče, barvy a nastavení pluginů z Altap či Open Salamanderu - po náhledu.</span>
+          </li>
+          <li class="showcase-item" id="new-safe-import">
+            <strong class="showcase-item-title">Import, který nic nemění bez ptaní</strong>
+            <span class="showcase-item-text">Nastavení starého programu se jen čte. Nic, co už máte, se bez vašeho zaškrtnutí nezmění a nejdřív se uloží záloha vašeho nastavení. Při prvním spuštění program import jednou sám nabídne.</span>
+          </li>
+          <li class="showcase-item" id="new-settings-move">
+            <strong class="showcase-item-title">Nastavení se jednou přestěhuje</strong>
+            <span class="showcase-item-text">Při prvním spuštění se nastavení zkopíruje na místo, které se už s verzí nemění; původní zůstane jako záloha. Návrat k verzi 0.1.x potom není podporován.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <p class="section-more showcase-history"><a class="btn btn--secondary" href="/cs/releases/">Všechna vydání →</a></p>
+  </div>
+</section>
+
 <section id="gallery" class="section">
   <span id="screens" class="anchor-alias" aria-hidden="true"></span>
   <div class="section-inner">
     <div class="section-head">
       <p class="kicker">Podívejte se</p>
       <h2 class="section-title">Galerie funkcí Tandem Commander.</h2>
-      <p class="section-lead">Klasické světlé panely zůstávají výchozí - nic se nepřesunulo, nic nepřeskládalo. Tmavý motiv má stejné rozložení i hustotu informací. Níže program při práci.</p>
+      <p class="section-lead">Výchozí zůstává klasický světlý vzhled a tmavý motiv má stejné rozložení i hustotu informací. Níže program při práci.</p>
     </div>
     <div data-gallery class="gallery-grid">
       <figure class="gallery-item" id="main-window">
@@ -114,25 +204,25 @@
     <p class="gallery-text">Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/main-window-light.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Dva panely, spousta záložek" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
-       target="_blank" rel="noopener"
-       aria-label="Dva panely, spousta záložek - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/main-window-light-640.webp" srcset="/assets/gallery/main-window-light-640.webp 640w, /assets/gallery/main-window-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy."
-           loading="eager" fetchpriority="high" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/main-window-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Dva panely, spousta záložek" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+     target="_blank" rel="noopener"
+     aria-label="Dva panely, spousta záložek - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/main-window-light-640.webp" srcset="/assets/gallery/main-window-light-640.webp 640w, /assets/gallery/main-window-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy."
+         loading="eager" fetchpriority="high" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="dark-theme">
   <figcaption class="gallery-caption">
@@ -140,25 +230,25 @@
     <p class="gallery-text">Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/dark-theme-dark.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Tmavý motiv" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
-       target="_blank" rel="noopener"
-       aria-label="Tmavý motiv - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/dark-theme-dark-640.webp" srcset="/assets/gallery/dark-theme-dark-640.webp 640w, /assets/gallery/dark-theme-dark.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí."
-           loading="eager" fetchpriority="high" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/dark-theme-dark.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Tmavý motiv" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+     target="_blank" rel="noopener"
+     aria-label="Tmavý motiv - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/dark-theme-dark-640.webp" srcset="/assets/gallery/dark-theme-dark-640.webp 640w, /assets/gallery/dark-theme-dark.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí."
+         loading="eager" fetchpriority="high" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="panel-tabs">
   <figcaption class="gallery-caption">
@@ -166,25 +256,25 @@
     <p class="gallery-text">Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/panel-tabs-light.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Záložky v panelu" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
-       target="_blank" rel="noopener"
-       aria-label="Záložky v panelu - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/panel-tabs-light-640.webp" srcset="/assets/gallery/panel-tabs-light-640.webp 640w, /assets/gallery/panel-tabs-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/panel-tabs-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Záložky v panelu" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+     target="_blank" rel="noopener"
+     aria-label="Záložky v panelu - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/panel-tabs-light-640.webp" srcset="/assets/gallery/panel-tabs-light-640.webp 640w, /assets/gallery/panel-tabs-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="quick-search">
   <figcaption class="gallery-caption">
@@ -192,25 +282,25 @@
     <p class="gallery-text">Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/quick-search-light.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Rychlé hledání ukáže jen shody" data-pswp-caption="Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
-       target="_blank" rel="noopener"
-       aria-label="Rychlé hledání ukáže jen shody - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/quick-search-light-640.webp" srcset="/assets/gallery/quick-search-light-640.webp 640w, /assets/gallery/quick-search-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/quick-search-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Rychlé hledání ukáže jen shody" data-pswp-caption="Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
+     target="_blank" rel="noopener"
+     aria-label="Rychlé hledání ukáže jen shody - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/quick-search-light-640.webp" srcset="/assets/gallery/quick-search-light-640.webp 640w, /assets/gallery/quick-search-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="tabs-configuration">
   <figcaption class="gallery-caption">
@@ -218,25 +308,25 @@
     <p class="gallery-text">Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/tabs-configuration-light.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Zkratky záložek po svém" data-pswp-caption="Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
-       target="_blank" rel="noopener"
-       aria-label="Zkratky záložek po svém - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/tabs-configuration-light-640.webp" srcset="/assets/gallery/tabs-configuration-light-640.webp 640w, /assets/gallery/tabs-configuration-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/tabs-configuration-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Zkratky záložek po svém" data-pswp-caption="Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
+     target="_blank" rel="noopener"
+     aria-label="Zkratky záložek po svém - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/tabs-configuration-light-640.webp" srcset="/assets/gallery/tabs-configuration-light-640.webp 640w, /assets/gallery/tabs-configuration-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="code-viewer">
   <figcaption class="gallery-caption">
@@ -244,25 +334,25 @@
     <p class="gallery-text">F3 na zdrojovém souboru: zvýraznění syntaxe pro více než 200 formátů ve dvanácti barevných schématech.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/code-viewer-light.webp"
-       data-pswp-width="1100" data-pswp-height="760"
-       data-pswp-title="Prohlížeč kódu" data-pswp-caption="F3 na zdrojovém souboru: zvýraznění syntaxe pro více než 200 formátů ve dvanácti barevných schématech."
-       target="_blank" rel="noopener"
-       aria-label="Prohlížeč kódu - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/code-viewer-light-640.webp" srcset="/assets/gallery/code-viewer-light-640.webp 640w, /assets/gallery/code-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="442"
-           alt="Okno prohlížeče kódu se souborem C++, čísly řádků a barevně odlišenými klíčovými slovy, řetězci a komentáři."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/code-viewer-light.webp"
+     data-pswp-width="1100" data-pswp-height="760"
+     data-pswp-title="Prohlížeč kódu" data-pswp-caption="F3 na zdrojovém souboru: zvýraznění syntaxe pro více než 200 formátů ve dvanácti barevných schématech."
+     target="_blank" rel="noopener"
+     aria-label="Prohlížeč kódu - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/code-viewer-light-640.webp" srcset="/assets/gallery/code-viewer-light-640.webp 640w, /assets/gallery/code-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="442"
+         alt="Okno prohlížeče kódu se souborem C++, čísly řádků a barevně odlišenými klíčovými slovy, řetězci a komentáři."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="markdown-viewer">
   <figcaption class="gallery-caption">
@@ -270,25 +360,25 @@
     <p class="gallery-text">Nadpisy, seznamy, tabulky a bloky kódu místo surového značkování - vykreslené, rolovatelné, jen pro čtení.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/markdown-viewer-light.webp"
-       data-pswp-width="1100" data-pswp-height="760"
-       data-pswp-title="Markdown na F3" data-pswp-caption="Nadpisy, seznamy, tabulky a bloky kódu místo surového značkování - vykreslené, rolovatelné, jen pro čtení."
-       target="_blank" rel="noopener"
-       aria-label="Markdown na F3 - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/markdown-viewer-light-640.webp" srcset="/assets/gallery/markdown-viewer-light-640.webp 640w, /assets/gallery/markdown-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="442"
-           alt="Okno prohlížeče Markdownu s vykresleným souborem README: nadpisy, tabulka cest k souborům a blok kódu."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/markdown-viewer-light.webp"
+     data-pswp-width="1100" data-pswp-height="760"
+     data-pswp-title="Markdown na F3" data-pswp-caption="Nadpisy, seznamy, tabulky a bloky kódu místo surového značkování - vykreslené, rolovatelné, jen pro čtení."
+     target="_blank" rel="noopener"
+     aria-label="Markdown na F3 - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/markdown-viewer-light-640.webp" srcset="/assets/gallery/markdown-viewer-light-640.webp 640w, /assets/gallery/markdown-viewer-light.webp 1100w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="442"
+         alt="Okno prohlížeče Markdownu s vykresleným souborem README: nadpisy, tabulka cest k souborům a blok kódu."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="unicode-long-paths">
   <figcaption class="gallery-caption">
@@ -296,25 +386,25 @@
     <p class="gallery-text">Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/unicode-long-paths-light.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Unicode a dlouhé cesty" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
-       target="_blank" rel="noopener"
-       aria-label="Unicode a dlouhé cesty - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/unicode-long-paths-light-640.webp" srcset="/assets/gallery/unicode-long-paths-light-640.webp 640w, /assets/gallery/unicode-long-paths-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/unicode-long-paths-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Unicode a dlouhé cesty" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+     target="_blank" rel="noopener"
+     aria-label="Unicode a dlouhé cesty - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/unicode-long-paths-light-640.webp" srcset="/assets/gallery/unicode-long-paths-light-640.webp 640w, /assets/gallery/unicode-long-paths-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="thumbnails">
   <figcaption class="gallery-caption">
@@ -322,25 +412,25 @@
     <p class="gallery-text">Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/thumbnails-light.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Náhledy bez čekání" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
-       target="_blank" rel="noopener"
-       aria-label="Náhledy bez čekání - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/thumbnails-light-640.webp" srcset="/assets/gallery/thumbnails-light-640.webp 640w, /assets/gallery/thumbnails-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/thumbnails-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Náhledy bez čekání" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+     target="_blank" rel="noopener"
+     aria-label="Náhledy bez čekání - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/thumbnails-light-640.webp" srcset="/assets/gallery/thumbnails-light-640.webp 640w, /assets/gallery/thumbnails-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
       <figure class="gallery-item" id="command-shell">
   <figcaption class="gallery-caption">
@@ -348,126 +438,27 @@
     <p class="gallery-text">Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu.</p>
   </figcaption>
   <div class="gallery-shots">
-    <a class="gallery-link gallery-link--any"
-       href="/assets/gallery/command-shell-light.webp"
-       data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Shell podle vaší volby" data-pswp-caption="Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu."
-       target="_blank" rel="noopener"
-       aria-label="Shell podle vaší volby - zobrazit v plné velikosti">
-      <img class="shot-img"
-           src="/assets/gallery/command-shell-light-640.webp" srcset="/assets/gallery/command-shell-light-640.webp 640w, /assets/gallery/command-shell-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
-           width="640" height="427"
-           alt="Dialog Konfigurace otevřený na stránce Command Shell se seznamem shellů, které lze otevřít klávesou Command Shell."
-           loading="lazy" decoding="async">
-      <span class="shot-zoom-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-          <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-    </a>
-  </div>
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/command-shell-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Shell podle vaší volby" data-pswp-caption="Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu."
+     target="_blank" rel="noopener"
+     aria-label="Shell podle vaší volby - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/command-shell-light-640.webp" srcset="/assets/gallery/command-shell-light-640.webp 640w, /assets/gallery/command-shell-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Dialog Konfigurace otevřený na stránce Command Shell se seznamem shellů, které lze otevřít klávesou Command Shell."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
 </figure>
     </div>
-  </div>
-  <span class="visually-hidden" data-gallery-strings
-      data-close-title="Zavřít zvětšený náhled"
-      data-prev-title="Předchozí obrázek"
-      data-next-title="Další obrázek"
-      data-zoom-title="Přiblížit"
-      data-fullscreen-title="Celá obrazovka"
-      data-error-msg="Obrázek se nepodařilo načíst."></span>
-
-</section>
-
-<section class="section band">
-  <div class="section-inner">
-    <div class="section-head">
-      <p class="kicker">Co to je</p>
-      <h2 class="section-title">Staré návyky, nic nového k učení.</h2>
-      <p class="section-lead">Správce souborů pro lidi, kteří se pohybují klávesnicí a přemýšlejí ve dvou panelech.</p>
-    </div>
-    <div class="card-grid card-grid--features">
-      <article class="card">
-        <p class="card-num">01</p>
-        <h3 class="card-title">Dva panely</h3>
-        <p class="card-text">Zdroj vlevo, cíl vpravo - a každý panel udrží několik adresářů otevřených v záložkách. Kopírujte, přesouvejte, balte a porovnávejte bez otevírání druhého okna a bez sahání po myši.</p>
-      </article>
-      <article class="card">
-        <p class="card-num">02</p>
-        <h3 class="card-title">Klávesnice na prvním místě</h3>
-        <p class="card-text">Funkční klávesy podél spodního okraje, zkratka na všechno, příkazová řádka přesně tam, kde už vaše ruce jsou - a klávesa Command Shell, která otevře shell podle vaší volby, od PowerShellu po Git Bash.</p>
-      </article>
-      <article class="card card--accent">
-        <p class="card-num card-num--brand">03</p>
-        <h3 class="card-title">Vlastní jádro</h3>
-        <p class="card-text"><span class="mono">tandemcommander.exe</span> je program s vlastní identitou: vlastní ikona, vlastní titulky oken, vlastní nastavení - a aktualizované jádro postavené pro Windows 11, s plnou podporou Unicode a dlouhých cest napříč celým programem.</p>
-      </article>
-      <article class="card">
-        <p class="card-num">04</p>
-        <h3 class="card-title">Prohlížeče na F3</h3>
-        <p class="card-text">Zdrojové a konfigurační soubory se zvýrazněním syntaxe ve více než 200 formátech, vykreslený Markdown, obrázky, databáze i spustitelné soubory - F3 otevře ten správný prohlížeč, Alt+F3 ten obyčejný.</p>
-      </article>
-      <article class="card">
-        <p class="card-num">05</p>
-        <h3 class="card-title">Servery a cloudy</h3>
-        <p class="card-text">Linuxový server přes SFTP v jednom panelu, váš disk ve druhém. V cloudových složkách ukazují panely stejné odznaky synchronizace jako Průzkumník - OneDrive, Disk Google - a vedle nich stav TortoiseGit a TortoiseSVN.</p>
-      </article>
-      <article class="card">
-        <p class="card-num">06</p>
-        <h3 class="card-title">Snadné nastěhování</h3>
-        <p class="card-text">Import nastavení ze Salamanderu přenese oblíbené cesty, FTP spojení, uživatelské menu, barvy a nastavení pluginů z Altap Salamanderu i Open Salamanderu - po náhledu a bez vašeho zaškrtnutí nic nezmění. Instaluje se podepsaným instalátorem nebo přes winget.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="new" class="section section--roomy">
-  <div class="section-inner">
-    <div class="section-head">
-      <p class="kicker">Novinky</p>
-      <h2 class="section-title">Co je nového v Tandem Commanderu.</h2>
-      <p class="section-lead">Nejdřív aktuální vydání, pod ním nejnovější novinky z těch předchozích.</p>
-    </div>
-    <div class="whats-new-current">
-      <p class="whats-new-version">Verze 0.2.0 · 25. října 2026</p>
-      <p class="whats-new-summary">Rychlé hledání najde text kdekoli v názvu a ukáže jen shody, nastavení se dá převzít z Altap i Open Salamanderu a záložky v panelech dostaly zkratky jako v prohlížeči.</p>
-    </div>
-    <div class="card-grid card-grid--news">
-      <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.2.0</p>
-        <h3 class="card-title card-title--sm">Rychlé hledání kdekoli v názvu</h3>
-        <p class="card-text card-text--sm">Napíšete <span class="mono">chat</span> a najde se i „2024_chatbot“: panel ukáže jen shody, jemně podbarvený, a v řádku s cestou hledaný text a počet shod. Příkazy pracují jen s tím, co je vidět.</p>
-        <a class="card-link" href="/cs/#quick-search">Ukázka →</a>
-      </article>
-      <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.2.0</p>
-        <h3 class="card-title card-title--sm">Hledání bez ohledu na diakritiku</h3>
-        <p class="card-text card-text--sm">Diakritika se ignoruje oběma směry - <span class="mono">zlut</span> najde „žluťoučký“, <span class="mono">strasse</span> najde „Straße“. Chcete dosavadní rychlé hledání? Stačí jedna volba v Konfiguraci ▸ Panely.</p>
-      </article>
-      <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.2.0</p>
-        <h3 class="card-title card-title--sm">Nastavení ze Salamanderu</h3>
-        <p class="card-text card-text--sm">Volby ▸ Import nastavení ze Salamanderu převezme oblíbené cesty, FTP spojení i hesla, uživatelské menu, prohlížeče, barvy a nastavení pluginů z Altap či Open Salamanderu - po náhledu.</p>
-      </article>
-      <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.2.0</p>
-        <h3 class="card-title card-title--sm">Import, který nic nemění bez ptaní</h3>
-        <p class="card-text card-text--sm">Nastavení starého programu se jen čte. Nic, co už máte, se bez vašeho zaškrtnutí nezmění a nejdřív se uloží záloha vašeho nastavení. Při prvním spuštění program import jednou sám nabídne.</p>
-      </article>
-      <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.2.0</p>
-        <h3 class="card-title card-title--sm">Zkratky záložek jako v prohlížeči</h3>
-        <p class="card-text card-text--sm">Nová stránka Záložky v Konfiguraci zapne <span class="mono">Ctrl+T</span>, <span class="mono">Ctrl+W</span> a <span class="mono">Ctrl+Page Down</span> / <span class="mono">Up</span>. Znovu otevřít zavřenou záložku vrátí posledních deset záložek zavřených v panelu.</p>
-        <a class="card-link" href="/cs/#tabs-configuration">Ukázka →</a>
-      </article>
-      <article class="card card--accent card--tight card--current">
-        <p class="version-chip">0.2.0</p>
-        <h3 class="card-title card-title--sm">Nastavení se jednou přestěhuje</h3>
-        <p class="card-text card-text--sm">Při prvním spuštění se nastavení zkopíruje na místo, které se už s verzí nemění; původní zůstane jako záloha. Návrat k verzi 0.1.x potom není podporován.</p>
-      </article>
-    </div>
-    <p class="section-more"><a href="/cs/releases/">Všechna vydání →</a></p>
   </div>
 </section>
 
@@ -551,6 +542,14 @@
   </div>
 </section>
 
+<span class="visually-hidden" data-gallery-strings
+      data-close-title="Zavřít zvětšený náhled"
+      data-prev-title="Předchozí obrázek"
+      data-next-title="Další obrázek"
+      data-zoom-title="Přiblížit"
+      data-fullscreen-title="Celá obrazovka"
+      data-error-msg="Obrázek se nepodařilo načíst."></span>
+
 </main>
 <footer class="site-footer">
   <div class="footer-inner">
@@ -564,8 +563,8 @@
       </div>
       <div class="footer-col">
         <p class="footer-heading">Program</p>
-        <a href="#gallery" class="footer-link">Galerie</a>
         <a href="#new" class="footer-link">Novinky</a>
+        <a href="#gallery" class="footer-link">Galerie</a>
         <a href="#project" class="footer-link">Projekt</a>
         <a href="#download" class="footer-link">Stažení</a>
         <a href="/cs/releases/" class="footer-link">Historie vydání</a>

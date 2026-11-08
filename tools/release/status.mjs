@@ -14,8 +14,26 @@ export function recordState(record) {
   return summaries.length && summaries.every((s) => typeof s === "string" && s.trim()) ? "filled" : "skeleton";
 }
 
+// What the home page's "What's new" will show for <version> (spec 012,
+// data-model §5): a patch leaves it at its main release X.Y.0; a main release
+// lists the scenes of the highlights that become picture panels and how many
+// highlights are compact. Same rule as the build (content.buildShowcase).
+export function homePageOf(version, mainRecord, gallery) {
+  const main = content.mainVersionOf(version);
+  if (main !== version) return { main, isPatch: true };
+  if (!mainRecord) return { main, isPatch: false, missing: true };
+  const showcase = content.buildShowcase({ ...mainRecord, highlights: mainRecord.highlights || [] }, gallery);
+  return {
+    main,
+    isPatch: false,
+    blocks: showcase.blocks.map((b) => b.scene.id),
+    compact: showcase.compact.length,
+  };
+}
+
 // git: { branch, releaseBranchExists, develBehindOrigin, dirty: [paths], recordCommits }
-export function buildStatus({ version, siteVersion, recordVersions, record, gallery, git }) {
+// mainRecord: the record X.Y.0 of <version> (the record itself for a main release).
+export function buildStatus({ version, siteVersion, recordVersions, record, mainRecord = record, gallery, git }) {
   const older = recordVersions.filter((v) => content.compareVersions(v, version) < 0);
   older.sort(content.compareVersions);
   const state = recordState(record);
@@ -35,6 +53,7 @@ export function buildStatus({ version, siteVersion, recordVersions, record, gall
     },
     record: state,
     captures: content.capturePlan(gallery, version, highlightScenes),
+    homePage: homePageOf(version, mainRecord, gallery),
   };
   status.next = nextStep(status);
   return status;

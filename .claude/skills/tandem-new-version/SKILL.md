@@ -101,6 +101,10 @@ Draft a complete record in every site language:
   `text` (≤ 220); plain text, backticks only around keys and commands;
 - `scene` on a highlight only when an existing published scene shows it.
 
+A **patch** (`X.Y.Z` with `Z > 0`) is bug fixes only: its `kind` must be `bugfix`, `maintenance`
+or `installer` - the build rejects `feature`/`first` for a patch. If the changelog section of a
+patch really announces new features, stop and tell the author; do not relabel it.
+
 Count the characters - the build rejects anything over the limits.
 
 ### 5. Find what else the version made stale
@@ -129,7 +133,11 @@ Present in one message:
 2. what you deliberately left out of the changelog section and why (one line each);
 3. any highlight that deserves a **new** gallery scene (none is created here);
 4. anything in a non-English text you are unsure about;
-5. the content proposals, numbered (or "no stale text found", with the number of sources read).
+5. the content proposals, numbered (or "no stale text found", with the number of sources read);
+6. the **home page** - its "What's new" presents only the main release `X.Y.0`
+   (specs/012-whats-new-showcase): for a patch say "What's new stays unchanged (it shows X.Y.0)";
+   for a main release list which highlights become picture panels (those with a published scene,
+   in order, at most three, each scene once) and which are compact items.
 
 Ask: accept, edit or reject - per item, or all at once. **Wait for the answer.** Apply requested
 edits and show the changed items again until the author approves. Rejected proposals are dropped
@@ -164,6 +172,10 @@ npm run shots -- --version <version> --scene <scene,scene,…>
 If it fails, relay the output verbatim, leave the previous pictures in place and continue with
 step 9; the handover lists the pictures that remain older.
 
+The capture keeps every picture it replaces: a picture taken with an older version moves to
+`src/assets/gallery/archive/<old version>/` and into `content/gallery/archive.json`, where the
+release history page shows it under that version (spec 012). Never delete archived pictures.
+
 After a successful capture, open each re-captured `src/assets/gallery/<scene>-<theme>.webp` and
 both `src/assets/screenshot-*.png` with your image-reading tool. Confirm that the title bar reads
 "Tandem Commander <version>" and that the picture still matches its scene (window state, no stray
@@ -175,7 +187,8 @@ the author's choice.
 
 ### 9. Check
 
-`npm run release:check` - tests, build, verification of the generated site, stale-image report. If
+`npm run release:status -- <version>` and compare its `home page` line with item 6 of stop 2; say
+so if they differ. Then `npm run release:check` - tests, build, verification of the generated site, stale-image report. If
 it fails, show the message (it names the file and field or the page and value). Fix only what is
 yours - the record texts and the accepted corrections - and run it again. Ask before touching
 anything else.
@@ -185,7 +198,8 @@ anything else.
 Report:
 
 - changed files grouped by purpose: release facts (`site.json`), release record, content
-  corrections, pictures (`captures.json`, images), regenerated `public/`;
+  corrections, pictures (`captures.json`, images, and the replaced pictures that the capture moved
+  to `src/assets/gallery/archive/<old version>/` with `archive.json`), regenerated `public/`;
 - the result of every check (tests, build, each verification check, picture check);
 - open items: pictures kept from the previous version (by choice or after a failed capture),
   pictures that are merely older (*older, review*), rejected proposals, highlights that deserve a

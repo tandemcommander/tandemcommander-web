@@ -248,9 +248,18 @@ function releaseStatus(version) {
     siteVersion: readSite().version,
     recordVersions: records.map((r) => r.version),
     record: records.find((r) => r.version === version) || null,
+    mainRecord: records.find((r) => r.version === content.mainVersionOf(version)) || null,
     gallery: content.loadGallery(),
     git: gatherGit(version),
   });
+}
+
+// One line on what "What's new" will show (specs/012-whats-new-showcase/contracts/content-rules.md).
+function homePageLine(home, version) {
+  if (home.isPatch) return `unchanged - ${version} is a patch of ${home.main}`;
+  if (home.missing) return `${home.main} - no record yet`;
+  const blocks = home.blocks.length ? ` (${home.blocks.join(", ")})` : "";
+  return `${home.main} - ${home.blocks.length} panel${home.blocks.length === 1 ? "" : "s"}${blocks}, ${home.compact} compact`;
 }
 
 // Read-only: where the release of <version> stands (contracts/release-cli.md).
@@ -276,6 +285,7 @@ function cmdStatus(args) {
   console.log(`  committed    ${status.git.committed ? "yes" : "no"}`);
   console.log(`  re-capture   ${rows(status.captures.must)}`);
   console.log(`  older        ${rows(status.captures.review)}`);
+  console.log(`  home page    ${homePageLine(status.homePage, status.version)}`);
   console.log(`next: ${status.next}`);
   return 0;
 }

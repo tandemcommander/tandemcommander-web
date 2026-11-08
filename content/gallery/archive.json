@@ -1,0 +1,316 @@
+{
+  "0.1.8": {
+    "dark-theme/dark": {
+      "appVersion": "0.1.8",
+      "appBuild": 192,
+      "capturedAt": "2026-09-20",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.8/dark-theme-dark.webp",
+        "card": "assets/gallery/archive/0.1.8/dark-theme-dark-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 16884,
+        "card": 13152
+      },
+      "title": {
+        "en": "Dark theme",
+        "cs": "Tmavý motiv"
+      },
+      "caption": {
+        "en": "The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m.",
+        "cs": "Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+      },
+      "alt": {
+        "en": "The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background.",
+        "cs": "Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí."
+      }
+    },
+    "main-window/light": {
+      "appVersion": "0.1.8",
+      "appBuild": 192,
+      "capturedAt": "2026-09-20",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.8/main-window-light.webp",
+        "card": "assets/gallery/archive/0.1.8/main-window-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 18820,
+        "card": 15950
+      },
+      "title": {
+        "en": "Two panels, many tabs",
+        "cs": "Dva panely, spousta záložek"
+      },
+      "caption": {
+        "en": "Source on the left, target on the right - and each panel keeps several directories open in tabs.",
+        "cs": "Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+      },
+      "alt": {
+        "en": "The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom.",
+        "cs": "Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy."
+      }
+    },
+    "panel-tabs/light": {
+      "appVersion": "0.1.8",
+      "appBuild": 192,
+      "capturedAt": "2026-09-20",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.8/panel-tabs-light.webp",
+        "card": "assets/gallery/archive/0.1.8/panel-tabs-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 18860,
+        "card": 13770
+      },
+      "title": {
+        "en": "Tabs in a panel",
+        "cs": "Záložky v panelu"
+      },
+      "caption": {
+        "en": "Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history.",
+        "cs": "Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+      },
+      "alt": {
+        "en": "The main window with several directory tabs open above the left panel, the active tab carrying a close button.",
+        "cs": "Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
+      }
+    },
+    "thumbnails/light": {
+      "appVersion": "0.1.8",
+      "appBuild": 192,
+      "capturedAt": "2026-09-20",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.8/thumbnails-light.webp",
+        "card": "assets/gallery/archive/0.1.8/thumbnails-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 137824,
+        "card": 23260
+      },
+      "title": {
+        "en": "Thumbnails without the wait",
+        "cs": "Náhledy bez čekání"
+      },
+      "caption": {
+        "en": "A folder of photographs fills in at once, and pictures taken sideways are shown the right way up.",
+        "cs": "Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+      },
+      "alt": {
+        "en": "A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation.",
+        "cs": "Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku."
+      }
+    },
+    "unicode-long-paths/light": {
+      "appVersion": "0.1.8",
+      "appBuild": 192,
+      "capturedAt": "2026-09-20",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.8/unicode-long-paths-light.webp",
+        "card": "assets/gallery/archive/0.1.8/unicode-long-paths-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 18966,
+        "card": 14714
+      },
+      "title": {
+        "en": "Unicode and long paths",
+        "cs": "Unicode a dlouhé cesty"
+      },
+      "caption": {
+        "en": "Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit.",
+        "cs": "Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+      },
+      "alt": {
+        "en": "A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters.",
+        "cs": "Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků."
+      }
+    }
+  },
+  "0.1.9": {
+    "dark-theme/dark": {
+      "appVersion": "0.1.9",
+      "appBuild": 193,
+      "capturedAt": "2026-10-07",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.9/dark-theme-dark.webp",
+        "card": "assets/gallery/archive/0.1.9/dark-theme-dark-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 15272,
+        "card": 12540
+      },
+      "title": {
+        "en": "Dark theme",
+        "cs": "Tmavý motiv"
+      },
+      "caption": {
+        "en": "The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m.",
+        "cs": "Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+      },
+      "alt": {
+        "en": "The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background.",
+        "cs": "Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí."
+      }
+    },
+    "main-window/light": {
+      "appVersion": "0.1.9",
+      "appBuild": 193,
+      "capturedAt": "2026-10-07",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.9/main-window-light.webp",
+        "card": "assets/gallery/archive/0.1.9/main-window-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 18924,
+        "card": 15922
+      },
+      "title": {
+        "en": "Two panels, many tabs",
+        "cs": "Dva panely, spousta záložek"
+      },
+      "caption": {
+        "en": "Source on the left, target on the right - and each panel keeps several directories open in tabs.",
+        "cs": "Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+      },
+      "alt": {
+        "en": "The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom.",
+        "cs": "Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy."
+      }
+    },
+    "panel-tabs/light": {
+      "appVersion": "0.1.9",
+      "appBuild": 193,
+      "capturedAt": "2026-10-07",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.9/panel-tabs-light.webp",
+        "card": "assets/gallery/archive/0.1.9/panel-tabs-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 18880,
+        "card": 13746
+      },
+      "title": {
+        "en": "Tabs in a panel",
+        "cs": "Záložky v panelu"
+      },
+      "caption": {
+        "en": "Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history.",
+        "cs": "Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+      },
+      "alt": {
+        "en": "The main window with several directory tabs open above the left panel, the active tab carrying a close button.",
+        "cs": "Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
+      }
+    },
+    "thumbnails/light": {
+      "appVersion": "0.1.9",
+      "appBuild": 193,
+      "capturedAt": "2026-10-07",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.9/thumbnails-light.webp",
+        "card": "assets/gallery/archive/0.1.9/thumbnails-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 137680,
+        "card": 23334
+      },
+      "title": {
+        "en": "Thumbnails without the wait",
+        "cs": "Náhledy bez čekání"
+      },
+      "caption": {
+        "en": "A folder of photographs fills in at once, and pictures taken sideways are shown the right way up.",
+        "cs": "Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+      },
+      "alt": {
+        "en": "A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation.",
+        "cs": "Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku."
+      }
+    },
+    "unicode-long-paths/light": {
+      "appVersion": "0.1.9",
+      "appBuild": 193,
+      "capturedAt": "2026-10-07",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.9/unicode-long-paths-light.webp",
+        "card": "assets/gallery/archive/0.1.9/unicode-long-paths-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 18944,
+        "card": 14764
+      },
+      "title": {
+        "en": "Unicode and long paths",
+        "cs": "Unicode a dlouhé cesty"
+      },
+      "caption": {
+        "en": "Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit.",
+        "cs": "Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+      },
+      "alt": {
+        "en": "A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters.",
+        "cs": "Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků."
+      }
+    }
+  }
+}

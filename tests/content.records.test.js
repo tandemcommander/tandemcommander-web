@@ -1,4 +1,4 @@
-// Release records: validation V1–V11, ordering, home-page card selection and
+// Release records: validation V1–V11, ordering, the main release (spec 012) and
 // the PAD change-info (specs/007-release-news-gallery/contracts/release-record.md).
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
@@ -129,42 +129,54 @@ test("V11: texts are plain — no angle brackets or tabs", () => {
   assert.throws(() => load({ "0.2.0.json": html }), /summary\.en: texts are plain/);
 });
 
+// Main release (specs/012-whats-new-showcase/data-model.md §2, rule S1).
+const loadAt = (version, date, files) =>
+  content.loadReleases({ ...SITE, version, releaseDate: date }, { contentDir: makeContent(files), languages: LANGS });
+
+test("S1: a main release X.Y.0 is its own main release", () => {
+  const r = load({ "0.2.0.json": current() });
+  assert.equal(r.main.version, "0.2.0");
+  assert.equal(content.mainVersionOf("0.3.0"), "0.3.0");
+});
+
+test("S1: a patch X.Y.Z is presented through its main release X.Y.0", () => {
+  const r = loadAt("0.2.1", "2026-10-20", {
+    "0.2.0.json": current(),
+    "0.2.1.json": record("0.2.1", "2026-10-20", [], { kind: "bugfix" }),
+  });
+  assert.equal(r.main.version, "0.2.0");
+  assert.equal(r.current.version, "0.2.1");
+});
+
+test("S1: a patch without its main release fails and names the record", () => {
+  assert.throws(() => loadAt("0.3.1", "2026-12-01", {
+    "0.2.0.json": current(),
+    "0.3.1.json": record("0.3.1", "2026-12-01", [], { kind: "bugfix" }),
+  }), /no record for main release 0\.3\.0 \(current version 0\.3\.1\) — create content\/releases\/0\.3\.0\.json/);
+});
+
+test("S1: before 0.2.0 every version is its own main release (legacy line)", () => {
+  const r = loadAt("0.1.9", "2026-09-25", { "0.1.9.json": record("0.1.9", "2026-09-25") });
+  assert.equal(r.main.version, "0.1.9");
+  assert.equal(content.mainVersionOf("0.1.10"), "0.1.10");
+});
+
+test("S3: from 0.2.0 on a patch is never a feature release", () => {
+  const files = (kind) => ({ "0.2.0.json": current(), "0.2.1.json": record("0.2.1", "2026-10-20", [], { kind }) });
+  assert.throws(() => loadAt("0.2.1", "2026-10-20", files("feature")),
+    /releases: 0\.2\.1\.json: kind "feature" is not allowed for a patch release — new features belong to a main release 0\.2\.0/);
+  assert.throws(() => loadAt("0.2.1", "2026-10-20", files("first")), /not allowed for a patch release/);
+  for (const kind of ["bugfix", "maintenance", "installer"]) {
+    assert.doesNotThrow(() => loadAt("0.2.1", "2026-10-20", files(kind)));
+  }
+  // the 0.1.x line carried features in patch numbers; history stays valid
+  assert.doesNotThrow(() => loadAt("0.1.9", "2026-09-25", { "0.1.9.json": record("0.1.9", "2026-09-25") }));
+  assert.doesNotThrow(() => loadAt("0.3.0", "2026-12-01", { "0.2.0.json": current(), "0.3.0.json": record("0.3.0", "2026-12-01") }));
+});
+
 test("invalid date and non-array highlights are rejected", () => {
   assert.throws(() => load({ "0.2.0.json": { ...current(), date: "2026-02-30" } }), /"date" must be a valid/);
   assert.throws(() => load({ "0.2.0.json": { ...current(), highlights: null } }), /"highlights" must be an array/);
-});
-
-test("home cards: current release first, topped up from older ones, exactly six", () => {
-  const r = load({
-    "0.2.0.json": record("0.2.0", "2026-10-01", [highlight("a"), highlight("b")]),
-    "0.1.9.json": record("0.1.9", "2026-09-25", []),
-    "0.1.8.json": record("0.1.8", "2026-09-20", [highlight("c"), highlight("d"), highlight("e")]),
-    "0.1.7.json": record("0.1.7", "2026-09-10", [highlight("f"), highlight("g")]),
-  });
-  assert.deepEqual(r.homeCards.map((c) => `${c.version}:${c.id}`),
-    ["0.2.0:a", "0.2.0:b", "0.1.8:c", "0.1.8:d", "0.1.8:e", "0.1.7:f"]);
-  assert.deepEqual(r.homeCards.map((c) => c.isCurrent), [true, true, false, false, false, false]);
-});
-
-test("home cards: a release without highlights leaves all six to its predecessors", () => {
-  const six = ["a", "b", "c", "d", "e", "f", "g"].map((id) => highlight(id));
-  const r = load({
-    "0.2.0.json": record("0.2.0", "2026-10-01", []),
-    "0.1.9.json": record("0.1.9", "2026-09-25", six),
-  });
-  assert.equal(r.homeCards.length, 6);
-  assert.ok(r.homeCards.every((c) => c.version === "0.1.9" && !c.isCurrent));
-});
-
-test("home cards: more than six current highlights are capped in recorded order", () => {
-  const many = ["a", "b", "c", "d", "e", "f", "g", "h"].map((id) => highlight(id));
-  const r = load({ "0.2.0.json": record("0.2.0", "2026-10-01", many), "0.1.9.json": record("0.1.9", "2026-09-25", [highlight("z")]) });
-  assert.deepEqual(r.homeCards.map((c) => c.id), ["a", "b", "c", "d", "e", "f"]);
-});
-
-test("home cards: fewer than six only when that is all there is", () => {
-  const r = load({ "0.2.0.json": current() });
-  assert.equal(r.homeCards.length, 2);
 });
 
 test("PAD change-info: single line, within the limit, never cut mid-word, backticks dropped", () => {
@@ -198,7 +210,7 @@ test("the repository's real release records load against the real site.json", ()
     const r = content.loadReleases(site);
     assert.equal(r.current.version, site.version);
     assert.ok(r.all.length >= 9);
-    assert.equal(r.homeCards.length, content.HOME_CARD_COUNT);
+    assert.equal(r.main.version, content.mainVersionOf(site.version));
     assert.ok(r.padChangeInfo.length <= content.LIMITS.padChangeInfo);
   } finally {
     if (saved !== undefined) process.env.TC_CONTENT_DIR = saved;

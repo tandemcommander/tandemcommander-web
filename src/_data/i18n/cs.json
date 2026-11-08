@@ -32,7 +32,7 @@
   "gallery": {
     "kicker": "Podívejte se",
     "title": "Galerie funkcí Tandem Commander.",
-    "lead": "Klasické světlé panely zůstávají výchozí - nic se nepřesunulo, nic nepřeskládalo. Tmavý motiv má stejné rozložení i hustotu informací. Níže program při práci.",
+    "lead": "Výchozí zůstává klasický světlý vzhled a tmavý motiv má stejné rozložení i hustotu informací. Níže program při práci.",
     "zoomLabel": "zobrazit v plné velikosti",
     "viewerClose": "Zavřít zvětšený náhled",
     "viewerPrev": "Předchozí obrázek",
@@ -41,30 +41,12 @@
     "viewerFullscreen": "Celá obrazovka",
     "viewerError": "Obrázek se nepodařilo načíst."
   },
-  "features": {
-    "kicker": "Co to je",
-    "title": "Staré návyky, nic nového k učení.",
-    "lead": "Správce souborů pro lidi, kteří se pohybují klávesnicí a přemýšlejí ve dvou panelech.",
-    "card1Title": "Dva panely",
-    "card1Text": "Zdroj vlevo, cíl vpravo - a každý panel udrží několik adresářů otevřených v záložkách. Kopírujte, přesouvejte, balte a porovnávejte bez otevírání druhého okna a bez sahání po myši.",
-    "card2Title": "Klávesnice na prvním místě",
-    "card2Text": "Funkční klávesy podél spodního okraje, zkratka na všechno, příkazová řádka přesně tam, kde už vaše ruce jsou - a klávesa Command Shell, která otevře shell podle vaší volby, od PowerShellu po Git Bash.",
-    "card3Title": "Vlastní jádro",
-    "card3Text": "<span class=\"mono\">tandemcommander.exe</span> je program s vlastní identitou: vlastní ikona, vlastní titulky oken, vlastní nastavení - a aktualizované jádro postavené pro Windows 11, s plnou podporou Unicode a dlouhých cest napříč celým programem.",
-    "card4Title": "Prohlížeče na F3",
-    "card4Text": "Zdrojové a konfigurační soubory se zvýrazněním syntaxe ve více než 200 formátech, vykreslený Markdown, obrázky, databáze i spustitelné soubory - F3 otevře ten správný prohlížeč, Alt+F3 ten obyčejný.",
-    "card5Title": "Servery a cloudy",
-    "card5Text": "Linuxový server přes SFTP v jednom panelu, váš disk ve druhém. V cloudových složkách ukazují panely stejné odznaky synchronizace jako Průzkumník - OneDrive, Disk Google - a vedle nich stav TortoiseGit a TortoiseSVN.",
-    "card6Title": "Snadné nastěhování",
-    "card6Text": "Import nastavení ze Salamanderu přenese oblíbené cesty, FTP spojení, uživatelské menu, barvy a nastavení pluginů z Altap Salamanderu i Open Salamanderu - po náhledu a bez vašeho zaškrtnutí nic nezmění.",
-    "card6Install": "Instaluje se podepsaným instalátorem.",
-    "card6InstallWinget": "Instaluje se podepsaným instalátorem nebo přes winget."
-  },
   "whatsNew": {
     "kicker": "Novinky",
     "title": "Co je nového v Tandem Commanderu.",
-    "lead": "Nejdřív aktuální vydání, pod ním nejnovější novinky z těch předchozích.",
+    "lead": "Co přinesla aktuální verze - ukázané přímo v programu. Všechna dřívější vydání najdete v historii vydání.",
     "currentLine": "Verze {version} · {date}",
+    "alsoIn": "Také ve verzi {version}",
     "seeIt": "Ukázka →",
     "allReleases": "Všechna vydání →"
   },
@@ -74,6 +56,7 @@
     "pageLead": "Co přinesla každá verze Tandem Commanderu, v několika větách. Úplné technické poznámky ke každému vydání najdete na GitHubu.",
     "current": "aktuální",
     "fullNotes": "Úplné poznámky k vydání na GitHubu ↗",
+    "shots": "Screenshoty této verze ({count})",
     "getIt": "Stáhnout verzi {version}",
     "kind": {
       "first": "První vydání",

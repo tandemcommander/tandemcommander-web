@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 // ---------------------------------------------------------------------------
 // i18n (spec: specs/004-multilingual-czech/)
@@ -517,6 +518,15 @@ module.exports = function (eleventyConfig) {
   // whose only markup is `backticks`; this escapes the text and renders those
   // as the site's mono span (spec: specs/007-release-news-gallery/).
   eleventyConfig.addFilter("inline", (text) => renderInline(text));
+
+  // "/js/main.js" → "/js/main.js?v=<content hash>" (spec 012): /css and /js
+  // have no cache rule, so without a version a browser may keep an old script
+  // next to a new page - e.g. a viewer that does not know the newer pictures.
+  eleventyConfig.addFilter("assetUrl", (url) => {
+    const file = path.join(__dirname, "src", url);
+    const hash = crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex").slice(0, 10);
+    return `${url}?v=${hash}`;
+  });
 
   // Structured content lives outside the input dir; rebuild on change.
   eleventyConfig.addWatchTarget("./content/");

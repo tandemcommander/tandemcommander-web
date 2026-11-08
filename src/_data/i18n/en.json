@@ -32,7 +32,7 @@
   "gallery": {
     "kicker": "See it working",
     "title": "Tandem Commander features gallery.",
-    "lead": "The classic light panels are still the default - nothing moved, nothing was reflowed. The dark theme is the same layout with the same information density. Below: the program at work.",
+    "lead": "The classic light look is still the default, and the dark theme keeps the same layout and information density. Below: the program at work.",
     "zoomLabel": "view full size",
     "viewerClose": "Close enlarged view",
     "viewerPrev": "Previous picture",
@@ -41,30 +41,12 @@
     "viewerFullscreen": "Full screen",
     "viewerError": "The picture could not be loaded."
   },
-  "features": {
-    "kicker": "What it is",
-    "title": "Old habits, nothing to relearn.",
-    "lead": "A file manager for people who navigate by keyboard and think in two panels.",
-    "card1Title": "Two panels",
-    "card1Text": "Source on the left, target on the right - and each panel keeps several directories open in tabs. Copy, move, pack and compare without opening a second window or reaching for the mouse.",
-    "card2Title": "Keyboard first",
-    "card2Text": "Function keys along the bottom edge, a shortcut for everything, a command line that stays exactly where your hands already are - and a Command Shell key that opens the shell you choose, from PowerShell to Git Bash.",
-    "card3Title": "Its own core",
-    "card3Text": "<span class=\"mono\">tandemcommander.exe</span> is a program with its own identity: own icon, own window titles, own settings - and a modern core built for Windows 11, with full Unicode and long paths throughout.",
-    "card4Title": "Viewers on F3",
-    "card4Text": "Source and configuration files with syntax highlighting in over 200 formats, rendered Markdown, images, databases and executables - F3 opens the right viewer, Alt+F3 the plain one.",
-    "card5Title": "Servers and clouds",
-    "card5Text": "A Linux server over SFTP in one panel, your disk in the other. In cloud folders the panels show the same sync badges as Explorer - OneDrive, Google Drive - with TortoiseGit and TortoiseSVN status next to them.",
-    "card6Title": "Easy to move in",
-    "card6Text": "Import Settings from Salamander brings your hot paths, FTP connections, user menu, colours and plugin settings over from Altap Salamander or Open Salamander - after a preview, changing nothing without your tick.",
-    "card6Install": "Install with the signed installer.",
-    "card6InstallWinget": "Install with the signed installer or through winget."
-  },
   "whatsNew": {
     "kicker": "What's new",
     "title": "What's new in Tandem Commander.",
-    "lead": "The current release first, followed by the most recent highlights of the releases before it.",
+    "lead": "What the current version brought - shown in the program. Every earlier release is in the release history.",
     "currentLine": "Version {version} · {date}",
+    "alsoIn": "Also in {version}",
     "seeIt": "See it →",
     "allReleases": "All releases →"
   },
@@ -74,6 +56,7 @@
     "pageLead": "What each version of Tandem Commander brought, in a few sentences. The complete, technical notes of every release are on GitHub.",
     "current": "current",
     "fullNotes": "Full release notes on GitHub ↗",
+    "shots": "Screenshots of this version ({count})",
     "getIt": "Get version {version}",
     "kind": {
       "first": "First release",

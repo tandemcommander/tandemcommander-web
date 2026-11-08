@@ -75,3 +75,31 @@ test("record state: missing, skeleton, filled", async () => {
   assert.equal(recordState({ summary: { en: "x", cs: " " } }), "skeleton");
   assert.equal(recordState(filled), "filled");
 });
+
+// The home page's "What's new" for a version (specs/012-whats-new-showcase/data-model.md §5).
+const both = (text) => ({ en: text, cs: text });
+const shown = (id) => ({ id, themes: ["light"], title: both(id), caption: both(id), alt: both(id),
+  images: { light: { full: `/${id}.webp`, width: 1200, height: 800 } } });
+const showcaseGallery = { hasCaptures: true, published: [shown("quick-search"), shown("panel-tabs")] };
+const mainRecord = {
+  version: "0.3.0", summary: both("Main."),
+  highlights: [{ id: "a", scene: "quick-search" }, { id: "b" }, { id: "c", scene: "panel-tabs" }, { id: "d" }],
+};
+
+test("home page: a main release lists its picture panels and compact items", async () => {
+  const { buildStatus } = await load();
+  const s = buildStatus(input({ version: "0.3.0", record: mainRecord, gallery: showcaseGallery }));
+  assert.deepEqual(s.homePage, { main: "0.3.0", isPatch: false, blocks: ["quick-search", "panel-tabs"], compact: 2 });
+});
+
+test("home page: a patch leaves What's new at its main release", async () => {
+  const { buildStatus } = await load();
+  const s = buildStatus(input({ version: "0.3.1", record: null, mainRecord, gallery: showcaseGallery }));
+  assert.deepEqual(s.homePage, { main: "0.3.0", isPatch: true });
+});
+
+test("home page: a main release without its record says so", async () => {
+  const { buildStatus } = await load();
+  assert.deepEqual(buildStatus(input({ version: "0.3.0", gallery: showcaseGallery })).homePage,
+    { main: "0.3.0", isPatch: false, missing: true });
+});

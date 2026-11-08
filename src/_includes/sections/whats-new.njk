@@ -1,8 +1,14 @@
-{#- Generated from the release records in content/releases/ (spec 007):
-    the current release's summary, then six highlight cards - the current
-    release's first, topped up from the releases before it. -#}
+{#- "What's new" on the home page (spec 012, contracts/showcase-ui.md): the
+    main release X.Y.0 of the current version - patches live only on the
+    release history page. Each highlight with a published scene is one panel:
+    title and text on the left, the scene's picture on the right, exactly the
+    size of a gallery picture (at most three panels). The other highlights form
+    a compact list; older releases are one link away. Every picture opens in
+    the PhotoSwipe viewer. Generated from content/releases/ and content/gallery/. -#}
+{%- import "components/gallery-card.njk" as cards -%}
 {%- set locale = lang | locale -%}
-<section id="new" class="section section--roomy">
+{%- set show = releases.showcase -%}
+<section id="new" class="section band section--roomy">
   <div class="section-inner">
     <div class="section-head">
       <p class="kicker">{{ lang | t("whatsNew.kicker") }}</p>
@@ -10,21 +16,44 @@
       <p class="section-lead">{{ lang | t("whatsNew.lead") }}</p>
     </div>
     <div class="whats-new-current">
-      <p class="whats-new-version">{{ lang | t("whatsNew.currentLine") | replace("{version}", releases.current.version) | replace("{date}", releases.current.date | releaseDate(locale.intl)) }}</p>
-      <p class="whats-new-summary">{{ releases.current.summary[lang] | inline | safe }}</p>
+      <p class="whats-new-version">{{ lang | t("whatsNew.currentLine") | replace("{version}", show.version) | replace("{date}", show.date | releaseDate(locale.intl)) }}</p>
+      <p class="whats-new-summary">{{ show.summary[lang] | inline | safe }}</p>
     </div>
-    <div class="card-grid card-grid--news">
-      {%- for card in releases.homeCards %}
-      <article class="card card--accent card--tight{% if card.isCurrent %} card--current{% endif %}">
-        <p class="version-chip">{{ card.version }}</p>
-        <h3 class="card-title card-title--sm">{{ card.title[lang] }}</h3>
-        <p class="card-text card-text--sm">{{ card.text[lang] | inline | safe }}</p>
-        {%- if card.scene and releases.linkScenes %}
-        <a class="card-link" href="{{ locale.url }}#{{ card.scene }}">{{ lang | t("whatsNew.seeIt") }}</a>
-        {%- endif %}
+    {%- if show.blocks.length or show.compact.length %}
+    <div class="showcase" data-showcase>
+      {%- for item in show.blocks %}
+      <article class="showcase-block" id="new-{{ item.id }}">
+        <div class="showcase-text">
+          <h3 class="showcase-title">{{ item.title[lang] }}</h3>
+          <p class="showcase-body">{{ item.text[lang] | inline | safe }}</p>
+        </div>
+        {{ cards.galleryShots(item.scene, lang, { wide: true, label: item.title[lang] }) }}
       </article>
       {%- endfor %}
+      {%- if show.compact.length %}
+      <section class="showcase-more" aria-labelledby="new-also">
+        <h3 class="showcase-more-title" id="new-also">{{ lang | t("whatsNew.alsoIn") | replace("{version}", show.version) }}</h3>
+        <ul class="showcase-list">
+          {%- for item in show.compact %}
+          <li class="showcase-item" id="new-{{ item.id }}">
+            <strong class="showcase-item-title">{{ item.title[lang] }}</strong>
+            <span class="showcase-item-text">{{ item.text[lang] | inline | safe }}</span>
+            {%- if item.scene %}
+            {%- for theme, image in item.scene.images %}
+            <a class="card-link card-link--inline{% if item.scene.themes.length > 1 %} gallery-link--{{ theme }}{% endif %}"
+               href="{{ image.full }}"
+               data-pswp-width="{{ image.width }}" data-pswp-height="{{ image.height }}"
+               data-pswp-title="{{ item.scene.title[lang] }}" data-pswp-caption="{{ item.scene.caption[lang] }}"
+               target="_blank" rel="noopener">{{ lang | t("whatsNew.seeIt") }}</a>
+            {%- endfor %}
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endif %}
     </div>
-    <p class="section-more"><a href="{{ locale.url }}releases/">{{ lang | t("whatsNew.allReleases") }}</a></p>
+    {%- endif %}
+    <p class="section-more showcase-history"><a class="btn btn--secondary" href="{{ locale.url }}releases/">{{ lang | t("whatsNew.allReleases") }}</a></p>
   </div>
 </section>

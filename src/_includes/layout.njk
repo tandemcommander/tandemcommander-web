@@ -56,9 +56,9 @@ if(target){location.replace(target+location.search+location.hash);}
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 {% if not locale.default %}<link rel="preload" href="/fonts/archivo-latin-ext-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 {% endif %}
-{% if pagePath == "gallery/" or pagePath == "" %}<link rel="stylesheet" href="/js/vendor/photoswipe/photoswipe.css">
-{% endif %}<link rel="stylesheet" href="/css/main.css">
-<script defer src="/js/main.js"></script>
+{% if pagePath == "gallery/" or pagePath == "" or pagePath == "releases/" %}<link rel="stylesheet" href="/js/vendor/photoswipe/photoswipe.css">
+{% endif %}<link rel="stylesheet" href="{{ "/css/main.css" | assetUrl }}">
+<script defer src="{{ "/js/main.js" | assetUrl }}" data-gallery-module="{{ "/js/gallery.js" | assetUrl }}"></script>
 </head>
 <body>
 {{ content | safe }}

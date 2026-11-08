@@ -35,8 +35,9 @@
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/archivo-latin-ext-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="/css/main.css">
-<script defer src="/js/main.js"></script>
+<link rel="stylesheet" href="/js/vendor/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/css/main.css?v=b69c426520">
+<script defer src="/js/main.js?v=5bce32de68" data-gallery-module="/js/gallery.js?v=ac511016ba"></script>
 </head>
 <body>
 <header class="site-header">
@@ -46,8 +47,8 @@
       <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
     </a>
     <nav class="site-nav" aria-label="Hlavní">
-      <a href="/cs/#gallery" class="nav-link">Galerie</a>
       <a href="/cs/#new" class="nav-link">Novinky</a>
+      <a href="/cs/#gallery" class="nav-link">Galerie</a>
       <a href="/cs/#project" class="nav-link">Projekt</a>
       <a href="/cs/#download" class="nav-link">Stažení</a>
       <div class="theme-toggle" role="group" aria-label="Motiv">
@@ -66,8 +67,8 @@
     </button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Hlavní nabídka">
-    <a href="/cs/#gallery" class="mobile-link">Galerie</a>
     <a href="/cs/#new" class="mobile-link">Novinky</a>
+    <a href="/cs/#gallery" class="mobile-link">Galerie</a>
     <a href="/cs/#project" class="mobile-link">Projekt</a>
     <a href="/cs/#download" class="mobile-link">Stažení</a>
     <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="Motiv">
@@ -128,6 +129,67 @@
             <span class="release-highlight-text">Při prvním spuštění se nastavení zkopíruje na místo, které se už s verzí nemění; původní zůstane jako záloha. Návrat k verzi 0.1.x potom není podporován.</span>
           </li>
         </ul>
+        <details class="release-shots">
+          <summary class="release-shots-toggle">Screenshoty této verze (7)</summary>
+          <div class="release-shots-grid" data-release-shots>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/main-window-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Dva panely, spousta záložek · 0.2.0" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+               target="_blank" rel="noopener"
+               aria-label="Dva panely, spousta záložek (0.2.0) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/main-window-light-640.webp" width="640" height="427"
+                   alt="Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/dark-theme-dark.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Tmavý motiv · 0.2.0" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+               target="_blank" rel="noopener"
+               aria-label="Tmavý motiv (0.2.0) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/dark-theme-dark-640.webp" width="640" height="427"
+                   alt="Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/panel-tabs-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Záložky v panelu · 0.2.0" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+               target="_blank" rel="noopener"
+               aria-label="Záložky v panelu (0.2.0) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/panel-tabs-light-640.webp" width="640" height="427"
+                   alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/quick-search-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Rychlé hledání ukáže jen shody · 0.2.0" data-pswp-caption="Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
+               target="_blank" rel="noopener"
+               aria-label="Rychlé hledání ukáže jen shody (0.2.0) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/quick-search-light-640.webp" width="640" height="427"
+                   alt="Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/tabs-configuration-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Zkratky záložek po svém · 0.2.0" data-pswp-caption="Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
+               target="_blank" rel="noopener"
+               aria-label="Zkratky záložek po svém (0.2.0) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/tabs-configuration-light-640.webp" width="640" height="427"
+                   alt="Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/unicode-long-paths-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Unicode a dlouhé cesty · 0.2.0" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+               target="_blank" rel="noopener"
+               aria-label="Unicode a dlouhé cesty (0.2.0) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/unicode-long-paths-light-640.webp" width="640" height="427"
+                   alt="Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/thumbnails-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Náhledy bez čekání · 0.2.0" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+               target="_blank" rel="noopener"
+               aria-label="Náhledy bez čekání (0.2.0) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/thumbnails-light-640.webp" width="640" height="427"
+                   alt="Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku." loading="lazy" decoding="async">
+            </a>
+          </div>
+        </details>
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.2.0">Úplné poznámky k vydání na GitHubu ↗</a></p>
       </article>
       <article class="release" id="v0.1.10">
@@ -203,6 +265,51 @@
             <span class="release-highlight-text">Heslo napsané přímo v adrese typu <span class="mono">ftp://user:password@server</span> se už neukládá do historie - dosud leželo v registru jako čitelný text. Dokument Markdown už sám od sebe neotevře webovou stránku.</span>
           </li>
         </ul>
+        <details class="release-shots">
+          <summary class="release-shots-toggle">Screenshoty této verze (5)</summary>
+          <div class="release-shots-grid" data-release-shots>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/main-window-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Dva panely, spousta záložek · 0.1.9" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+               target="_blank" rel="noopener"
+               aria-label="Dva panely, spousta záložek (0.1.9) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/main-window-light-640.webp" width="640" height="427"
+                   alt="Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/dark-theme-dark.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Tmavý motiv · 0.1.9" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+               target="_blank" rel="noopener"
+               aria-label="Tmavý motiv (0.1.9) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/dark-theme-dark-640.webp" width="640" height="427"
+                   alt="Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/panel-tabs-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Záložky v panelu · 0.1.9" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+               target="_blank" rel="noopener"
+               aria-label="Záložky v panelu (0.1.9) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/panel-tabs-light-640.webp" width="640" height="427"
+                   alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/unicode-long-paths-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Unicode a dlouhé cesty · 0.1.9" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+               target="_blank" rel="noopener"
+               aria-label="Unicode a dlouhé cesty (0.1.9) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/unicode-long-paths-light-640.webp" width="640" height="427"
+                   alt="Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/thumbnails-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Náhledy bez čekání · 0.1.9" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+               target="_blank" rel="noopener"
+               aria-label="Náhledy bez čekání (0.1.9) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/thumbnails-light-640.webp" width="640" height="427"
+                   alt="Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku." loading="lazy" decoding="async">
+            </a>
+          </div>
+        </details>
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.9">Úplné poznámky k vydání na GitHubu ↗</a></p>
       </article>
       <article class="release" id="v0.1.8">
@@ -225,6 +332,75 @@
             <span class="release-highlight-text">Microsoft Visual C++ runtime je nově přímo ve složce programu. Na čistém počítači se starší verze nainstalovaly, ale nespustily - to už neplatí.</span>
           </li>
         </ul>
+        <details class="release-shots">
+          <summary class="release-shots-toggle">Screenshoty této verze (8)</summary>
+          <div class="release-shots-grid" data-release-shots>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/main-window-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Dva panely, spousta záložek · 0.1.8" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+               target="_blank" rel="noopener"
+               aria-label="Dva panely, spousta záložek (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/main-window-light-640.webp" width="640" height="427"
+                   alt="Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/dark-theme-dark.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Tmavý motiv · 0.1.8" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+               target="_blank" rel="noopener"
+               aria-label="Tmavý motiv (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/dark-theme-dark-640.webp" width="640" height="427"
+                   alt="Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/panel-tabs-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Záložky v panelu · 0.1.8" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+               target="_blank" rel="noopener"
+               aria-label="Záložky v panelu (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/panel-tabs-light-640.webp" width="640" height="427"
+                   alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/code-viewer-light.webp"
+               data-pswp-width="1100" data-pswp-height="760"
+               data-pswp-title="Prohlížeč kódu · 0.1.8" data-pswp-caption="F3 na zdrojovém souboru: zvýraznění syntaxe pro více než 200 formátů ve dvanácti barevných schématech."
+               target="_blank" rel="noopener"
+               aria-label="Prohlížeč kódu (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/code-viewer-light-640.webp" width="640" height="442"
+                   alt="Okno prohlížeče kódu se souborem C++, čísly řádků a barevně odlišenými klíčovými slovy, řetězci a komentáři." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/markdown-viewer-light.webp"
+               data-pswp-width="1100" data-pswp-height="760"
+               data-pswp-title="Markdown na F3 · 0.1.8" data-pswp-caption="Nadpisy, seznamy, tabulky a bloky kódu místo surového značkování - vykreslené, rolovatelné, jen pro čtení."
+               target="_blank" rel="noopener"
+               aria-label="Markdown na F3 (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/markdown-viewer-light-640.webp" width="640" height="442"
+                   alt="Okno prohlížeče Markdownu s vykresleným souborem README: nadpisy, tabulka cest k souborům a blok kódu." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/unicode-long-paths-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Unicode a dlouhé cesty · 0.1.8" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+               target="_blank" rel="noopener"
+               aria-label="Unicode a dlouhé cesty (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/unicode-long-paths-light-640.webp" width="640" height="427"
+                   alt="Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/thumbnails-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Náhledy bez čekání · 0.1.8" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+               target="_blank" rel="noopener"
+               aria-label="Náhledy bez čekání (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/thumbnails-light-640.webp" width="640" height="427"
+                   alt="Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/command-shell-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Shell podle vaší volby · 0.1.8" data-pswp-caption="Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu."
+               target="_blank" rel="noopener"
+               aria-label="Shell podle vaší volby (0.1.8) - zobrazit v plné velikosti">
+              <img class="shot-img" src="/assets/gallery/command-shell-light-640.webp" width="640" height="427"
+                   alt="Dialog Konfigurace otevřený na stránce Command Shell se seznamem shellů, které lze otevřít klávesou Command Shell." loading="lazy" decoding="async">
+            </a>
+          </div>
+        </details>
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.8">Úplné poznámky k vydání na GitHubu ↗</a></p>
       </article>
       <article class="release" id="v0.1.7">
@@ -404,6 +580,14 @@
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.0">Úplné poznámky k vydání na GitHubu ↗</a></p>
       </article>
     </div>
+    <span class="visually-hidden" data-gallery-strings
+      data-close-title="Zavřít zvětšený náhled"
+      data-prev-title="Předchozí obrázek"
+      data-next-title="Další obrázek"
+      data-zoom-title="Přiblížit"
+      data-fullscreen-title="Celá obrazovka"
+      data-error-msg="Obrázek se nepodařilo načíst."></span>
+
     <p class="release-get"><a href="/cs/#download" class="btn btn--primary">Stáhnout verzi 0.2.0</a></p>
   </div>
 </section>
@@ -420,8 +604,8 @@
       </div>
       <div class="footer-col">
         <p class="footer-heading">Program</p>
-        <a href="/cs/#gallery" class="footer-link">Galerie</a>
         <a href="/cs/#new" class="footer-link">Novinky</a>
+        <a href="/cs/#gallery" class="footer-link">Galerie</a>
         <a href="/cs/#project" class="footer-link">Projekt</a>
         <a href="/cs/#download" class="footer-link">Stažení</a>
         <a href="/cs/releases/" class="footer-link">Historie vydání</a>

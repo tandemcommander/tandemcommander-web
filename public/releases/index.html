@@ -34,8 +34,9 @@
 
 <link rel="preload" href="/fonts/archivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="/css/main.css">
-<script defer src="/js/main.js"></script>
+<link rel="stylesheet" href="/js/vendor/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/css/main.css?v=b69c426520">
+<script defer src="/js/main.js?v=5bce32de68" data-gallery-module="/js/gallery.js?v=ac511016ba"></script>
 </head>
 <body>
 <header class="site-header">
@@ -45,8 +46,8 @@
       <span class="brand-name">Tandem <span class="brand-accent">Commander</span></span>
     </a>
     <nav class="site-nav" aria-label="Main">
-      <a href="/#gallery" class="nav-link">Gallery</a>
       <a href="/#new" class="nav-link">What&#39;s new</a>
+      <a href="/#gallery" class="nav-link">Gallery</a>
       <a href="/#project" class="nav-link">Project</a>
       <a href="/#download" class="nav-link">Download</a>
       <div class="theme-toggle" role="group" aria-label="Theme">
@@ -65,8 +66,8 @@
     </button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="Main menu">
-    <a href="/#gallery" class="mobile-link">Gallery</a>
     <a href="/#new" class="mobile-link">What&#39;s new</a>
+    <a href="/#gallery" class="mobile-link">Gallery</a>
     <a href="/#project" class="mobile-link">Project</a>
     <a href="/#download" class="mobile-link">Download</a>
     <div class="theme-toggle theme-toggle--mobile" role="group" aria-label="Theme">
@@ -102,7 +103,7 @@
         <ul class="release-highlights">
           <li>
             <strong class="release-highlight-title">Quick search finds any part of a name</strong>
-            <span class="release-highlight-text">Typing <span class="mono">chat</span> finds &quot;2024_chatbot&quot;: the panel shows only the matches, lightly tinted, with &quot;Search: chat (3 of 120)&quot; in its directory line. Commands act only on what is shown.</span>
+            <span class="release-highlight-text">Typing <span class="mono">chat</span> finds &quot;2024_chatbot&quot;: the panel shows only the matches, lightly tinted, with &quot;Search: chat (3 of 12)&quot; in its directory line. Commands act only on what is shown.</span>
             <a class="card-link card-link--inline" href="/#quick-search">See it →</a>
           </li>
           <li>
@@ -127,6 +128,67 @@
             <span class="release-highlight-text">At the first start your settings are copied to a place that no longer changes with the version; the old ones stay as a backup. Going back to 0.1.x afterwards is not supported.</span>
           </li>
         </ul>
+        <details class="release-shots">
+          <summary class="release-shots-toggle">Screenshots of this version (7)</summary>
+          <div class="release-shots-grid" data-release-shots>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/main-window-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Two panels, many tabs · 0.2.0" data-pswp-caption="Source on the left, target on the right - and each panel keeps several directories open in tabs."
+               target="_blank" rel="noopener"
+               aria-label="Two panels, many tabs (0.2.0) - view full size">
+              <img class="shot-img" src="/assets/gallery/main-window-light-640.webp" width="640" height="427"
+                   alt="The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/dark-theme-dark.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Dark theme · 0.2.0" data-pswp-caption="The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m."
+               target="_blank" rel="noopener"
+               aria-label="Dark theme (0.2.0) - view full size">
+              <img class="shot-img" src="/assets/gallery/dark-theme-dark-640.webp" width="640" height="427"
+                   alt="The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/panel-tabs-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Tabs in a panel · 0.2.0" data-pswp-caption="Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history."
+               target="_blank" rel="noopener"
+               aria-label="Tabs in a panel (0.2.0) - view full size">
+              <img class="shot-img" src="/assets/gallery/panel-tabs-light-640.webp" width="640" height="427"
+                   alt="The main window with several directory tabs open above the left panel, the active tab carrying a close button." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/quick-search-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Quick search shows only the matches · 0.2.0" data-pswp-caption="Type part of a name - here &quot;chat&quot; - and the panel keeps only the matching items, lightly tinted, with the number of matches in its directory line."
+               target="_blank" rel="noopener"
+               aria-label="Quick search shows only the matches (0.2.0) - view full size">
+              <img class="shot-img" src="/assets/gallery/quick-search-light-640.webp" width="640" height="427"
+                   alt="The main window with the left panel filtered by quick search: only the items whose names contain &quot;chat&quot; are listed, the panel is lightly tinted and its directory line shows the search text and the number of matches." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/tabs-configuration-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Tab shortcuts your way · 0.2.0" data-pswp-caption="The Tabs page of Configuration: switch on browser-like shortcuts - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - and see every tab shortcut at a glance."
+               target="_blank" rel="noopener"
+               aria-label="Tab shortcuts your way (0.2.0) - view full size">
+              <img class="shot-img" src="/assets/gallery/tabs-configuration-light-640.webp" width="640" height="427"
+                   alt="The Configuration dialog open on its Tabs page, with tabs shown in panels, browser-like tab shortcuts switched on and the list of tab shortcuts that follows them." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/unicode-long-paths-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Unicode and long paths · 0.2.0" data-pswp-caption="Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit."
+               target="_blank" rel="noopener"
+               aria-label="Unicode and long paths (0.2.0) - view full size">
+              <img class="shot-img" src="/assets/gallery/unicode-long-paths-light-640.webp" width="640" height="427"
+                   alt="A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/thumbnails-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Thumbnails without the wait · 0.2.0" data-pswp-caption="A folder of photographs fills in at once, and pictures taken sideways are shown the right way up."
+               target="_blank" rel="noopener"
+               aria-label="Thumbnails without the wait (0.2.0) - view full size">
+              <img class="shot-img" src="/assets/gallery/thumbnails-light-640.webp" width="640" height="427"
+                   alt="A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation." loading="lazy" decoding="async">
+            </a>
+          </div>
+        </details>
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.2.0">Full release notes on GitHub ↗</a></p>
       </article>
       <article class="release" id="v0.1.10">
@@ -202,6 +264,51 @@
             <span class="release-highlight-text">A password typed inside an address like <span class="mono">ftp://user:password@server</span> is no longer saved in history - until now it sat in the registry as plain text. A Markdown document can no longer open a web page by itself.</span>
           </li>
         </ul>
+        <details class="release-shots">
+          <summary class="release-shots-toggle">Screenshots of this version (5)</summary>
+          <div class="release-shots-grid" data-release-shots>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/main-window-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Two panels, many tabs · 0.1.9" data-pswp-caption="Source on the left, target on the right - and each panel keeps several directories open in tabs."
+               target="_blank" rel="noopener"
+               aria-label="Two panels, many tabs (0.1.9) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/main-window-light-640.webp" width="640" height="427"
+                   alt="The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/dark-theme-dark.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Dark theme · 0.1.9" data-pswp-caption="The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m."
+               target="_blank" rel="noopener"
+               aria-label="Dark theme (0.1.9) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/dark-theme-dark-640.webp" width="640" height="427"
+                   alt="The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/panel-tabs-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Tabs in a panel · 0.1.9" data-pswp-caption="Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history."
+               target="_blank" rel="noopener"
+               aria-label="Tabs in a panel (0.1.9) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/panel-tabs-light-640.webp" width="640" height="427"
+                   alt="The main window with several directory tabs open above the left panel, the active tab carrying a close button." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/unicode-long-paths-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Unicode and long paths · 0.1.9" data-pswp-caption="Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit."
+               target="_blank" rel="noopener"
+               aria-label="Unicode and long paths (0.1.9) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/unicode-long-paths-light-640.webp" width="640" height="427"
+                   alt="A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.9/thumbnails-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Thumbnails without the wait · 0.1.9" data-pswp-caption="A folder of photographs fills in at once, and pictures taken sideways are shown the right way up."
+               target="_blank" rel="noopener"
+               aria-label="Thumbnails without the wait (0.1.9) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.9/thumbnails-light-640.webp" width="640" height="427"
+                   alt="A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation." loading="lazy" decoding="async">
+            </a>
+          </div>
+        </details>
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.9">Full release notes on GitHub ↗</a></p>
       </article>
       <article class="release" id="v0.1.8">
@@ -224,6 +331,75 @@
             <span class="release-highlight-text">The Microsoft Visual C++ runtime now ships inside the program folder. On a clean PC, earlier versions installed fine and then refused to start - that is over.</span>
           </li>
         </ul>
+        <details class="release-shots">
+          <summary class="release-shots-toggle">Screenshots of this version (8)</summary>
+          <div class="release-shots-grid" data-release-shots>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/main-window-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Two panels, many tabs · 0.1.8" data-pswp-caption="Source on the left, target on the right - and each panel keeps several directories open in tabs."
+               target="_blank" rel="noopener"
+               aria-label="Two panels, many tabs (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/main-window-light-640.webp" width="640" height="427"
+                   alt="The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/dark-theme-dark.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Dark theme · 0.1.8" data-pswp-caption="The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m."
+               target="_blank" rel="noopener"
+               aria-label="Dark theme (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/dark-theme-dark-640.webp" width="640" height="427"
+                   alt="The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/panel-tabs-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Tabs in a panel · 0.1.8" data-pswp-caption="Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history."
+               target="_blank" rel="noopener"
+               aria-label="Tabs in a panel (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/panel-tabs-light-640.webp" width="640" height="427"
+                   alt="The main window with several directory tabs open above the left panel, the active tab carrying a close button." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/code-viewer-light.webp"
+               data-pswp-width="1100" data-pswp-height="760"
+               data-pswp-title="Code Viewer · 0.1.8" data-pswp-caption="F3 on a source file: syntax highlighting for over 200 formats in twelve colour schemes."
+               target="_blank" rel="noopener"
+               aria-label="Code Viewer (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/code-viewer-light-640.webp" width="640" height="442"
+                   alt="The Code Viewer window showing a C++ file with line numbers and coloured keywords, strings and comments." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/markdown-viewer-light.webp"
+               data-pswp-width="1100" data-pswp-height="760"
+               data-pswp-title="Markdown on F3 · 0.1.8" data-pswp-caption="Headings, lists, tables and code blocks instead of raw markup - rendered, scrollable, read-only."
+               target="_blank" rel="noopener"
+               aria-label="Markdown on F3 (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/markdown-viewer-light-640.webp" width="640" height="442"
+                   alt="The Markdown viewer window showing a rendered README: headings, a table of file paths and a fenced code block." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/unicode-long-paths-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Unicode and long paths · 0.1.8" data-pswp-caption="Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit."
+               target="_blank" rel="noopener"
+               aria-label="Unicode and long paths (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/unicode-long-paths-light-640.webp" width="640" height="427"
+                   alt="A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/archive/0.1.8/thumbnails-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Thumbnails without the wait · 0.1.8" data-pswp-caption="A folder of photographs fills in at once, and pictures taken sideways are shown the right way up."
+               target="_blank" rel="noopener"
+               aria-label="Thumbnails without the wait (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/archive/0.1.8/thumbnails-light-640.webp" width="640" height="427"
+                   alt="A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation." loading="lazy" decoding="async">
+            </a>
+            <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/command-shell-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="The shell you choose · 0.1.8" data-pswp-caption="Command Prompt, PowerShell 7, Windows Terminal, Git Bash or any program of your own - on one key."
+               target="_blank" rel="noopener"
+               aria-label="The shell you choose (0.1.8) - view full size">
+              <img class="shot-img" src="/assets/gallery/command-shell-light-640.webp" width="640" height="427"
+                   alt="The Configuration dialog open on its Command Shell page, listing the shells that can be opened with the Command Shell key." loading="lazy" decoding="async">
+            </a>
+          </div>
+        </details>
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.8">Full release notes on GitHub ↗</a></p>
       </article>
       <article class="release" id="v0.1.7">
@@ -403,6 +579,14 @@
         <p class="release-notes"><a href="https://github.com/tandemcommander/tandemcommander/releases/tag/v0.1.0">Full release notes on GitHub ↗</a></p>
       </article>
     </div>
+    <span class="visually-hidden" data-gallery-strings
+      data-close-title="Close enlarged view"
+      data-prev-title="Previous picture"
+      data-next-title="Next picture"
+      data-zoom-title="Zoom"
+      data-fullscreen-title="Full screen"
+      data-error-msg="The picture could not be loaded."></span>
+
     <p class="release-get"><a href="/#download" class="btn btn--primary">Get version 0.2.0</a></p>
   </div>
 </section>
@@ -419,8 +603,8 @@
       </div>
       <div class="footer-col">
         <p class="footer-heading">Program</p>
-        <a href="/#gallery" class="footer-link">Gallery</a>
         <a href="/#new" class="footer-link">What&#39;s new</a>
+        <a href="/#gallery" class="footer-link">Gallery</a>
         <a href="/#project" class="footer-link">Project</a>
         <a href="/#download" class="footer-link">Download</a>
         <a href="/releases/" class="footer-link">Release history</a>

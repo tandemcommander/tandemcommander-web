@@ -9,12 +9,19 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 import sharp from "sharp";
+
+const require = createRequire(import.meta.url);
+const content = require("../../lib/content.js");
 
 const REPO_ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const SRC = path.join(REPO_ROOT, "src");
 const GALLERY_DIR = path.join(SRC, "assets", "gallery");
 const CAPTURES = path.join(REPO_ROOT, "content", "gallery", "captures.json");
+// Pictures replaced by a newer version's capture (spec 012): kept per version
+// for the release history page.
+const ARCHIVE = path.join(REPO_ROOT, "content", "gallery", "archive.json");
 
 const CARD_WIDTH = 640;
 const CARD_QUALITY = 82;
@@ -36,9 +43,21 @@ function writeCaptures(captures) {
   fs.writeFileSync(CAPTURES, JSON.stringify(ordered, null, 2) + "\n");
 }
 
+function writeArchive(archive) {
+  const ordered = {};
+  for (const version of Object.keys(archive).sort(content.compareVersions)) {
+    ordered[version] = {};
+    for (const key of Object.keys(archive[version]).sort()) ordered[version][key] = archive[version][key];
+  }
+  fs.writeFileSync(ARCHIVE, JSON.stringify(ordered, null, 2) + "\n");
+}
+
 export async function postprocess({ outDir, result, scenes }) {
   fs.mkdirSync(GALLERY_DIR, { recursive: true });
   const captures = readJson(CAPTURES, {});
+  const archive = readJson(ARCHIVE, {});
+  const catalog = new Map(scenes.map((s) => [s.id, s]));
+  let archived = false;
   const problems = [];
   const written = [];
 
@@ -50,6 +69,18 @@ export async function postprocess({ outDir, result, scenes }) {
       problems.push(`${key}: the guest reported ${scene.file} but it is not there`);
       continue;
     }
+    // The picture this capture replaces keeps its place in the history of the
+    // version it showed (archive/<old version>/) before it is overwritten.
+    const plan = content.archivePlan(captures[key], key, catalog.get(scene.id), result.app.version);
+    if (plan) {
+      for (const move of plan.moves) {
+        fs.mkdirSync(path.dirname(path.join(SRC, move.to)), { recursive: true });
+        fs.copyFileSync(path.join(SRC, move.from), path.join(SRC, move.to));
+      }
+      (archive[plan.version] = archive[plan.version] || {})[key] = plan.entry;
+      archived = true;
+    }
+
     const base = `${scene.id}-${scene.theme}`;
     const fullRel = path.posix.join("assets", "gallery", `${base}.webp`);
     const cardRel = path.posix.join("assets", "gallery", `${base}-640.webp`);
@@ -97,6 +128,7 @@ export async function postprocess({ outDir, result, scenes }) {
   }
 
   writeCaptures(captures);
+  if (archived) writeArchive(archive);
   writeContactSheet(outDir, captures, written);
   return { written, problems };
 }

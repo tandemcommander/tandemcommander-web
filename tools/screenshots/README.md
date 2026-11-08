@@ -120,4 +120,7 @@ you staged - and its last step is always the personal-data review.
 - `src/assets/screenshot-light.png` and `screenshot-dark.png` are regenerated from the
   `main-window` and `dark-theme` scenes. **These two addresses are permanent** - software
   catalogues fetch the first one through `/pad.xml`.
-- Commit the images together with `captures.json` and the regenerated `public/`.
+- A picture replaced by a capture of a newer version is not lost: it moves to
+  `src/assets/gallery/archive/<old version>/` and into `content/gallery/archive.json`, and the
+  release history page shows it under that version (spec 012).
+- Commit the images together with `captures.json`, `archive.json` and the regenerated `public/`.

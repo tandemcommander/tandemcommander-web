@@ -84,14 +84,28 @@
     if (mq.addEventListener) { mq.addEventListener('change', onChange); } else { mq.addListener(onChange); }
   }
 
-  /* ---- Gallery viewer (spec 007) ----
-     PhotoSwipe, self-hosted under js/vendor/photoswipe (MIT). It is loaded as
-     a module only when the page actually has a gallery, and only by browsers
-     that support modules: without it every card is still a plain link to the
-     full-size picture, so the gallery keeps working.
-
-     Replaces the hand-written lightbox of spec 002; that page section is gone. */
-  if (document.querySelector('[data-gallery]')) {
-    import('/js/gallery.js').catch(function () { /* the links still work */ });
+  /* ---- Picture viewer (specs 007 and 012) ----
+     PhotoSwipe, self-hosted under js/vendor/photoswipe (MIT), for the gallery
+     and the "What's new" pictures. It is loaded as a module only when the page
+     has such pictures. Every enlargeable picture opens in the viewer, never on
+     its own: a click that comes before the module is ready is held here and
+     replayed by gallery.js once the viewer exists. Only if the module cannot
+     load at all (or without scripting) do the links open the full-size file.
+     The module URL carries a content hash (data-gallery-module), so a browser
+     never pairs a new page with a cached old viewer. */
+  var viewerScope = '[data-gallery], [data-showcase], [data-release-shots]';
+  var moduleUrl = (document.currentScript && document.currentScript.getAttribute('data-gallery-module')) || '/js/gallery.js';
+  if (document.querySelector(viewerScope)) {
+    document.addEventListener('click', function (event) {
+      if (window.tcViewerReady || event.defaultPrevented || event.button !== 0 ||
+          event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var link = event.target.closest && event.target.closest('a[data-pswp-width]');
+      if (!link || !link.closest(viewerScope)) return;
+      event.preventDefault();
+      window.tcViewerPending = link;
+    });
+    import(moduleUrl).catch(function () {
+      window.tcViewerReady = true; /* no viewer: from now on the links do their plain job */
+    });
   }
 })();

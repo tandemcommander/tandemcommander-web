@@ -505,41 +505,8 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
 }
 
 /* ==========================================================================
-   Cards (What it is / What's new)
+   What's new (spec 012: the main release, as a showcase)
    ========================================================================== */
-.card-grid { display: grid; gap: 22px; }
-.card-grid--features { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
-.card-grid--news { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); } /* six cards: 3 × 2 on desktop */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 28px 26px;
-  box-shadow: var(--shadow-sm);
-}
-.card--accent { border-top: 2px solid var(--brand-solid); }
-.card--tight { padding: 26px 24px; }
-.card-num {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--fg-3);
-  margin: 0 0 14px;
-}
-.card-num--brand { color: var(--brand); }
-.card-title {
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -.01em;
-  color: var(--fg);
-  margin: 0 0 10px;
-}
-.card-title--sm { font-size: 18px; letter-spacing: 0; margin: 0 0 8px; }
-.card-text { font-size: 15.5px; color: var(--fg-2); margin: 0; }
-.card-text--sm { font-size: 15px; }
-
-/* What's new — generated from content/releases (spec 007) */
 .whats-new-current {
   border-left: 2px solid var(--brand-solid);
   padding: 2px 0 2px 18px;
@@ -555,6 +522,70 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
   margin: 0 0 6px;
 }
 .whats-new-summary { font-size: 17px; color: var(--fg); margin: 0; }
+
+/* What's new showcase (spec 012, contracts/showcase-ui.md §3): one panel per
+   highlight of the main release - title and text on the left, the picture on
+   the right. The two columns and their gap are the gallery's, so the picture
+   is exactly the size of a gallery picture (same markup, .gallery-shots). */
+.showcase { display: grid; gap: 26px; margin-top: 44px; }
+.showcase-block {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.showcase-text { padding: 30px 8px 30px 32px; }
+.showcase-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.25;
+  color: var(--fg);
+  margin: 0 0 12px;
+}
+.showcase-body { font-size: 16px; color: var(--fg-2); margin: 0; }
+/* the picture half of the panel is the gallery link itself: same padding and
+   inner width as a gallery picture, its frame merged into the panel */
+.showcase-block .gallery-shots { align-self: stretch; }
+.showcase-block .gallery-link {
+  height: 100%;
+  border: 0;
+  border-left: 1px solid var(--line);
+  border-radius: 0 13px 13px 0;
+  box-shadow: none;
+}
+.showcase-more { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 34px; }
+.showcase-more-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0 0 20px;
+}
+.showcase-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 22px 40px;
+}
+.showcase-item-title { display: block; font-size: 16.5px; color: var(--fg); margin: 0 0 4px; }
+.showcase-item-text { display: block; font-size: 15px; color: var(--fg-2); }
+.showcase-history { margin-top: 44px; }
+@media (max-width: 859.98px) {
+  .showcase { margin-top: 32px; }
+  .showcase-block { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .showcase-text { padding: 22px 20px 16px; }
+  .showcase-title { font-size: 20px; }
+  .showcase-block .gallery-link { border-left: 0; border-top: 1px solid var(--line); border-radius: 0 0 13px 13px; }
+}
 .version-chip {
   display: inline-block;
   font-family: 'IBM Plex Mono', monospace;
@@ -566,7 +597,6 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
   padding: 2px 9px;
   margin: 0 0 12px;
 }
-.card--current .version-chip { color: #FFFFFF; background: var(--brand-solid); border-color: var(--brand-solid); }
 .card-link { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600; }
 
 /* Release history page (spec 007, US5) */
@@ -605,6 +635,40 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
 .release-highlight-title { display: block; color: var(--fg); font-weight: 700; }
 .card-link--inline { margin: 4px 0 0; }
 .release-notes { font-size: 14px; margin: 0; }
+/* Screenshots taken with a release (spec 012, US4): folded by default, so
+   their lazy images load only when opened; every picture opens in PhotoSwipe. */
+.release-shots { margin: 0 0 14px; }
+.release-shots-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--brand);
+  cursor: pointer;
+  list-style: none;
+}
+.release-shots-toggle::-webkit-details-marker { display: none; }
+.release-shots-toggle::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+.release-shots[open] > .release-shots-toggle::before { transform: rotate(45deg); }
+.release-shots-toggle:focus-visible { outline: 2px solid var(--brand-solid); outline-offset: 3px; border-radius: 4px; }
+.release-shots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.release-shot.gallery-link { padding: 6px; box-shadow: var(--shadow-sm); }
+@media (prefers-reduced-motion: no-preference) {
+  .release-shots-toggle::before { transition: transform .15s ease; }
+}
 .release-get { margin: 34px 0 0; text-align: center; }
 @media (max-width: 859.98px) {
   .section--page { padding-top: 40px; }

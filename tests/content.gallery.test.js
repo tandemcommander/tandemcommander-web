@@ -55,7 +55,7 @@ function capturesFor(scenes) {
 }
 
 // Writes scenes + captures + the image files a valid catalog needs.
-function make({ scenes, captures = capturesFor(scenes), skipFiles = [], noCaptures = false }) {
+function make({ scenes, captures = capturesFor(scenes), skipFiles = [], noCaptures = false, archive }) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tc-gallery-"));
   fs.mkdirSync(path.join(dir, "gallery"), { recursive: true });
   fs.writeFileSync(path.join(dir, "gallery", "scenes.json"), JSON.stringify(scenes, null, 2));
@@ -68,6 +68,19 @@ function make({ scenes, captures = capturesFor(scenes), skipFiles = [], noCaptur
         const rel = capture.files[key];
         if (skipFiles.includes(rel)) continue;
         fs.writeFileSync(path.join(srcDir, rel), "x");
+      }
+    }
+  }
+  if (archive) {
+    fs.writeFileSync(path.join(dir, "gallery", "archive.json"), JSON.stringify(archive, null, 2));
+    for (const entries of Object.values(archive)) {
+      for (const entry of Object.values(entries)) {
+        for (const key of ["full", "card"]) {
+          const rel = entry.files && entry.files[key];
+          if (!rel || skipFiles.includes(rel)) continue;
+          fs.mkdirSync(path.dirname(path.join(srcDir, rel)), { recursive: true });
+          fs.writeFileSync(path.join(srcDir, rel), "x");
+        }
       }
     }
   }
@@ -181,4 +194,68 @@ test("the repository's own catalog validates (once it exists)", () => {
   } finally {
     if (saved !== undefined) process.env.TC_CONTENT_DIR = saved;
   }
+});
+
+
+// The picture archive and the pictures of one release
+// (specs/012-whats-new-showcase/data-model.md §7, rules A1-A4).
+const archived = (id, theme, version) => ({
+  appVersion: version, appBuild: 190, capturedAt: "2026-09-01", environment: "sandbox", dpi: 96, width: 1200, height: 800,
+  files: { full: `assets/gallery/archive/${version}/${id}-${theme}.webp`, card: `assets/gallery/archive/${version}/${id}-${theme}-640.webp`, cardWidth: 640, cardHeight: 427 },
+  bytes: { full: 1, card: 1 },
+  title: both(`Old ${id}`), caption: both(`Old caption ${id}.`), alt: both(`Old alt ${id}.`),
+});
+
+test("A1-A4: archive entries are checked like captures, with their own texts", () => {
+  const scenes = catalog();
+  const ok = { "0.1.7": { "main-window/light": archived("main-window", "light", "0.1.7") } };
+  assert.doesNotThrow(() => load({ scenes, archive: ok }));
+  assert.throws(() => load({ scenes, archive: { "v1": {} } }), /gallery: archive v1: "v1" is not a version/);
+  assert.throws(() => load({ scenes, archive: { "0.1.7": { "main-window": archived("main-window", "light", "0.1.7") } } }),
+    /archive 0\.1\.7: main-window: key must be <scene>\/<light\|dark>/);
+  assert.throws(() => load({ scenes, archive: { "0.1.6": { "main-window/light": archived("main-window", "light", "0.1.7") } } }),
+    /main-window\/light: appVersion 0\.1\.7 differs from 0\.1\.6/);
+  const noText = archived("main-window", "light", "0.1.7");
+  delete noText.caption.cs;
+  assert.throws(() => load({ scenes, archive: { "0.1.7": { "main-window/light": noText } } }), /main-window\/light\.caption\.cs: missing translation/);
+  assert.throws(() => load({ scenes, archive: ok, skipFiles: ["assets/gallery/archive/0.1.7/main-window-light-640.webp"] }),
+    /image file missing: src\/assets\/gallery\/archive\/0\.1\.7\/main-window-light-640\.webp/);
+  // the current picture of a version cannot also be archived for it
+  assert.throws(() => load({ scenes, archive: { "0.1.8": { "main-window/light": archived("main-window", "light", "0.1.8") } } }),
+    /is also the current picture/);
+});
+
+test("release pictures: archived and current ones of that version, in catalog order", () => {
+  const scenes = catalog();
+  const archive = { "0.1.7": {
+    "thumbnails/light": archived("thumbnails", "light", "0.1.7"),
+    "main-window/light": archived("main-window", "light", "0.1.7"),
+  } };
+  const g = load({ scenes, archive });
+  const old = content.releaseShots(g, "0.1.7");
+  assert.deepEqual(old.map((s) => s.key), ["main-window/light", "thumbnails/light"]);
+  assert.equal(old[0].full, "/assets/gallery/archive/0.1.7/main-window-light.webp");
+  assert.deepEqual(old[0].title, both("Old main-window"));
+  const current = content.releaseShots(g, "0.1.8"); // every fixture capture is 0.1.8
+  assert.equal(current.length, 9);
+  assert.equal(current[0].key, "main-window/light");
+  assert.deepEqual(current[0].title, both("Title main-window"));
+  assert.deepEqual(content.releaseShots(g, "0.1.9"), []);
+  assert.deepEqual(content.releaseShots(load({ scenes, noCaptures: true }), "0.1.8"), []);
+});
+
+test("a capture of a newer version archives the picture it replaces", () => {
+  const scene = { id: "main-window", title: both("T"), caption: both("C."), alt: both("A.") };
+  const capture = { appVersion: "0.1.8", width: 1200, height: 800,
+    files: { full: "assets/gallery/main-window-light.webp", card: "assets/gallery/main-window-light-640.webp", cardWidth: 640, cardHeight: 427 } };
+  const plan = content.archivePlan(capture, "main-window/light", scene, "0.1.9");
+  assert.equal(plan.version, "0.1.8");
+  assert.deepEqual(plan.moves, [
+    { from: "assets/gallery/main-window-light.webp", to: "assets/gallery/archive/0.1.8/main-window-light.webp" },
+    { from: "assets/gallery/main-window-light-640.webp", to: "assets/gallery/archive/0.1.8/main-window-light-640.webp" },
+  ]);
+  assert.equal(plan.entry.files.full, "assets/gallery/archive/0.1.8/main-window-light.webp");
+  assert.deepEqual(plan.entry.title, both("T"));
+  assert.equal(content.archivePlan(capture, "main-window/light", scene, "0.1.8"), null); // same version: overwrite
+  assert.equal(content.archivePlan(undefined, "main-window/light", scene, "0.1.9"), null); // first capture
 });

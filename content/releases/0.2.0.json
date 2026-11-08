@@ -15,7 +15,7 @@
         "cs": "Rychlé hledání kdekoli v názvu"
       },
       "text": {
-        "en": "Typing `chat` finds \"2024_chatbot\": the panel shows only the matches, lightly tinted, with \"Search: chat (3 of 120)\" in its directory line. Commands act only on what is shown.",
+        "en": "Typing `chat` finds \"2024_chatbot\": the panel shows only the matches, lightly tinted, with \"Search: chat (3 of 12)\" in its directory line. Commands act only on what is shown.",
         "cs": "Napíšete `chat` a najde se i „2024_chatbot“: panel ukáže jen shody, jemně podbarvený, a v řádku s cestou hledaný text a počet shod. Příkazy pracují jen s tím, co je vidět."
       },
       "scene": "quick-search"

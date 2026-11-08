@@ -1,5 +1,8 @@
 # Contract: Pages, URLs and UI behaviour
 
+> **Superseded in part (2026-11-08):** the home page's "What it is" section and the six-card
+> "What's new" are replaced by [specs/012-whats-new-showcase/contracts/showcase-ui.md](../../012-whats-new-showcase/contracts/showcase-ui.md).
+
 **Decisions**: [research.md R4, R11, R12](../research.md)
 
 ## URLs (permanent once published)

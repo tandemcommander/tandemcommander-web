@@ -1,5 +1,5 @@
-// winget commands and the texts that depend on the availability mark
-// (specs/010-winget-install/data-model.md §1–§2).
+// winget commands and where they may be written
+// (specs/010-winget-install/data-model.md §1–§2; card 06 went with spec 012).
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
 
@@ -37,18 +37,5 @@ for (const { code } of LANGUAGES) {
     }
     const hint = catalog(code).download.wingetHint;
     assert.equal(hint.split("`{command}`").length, 2, "download.wingetHint");
-  });
-
-  test(`${code}: card 06 has a closing sentence for both states of the mark`, () => {
-    const { card6Text, card6Install, card6InstallWinget } = catalog(code).features;
-    for (const text of [card6Text, card6Install, card6InstallWinget]) {
-      assert.ok(typeof text === "string" && text.trim().length > 0);
-    }
-    assert.doesNotMatch(card6Text, /winget/);
-    assert.doesNotMatch(card6Install, /winget/);
-    assert.match(card6InstallWinget, /winget/);
-    for (const [key, value] of leaves(catalog(code).features, "features")) {
-      assert.doesNotMatch(value, /on its way|na cestě/, key);
-    }
   });
 }
