@@ -92,7 +92,7 @@
     <h1 class="hero-title">Znovuzrození <br>dvoupanelové&nbsp;<span class="accent">legendy</span></h1>
     <p class="hero-lead">Dva panely, funkční klávesové zkratky a pluginy - pracovní styl, na který jsou zvyklí tisíce uživatelů. Znovuzrozené z otevřeného kódu Open Salamander, dnes plně podporuje Unicode, zvládá dlouhé cesty, drží adresáře v záložkách panelů, připojí se přes SFTP, na F3 zobrazí zdrojový kód i Markdown, ukazuje stav cloudové synchronizace - a přináší i experimentální tmavý motiv. Projekt je živý a průběžně vylepšován.</p>
     <div class="hero-cta">
-      <a href="#download" class="btn btn--primary">Stáhnout pro Windows<span class="btn-badge">v0.2.0</span></a>
+      <a href="#download" class="btn btn--primary">Stáhnout pro Windows<span class="btn-badge">v0.3.0</span></a>
       <a href="https://github.com/tandemcommander/tandemcommander" class="btn btn--secondary">Prohlédnout zdrojový kód</a>
     </div>
     <p class="hero-note">Instalátor pro Windows · Windows 11 · x64 · zdarma pod GPLv2</p>
@@ -107,26 +107,26 @@
       <p class="section-lead">Co přinesla aktuální verze - ukázané přímo v programu. Všechna dřívější vydání najdete v historii vydání.</p>
     </div>
     <div class="whats-new-current">
-      <p class="whats-new-version">Verze 0.2.0 · 25. října 2026</p>
-      <p class="whats-new-summary">Rychlé hledání najde text kdekoli v názvu a ukáže jen shody, nastavení se dá převzít z Altap i Open Salamanderu a záložky v panelech dostaly zkratky jako v prohlížeči.</p>
+      <p class="whats-new-version">Verze 0.3.0 · 8. listopadu 2026</p>
+      <p class="whats-new-summary">Záložky mají nový vzhled, ikony styl Fluent 2, aktualizace se instalují jedním kliknutím, distribuce WSL jsou mezi disky a <span class="mono">Shift+F6</span> přejmenuje přímo v panelu.</p>
     </div>
     <div class="showcase" data-showcase>
-      <article class="showcase-block" id="new-quick-search-anywhere">
+      <article class="showcase-block" id="new-rounded-tabs">
         <div class="showcase-text">
-          <h3 class="showcase-title">Rychlé hledání kdekoli v názvu</h3>
-          <p class="showcase-body">Napíšete <span class="mono">chat</span> a najde se i „2024_chatbot“: panel ukáže jen shody, jemně podbarvený, a v řádku s cestou hledaný text a počet shod. Příkazy pracují jen s tím, co je vidět.</p>
+          <h3 class="showcase-title">Nový vzhled záložek</h3>
+          <p class="showcase-body">Mají oblý vzhled a ikonu podle obsahu: disk, složka, archiv nebo plugin. Dají se přetáhnout myší a přes své menu přesunout do druhého panelu.</p>
         </div>
         <div class="gallery-shots">
   <a class="gallery-link gallery-link--any"
-     href="/assets/gallery/quick-search-light.webp"
+     href="/assets/gallery/panel-tabs-light.webp"
      data-pswp-width="1200" data-pswp-height="800"
-     data-pswp-title="Rychlé hledání ukáže jen shody" data-pswp-caption="Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
+     data-pswp-title="Záložky v panelu" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
      target="_blank" rel="noopener"
-     aria-label="Rychlé hledání kdekoli v názvu - zobrazit v plné velikosti">
+     aria-label="Nový vzhled záložek - zobrazit v plné velikosti">
     <img class="shot-img"
-         src="/assets/gallery/quick-search-light-640.webp" srcset="/assets/gallery/quick-search-light-640.webp 640w, /assets/gallery/quick-search-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         src="/assets/gallery/panel-tabs-light-640.webp" srcset="/assets/gallery/panel-tabs-light-640.webp 640w, /assets/gallery/panel-tabs-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
          width="640" height="427"
-         alt="Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod."
+         alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
          loading="lazy" decoding="async">
     <span class="shot-zoom-icon">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
@@ -137,22 +137,48 @@
   </a>
 </div>
       </article>
-      <article class="showcase-block" id="new-tab-shortcuts">
+      <article class="showcase-block" id="new-fluent-icons">
         <div class="showcase-text">
-          <h3 class="showcase-title">Zkratky záložek jako v prohlížeči</h3>
-          <p class="showcase-body">Nová stránka Záložky v Konfiguraci zapne <span class="mono">Ctrl+T</span>, <span class="mono">Ctrl+W</span> a <span class="mono">Ctrl+Page Down</span> / <span class="mono">Up</span>. Znovu otevřít zavřenou záložku vrátí posledních deset záložek zavřených v panelu.</p>
+          <h3 class="showcase-title">Ikony Fluent 2</h3>
+          <p class="showcase-body">Panely nástrojů, menu, disky i pluginy mají jednotný moderní styl ikon s tmavými variantami. Chcete původní ikony? Zvolte Classic v Konfiguraci ▸ Vzhled - bez restartu.</p>
         </div>
         <div class="gallery-shots">
   <a class="gallery-link gallery-link--any"
-     href="/assets/gallery/tabs-configuration-light.webp"
+     href="/assets/gallery/icon-style-light.webp"
      data-pswp-width="1200" data-pswp-height="800"
-     data-pswp-title="Zkratky záložek po svém" data-pswp-caption="Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
+     data-pswp-title="Ikony Fluent 2, nebo ty klasické" data-pswp-caption="Výchozí jsou ikony Fluent 2 s tmavými variantami. Zvolte zde Classic a původní ikony Salamanderu jsou zpět hned, bez restartu."
      target="_blank" rel="noopener"
-     aria-label="Zkratky záložek jako v prohlížeči - zobrazit v plné velikosti">
+     aria-label="Ikony Fluent 2 - zobrazit v plné velikosti">
     <img class="shot-img"
-         src="/assets/gallery/tabs-configuration-light-640.webp" srcset="/assets/gallery/tabs-configuration-light-640.webp 640w, /assets/gallery/tabs-configuration-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         src="/assets/gallery/icon-style-light-640.webp" srcset="/assets/gallery/icon-style-light-640.webp 640w, /assets/gallery/icon-style-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
          width="640" height="427"
-         alt="Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí."
+         alt="Dialog Konfigurace otevřený na stránce Vzhled s nastavením stylu ikon a náhledem sad ikon Fluent 2 a Classic."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+      </article>
+      <article class="showcase-block" id="new-self-update">
+        <div class="showcase-text">
+          <h3 class="showcase-title">Aktualizace jedním kliknutím</h3>
+          <p class="showcase-body">Program stáhne novou verzi, ověří kontrolní součet i podpis, nainstaluje ji a znovu se spustí. Vyberete si: jen upozornění, nabídku instalace (výchozí), nebo instalaci hned.</p>
+        </div>
+        <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/update-settings-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Aktualizace podle vás" data-pswp-caption="Když vyjde nová verze: jen upozornění, stažení s nabídkou instalace (výchozí), nebo instalace hned po stažení."
+     target="_blank" rel="noopener"
+     aria-label="Aktualizace jedním kliknutím - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/update-settings-light-640.webp" srcset="/assets/gallery/update-settings-light-640.webp 640w, /assets/gallery/update-settings-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Dialog Konfigurace otevřený na stránce Obecné s nastavením, co se stane, když vyjde nová verze."
          loading="lazy" decoding="async">
     <span class="shot-zoom-icon">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
@@ -164,85 +190,114 @@
 </div>
       </article>
       <section class="showcase-more" aria-labelledby="new-also">
-        <h3 class="showcase-more-title" id="new-also">Také ve verzi 0.2.0</h3>
+        <h3 class="showcase-more-title" id="new-also">Také ve verzi 0.3.0</h3>
         <ul class="showcase-list">
-          <li class="showcase-item" id="new-search-without-accents">
-            <strong class="showcase-item-title">Hledání bez ohledu na diakritiku</strong>
-            <span class="showcase-item-text">Diakritika se ignoruje oběma směry - <span class="mono">zlut</span> najde „žluťoučký“, <span class="mono">strasse</span> najde „Straße“. Chcete dosavadní rychlé hledání? Stačí jedna volba v Konfiguraci ▸ Panely.</span>
+          <li class="showcase-item" id="new-wsl-drives">
+            <strong class="showcase-item-title">Distribuce WSL mezi disky</strong>
+            <span class="showcase-item-text">Na počítači s WSL nabídnou <span class="mono">Alt+F1</span> / <span class="mono">Alt+F2</span> i lišta disků každou nainstalovanou linuxovou distribuci a jedna volba ji otevře. Sestavení menu WSL nespouští.</span>
           </li>
-          <li class="showcase-item" id="new-salamander-import">
-            <strong class="showcase-item-title">Nastavení ze Salamanderu</strong>
-            <span class="showcase-item-text">Volby ▸ Import nastavení ze Salamanderu převezme oblíbené cesty, FTP spojení i hesla, uživatelské menu, prohlížeče, barvy a nastavení pluginů z Altap či Open Salamanderu - po náhledu.</span>
-          </li>
-          <li class="showcase-item" id="new-safe-import">
-            <strong class="showcase-item-title">Import, který nic nemění bez ptaní</strong>
-            <span class="showcase-item-text">Nastavení starého programu se jen čte. Nic, co už máte, se bez vašeho zaškrtnutí nezmění a nejdřív se uloží záloha vašeho nastavení. Při prvním spuštění program import jednou sám nabídne.</span>
-          </li>
-          <li class="showcase-item" id="new-settings-move">
-            <strong class="showcase-item-title">Nastavení se jednou přestěhuje</strong>
-            <span class="showcase-item-text">Při prvním spuštění se nastavení zkopíruje na místo, které se už s verzí nemění; původní zůstane jako záloha. Návrat k verzi 0.1.x potom není podporován.</span>
+          <li class="showcase-item" id="new-rename-in-place">
+            <strong class="showcase-item-title">Přejmenování na místě přes Shift+F6</strong>
+            <span class="showcase-item-text"><span class="mono">Shift+F6</span> otevře editaci přímo nad názvem položky pod kurzorem, název bez přípony je označený; <span class="mono">Enter</span> přejmenuje, <span class="mono">Esc</span> zruší. <span class="mono">F2</span> dál otevírá dialog Přejmenovat.</span>
+            <a class="card-link card-link--inline"
+               href="/assets/gallery/rename-in-place-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Přejmenování přímo v panelu" data-pswp-caption="Shift+F6 otevře editaci nad názvem pod kurzorem, označený je název bez přípony. Enter přejmenuje, Esc zruší."
+               target="_blank" rel="noopener">Ukázka →</a>
           </li>
         </ul>
       </section>
     </div>
     <details class="release-shots release-shots--home">
-  <summary class="release-shots-toggle">Screenshoty této verze (7)</summary>
+  <summary class="release-shots-toggle">Screenshoty této verze (11)</summary>
   <div class="release-shots-grid" data-release-shots>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/main-window-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Dva panely, spousta záložek · 0.2.0" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+       data-pswp-title="Dva panely, spousta záložek · 0.3.0" data-pswp-caption="Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
        target="_blank" rel="noopener"
-       aria-label="Dva panely, spousta záložek (0.2.0) - zobrazit v plné velikosti">
+       aria-label="Dva panely, spousta záložek (0.3.0) - zobrazit v plné velikosti">
       <img class="shot-img" src="/assets/gallery/main-window-light-640.webp" width="640" height="427"
            alt="Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy." loading="lazy" decoding="async">
     </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/dark-theme-dark.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Tmavý motiv · 0.2.0" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+       data-pswp-title="Tmavý motiv · 0.3.0" data-pswp-caption="Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
        target="_blank" rel="noopener"
-       aria-label="Tmavý motiv (0.2.0) - zobrazit v plné velikosti">
+       aria-label="Tmavý motiv (0.3.0) - zobrazit v plné velikosti">
       <img class="shot-img" src="/assets/gallery/dark-theme-dark-640.webp" width="640" height="427"
            alt="Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí." loading="lazy" decoding="async">
     </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/icon-style-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Ikony Fluent 2, nebo ty klasické · 0.3.0" data-pswp-caption="Výchozí jsou ikony Fluent 2 s tmavými variantami. Zvolte zde Classic a původní ikony Salamanderu jsou zpět hned, bez restartu."
+       target="_blank" rel="noopener"
+       aria-label="Ikony Fluent 2, nebo ty klasické (0.3.0) - zobrazit v plné velikosti">
+      <img class="shot-img" src="/assets/gallery/icon-style-light-640.webp" width="640" height="427"
+           alt="Dialog Konfigurace otevřený na stránce Vzhled s nastavením stylu ikon a náhledem sad ikon Fluent 2 a Classic." loading="lazy" decoding="async">
+    </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/panel-tabs-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Záložky v panelu · 0.2.0" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+       data-pswp-title="Záložky v panelu · 0.3.0" data-pswp-caption="Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
        target="_blank" rel="noopener"
-       aria-label="Záložky v panelu (0.2.0) - zobrazit v plné velikosti">
+       aria-label="Záložky v panelu (0.3.0) - zobrazit v plné velikosti">
       <img class="shot-img" src="/assets/gallery/panel-tabs-light-640.webp" width="640" height="427"
            alt="Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření." loading="lazy" decoding="async">
     </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/quick-search-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Rychlé hledání ukáže jen shody · 0.2.0" data-pswp-caption="Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
+       data-pswp-title="Rychlé hledání ukáže jen shody · 0.3.0" data-pswp-caption="Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
        target="_blank" rel="noopener"
-       aria-label="Rychlé hledání ukáže jen shody (0.2.0) - zobrazit v plné velikosti">
+       aria-label="Rychlé hledání ukáže jen shody (0.3.0) - zobrazit v plné velikosti">
       <img class="shot-img" src="/assets/gallery/quick-search-light-640.webp" width="640" height="427"
            alt="Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod." loading="lazy" decoding="async">
     </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/update-settings-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Aktualizace podle vás · 0.3.0" data-pswp-caption="Když vyjde nová verze: jen upozornění, stažení s nabídkou instalace (výchozí), nebo instalace hned po stažení."
+       target="_blank" rel="noopener"
+       aria-label="Aktualizace podle vás (0.3.0) - zobrazit v plné velikosti">
+      <img class="shot-img" src="/assets/gallery/update-settings-light-640.webp" width="640" height="427"
+           alt="Dialog Konfigurace otevřený na stránce Obecné s nastavením, co se stane, když vyjde nová verze." loading="lazy" decoding="async">
+    </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/tabs-configuration-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Zkratky záložek po svém · 0.2.0" data-pswp-caption="Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
+       data-pswp-title="Zkratky záložek po svém · 0.3.0" data-pswp-caption="Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
        target="_blank" rel="noopener"
-       aria-label="Zkratky záložek po svém (0.2.0) - zobrazit v plné velikosti">
+       aria-label="Zkratky záložek po svém (0.3.0) - zobrazit v plné velikosti">
       <img class="shot-img" src="/assets/gallery/tabs-configuration-light-640.webp" width="640" height="427"
            alt="Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí." loading="lazy" decoding="async">
     </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/rename-in-place-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Přejmenování přímo v panelu · 0.3.0" data-pswp-caption="Shift+F6 otevře editaci nad názvem pod kurzorem, označený je název bez přípony. Enter přejmenuje, Esc zruší."
+       target="_blank" rel="noopener"
+       aria-label="Přejmenování přímo v panelu (0.3.0) - zobrazit v plné velikosti">
+      <img class="shot-img" src="/assets/gallery/rename-in-place-light-640.webp" width="640" height="427"
+           alt="Hlavní okno s editačním polem otevřeným nad názvem souboru v levém panelu, označený je název bez přípony." loading="lazy" decoding="async">
+    </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/unicode-long-paths-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Unicode a dlouhé cesty · 0.2.0" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+       data-pswp-title="Unicode a dlouhé cesty · 0.3.0" data-pswp-caption="Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
        target="_blank" rel="noopener"
-       aria-label="Unicode a dlouhé cesty (0.2.0) - zobrazit v plné velikosti">
+       aria-label="Unicode a dlouhé cesty (0.3.0) - zobrazit v plné velikosti">
       <img class="shot-img" src="/assets/gallery/unicode-long-paths-light-640.webp" width="640" height="427"
            alt="Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků." loading="lazy" decoding="async">
     </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/thumbnails-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Náhledy bez čekání · 0.2.0" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+       data-pswp-title="Náhledy bez čekání · 0.3.0" data-pswp-caption="Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
        target="_blank" rel="noopener"
-       aria-label="Náhledy bez čekání (0.2.0) - zobrazit v plné velikosti">
+       aria-label="Náhledy bez čekání (0.3.0) - zobrazit v plné velikosti">
       <img class="shot-img" src="/assets/gallery/thumbnails-light-640.webp" width="640" height="427"
            alt="Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku." loading="lazy" decoding="async">
+    </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/command-shell-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Shell podle vaší volby · 0.3.0" data-pswp-caption="Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu."
+       target="_blank" rel="noopener"
+       aria-label="Shell podle vaší volby (0.3.0) - zobrazit v plné velikosti">
+      <img class="shot-img" src="/assets/gallery/command-shell-light-640.webp" width="640" height="427"
+           alt="Dialog Konfigurace otevřený na stránce Command Shell se seznamem shellů, které lze otevřít klávesou Command Shell." loading="lazy" decoding="async">
     </a>
   </div>
 </details>
@@ -311,6 +366,32 @@
   </a>
 </div>
 </figure>
+      <figure class="gallery-item" id="icon-style">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Ikony Fluent 2, nebo ty klasické</h3>
+    <p class="gallery-text">Výchozí jsou ikony Fluent 2 s tmavými variantami. Zvolte zde Classic a původní ikony Salamanderu jsou zpět hned, bez restartu.</p>
+  </figcaption>
+  <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/icon-style-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Ikony Fluent 2, nebo ty klasické" data-pswp-caption="Výchozí jsou ikony Fluent 2 s tmavými variantami. Zvolte zde Classic a původní ikony Salamanderu jsou zpět hned, bez restartu."
+     target="_blank" rel="noopener"
+     aria-label="Ikony Fluent 2, nebo ty klasické - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/icon-style-light-640.webp" srcset="/assets/gallery/icon-style-light-640.webp 640w, /assets/gallery/icon-style-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Dialog Konfigurace otevřený na stránce Vzhled s nastavením stylu ikon a náhledem sad ikon Fluent 2 a Classic."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+</figure>
       <figure class="gallery-item" id="panel-tabs">
   <figcaption class="gallery-caption">
     <h3 class="gallery-title">Záložky v panelu</h3>
@@ -363,6 +444,32 @@
   </a>
 </div>
 </figure>
+      <figure class="gallery-item" id="update-settings">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Aktualizace podle vás</h3>
+    <p class="gallery-text">Když vyjde nová verze: jen upozornění, stažení s nabídkou instalace (výchozí), nebo instalace hned po stažení.</p>
+  </figcaption>
+  <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/update-settings-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Aktualizace podle vás" data-pswp-caption="Když vyjde nová verze: jen upozornění, stažení s nabídkou instalace (výchozí), nebo instalace hned po stažení."
+     target="_blank" rel="noopener"
+     aria-label="Aktualizace podle vás - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/update-settings-light-640.webp" srcset="/assets/gallery/update-settings-light-640.webp 640w, /assets/gallery/update-settings-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Dialog Konfigurace otevřený na stránce Obecné s nastavením, co se stane, když vyjde nová verze."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+</figure>
       <figure class="gallery-item" id="tabs-configuration">
   <figcaption class="gallery-caption">
     <h3 class="gallery-title">Zkratky záložek po svém</h3>
@@ -379,6 +486,32 @@
          src="/assets/gallery/tabs-configuration-light-640.webp" srcset="/assets/gallery/tabs-configuration-light-640.webp 640w, /assets/gallery/tabs-configuration-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
          width="640" height="427"
          alt="Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+</figure>
+      <figure class="gallery-item" id="rename-in-place">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Přejmenování přímo v panelu</h3>
+    <p class="gallery-text">Shift+F6 otevře editaci nad názvem pod kurzorem, označený je název bez přípony. Enter přejmenuje, Esc zruší.</p>
+  </figcaption>
+  <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/rename-in-place-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Přejmenování přímo v panelu" data-pswp-caption="Shift+F6 otevře editaci nad názvem pod kurzorem, označený je název bez přípony. Enter přejmenuje, Esc zruší."
+     target="_blank" rel="noopener"
+     aria-label="Přejmenování přímo v panelu - zobrazit v plné velikosti">
+    <img class="shot-img"
+         src="/assets/gallery/rename-in-place-light-640.webp" srcset="/assets/gallery/rename-in-place-light-640.webp 640w, /assets/gallery/rename-in-place-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="Hlavní okno s editačním polem otevřeným nad názvem souboru v levém panelu, označený je název bez přípony."
          loading="lazy" decoding="async">
     <span class="shot-zoom-icon">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
@@ -538,7 +671,7 @@
     <div class="facts">
       <div class="fact">
         <span class="fact-label">Verze</span>
-        <span class="fact-value">0.2.0</span>
+        <span class="fact-value">0.3.0</span>
       </div>
       <div class="fact">
         <span class="fact-label">Platforma</span>
@@ -575,13 +708,13 @@
 <section id="download" class="section section--download">
   <div class="download-inner">
     <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="download-mark">
-    <h2 class="section-title section-title--md">Stáhněte si verzi 0.2.0</h2>
+    <h2 class="section-title section-title--md">Stáhněte si verzi 0.3.0</h2>
     <div class="installer-wrap">
       <div class="installer-card">
         <h3 class="installer-title">Instalátor</h3>
-        <p class="installer-desc">Verze 0.2.0 pro Windows 11, x64.<br>Vydáno 25. října 2026</p>
-        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.2.0/tandemcommander-0.2.0-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Stáhnout instalátor</a>
-        <p class="installer-file">tandemcommander-0.2.0-x64-setup.exe</p>
+        <p class="installer-desc">Verze 0.3.0 pro Windows 11, x64.<br>Vydáno 8. listopadu 2026</p>
+        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.3.0/tandemcommander-0.3.0-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Stáhnout instalátor</a>
+        <p class="installer-file">tandemcommander-0.3.0-x64-setup.exe</p>
       </div>
     </div>
     <div class="winget">

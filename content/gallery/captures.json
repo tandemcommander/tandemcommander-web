@@ -19,9 +19,9 @@
     }
   },
   "command-shell/light": {
-    "appVersion": "0.1.8",
-    "appBuild": 192,
-    "capturedAt": "2026-09-20",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -33,14 +33,14 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 26986,
-      "card": 19770
+      "full": 26400,
+      "card": 19928
     }
   },
   "dark-theme/dark": {
-    "appVersion": "0.2.0",
-    "appBuild": 195,
-    "capturedAt": "2026-10-25",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -52,14 +52,33 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 15340,
-      "card": 12440
+      "full": 15064,
+      "card": 13050
+    }
+  },
+  "icon-style/light": {
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/icon-style-light.webp",
+      "card": "assets/gallery/icon-style-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 30364,
+      "card": 23572
     }
   },
   "main-window/light": {
-    "appVersion": "0.2.0",
-    "appBuild": 195,
-    "capturedAt": "2026-10-25",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -71,8 +90,8 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 17758,
-      "card": 15774
+      "full": 18470,
+      "card": 16152
     }
   },
   "markdown-viewer/light": {
@@ -95,9 +114,9 @@
     }
   },
   "panel-tabs/light": {
-    "appVersion": "0.2.0",
-    "appBuild": 195,
-    "capturedAt": "2026-10-25",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -109,14 +128,14 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 18826,
-      "card": 13698
+      "full": 18722,
+      "card": 14020
     }
   },
   "quick-search/light": {
-    "appVersion": "0.2.0",
-    "appBuild": 195,
-    "capturedAt": "2026-10-25",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -128,14 +147,33 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 19300,
-      "card": 14526
+      "full": 18926,
+      "card": 14582
+    }
+  },
+  "rename-in-place/light": {
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/rename-in-place-light.webp",
+      "card": "assets/gallery/rename-in-place-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 17564,
+      "card": 16904
     }
   },
   "tabs-configuration/light": {
-    "appVersion": "0.2.0",
-    "appBuild": 195,
-    "capturedAt": "2026-10-25",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -147,14 +185,14 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 26326,
-      "card": 21222
+      "full": 25588,
+      "card": 21258
     }
   },
   "thumbnails/light": {
-    "appVersion": "0.2.0",
-    "appBuild": 195,
-    "capturedAt": "2026-10-25",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -166,14 +204,14 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 138010,
-      "card": 23192
+      "full": 138376,
+      "card": 23438
     }
   },
   "unicode-long-paths/light": {
-    "appVersion": "0.2.0",
-    "appBuild": 195,
-    "capturedAt": "2026-10-25",
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
     "environment": "sandbox",
     "dpi": 96,
     "width": 1200,
@@ -185,8 +223,27 @@
       "cardHeight": 427
     },
     "bytes": {
-      "full": 19002,
-      "card": 14724
+      "full": 18584,
+      "card": 14756
+    }
+  },
+  "update-settings/light": {
+    "appVersion": "0.3.0",
+    "appBuild": 196,
+    "capturedAt": "2026-11-08",
+    "environment": "sandbox",
+    "dpi": 96,
+    "width": 1200,
+    "height": 800,
+    "files": {
+      "full": "assets/gallery/update-settings-light.webp",
+      "card": "assets/gallery/update-settings-light-640.webp",
+      "cardWidth": 640,
+      "cardHeight": 427
+    },
+    "bytes": {
+      "full": 29854,
+      "card": 26126
     }
   }
 }

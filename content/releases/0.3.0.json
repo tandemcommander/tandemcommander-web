@@ -1,0 +1,71 @@
+{
+  "version": "0.3.0",
+  "date": "2026-11-08",
+  "build": 196,
+  "kind": "feature",
+  "summary": {
+    "en": "Panel tabs get a new look, icons the Fluent 2 style, updates install with one click, WSL distributions appear among the drives and `Shift+F6` renames right in the panel.",
+    "cs": "Záložky mají nový vzhled, ikony styl Fluent 2, aktualizace se instalují jedním kliknutím, distribuce WSL jsou mezi disky a `Shift+F6` přejmenuje přímo v panelu."
+  },
+  "highlights": [
+    {
+      "id": "rounded-tabs",
+      "title": {
+        "en": "Redesigned panel tabs",
+        "cs": "Nový vzhled záložek"
+      },
+      "text": {
+        "en": "Tabs have a rounded look and an icon for their content: drive, folder, archive or plug-in. A tab can be dragged with the mouse, and its menu can move it to the other panel.",
+        "cs": "Mají oblý vzhled a ikonu podle obsahu: disk, složka, archiv nebo plugin. Dají se přetáhnout myší a přes své menu přesunout do druhého panelu."
+      },
+      "scene": "panel-tabs"
+    },
+    {
+      "id": "fluent-icons",
+      "title": {
+        "en": "Fluent 2 icons",
+        "cs": "Ikony Fluent 2"
+      },
+      "text": {
+        "en": "Toolbars, menus, drives and plug-ins share one modern icon style with dark variants. Prefer the original icons? Choose Classic in Configuration ▸ Appearance - no restart needed.",
+        "cs": "Panely nástrojů, menu, disky i pluginy mají jednotný moderní styl ikon s tmavými variantami. Chcete původní ikony? Zvolte Classic v Konfiguraci ▸ Vzhled - bez restartu."
+      },
+      "scene": "icon-style"
+    },
+    {
+      "id": "self-update",
+      "title": {
+        "en": "Updates with one click",
+        "cs": "Aktualizace jedním kliknutím"
+      },
+      "text": {
+        "en": "The program downloads the new version, checks its checksum and signature, installs it and starts again. You choose: only a notice, an offer to install (the default), or installation at once.",
+        "cs": "Program stáhne novou verzi, ověří kontrolní součet i podpis, nainstaluje ji a znovu se spustí. Vyberete si: jen upozornění, nabídku instalace (výchozí), nebo instalaci hned."
+      },
+      "scene": "update-settings"
+    },
+    {
+      "id": "wsl-drives",
+      "title": {
+        "en": "WSL distributions as drives",
+        "cs": "Distribuce WSL mezi disky"
+      },
+      "text": {
+        "en": "On a computer with WSL, `Alt+F1` / `Alt+F2` and the drive bar list every installed Linux distribution, and one choice opens it. Building the menu does not start WSL.",
+        "cs": "Na počítači s WSL nabídnou `Alt+F1` / `Alt+F2` i lišta disků každou nainstalovanou linuxovou distribuci a jedna volba ji otevře. Sestavení menu WSL nespouští."
+      }
+    },
+    {
+      "id": "rename-in-place",
+      "title": {
+        "en": "Rename in place with Shift+F6",
+        "cs": "Přejmenování na místě přes Shift+F6"
+      },
+      "text": {
+        "en": "`Shift+F6` opens an edit box right over the focused name with the name selected, the extension not; `Enter` renames, `Esc` cancels. `F2` still opens the Rename dialog.",
+        "cs": "`Shift+F6` otevře editaci přímo nad názvem položky pod kurzorem, název bez přípony je označený; `Enter` přejmenuje, `Esc` zruší. `F2` dál otevírá dialog Přejmenovat."
+      },
+      "scene": "rename-in-place"
+    }
+  ]
+}

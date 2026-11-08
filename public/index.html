@@ -107,7 +107,7 @@ if(target){location.replace(target+location.search+location.hash);}
     <h1 class="hero-title">The two-pane <br>legend&nbsp;<span class="accent">reborn</span></h1>
     <p class="hero-lead">Two panels, function keys along the bottom, a plugin for everything - the working style power users build their habits on, running natively on Windows 11. Born from the open source Open Salamander codebase and written in C++, it now speaks full Unicode, handles long paths, keeps directories open in panel tabs, connects over SFTP, shows source code and Markdown on F3, mirrors your cloud sync status - and ships in a dark theme as well as the light one.</p>
     <div class="hero-cta">
-      <a href="#download" class="btn btn--primary">Download for Windows<span class="btn-badge">v0.2.0</span></a>
+      <a href="#download" class="btn btn--primary">Download for Windows<span class="btn-badge">v0.3.0</span></a>
       <a href="https://github.com/tandemcommander/tandemcommander" class="btn btn--secondary">Browse the source</a>
     </div>
     <p class="hero-note">Windows installer · Windows 11 · x64 · free under GPLv2</p>
@@ -122,26 +122,26 @@ if(target){location.replace(target+location.search+location.hash);}
       <p class="section-lead">What the current version brought - shown in the program. Every earlier release is in the release history.</p>
     </div>
     <div class="whats-new-current">
-      <p class="whats-new-version">Version 0.2.0 · October 25, 2026</p>
-      <p class="whats-new-summary">Quick search finds text anywhere in a name and shows only the matches, settings come over from Altap and Open Salamander, and panel tabs get browser-like shortcuts.</p>
+      <p class="whats-new-version">Version 0.3.0 · November 8, 2026</p>
+      <p class="whats-new-summary">Panel tabs get a new look, icons the Fluent 2 style, updates install with one click, WSL distributions appear among the drives and <span class="mono">Shift+F6</span> renames right in the panel.</p>
     </div>
     <div class="showcase" data-showcase>
-      <article class="showcase-block" id="new-quick-search-anywhere">
+      <article class="showcase-block" id="new-rounded-tabs">
         <div class="showcase-text">
-          <h3 class="showcase-title">Quick search finds any part of a name</h3>
-          <p class="showcase-body">Typing <span class="mono">chat</span> finds &quot;2024_chatbot&quot;: the panel shows only the matches, lightly tinted, with &quot;Search: chat (3 of 12)&quot; in its directory line. Commands act only on what is shown.</p>
+          <h3 class="showcase-title">Redesigned panel tabs</h3>
+          <p class="showcase-body">Tabs have a rounded look and an icon for their content: drive, folder, archive or plug-in. A tab can be dragged with the mouse, and its menu can move it to the other panel.</p>
         </div>
         <div class="gallery-shots">
   <a class="gallery-link gallery-link--any"
-     href="/assets/gallery/quick-search-light.webp"
+     href="/assets/gallery/panel-tabs-light.webp"
      data-pswp-width="1200" data-pswp-height="800"
-     data-pswp-title="Quick search shows only the matches" data-pswp-caption="Type part of a name - here &quot;chat&quot; - and the panel keeps only the matching items, lightly tinted, with the number of matches in its directory line."
+     data-pswp-title="Tabs in a panel" data-pswp-caption="Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history."
      target="_blank" rel="noopener"
-     aria-label="Quick search finds any part of a name - view full size">
+     aria-label="Redesigned panel tabs - view full size">
     <img class="shot-img"
-         src="/assets/gallery/quick-search-light-640.webp" srcset="/assets/gallery/quick-search-light-640.webp 640w, /assets/gallery/quick-search-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         src="/assets/gallery/panel-tabs-light-640.webp" srcset="/assets/gallery/panel-tabs-light-640.webp 640w, /assets/gallery/panel-tabs-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
          width="640" height="427"
-         alt="The main window with the left panel filtered by quick search: only the items whose names contain &quot;chat&quot; are listed, the panel is lightly tinted and its directory line shows the search text and the number of matches."
+         alt="The main window with several directory tabs open above the left panel, the active tab carrying a close button."
          loading="lazy" decoding="async">
     <span class="shot-zoom-icon">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
@@ -152,22 +152,48 @@ if(target){location.replace(target+location.search+location.hash);}
   </a>
 </div>
       </article>
-      <article class="showcase-block" id="new-tab-shortcuts">
+      <article class="showcase-block" id="new-fluent-icons">
         <div class="showcase-text">
-          <h3 class="showcase-title">Browser-like tab shortcuts</h3>
-          <p class="showcase-body">A new Tabs page in Configuration turns on <span class="mono">Ctrl+T</span>, <span class="mono">Ctrl+W</span> and <span class="mono">Ctrl+Page Down</span> / <span class="mono">Up</span>. Reopen Closed Tab brings back the last ten tabs closed in a panel.</p>
+          <h3 class="showcase-title">Fluent 2 icons</h3>
+          <p class="showcase-body">Toolbars, menus, drives and plug-ins share one modern icon style with dark variants. Prefer the original icons? Choose Classic in Configuration ▸ Appearance - no restart needed.</p>
         </div>
         <div class="gallery-shots">
   <a class="gallery-link gallery-link--any"
-     href="/assets/gallery/tabs-configuration-light.webp"
+     href="/assets/gallery/icon-style-light.webp"
      data-pswp-width="1200" data-pswp-height="800"
-     data-pswp-title="Tab shortcuts your way" data-pswp-caption="The Tabs page of Configuration: switch on browser-like shortcuts - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - and see every tab shortcut at a glance."
+     data-pswp-title="Fluent 2 icons, or the classic ones" data-pswp-caption="Fluent 2 icons with dark variants are the default. Choose Classic here and the original Salamander icons are back at once, no restart."
      target="_blank" rel="noopener"
-     aria-label="Browser-like tab shortcuts - view full size">
+     aria-label="Fluent 2 icons - view full size">
     <img class="shot-img"
-         src="/assets/gallery/tabs-configuration-light-640.webp" srcset="/assets/gallery/tabs-configuration-light-640.webp 640w, /assets/gallery/tabs-configuration-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         src="/assets/gallery/icon-style-light-640.webp" srcset="/assets/gallery/icon-style-light-640.webp 640w, /assets/gallery/icon-style-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
          width="640" height="427"
-         alt="The Configuration dialog open on its Tabs page, with tabs shown in panels, browser-like tab shortcuts switched on and the list of tab shortcuts that follows them."
+         alt="The Configuration dialog open on its Appearance page, with the Icon style setting and a preview of the Fluent 2 and Classic icon sets."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+      </article>
+      <article class="showcase-block" id="new-self-update">
+        <div class="showcase-text">
+          <h3 class="showcase-title">Updates with one click</h3>
+          <p class="showcase-body">The program downloads the new version, checks its checksum and signature, installs it and starts again. You choose: only a notice, an offer to install (the default), or installation at once.</p>
+        </div>
+        <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/update-settings-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Updates the way you want" data-pswp-caption="When a new version is found: only a notice, a download offered for installation (the default), or installation as soon as it is downloaded."
+     target="_blank" rel="noopener"
+     aria-label="Updates with one click - view full size">
+    <img class="shot-img"
+         src="/assets/gallery/update-settings-light-640.webp" srcset="/assets/gallery/update-settings-light-640.webp 640w, /assets/gallery/update-settings-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="The Configuration dialog open on its General page, showing the setting for what happens when a new version is found."
          loading="lazy" decoding="async">
     <span class="shot-zoom-icon">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
@@ -179,85 +205,114 @@ if(target){location.replace(target+location.search+location.hash);}
 </div>
       </article>
       <section class="showcase-more" aria-labelledby="new-also">
-        <h3 class="showcase-more-title" id="new-also">Also in 0.2.0</h3>
+        <h3 class="showcase-more-title" id="new-also">Also in 0.3.0</h3>
         <ul class="showcase-list">
-          <li class="showcase-item" id="new-search-without-accents">
-            <strong class="showcase-item-title">Search ignores accents</strong>
-            <span class="showcase-item-text">Accents are ignored both ways - <span class="mono">zlut</span> finds &quot;žluťoučký&quot;, <span class="mono">strasse</span> finds &quot;Straße&quot;. Prefer the previous quick search? It is one option in Configuration ▸ Panels.</span>
+          <li class="showcase-item" id="new-wsl-drives">
+            <strong class="showcase-item-title">WSL distributions as drives</strong>
+            <span class="showcase-item-text">On a computer with WSL, <span class="mono">Alt+F1</span> / <span class="mono">Alt+F2</span> and the drive bar list every installed Linux distribution, and one choice opens it. Building the menu does not start WSL.</span>
           </li>
-          <li class="showcase-item" id="new-salamander-import">
-            <strong class="showcase-item-title">Settings from Salamander</strong>
-            <span class="showcase-item-text">Options ▸ Import Settings from Salamander brings hot paths, FTP connections and passwords, the user menu, viewers, colours and plugin settings from Altap or Open Salamander, after a preview.</span>
-          </li>
-          <li class="showcase-item" id="new-safe-import">
-            <strong class="showcase-item-title">Import that changes nothing unasked</strong>
-            <span class="showcase-item-text">The old program's settings are only read. Nothing you already have changes without your tick, and a backup of your settings is saved first. The import is also offered once at the first start.</span>
-          </li>
-          <li class="showcase-item" id="new-settings-move">
-            <strong class="showcase-item-title">Settings move once</strong>
-            <span class="showcase-item-text">At the first start your settings are copied to a place that no longer changes with the version; the old ones stay as a backup. Going back to 0.1.x afterwards is not supported.</span>
+          <li class="showcase-item" id="new-rename-in-place">
+            <strong class="showcase-item-title">Rename in place with Shift+F6</strong>
+            <span class="showcase-item-text"><span class="mono">Shift+F6</span> opens an edit box right over the focused name with the name selected, the extension not; <span class="mono">Enter</span> renames, <span class="mono">Esc</span> cancels. <span class="mono">F2</span> still opens the Rename dialog.</span>
+            <a class="card-link card-link--inline"
+               href="/assets/gallery/rename-in-place-light.webp"
+               data-pswp-width="1200" data-pswp-height="800"
+               data-pswp-title="Rename right in the panel" data-pswp-caption="Shift+F6 opens an edit box over the focused name, the name selected without its extension. Enter renames, Esc cancels."
+               target="_blank" rel="noopener">See it →</a>
           </li>
         </ul>
       </section>
     </div>
     <details class="release-shots release-shots--home">
-  <summary class="release-shots-toggle">Screenshots of this version (7)</summary>
+  <summary class="release-shots-toggle">Screenshots of this version (11)</summary>
   <div class="release-shots-grid" data-release-shots>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/main-window-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Two panels, many tabs · 0.2.0" data-pswp-caption="Source on the left, target on the right - and each panel keeps several directories open in tabs."
+       data-pswp-title="Two panels, many tabs · 0.3.0" data-pswp-caption="Source on the left, target on the right - and each panel keeps several directories open in tabs."
        target="_blank" rel="noopener"
-       aria-label="Two panels, many tabs (0.2.0) - view full size">
+       aria-label="Two panels, many tabs (0.3.0) - view full size">
       <img class="shot-img" src="/assets/gallery/main-window-light-640.webp" width="640" height="427"
            alt="The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom." loading="lazy" decoding="async">
     </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/dark-theme-dark.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Dark theme · 0.2.0" data-pswp-caption="The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m."
+       data-pswp-title="Dark theme · 0.3.0" data-pswp-caption="The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m."
        target="_blank" rel="noopener"
-       aria-label="Dark theme (0.2.0) - view full size">
+       aria-label="Dark theme (0.3.0) - view full size">
       <img class="shot-img" src="/assets/gallery/dark-theme-dark-640.webp" width="640" height="427"
            alt="The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background." loading="lazy" decoding="async">
     </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/icon-style-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Fluent 2 icons, or the classic ones · 0.3.0" data-pswp-caption="Fluent 2 icons with dark variants are the default. Choose Classic here and the original Salamander icons are back at once, no restart."
+       target="_blank" rel="noopener"
+       aria-label="Fluent 2 icons, or the classic ones (0.3.0) - view full size">
+      <img class="shot-img" src="/assets/gallery/icon-style-light-640.webp" width="640" height="427"
+           alt="The Configuration dialog open on its Appearance page, with the Icon style setting and a preview of the Fluent 2 and Classic icon sets." loading="lazy" decoding="async">
+    </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/panel-tabs-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Tabs in a panel · 0.2.0" data-pswp-caption="Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history."
+       data-pswp-title="Tabs in a panel · 0.3.0" data-pswp-caption="Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history."
        target="_blank" rel="noopener"
-       aria-label="Tabs in a panel (0.2.0) - view full size">
+       aria-label="Tabs in a panel (0.3.0) - view full size">
       <img class="shot-img" src="/assets/gallery/panel-tabs-light-640.webp" width="640" height="427"
            alt="The main window with several directory tabs open above the left panel, the active tab carrying a close button." loading="lazy" decoding="async">
     </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/quick-search-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Quick search shows only the matches · 0.2.0" data-pswp-caption="Type part of a name - here &quot;chat&quot; - and the panel keeps only the matching items, lightly tinted, with the number of matches in its directory line."
+       data-pswp-title="Quick search shows only the matches · 0.3.0" data-pswp-caption="Type part of a name - here &quot;chat&quot; - and the panel keeps only the matching items, lightly tinted, with the number of matches in its directory line."
        target="_blank" rel="noopener"
-       aria-label="Quick search shows only the matches (0.2.0) - view full size">
+       aria-label="Quick search shows only the matches (0.3.0) - view full size">
       <img class="shot-img" src="/assets/gallery/quick-search-light-640.webp" width="640" height="427"
            alt="The main window with the left panel filtered by quick search: only the items whose names contain &quot;chat&quot; are listed, the panel is lightly tinted and its directory line shows the search text and the number of matches." loading="lazy" decoding="async">
     </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/update-settings-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Updates the way you want · 0.3.0" data-pswp-caption="When a new version is found: only a notice, a download offered for installation (the default), or installation as soon as it is downloaded."
+       target="_blank" rel="noopener"
+       aria-label="Updates the way you want (0.3.0) - view full size">
+      <img class="shot-img" src="/assets/gallery/update-settings-light-640.webp" width="640" height="427"
+           alt="The Configuration dialog open on its General page, showing the setting for what happens when a new version is found." loading="lazy" decoding="async">
+    </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/tabs-configuration-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Tab shortcuts your way · 0.2.0" data-pswp-caption="The Tabs page of Configuration: switch on browser-like shortcuts - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - and see every tab shortcut at a glance."
+       data-pswp-title="Tab shortcuts your way · 0.3.0" data-pswp-caption="The Tabs page of Configuration: switch on browser-like shortcuts - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - and see every tab shortcut at a glance."
        target="_blank" rel="noopener"
-       aria-label="Tab shortcuts your way (0.2.0) - view full size">
+       aria-label="Tab shortcuts your way (0.3.0) - view full size">
       <img class="shot-img" src="/assets/gallery/tabs-configuration-light-640.webp" width="640" height="427"
            alt="The Configuration dialog open on its Tabs page, with tabs shown in panels, browser-like tab shortcuts switched on and the list of tab shortcuts that follows them." loading="lazy" decoding="async">
     </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/rename-in-place-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="Rename right in the panel · 0.3.0" data-pswp-caption="Shift+F6 opens an edit box over the focused name, the name selected without its extension. Enter renames, Esc cancels."
+       target="_blank" rel="noopener"
+       aria-label="Rename right in the panel (0.3.0) - view full size">
+      <img class="shot-img" src="/assets/gallery/rename-in-place-light-640.webp" width="640" height="427"
+           alt="The main window with an edit box open over a file name in the left panel, the name selected without its extension." loading="lazy" decoding="async">
+    </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/unicode-long-paths-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Unicode and long paths · 0.2.0" data-pswp-caption="Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit."
+       data-pswp-title="Unicode and long paths · 0.3.0" data-pswp-caption="Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit."
        target="_blank" rel="noopener"
-       aria-label="Unicode and long paths (0.2.0) - view full size">
+       aria-label="Unicode and long paths (0.3.0) - view full size">
       <img class="shot-img" src="/assets/gallery/unicode-long-paths-light-640.webp" width="640" height="427"
            alt="A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters." loading="lazy" decoding="async">
     </a>
     <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/thumbnails-light.webp"
        data-pswp-width="1200" data-pswp-height="800"
-       data-pswp-title="Thumbnails without the wait · 0.2.0" data-pswp-caption="A folder of photographs fills in at once, and pictures taken sideways are shown the right way up."
+       data-pswp-title="Thumbnails without the wait · 0.3.0" data-pswp-caption="A folder of photographs fills in at once, and pictures taken sideways are shown the right way up."
        target="_blank" rel="noopener"
-       aria-label="Thumbnails without the wait (0.2.0) - view full size">
+       aria-label="Thumbnails without the wait (0.3.0) - view full size">
       <img class="shot-img" src="/assets/gallery/thumbnails-light-640.webp" width="640" height="427"
            alt="A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation." loading="lazy" decoding="async">
+    </a>
+    <a class="release-shot gallery-link gallery-link--any" href="/assets/gallery/command-shell-light.webp"
+       data-pswp-width="1200" data-pswp-height="800"
+       data-pswp-title="The shell you choose · 0.3.0" data-pswp-caption="Command Prompt, PowerShell 7, Windows Terminal, Git Bash or any program of your own - on one key."
+       target="_blank" rel="noopener"
+       aria-label="The shell you choose (0.3.0) - view full size">
+      <img class="shot-img" src="/assets/gallery/command-shell-light-640.webp" width="640" height="427"
+           alt="The Configuration dialog open on its Command Shell page, listing the shells that can be opened with the Command Shell key." loading="lazy" decoding="async">
     </a>
   </div>
 </details>
@@ -326,6 +381,32 @@ if(target){location.replace(target+location.search+location.hash);}
   </a>
 </div>
 </figure>
+      <figure class="gallery-item" id="icon-style">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Fluent 2 icons, or the classic ones</h3>
+    <p class="gallery-text">Fluent 2 icons with dark variants are the default. Choose Classic here and the original Salamander icons are back at once, no restart.</p>
+  </figcaption>
+  <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/icon-style-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Fluent 2 icons, or the classic ones" data-pswp-caption="Fluent 2 icons with dark variants are the default. Choose Classic here and the original Salamander icons are back at once, no restart."
+     target="_blank" rel="noopener"
+     aria-label="Fluent 2 icons, or the classic ones - view full size">
+    <img class="shot-img"
+         src="/assets/gallery/icon-style-light-640.webp" srcset="/assets/gallery/icon-style-light-640.webp 640w, /assets/gallery/icon-style-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="The Configuration dialog open on its Appearance page, with the Icon style setting and a preview of the Fluent 2 and Classic icon sets."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+</figure>
       <figure class="gallery-item" id="panel-tabs">
   <figcaption class="gallery-caption">
     <h3 class="gallery-title">Tabs in a panel</h3>
@@ -378,6 +459,32 @@ if(target){location.replace(target+location.search+location.hash);}
   </a>
 </div>
 </figure>
+      <figure class="gallery-item" id="update-settings">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Updates the way you want</h3>
+    <p class="gallery-text">When a new version is found: only a notice, a download offered for installation (the default), or installation as soon as it is downloaded.</p>
+  </figcaption>
+  <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/update-settings-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Updates the way you want" data-pswp-caption="When a new version is found: only a notice, a download offered for installation (the default), or installation as soon as it is downloaded."
+     target="_blank" rel="noopener"
+     aria-label="Updates the way you want - view full size">
+    <img class="shot-img"
+         src="/assets/gallery/update-settings-light-640.webp" srcset="/assets/gallery/update-settings-light-640.webp 640w, /assets/gallery/update-settings-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="The Configuration dialog open on its General page, showing the setting for what happens when a new version is found."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+</figure>
       <figure class="gallery-item" id="tabs-configuration">
   <figcaption class="gallery-caption">
     <h3 class="gallery-title">Tab shortcuts your way</h3>
@@ -394,6 +501,32 @@ if(target){location.replace(target+location.search+location.hash);}
          src="/assets/gallery/tabs-configuration-light-640.webp" srcset="/assets/gallery/tabs-configuration-light-640.webp 640w, /assets/gallery/tabs-configuration-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
          width="640" height="427"
          alt="The Configuration dialog open on its Tabs page, with tabs shown in panels, browser-like tab shortcuts switched on and the list of tab shortcuts that follows them."
+         loading="lazy" decoding="async">
+    <span class="shot-zoom-icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <circle cx="10.5" cy="10.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M14.8 14.8L19 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+</figure>
+      <figure class="gallery-item" id="rename-in-place">
+  <figcaption class="gallery-caption">
+    <h3 class="gallery-title">Rename right in the panel</h3>
+    <p class="gallery-text">Shift+F6 opens an edit box over the focused name, the name selected without its extension. Enter renames, Esc cancels.</p>
+  </figcaption>
+  <div class="gallery-shots">
+  <a class="gallery-link gallery-link--any"
+     href="/assets/gallery/rename-in-place-light.webp"
+     data-pswp-width="1200" data-pswp-height="800"
+     data-pswp-title="Rename right in the panel" data-pswp-caption="Shift+F6 opens an edit box over the focused name, the name selected without its extension. Enter renames, Esc cancels."
+     target="_blank" rel="noopener"
+     aria-label="Rename right in the panel - view full size">
+    <img class="shot-img"
+         src="/assets/gallery/rename-in-place-light-640.webp" srcset="/assets/gallery/rename-in-place-light-640.webp 640w, /assets/gallery/rename-in-place-light.webp 1200w" sizes="(min-width: 1100px) 560px, (min-width: 860px) 46vw, 92vw"
+         width="640" height="427"
+         alt="The main window with an edit box open over a file name in the left panel, the name selected without its extension."
          loading="lazy" decoding="async">
     <span class="shot-zoom-icon">
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
@@ -553,7 +686,7 @@ if(target){location.replace(target+location.search+location.hash);}
     <div class="facts">
       <div class="fact">
         <span class="fact-label">Version</span>
-        <span class="fact-value">0.2.0</span>
+        <span class="fact-value">0.3.0</span>
       </div>
       <div class="fact">
         <span class="fact-label">Platform</span>
@@ -590,13 +723,13 @@ if(target){location.replace(target+location.search+location.hash);}
 <section id="download" class="section section--download">
   <div class="download-inner">
     <img src="/assets/tandem-commander-icon.svg" alt="" aria-hidden="true" class="download-mark">
-    <h2 class="section-title section-title--md">Get version 0.2.0</h2>
+    <h2 class="section-title section-title--md">Get version 0.3.0</h2>
     <div class="installer-wrap">
       <div class="installer-card">
         <h3 class="installer-title">Installer</h3>
-        <p class="installer-desc">Version 0.2.0 for Windows 11, x64.<br>Released October 25, 2026</p>
-        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.2.0/tandemcommander-0.2.0-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Download installer</a>
-        <p class="installer-file">tandemcommander-0.2.0-x64-setup.exe</p>
+        <p class="installer-desc">Version 0.3.0 for Windows 11, x64.<br>Released November 8, 2026</p>
+        <a href="https://github.com/tandemcommander/tandemcommander/releases/download/v0.3.0/tandemcommander-0.3.0-x64-setup.exe" class="btn btn--primary btn--download"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M6.5 10.5 12 16l5.5-5.5"></path><path d="M4 20h16"></path></svg>Download installer</a>
+        <p class="installer-file">tandemcommander-0.3.0-x64-setup.exe</p>
       </div>
     </div>
     <div class="winget">

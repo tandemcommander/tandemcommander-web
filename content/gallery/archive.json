@@ -1,5 +1,36 @@
 {
   "0.1.8": {
+    "command-shell/light": {
+      "appVersion": "0.1.8",
+      "appBuild": 192,
+      "capturedAt": "2026-09-20",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.1.8/command-shell-light.webp",
+        "card": "assets/gallery/archive/0.1.8/command-shell-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 26986,
+        "card": 19770
+      },
+      "title": {
+        "en": "The shell you choose",
+        "cs": "Shell podle vaší volby"
+      },
+      "caption": {
+        "en": "Command Prompt, PowerShell 7, Windows Terminal, Git Bash or any program of your own - on one key.",
+        "cs": "Příkazový řádek, PowerShell 7, Windows Terminal, Git Bash nebo vlastní program - na jednu klávesu."
+      },
+      "alt": {
+        "en": "The Configuration dialog open on its Command Shell page, listing the shells that can be opened with the Command Shell key.",
+        "cs": "Dialog Konfigurace otevřený na stránce Command Shell se seznamem shellů, které lze otevřít klávesou Command Shell."
+      }
+    },
     "dark-theme/dark": {
       "appVersion": "0.1.8",
       "appBuild": 192,
@@ -298,6 +329,225 @@
       "bytes": {
         "full": 18944,
         "card": 14764
+      },
+      "title": {
+        "en": "Unicode and long paths",
+        "cs": "Unicode a dlouhé cesty"
+      },
+      "caption": {
+        "en": "Accented, Greek, Japanese and emoji names, and a path well past the old 260-character limit.",
+        "cs": "Názvy s diakritikou, řecké, japonské i emoji - a cesta výrazně za starým limitem 260 znaků."
+      },
+      "alt": {
+        "en": "A panel listing files whose names use Czech, Greek and Japanese characters and an emoji, beside a directory nested far beyond 260 characters.",
+        "cs": "Panel se soubory, jejichž názvy používají českou diakritiku, řečtinu, japonštinu a emoji, vedle adresáře zanořeného daleko za 260 znaků."
+      }
+    }
+  },
+  "0.2.0": {
+    "dark-theme/dark": {
+      "appVersion": "0.2.0",
+      "appBuild": 195,
+      "capturedAt": "2026-10-25",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.2.0/dark-theme-dark.webp",
+        "card": "assets/gallery/archive/0.2.0/dark-theme-dark-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 15340,
+        "card": 12440
+      },
+      "title": {
+        "en": "Dark theme",
+        "cs": "Tmavý motiv"
+      },
+      "caption": {
+        "en": "The same layout and the same information density, for the people who stopped enjoying white rectangles at 2 a.m.",
+        "cs": "Stejné rozložení i hustota informací, pro ty, koho ve dvě ráno přestaly bavit bílé obdélníky :)"
+      },
+      "alt": {
+        "en": "The Tandem Commander main window in its dark theme, showing the same two panels with light text on a dark background.",
+        "cs": "Hlavní okno Tandem Commanderu v tmavém motivu se stejnými dvěma panely, světlý text na tmavém pozadí."
+      }
+    },
+    "main-window/light": {
+      "appVersion": "0.2.0",
+      "appBuild": 195,
+      "capturedAt": "2026-10-25",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.2.0/main-window-light.webp",
+        "card": "assets/gallery/archive/0.2.0/main-window-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 17758,
+        "card": 15774
+      },
+      "title": {
+        "en": "Two panels, many tabs",
+        "cs": "Dva panely, spousta záložek"
+      },
+      "caption": {
+        "en": "Source on the left, target on the right - and each panel keeps several directories open in tabs.",
+        "cs": "Zdroj vlevo, cíl vpravo - a každý panel drží několik adresářů otevřených v záložkách."
+      },
+      "alt": {
+        "en": "The Tandem Commander main window in its light theme: two file panels side by side, each with a strip of directory tabs above it, function keys along the bottom.",
+        "cs": "Hlavní okno Tandem Commanderu ve světlém motivu: dva panely souborů vedle sebe, nad každým lišta se záložkami adresářů, dole funkční klávesy."
+      }
+    },
+    "panel-tabs/light": {
+      "appVersion": "0.2.0",
+      "appBuild": 195,
+      "capturedAt": "2026-10-25",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.2.0/panel-tabs-light.webp",
+        "card": "assets/gallery/archive/0.2.0/panel-tabs-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 18826,
+        "card": 13698
+      },
+      "title": {
+        "en": "Tabs in a panel",
+        "cs": "Záložky v panelu"
+      },
+      "caption": {
+        "en": "Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history.",
+        "cs": "Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+      },
+      "alt": {
+        "en": "The main window with several directory tabs open above the left panel, the active tab carrying a close button.",
+        "cs": "Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
+      }
+    },
+    "quick-search/light": {
+      "appVersion": "0.2.0",
+      "appBuild": 195,
+      "capturedAt": "2026-10-25",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.2.0/quick-search-light.webp",
+        "card": "assets/gallery/archive/0.2.0/quick-search-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 19300,
+        "card": 14526
+      },
+      "title": {
+        "en": "Quick search shows only the matches",
+        "cs": "Rychlé hledání ukáže jen shody"
+      },
+      "caption": {
+        "en": "Type part of a name - here \"chat\" - and the panel keeps only the matching items, lightly tinted, with the number of matches in its directory line.",
+        "cs": "Napište část názvu - tady „chat“ - a panel ponechá jen odpovídající položky, jemně podbarvené, s počtem shod v řádku s cestou."
+      },
+      "alt": {
+        "en": "The main window with the left panel filtered by quick search: only the items whose names contain \"chat\" are listed, the panel is lightly tinted and its directory line shows the search text and the number of matches.",
+        "cs": "Hlavní okno s levým panelem zúženým rychlým hledáním: zobrazené jsou jen položky, jejichž název obsahuje „chat“, panel je jemně podbarvený a řádek s cestou ukazuje hledaný text a počet shod."
+      }
+    },
+    "tabs-configuration/light": {
+      "appVersion": "0.2.0",
+      "appBuild": 195,
+      "capturedAt": "2026-10-25",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.2.0/tabs-configuration-light.webp",
+        "card": "assets/gallery/archive/0.2.0/tabs-configuration-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 26326,
+        "card": 21222
+      },
+      "title": {
+        "en": "Tab shortcuts your way",
+        "cs": "Zkratky záložek po svém"
+      },
+      "caption": {
+        "en": "The Tabs page of Configuration: switch on browser-like shortcuts - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - and see every tab shortcut at a glance.",
+        "cs": "Stránka Záložky v Konfiguraci: zapněte zkratky jako v prohlížeči - Ctrl+T, Ctrl+W, Ctrl+Page Down / Up - a mějte všechny zkratky záložek na očích."
+      },
+      "alt": {
+        "en": "The Configuration dialog open on its Tabs page, with tabs shown in panels, browser-like tab shortcuts switched on and the list of tab shortcuts that follows them.",
+        "cs": "Dialog Konfigurace otevřený na stránce Záložky: záložky v panelech zobrazené, zkratky jako v prohlížeči zapnuté a pod nimi seznam zkratek záložek, který se jim přizpůsobí."
+      }
+    },
+    "thumbnails/light": {
+      "appVersion": "0.2.0",
+      "appBuild": 195,
+      "capturedAt": "2026-10-25",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.2.0/thumbnails-light.webp",
+        "card": "assets/gallery/archive/0.2.0/thumbnails-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 138010,
+        "card": 23192
+      },
+      "title": {
+        "en": "Thumbnails without the wait",
+        "cs": "Náhledy bez čekání"
+      },
+      "caption": {
+        "en": "A folder of photographs fills in at once, and pictures taken sideways are shown the right way up.",
+        "cs": "Složka fotek se naplní naráz a snímky pořízené na výšku se zobrazí správně otočené."
+      },
+      "alt": {
+        "en": "A panel in thumbnails view showing a folder of landscape photographs as a grid of previews, two of them in portrait orientation.",
+        "cs": "Panel v zobrazení náhledů se složkou krajinářských fotografií jako mřížka náhledů, dvě z nich na výšku."
+      }
+    },
+    "unicode-long-paths/light": {
+      "appVersion": "0.2.0",
+      "appBuild": 195,
+      "capturedAt": "2026-10-25",
+      "environment": "sandbox",
+      "dpi": 96,
+      "width": 1200,
+      "height": 800,
+      "files": {
+        "full": "assets/gallery/archive/0.2.0/unicode-long-paths-light.webp",
+        "card": "assets/gallery/archive/0.2.0/unicode-long-paths-light-640.webp",
+        "cardWidth": 640,
+        "cardHeight": 427
+      },
+      "bytes": {
+        "full": 19002,
+        "card": 14724
       },
       "title": {
         "en": "Unicode and long paths",

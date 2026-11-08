@@ -90,6 +90,69 @@
     }
   },
   {
+    "id": "icon-style",
+    "title": {
+      "en": "Fluent 2 icons, or the classic ones",
+      "cs": "Ikony Fluent 2, nebo ty klasické"
+    },
+    "caption": {
+      "en": "Fluent 2 icons with dark variants are the default. Choose Classic here and the original Salamander icons are back at once, no restart.",
+      "cs": "Výchozí jsou ikony Fluent 2 s tmavými variantami. Zvolte zde Classic a původní ikony Salamanderu jsou zpět hned, bez restartu."
+    },
+    "alt": {
+      "en": "The Configuration dialog open on its Appearance page, with the Icon style setting and a preview of the Fluent 2 and Classic icon sets.",
+      "cs": "Dialog Konfigurace otevřený na stránce Vzhled s nastavením stylu ikon a náhledem sad ikon Fluent 2 a Classic."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": false,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "keys": "Alt+O"
+        },
+        {
+          "keys": "C"
+        },
+        {
+          "waitWindow": {
+            "titleContains": "Configuration",
+            "timeoutMs": 30000
+          }
+        },
+        {
+          "text": "Appearance"
+        },
+        {
+          "settle": {
+            "timeoutMs": 8000
+          }
+        },
+        {
+          "capture": "withDialog"
+        },
+        {
+          "close": "foreground"
+        }
+      ]
+    }
+  },
+  {
     "id": "panel-tabs",
     "title": {
       "en": "Tabs in a panel",
@@ -209,6 +272,69 @@
     }
   },
   {
+    "id": "update-settings",
+    "title": {
+      "en": "Updates the way you want",
+      "cs": "Aktualizace podle vás"
+    },
+    "caption": {
+      "en": "When a new version is found: only a notice, a download offered for installation (the default), or installation as soon as it is downloaded.",
+      "cs": "Když vyjde nová verze: jen upozornění, stažení s nabídkou instalace (výchozí), nebo instalace hned po stažení."
+    },
+    "alt": {
+      "en": "The Configuration dialog open on its General page, showing the setting for what happens when a new version is found.",
+      "cs": "Dialog Konfigurace otevřený na stránce Obecné s nastavením, co se stane, když vyjde nová verze."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": true,
+    "showsVersion": false,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "keys": "Alt+O"
+        },
+        {
+          "keys": "C"
+        },
+        {
+          "waitWindow": {
+            "titleContains": "Configuration",
+            "timeoutMs": 30000
+          }
+        },
+        {
+          "text": "General"
+        },
+        {
+          "settle": {
+            "timeoutMs": 8000
+          }
+        },
+        {
+          "capture": "withDialog"
+        },
+        {
+          "close": "foreground"
+        }
+      ]
+    }
+  },
+  {
     "id": "tabs-configuration",
     "title": {
       "en": "Tab shortcuts your way",
@@ -270,6 +396,62 @@
         },
         {
           "close": "foreground"
+        }
+      ]
+    }
+  },
+  {
+    "id": "rename-in-place",
+    "title": {
+      "en": "Rename right in the panel",
+      "cs": "Přejmenování přímo v panelu"
+    },
+    "caption": {
+      "en": "Shift+F6 opens an edit box over the focused name, the name selected without its extension. Enter renames, Esc cancels.",
+      "cs": "Shift+F6 otevře editaci nad názvem pod kurzorem, označený je název bez přípony. Enter přejmenuje, Esc zruší."
+    },
+    "alt": {
+      "en": "The main window with an edit box open over a file name in the left panel, the name selected without its extension.",
+      "cs": "Hlavní okno s editačním polem otevřeným nad názvem souboru v levém panelu, označený je název bez přípony."
+    },
+    "themes": [
+      "light"
+    ],
+    "mode": "auto",
+    "featured": false,
+    "showsVersion": true,
+    "stage": {
+      "window": {
+        "width": 1200,
+        "height": 800
+      },
+      "config": {
+        "left": {
+          "path": "C:\\Workspace\\Documents"
+        },
+        "right": {
+          "path": "C:\\Workspace\\Projects"
+        }
+      },
+      "steps": [
+        {
+          "settle": {
+            "timeoutMs": 5000
+          }
+        },
+        {
+          "focus": "meeting-notes.md"
+        },
+        {
+          "keys": "Shift+F6"
+        },
+        {
+          "settle": {
+            "timeoutMs": 5000
+          }
+        },
+        {
+          "capture": "main"
         }
       ]
     }
@@ -546,7 +728,7 @@
           }
         },
         {
-          "keys": "Down*15"
+          "text": "Command Shell"
         },
         {
           "settle": {
