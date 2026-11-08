@@ -114,6 +114,9 @@ Removed: `features.*`. Changed: `whatsNew.lead`, `gallery.lead`. Added: `whatsNe
 </article>
 ```
 
+The same macro (`components/release-shots.njk`) renders the main release's gallery in "What's new"
+(`release-shots--home`, after `.showcase`, before the history link; FR-028).
+
 Grid `repeat(auto-fill, minmax(220px, 1fr))`; closed by default, so lazy pictures load only when
 opened. The page loads `photoswipe.css` and renders the viewer strings once. New key:
 `releases.shots` ("Screenshots of this version ({count})" / "Screenshoty této verze ({count})").

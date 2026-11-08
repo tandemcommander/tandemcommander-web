@@ -6,6 +6,7 @@
     a compact list; older releases are one link away. Every picture opens in
     the PhotoSwipe viewer. Generated from content/releases/ and content/gallery/. -#}
 {%- import "components/gallery-card.njk" as cards -%}
+{%- import "components/release-shots.njk" as shotsList -%}
 {%- set locale = lang | locale -%}
 {%- set show = releases.showcase -%}
 <section id="new" class="section band section--roomy">
@@ -53,6 +54,10 @@
       </section>
       {%- endif %}
     </div>
+    {%- endif %}
+    {#- every screenshot taken with the main release, folded, opened in PhotoSwipe -#}
+    {%- if releases.main.shots and releases.main.shots.length %}
+    {{ shotsList.releaseShots(releases.main.shots, releases.main.version, lang, "home") }}
     {%- endif %}
     <p class="section-more showcase-history"><a class="btn btn--secondary" href="{{ locale.url }}releases/">{{ lang | t("whatsNew.allReleases") }}</a></p>
   </div>

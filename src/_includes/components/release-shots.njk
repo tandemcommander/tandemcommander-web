@@ -1,0 +1,23 @@
+{#- The screenshots taken with one version (spec 012, US4): a collapsed
+    "Screenshots of this version (N)" gallery - used under every release on
+    the history page and, for the main release, in "What's new" on the home
+    page. Closed by default, so its lazy pictures load only when opened; each
+    picture opens in PhotoSwipe, one set per gallery ([data-release-shots]).
+    releaseShots(shots, version, lang, modifier) - shots from releaseShots(). -#}
+{%- macro releaseShots(shots, version, lang, modifier = "") -%}
+<details class="release-shots{% if modifier %} release-shots--{{ modifier }}{% endif %}">
+  <summary class="release-shots-toggle">{{ lang | t("releases.shots") | replace("{count}", shots.length) }}</summary>
+  <div class="release-shots-grid" data-release-shots>
+    {%- for s in shots %}
+    <a class="release-shot gallery-link gallery-link--any" href="{{ s.full }}"
+       data-pswp-width="{{ s.width }}" data-pswp-height="{{ s.height }}"
+       data-pswp-title="{{ s.title[lang] }} · {{ version }}" data-pswp-caption="{{ s.caption[lang] }}"
+       target="_blank" rel="noopener"
+       aria-label="{{ s.title[lang] }} ({{ version }}) - {{ lang | t("gallery.zoomLabel") }}">
+      <img class="shot-img" src="{{ s.card }}" width="{{ s.cardWidth }}" height="{{ s.cardHeight }}"
+           alt="{{ s.alt[lang] }}" loading="lazy" decoding="async">
+    </a>
+    {%- endfor %}
+  </div>
+</details>
+{%- endmacro -%}

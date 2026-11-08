@@ -14,6 +14,7 @@ eleventyComputed:
     generated from the release records in content/releases/. Under each
     release, the screenshots taken with that version (spec 012, US4), folded
     away and opened in the PhotoSwipe viewer. -#}
+{%- import "components/release-shots.njk" as shotsList -%}
 {% include "sections/header.njk" %}
 <main>
 <section id="top" class="section section--page">
@@ -51,21 +52,7 @@ eleventyComputed:
         </ul>
         {%- endif %}
         {%- if r.shots.length %}
-        <details class="release-shots">
-          <summary class="release-shots-toggle">{{ lang | t("releases.shots") | replace("{count}", r.shots.length) }}</summary>
-          <div class="release-shots-grid" data-release-shots>
-            {%- for s in r.shots %}
-            <a class="release-shot gallery-link gallery-link--any" href="{{ s.full }}"
-               data-pswp-width="{{ s.width }}" data-pswp-height="{{ s.height }}"
-               data-pswp-title="{{ s.title[lang] }} · {{ r.version }}" data-pswp-caption="{{ s.caption[lang] }}"
-               target="_blank" rel="noopener"
-               aria-label="{{ s.title[lang] }} ({{ r.version }}) - {{ lang | t("gallery.zoomLabel") }}">
-              <img class="shot-img" src="{{ s.card }}" width="{{ s.cardWidth }}" height="{{ s.cardHeight }}"
-                   alt="{{ s.alt[lang] }}" loading="lazy" decoding="async">
-            </a>
-            {%- endfor %}
-          </div>
-        </details>
+        {{ shotsList.releaseShots(r.shots, r.version, lang) }}
         {%- endif %}
         <p class="release-notes"><a href="{{ r.notesUrl }}">{{ lang | t("releases.fullNotes") }}</a></p>
       </article>

@@ -666,6 +666,9 @@ html:not([data-theme="dark"]) .gallery-link--dark { display: none; }
   margin-top: 14px;
 }
 .release-shot.gallery-link { padding: 6px; box-shadow: var(--shadow-sm); }
+.release-shots--home { margin: 40px 0 0; }
+.release-shots--home .release-shots-toggle { font-size: 15px; }
+.release-shots--home + .showcase-history { margin-top: 28px; }
 @media (prefers-reduced-motion: no-preference) {
   .release-shots-toggle::before { transition: transform .15s ease; }
 }
