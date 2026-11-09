@@ -81,20 +81,34 @@ export async function postprocess({ outDir, result, scenes }) {
       archived = true;
     }
 
-    const base = `${scene.id}-${scene.theme}`;
-    const fullRel = path.posix.join("assets", "gallery", `${base}.webp`);
-    const cardRel = path.posix.join("assets", "gallery", `${base}-640.webp`);
-
     const image = sharp(source);
     const meta = await image.metadata();
-    await image.clone().webp({ lossless: true, effort: 6 }).toFile(path.join(SRC, fullRel));
-    const card = await image
+    const full = await image.clone().webp({ lossless: true, effort: 6 }).toBuffer();
+    const { data: card, info: cardInfo } = await image
       .clone()
       .resize({ width: Math.min(CARD_WIDTH, meta.width), withoutEnlargement: true })
       .webp({ quality: CARD_QUALITY, effort: 6 })
-      .toFile(path.join(SRC, cardRel));
+      .toBuffer({ resolveWithObject: true });
 
-    const fullBytes = fs.statSync(path.join(SRC, fullRel)).size;
+    // The file name carries the content hash (lib/content.js): a changed
+    // picture is a new address, so no browser or CDN cache can keep showing
+    // the old one, and the build refuses a picture named otherwise.
+    const base = `${scene.id}-${scene.theme}`;
+    const fullRel = path.posix.join("assets", "gallery", content.pictureFileName(base, full));
+    const cardRel = path.posix.join("assets", "gallery", content.pictureFileName(`${base}-640`, card));
+    fs.writeFileSync(path.join(SRC, fullRel), full);
+    fs.writeFileSync(path.join(SRC, cardRel), card);
+
+    // The files this capture replaces (already copied into the archive above
+    // when they showed an older version) are removed - with content names a
+    // changed picture no longer overwrites them, and the build rejects a
+    // picture that belongs to no record.
+    const previous = captures[key] ? [captures[key].files.full, captures[key].files.card] : [];
+    for (const rel of previous) {
+      if (rel !== fullRel && rel !== cardRel) fs.rmSync(path.join(SRC, rel), { force: true });
+    }
+
+    const fullBytes = full.length;
     if (fullBytes > MAX_FULL_BYTES) {
       problems.push(`${key}: ${Math.round(fullBytes / 1024)} KB exceeds the ${MAX_FULL_BYTES / 1024} KB budget`);
     }
@@ -107,10 +121,10 @@ export async function postprocess({ outDir, result, scenes }) {
       dpi: (result.environment && result.environment.dpi) || null,
       width: meta.width,
       height: meta.height,
-      files: { full: fullRel, card: cardRel, cardWidth: card.width, cardHeight: card.height },
-      bytes: { full: fullBytes, card: fs.statSync(path.join(SRC, cardRel)).size },
+      files: { full: fullRel, card: cardRel, cardWidth: cardInfo.width, cardHeight: cardInfo.height },
+      bytes: { full: fullBytes, card: card.length },
     };
-    written.push({ key, width: meta.width, height: meta.height, fullBytes, cardBytes: captures[key].bytes.card });
+    written.push({ key, width: meta.width, height: meta.height, fullBytes, cardBytes: card.length });
 
     if (LEGACY_PNG[key]) {
       await sharp(source).png({ compressionLevel: 9, palette: true }).toFile(LEGACY_PNG[key]);

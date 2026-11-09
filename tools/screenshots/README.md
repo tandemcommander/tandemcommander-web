@@ -117,6 +117,13 @@ you staged - and its last step is always the personal-data review.
 
 - `content/gallery/captures.json` records for every image the application version and build it was
   captured with. `npm run release:check` reports which images a new release makes stale.
+- Every image is written as `src/assets/gallery/<id>-<theme>.<hash>.webp` (and `…-640.<hash>.webp`
+  for the card), the hash being the first ten hex characters of the file's SHA-256. **A changed
+  picture therefore always has a new address** - `/assets/gallery/*` is cached by browsers for a
+  year (`src/root/_headers`), and under a fixed name a new capture would keep coming out of those
+  caches for days. The build refuses a picture whose name does not match its content, and a picture
+  file that neither `captures.json` nor `archive.json` records. Never rename or edit an image by hand;
+  re-capture the scene instead.
 - `src/assets/screenshot-light.png` and `screenshot-dark.png` are regenerated from the
   `main-window` and `dark-theme` scenes. **These two addresses are permanent** - software
   catalogues fetch the first one through `/pad.xml`.

@@ -155,16 +155,16 @@
   {
     "id": "panel-tabs",
     "title": {
-      "en": "Tabs in a panel",
-      "cs": "Záložky v panelu"
+      "en": "Tabs with the Windows 11 look",
+      "cs": "Záložky ve stylu Windows 11"
     },
     "caption": {
-      "en": "Middle-click a folder to open it in a background tab; each tab keeps its own view, sorting and history.",
-      "cs": "Prostřední tlačítko otevře složku v záložce na pozadí; každá záložka si drží vlastní zobrazení, řazení i historii."
+      "en": "Rounded tabs, each with an icon for its content: drive, folder, archive or plug-in. Middle-click a folder to open it in a background tab.",
+      "cs": "Oblé záložky, každá s ikonou podle obsahu: disk, složka, archiv nebo plugin. Prostřední tlačítko otevře složku v záložce na pozadí."
     },
     "alt": {
-      "en": "The main window with several directory tabs open above the left panel, the active tab carrying a close button.",
-      "cs": "Hlavní okno s několika záložkami adresářů nad levým panelem, aktivní záložka má tlačítko pro zavření."
+      "en": "The main window with three rounded directory tabs above the left panel, each with a folder icon; the active tab carries a close button and a plus button follows the last tab.",
+      "cs": "Hlavní okno se třemi oblými záložkami adresářů nad levým panelem, každá s ikonou složky; aktivní záložka má tlačítko pro zavření a za poslední záložkou je tlačítko plus."
     },
     "themes": [
       "light"

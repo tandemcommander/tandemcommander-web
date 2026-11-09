@@ -15,8 +15,8 @@
         "cs": "Nový vzhled záložek"
       },
       "text": {
-        "en": "Tabs have a rounded look and an icon for their content: drive, folder, archive or plug-in. A tab can be dragged with the mouse, and its menu can move it to the other panel.",
-        "cs": "Mají oblý vzhled a ikonu podle obsahu: disk, složka, archiv nebo plugin. Dají se přetáhnout myší a přes své menu přesunout do druhého panelu."
+        "en": "Tabs have the rounded Windows 11 look and an icon for their content: drive, folder, archive or plug-in. A dragged tab follows the mouse while the others slide aside, and its menu can move it to the other panel.",
+        "cs": "Záložky mají oblý vzhled Windows 11 a ikonu podle obsahu: disk, složka, archiv nebo plugin. Tažená záložka sleduje myš, ostatní uhýbají, a přes své menu se dá přesunout do druhého panelu."
       },
       "scene": "panel-tabs"
     },

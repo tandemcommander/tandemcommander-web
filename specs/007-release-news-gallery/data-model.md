@@ -145,8 +145,8 @@ Written **only** by the capture pipeline (`npm run shots`), never by hand. Keyed
 | `environment` | enum | `sandbox` · `host` |
 | `dpi` | integer | recorded; `96` expected (research R2) |
 | `width`, `height` | integer | native pixel size → `width`/`height` attributes in templates (FR-020) |
-| `files.full` | path | `assets/gallery/<id>-<theme>.webp` (lossless) |
-| `files.card` | path | `assets/gallery/<id>-<theme>-640.webp` |
+| `files.full` | path | `assets/gallery/<id>-<theme>.<hash>.webp` (lossless); `<hash>` = first 10 hex chars of the file's SHA-256, so a changed picture is a new address (cache rule, 2026-11-09) |
+| `files.card` | path | `assets/gallery/<id>-<theme>-640.<hash>.webp` |
 | `files.cardWidth`, `files.cardHeight` | integer | |
 | `bytes.full`, `bytes.card` | integer | checked against SC-006 (full ≤ 300 KB) - a larger file fails the pipeline, not the site build |
 

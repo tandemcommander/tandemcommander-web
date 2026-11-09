@@ -39,6 +39,11 @@ function catalog(extra = [], over = {}) {
   return base.map((s) => ({ ...s, ...(over[s.id] || {}) })).concat(extra);
 }
 
+// Every fixture image holds the text "x"; a picture's name carries its
+// content hash (rule G8), and this is the hash of "x".
+const HASH = "2d711642b7";
+const picture = (stem, dir = "assets/gallery") => `${dir}/${stem}.${HASH}.webp`;
+
 function capturesFor(scenes) {
   const captures = {};
   for (const s of scenes.filter((x) => x.published !== false)) {
@@ -46,7 +51,7 @@ function capturesFor(scenes) {
       captures[`${s.id}/${theme}`] = {
         appVersion: "0.1.8", appBuild: 192, capturedAt: "2026-09-20", environment: "sandbox", dpi: 96,
         width: 1200, height: 800,
-        files: { full: `assets/gallery/${s.id}-${theme}.webp`, card: `assets/gallery/${s.id}-${theme}-640.webp`, cardWidth: 640, cardHeight: 427 },
+        files: { full: picture(`${s.id}-${theme}`), card: picture(`${s.id}-${theme}-640`), cardWidth: 640, cardHeight: 427 },
         bytes: { full: 70000, card: 30000 },
       };
     }
@@ -96,8 +101,8 @@ test("a valid catalog loads with images resolved per theme", () => {
   assert.equal(g.hasCaptures, true);
   const tabs = g.published.find((s) => s.id === "panel-tabs");
   assert.deepEqual(Object.keys(tabs.images), ["light", "dark"]);
-  assert.equal(tabs.images.dark.full, "/assets/gallery/panel-tabs-dark.webp");
-  assert.equal(tabs.images.light.card, "/assets/gallery/panel-tabs-light-640.webp");
+  assert.equal(tabs.images.dark.full, `/assets/gallery/panel-tabs-dark.${HASH}.webp`);
+  assert.equal(tabs.images.light.card, `/assets/gallery/panel-tabs-light-640.${HASH}.webp`);
   assert.equal(tabs.images.light.width, 1200);
 });
 
@@ -143,8 +148,35 @@ test("G5: every published theme needs a capture and its files on disk", () => {
   delete captures["panel-tabs/dark"];
   assert.throws(() => load({ scenes, captures }), /gallery: panel-tabs: no capture for theme "dark"/);
 
-  assert.throws(() => load({ scenes, skipFiles: ["assets/gallery/code-viewer-light-640.webp"] }),
-    /gallery: code-viewer: image file missing: src\/assets\/gallery\/code-viewer-light-640\.webp/);
+  assert.throws(() => load({ scenes, skipFiles: [picture("code-viewer-light-640")] }),
+    new RegExp(`gallery: code-viewer: image file missing: src/assets/gallery/code-viewer-light-640\\.${HASH}\\.webp`));
+});
+
+test("G8: a picture is named after its content, and no picture is left unrecorded", () => {
+  const scenes = catalog();
+  // the name carries no hash
+  const unnamed = capturesFor(scenes);
+  unnamed["code-viewer/light"].files.full = "assets/gallery/code-viewer-light.webp";
+  assert.throws(() => load({ scenes, captures: unnamed }),
+    /gallery: code-viewer: src\/assets\/gallery\/code-viewer-light\.webp: the file name must carry the picture's content hash \(\.2d711642b7\.webp\)/);
+  // the name carries the hash of another content: the picture changed, the name did not
+  const changed = make({ scenes });
+  fs.writeFileSync(path.join(changed.srcDir, picture("thumbnails-light")), "y");
+  assert.throws(() => content.loadGallery(changed),
+    /gallery: thumbnails: src\/assets\/gallery\/thumbnails-light\.2d711642b7\.webp: the file name must carry the picture's content hash \(\.a1fce4363\w\.webp\)/);
+  // the same for an archived picture
+  const archive = { "0.1.7": { "main-window/light": archived("main-window", "light", "0.1.7") } };
+  const old = make({ scenes, archive });
+  fs.writeFileSync(path.join(old.srcDir, picture("main-window-light-640", "assets/gallery/archive/0.1.7")), "y");
+  assert.throws(() => content.loadGallery(old), /archive 0\.1\.7: main-window\/light: src\/assets\/gallery\/archive\/0\.1\.7\/main-window-light-640\.2d711642b7\.webp: the file name must carry/);
+  // a file no capture and no archive entry records
+  const stray = make({ scenes });
+  fs.writeFileSync(path.join(stray.srcDir, "assets/gallery/thumbnails-light.0000000000.webp"), "x");
+  assert.throws(() => content.loadGallery(stray),
+    /gallery: src\/assets\/gallery\/thumbnails-light\.0000000000\.webp belongs to no capture and no archived picture/);
+  // names: the hash of the content, after the stem
+  assert.equal(content.pictureHash(Buffer.from("x")), HASH);
+  assert.equal(content.pictureFileName("panel-tabs-light-640", Buffer.from("x")), `panel-tabs-light-640.${HASH}.webp`);
 });
 
 test("G6: captures carry pixel dimensions", () => {
@@ -201,7 +233,7 @@ test("the repository's own catalog validates (once it exists)", () => {
 // (specs/012-whats-new-showcase/data-model.md §7, rules A1-A4).
 const archived = (id, theme, version) => ({
   appVersion: version, appBuild: 190, capturedAt: "2026-09-01", environment: "sandbox", dpi: 96, width: 1200, height: 800,
-  files: { full: `assets/gallery/archive/${version}/${id}-${theme}.webp`, card: `assets/gallery/archive/${version}/${id}-${theme}-640.webp`, cardWidth: 640, cardHeight: 427 },
+  files: { full: picture(`${id}-${theme}`, `assets/gallery/archive/${version}`), card: picture(`${id}-${theme}-640`, `assets/gallery/archive/${version}`), cardWidth: 640, cardHeight: 427 },
   bytes: { full: 1, card: 1 },
   title: both(`Old ${id}`), caption: both(`Old caption ${id}.`), alt: both(`Old alt ${id}.`),
 });
@@ -218,8 +250,8 @@ test("A1-A4: archive entries are checked like captures, with their own texts", (
   const noText = archived("main-window", "light", "0.1.7");
   delete noText.caption.cs;
   assert.throws(() => load({ scenes, archive: { "0.1.7": { "main-window/light": noText } } }), /main-window\/light\.caption\.cs: missing translation/);
-  assert.throws(() => load({ scenes, archive: ok, skipFiles: ["assets/gallery/archive/0.1.7/main-window-light-640.webp"] }),
-    /image file missing: src\/assets\/gallery\/archive\/0\.1\.7\/main-window-light-640\.webp/);
+  assert.throws(() => load({ scenes, archive: ok, skipFiles: [picture("main-window-light-640", "assets/gallery/archive/0.1.7")] }),
+    new RegExp(`image file missing: src/assets/gallery/archive/0\\.1\\.7/main-window-light-640\\.${HASH}\\.webp`));
   // the current picture of a version cannot also be archived for it
   assert.throws(() => load({ scenes, archive: { "0.1.8": { "main-window/light": archived("main-window", "light", "0.1.8") } } }),
     /is also the current picture/);
@@ -234,7 +266,7 @@ test("release pictures: archived and current ones of that version, in catalog or
   const g = load({ scenes, archive });
   const old = content.releaseShots(g, "0.1.7");
   assert.deepEqual(old.map((s) => s.key), ["main-window/light", "thumbnails/light"]);
-  assert.equal(old[0].full, "/assets/gallery/archive/0.1.7/main-window-light.webp");
+  assert.equal(old[0].full, `/assets/gallery/archive/0.1.7/main-window-light.${HASH}.webp`);
   assert.deepEqual(old[0].title, both("Old main-window"));
   const current = content.releaseShots(g, "0.1.8"); // every fixture capture is 0.1.8
   assert.equal(current.length, 9);

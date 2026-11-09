@@ -176,8 +176,10 @@ The capture keeps every picture it replaces: a picture taken with an older versi
 `src/assets/gallery/archive/<old version>/` and into `content/gallery/archive.json`, where the
 release history page shows it under that version (spec 012). Never delete archived pictures.
 
-After a successful capture, open each re-captured `src/assets/gallery/<scene>-<theme>.webp` and
-both `src/assets/screenshot-*.png` with your image-reading tool. Confirm that the title bar reads
+After a successful capture, open each re-captured picture - `files.full` of its entry in
+`content/gallery/captures.json`, i.e. `src/assets/gallery/<scene>-<theme>.<content hash>.webp`;
+the hash is part of the name on purpose, so a changed picture is a new address for every cache -
+and both `src/assets/screenshot-*.png` with your image-reading tool. Confirm that the title bar reads
 "Tandem Commander <version>" and that the picture still matches its scene (window state, no stray
 dialog). Run `release:status` once more: `captures.must` must be empty. Flag every picture that
 fails either check - it is not current.

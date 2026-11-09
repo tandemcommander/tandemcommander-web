@@ -8,8 +8,8 @@
     "width": 1100,
     "height": 760,
     "files": {
-      "full": "assets/gallery/code-viewer-light.webp",
-      "card": "assets/gallery/code-viewer-light-640.webp",
+      "full": "assets/gallery/code-viewer-light.a937442af7.webp",
+      "card": "assets/gallery/code-viewer-light-640.b447848093.webp",
       "cardWidth": 640,
       "cardHeight": 442
     },
@@ -27,8 +27,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/command-shell-light.webp",
-      "card": "assets/gallery/command-shell-light-640.webp",
+      "full": "assets/gallery/command-shell-light.ee58ae26a1.webp",
+      "card": "assets/gallery/command-shell-light-640.c4b247ea49.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -46,8 +46,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/dark-theme-dark.webp",
-      "card": "assets/gallery/dark-theme-dark-640.webp",
+      "full": "assets/gallery/dark-theme-dark.aeb979a55c.webp",
+      "card": "assets/gallery/dark-theme-dark-640.51a17bf573.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -65,8 +65,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/icon-style-light.webp",
-      "card": "assets/gallery/icon-style-light-640.webp",
+      "full": "assets/gallery/icon-style-light.c6d887707f.webp",
+      "card": "assets/gallery/icon-style-light-640.a078c316d0.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -84,8 +84,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/main-window-light.webp",
-      "card": "assets/gallery/main-window-light-640.webp",
+      "full": "assets/gallery/main-window-light.ddd06d6c86.webp",
+      "card": "assets/gallery/main-window-light-640.4ce912dd34.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -103,8 +103,8 @@
     "width": 1100,
     "height": 760,
     "files": {
-      "full": "assets/gallery/markdown-viewer-light.webp",
-      "card": "assets/gallery/markdown-viewer-light-640.webp",
+      "full": "assets/gallery/markdown-viewer-light.c5b715ec2f.webp",
+      "card": "assets/gallery/markdown-viewer-light-640.d4b04b4491.webp",
       "cardWidth": 640,
       "cardHeight": 442
     },
@@ -122,8 +122,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/panel-tabs-light.webp",
-      "card": "assets/gallery/panel-tabs-light-640.webp",
+      "full": "assets/gallery/panel-tabs-light.31d4ce0619.webp",
+      "card": "assets/gallery/panel-tabs-light-640.295788cc38.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -141,8 +141,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/quick-search-light.webp",
-      "card": "assets/gallery/quick-search-light-640.webp",
+      "full": "assets/gallery/quick-search-light.84ddab9f04.webp",
+      "card": "assets/gallery/quick-search-light-640.5b9106cfab.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -160,8 +160,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/rename-in-place-light.webp",
-      "card": "assets/gallery/rename-in-place-light-640.webp",
+      "full": "assets/gallery/rename-in-place-light.992950cd97.webp",
+      "card": "assets/gallery/rename-in-place-light-640.957680aaa4.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -179,8 +179,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/tabs-configuration-light.webp",
-      "card": "assets/gallery/tabs-configuration-light-640.webp",
+      "full": "assets/gallery/tabs-configuration-light.e835414c99.webp",
+      "card": "assets/gallery/tabs-configuration-light-640.68f56da7de.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -198,8 +198,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/thumbnails-light.webp",
-      "card": "assets/gallery/thumbnails-light-640.webp",
+      "full": "assets/gallery/thumbnails-light.b8c79edda1.webp",
+      "card": "assets/gallery/thumbnails-light-640.ddf99f69dc.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -217,8 +217,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/unicode-long-paths-light.webp",
-      "card": "assets/gallery/unicode-long-paths-light-640.webp",
+      "full": "assets/gallery/unicode-long-paths-light.8ac5dda2c5.webp",
+      "card": "assets/gallery/unicode-long-paths-light-640.740cb70153.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },
@@ -236,8 +236,8 @@
     "width": 1200,
     "height": 800,
     "files": {
-      "full": "assets/gallery/update-settings-light.webp",
-      "card": "assets/gallery/update-settings-light-640.webp",
+      "full": "assets/gallery/update-settings-light.054001f459.webp",
+      "card": "assets/gallery/update-settings-light-640.c01aa053ec.webp",
       "cardWidth": 640,
       "cardHeight": 427
     },

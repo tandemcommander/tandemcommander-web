@@ -9,3 +9,11 @@
 
 /assets/*
   Cache-Control: public, max-age=604800
+
+# Gallery pictures are named after their content (lib/content.js): a changed
+# picture is a new address, so these can be cached for good. Matching rules
+# are combined, so the week from /assets/* is detached first - without that
+# the response carried both values in one header.
+/assets/gallery/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable

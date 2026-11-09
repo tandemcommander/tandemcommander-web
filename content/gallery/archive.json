@@ -9,8 +9,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.8/command-shell-light.webp",
-        "card": "assets/gallery/archive/0.1.8/command-shell-light-640.webp",
+        "full": "assets/gallery/archive/0.1.8/command-shell-light.c38f7a2435.webp",
+        "card": "assets/gallery/archive/0.1.8/command-shell-light-640.5509dbdef2.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -40,8 +40,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.8/dark-theme-dark.webp",
-        "card": "assets/gallery/archive/0.1.8/dark-theme-dark-640.webp",
+        "full": "assets/gallery/archive/0.1.8/dark-theme-dark.c83e01d9a3.webp",
+        "card": "assets/gallery/archive/0.1.8/dark-theme-dark-640.ff0a7042a7.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -71,8 +71,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.8/main-window-light.webp",
-        "card": "assets/gallery/archive/0.1.8/main-window-light-640.webp",
+        "full": "assets/gallery/archive/0.1.8/main-window-light.de02912ab2.webp",
+        "card": "assets/gallery/archive/0.1.8/main-window-light-640.102c7b5380.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -102,8 +102,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.8/panel-tabs-light.webp",
-        "card": "assets/gallery/archive/0.1.8/panel-tabs-light-640.webp",
+        "full": "assets/gallery/archive/0.1.8/panel-tabs-light.2c0cfe61af.webp",
+        "card": "assets/gallery/archive/0.1.8/panel-tabs-light-640.025831592a.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -133,8 +133,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.8/thumbnails-light.webp",
-        "card": "assets/gallery/archive/0.1.8/thumbnails-light-640.webp",
+        "full": "assets/gallery/archive/0.1.8/thumbnails-light.ec1781f277.webp",
+        "card": "assets/gallery/archive/0.1.8/thumbnails-light-640.f7df1bf59c.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -164,8 +164,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.8/unicode-long-paths-light.webp",
-        "card": "assets/gallery/archive/0.1.8/unicode-long-paths-light-640.webp",
+        "full": "assets/gallery/archive/0.1.8/unicode-long-paths-light.6b5895fe0d.webp",
+        "card": "assets/gallery/archive/0.1.8/unicode-long-paths-light-640.3c14bb7a12.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -197,8 +197,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.9/dark-theme-dark.webp",
-        "card": "assets/gallery/archive/0.1.9/dark-theme-dark-640.webp",
+        "full": "assets/gallery/archive/0.1.9/dark-theme-dark.40221d3c5f.webp",
+        "card": "assets/gallery/archive/0.1.9/dark-theme-dark-640.68955caca6.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -228,8 +228,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.9/main-window-light.webp",
-        "card": "assets/gallery/archive/0.1.9/main-window-light-640.webp",
+        "full": "assets/gallery/archive/0.1.9/main-window-light.1586d42126.webp",
+        "card": "assets/gallery/archive/0.1.9/main-window-light-640.d08e9855f2.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -259,8 +259,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.9/panel-tabs-light.webp",
-        "card": "assets/gallery/archive/0.1.9/panel-tabs-light-640.webp",
+        "full": "assets/gallery/archive/0.1.9/panel-tabs-light.b0c9138448.webp",
+        "card": "assets/gallery/archive/0.1.9/panel-tabs-light-640.b020c18fee.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -290,8 +290,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.9/thumbnails-light.webp",
-        "card": "assets/gallery/archive/0.1.9/thumbnails-light-640.webp",
+        "full": "assets/gallery/archive/0.1.9/thumbnails-light.0ae82c185b.webp",
+        "card": "assets/gallery/archive/0.1.9/thumbnails-light-640.b993bb3969.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -321,8 +321,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.1.9/unicode-long-paths-light.webp",
-        "card": "assets/gallery/archive/0.1.9/unicode-long-paths-light-640.webp",
+        "full": "assets/gallery/archive/0.1.9/unicode-long-paths-light.f515ebb484.webp",
+        "card": "assets/gallery/archive/0.1.9/unicode-long-paths-light-640.6fac1148d8.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -354,8 +354,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.2.0/dark-theme-dark.webp",
-        "card": "assets/gallery/archive/0.2.0/dark-theme-dark-640.webp",
+        "full": "assets/gallery/archive/0.2.0/dark-theme-dark.e8d5ef34f0.webp",
+        "card": "assets/gallery/archive/0.2.0/dark-theme-dark-640.9153156c06.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -385,8 +385,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.2.0/main-window-light.webp",
-        "card": "assets/gallery/archive/0.2.0/main-window-light-640.webp",
+        "full": "assets/gallery/archive/0.2.0/main-window-light.1fc286527f.webp",
+        "card": "assets/gallery/archive/0.2.0/main-window-light-640.7e7fe5b0ee.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -416,8 +416,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.2.0/panel-tabs-light.webp",
-        "card": "assets/gallery/archive/0.2.0/panel-tabs-light-640.webp",
+        "full": "assets/gallery/archive/0.2.0/panel-tabs-light.a503af312e.webp",
+        "card": "assets/gallery/archive/0.2.0/panel-tabs-light-640.ac4f987ef0.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -447,8 +447,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.2.0/quick-search-light.webp",
-        "card": "assets/gallery/archive/0.2.0/quick-search-light-640.webp",
+        "full": "assets/gallery/archive/0.2.0/quick-search-light.2607afc11e.webp",
+        "card": "assets/gallery/archive/0.2.0/quick-search-light-640.ea5f663a89.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -478,8 +478,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.2.0/tabs-configuration-light.webp",
-        "card": "assets/gallery/archive/0.2.0/tabs-configuration-light-640.webp",
+        "full": "assets/gallery/archive/0.2.0/tabs-configuration-light.3de250e7ba.webp",
+        "card": "assets/gallery/archive/0.2.0/tabs-configuration-light-640.9ef5cd822b.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -509,8 +509,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.2.0/thumbnails-light.webp",
-        "card": "assets/gallery/archive/0.2.0/thumbnails-light-640.webp",
+        "full": "assets/gallery/archive/0.2.0/thumbnails-light.ce14b9a3b3.webp",
+        "card": "assets/gallery/archive/0.2.0/thumbnails-light-640.bf4c4e3eac.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
@@ -540,8 +540,8 @@
       "width": 1200,
       "height": 800,
       "files": {
-        "full": "assets/gallery/archive/0.2.0/unicode-long-paths-light.webp",
-        "card": "assets/gallery/archive/0.2.0/unicode-long-paths-light-640.webp",
+        "full": "assets/gallery/archive/0.2.0/unicode-long-paths-light.56f2fecb83.webp",
+        "card": "assets/gallery/archive/0.2.0/unicode-long-paths-light-640.d4d67fc0f7.webp",
         "cardWidth": 640,
         "cardHeight": 427
       },
